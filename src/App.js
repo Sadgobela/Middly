@@ -76,7 +76,7 @@ const client = new ApolloClient({
       cache
     }),
     new HttpLink({
-      uri: 'https://4nef3fumj7.execute-api.eu-west-1.amazonaws.com/dev/graphql',
+      uri: 'https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/graphql',
       credentials: 'include'
     })
   ]),
