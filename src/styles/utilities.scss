@@ -1,0 +1,16 @@
+/*region -- Text Decoration --*/
+.text-hover {
+    position: relative;
+    &:hover:after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: inherit;
+    }
+}
+/*endregion -- Text Decoration -- */

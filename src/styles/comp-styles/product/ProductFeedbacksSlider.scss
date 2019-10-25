@@ -1,0 +1,97 @@
+.ProductFeedbacksSlider {
+  padding: 30px 0 0;
+  margin: 30px auto 0;
+  max-width: 100%;
+  width: 100%;
+  border-top: 1px solid rgb(228, 228, 228);
+
+  .ItemsSection {
+    padding: 0;
+
+    &--featured {
+      background: transparent;
+    }
+    &-heading {
+      margin-bottom: 20px;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    &-title {
+      font-size: 16px;
+      font-weight: 700;
+      padding: 0;
+    }
+    &-colLink {
+      text-align: right;
+      font-weight: normal;
+      font-size: 14px;
+      color: rgb(220, 85, 85);
+
+      span {
+        font-weight: inherit;
+        color: inherit;
+        font-size: inherit;
+      }
+    }
+  }
+  .ProductSlider {
+    max-width: 800px;
+
+    &-list {
+      margin: 0;
+    }
+  }
+  .slick {
+    &-list {
+      padding: 0 10px;
+    }
+    &-track {
+      min-width: 100vw;
+    }
+  }
+  .Photo-slide {
+    max-width: 175px;
+    margin: 0 auto;
+    border-radius: 2px;
+    border: 1px solid rgb(228, 228, 228);
+    position: relative;
+    overflow: hidden;
+
+    &Header {
+      padding: 8px;
+      display: flex;
+      align-items: center;
+    }
+    .avatar {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-right: 8px;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .name {
+      color: #000;
+      font-size: 12px;
+
+      span {
+        display: block;
+        font-size: 10px;
+        color: rgb(155, 155, 155);
+        line-height: 1.4;
+      }
+    }
+    img {
+      width: 175px;
+      height: 156px;
+      object-fit: cover;
+    }
+  }
+}

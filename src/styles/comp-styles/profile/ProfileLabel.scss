@@ -1,0 +1,165 @@
+@import "comp-styles/variables";
+
+$user-profile-bg: #fafafa;
+
+.ProfileLabel {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: 170px;
+
+  &-user {
+    padding: 0 0 10px;
+  }
+
+  &-userName {
+    margin: 0 0 5px;
+
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+  }
+
+  &-userLocation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 0 0 10px;
+
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #9b9b9b;
+
+    & svg {
+      width: 12px;
+      height: 16px;
+      margin: 0 4px 0 0;
+
+      fill: #9b9b9b;
+    }
+  }
+
+  &-userFollowers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  &-userFollowersItem {
+    flex: 0 0 50%;
+
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #000;
+
+    & a {
+      color: #000;
+
+      &:focus,
+      &:hover {
+        color: #9b9b9b;
+      }
+    }
+
+    & .num {
+      font-weight: bold;
+    }
+  }
+
+  &-userLink {
+    & a {
+      position: relative;
+
+      display: block;
+      max-width: 140px;
+      margin: 0 auto;
+      padding: 7px 5px;
+
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #9b9b9b;
+      border-radius: 15px;
+      border: 1px solid #9b9b9b;
+      background: #fff;
+      transition: color 300ms ease-in-out;
+
+      &:focus,
+      &:hover {
+        color: $primary-color;
+        text-decoration: none;
+      }
+
+      &.active {
+        font-weight: bold;
+        color: $primary-color;
+        &::before {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+
+  &-actionBtns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: 20px 0 0;
+  }
+  &-btnFollow,
+  &-btnMessage {
+    flex: 0 0 auto;
+    min-width: 93px;
+    margin: 0 5px;
+    padding: 6px 18px;
+
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+
+    color: #fff;
+    border-radius: 15px;
+    border: 1px solid $primary-color;
+    background: $primary-color;
+
+    transition: all 250ms ease-in;
+    &:focus,
+    &:hover {
+      color: $primary-color;
+      background: #fff;
+    }
+  }
+  &-btnMessage {
+    color: #9b9b9b;
+    border-color: #9b9b9b;
+    background: #fff;
+
+    &:focus,
+    &:hover {
+      color: #000;
+      border-color: #000;
+    }
+  }
+
+  @media (min-width: 992px) {
+    display: block;
+    width: 100%;
+
+    &-user {
+      padding: 0 0 20px;
+    }
+
+    &-userName {
+      margin: 0 0 10px;
+    }
+
+    &-userLocation {
+      margin: 0 0 20px;
+    }
+  }
+}

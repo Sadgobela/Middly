@@ -1,0 +1,314 @@
+.Feedback {
+  margin: 0 0 25px;
+  padding: 15px 0 0;
+
+  border: 1px solid #ececec;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &-heading {}
+
+  &-headingRow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  &-colLogo {
+    flex: 0 0 60px;
+    padding: 0 10px;
+  }
+  &-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &-colAuthor {
+    flex: 0 0 160px;
+    padding: 0;
+  }
+  &-author {
+    margin: 0 0 3px;
+
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    text-transform: none;
+    color: #000;
+  }
+  &-member {
+    display: inline-flex;
+    padding: 2px 10px;
+
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #000;
+
+    border-radius: 2px;
+    background: #e2e2e2;
+  }
+
+  &-colFollow {
+    flex: 0 0 70px;
+    margin-left: auto;
+    padding: 0 5px;
+  }
+  &-btnFollow {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 5px 12px;
+
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+
+    border-radius: 2px;
+    border: 1px solid #ed484f;
+    background: #ed484f;
+    outline: 0;
+    transition: background 300ms ease-out;
+
+    &:focus,
+    &:hover {
+      color: #ed484f;
+      background: #fff;
+    }
+  }
+
+  &-colDate {
+    flex: 0 0 100%;
+    padding: 5px 10px 0 60px;
+  }
+  &-date {
+    font-size: 13px;
+    line-height: 16px;
+    color: #818181;
+  }
+
+  &-content {
+    padding: 19px 15px;
+  }
+
+  &-text {
+    margin: 7px 0 17px;
+
+    font-size: 15px;
+    line-height: 21px;
+    color: #363636;
+
+    & p {
+      margin: 0 0 12px;
+
+      font-size: 15px;
+      line-height: 21px;
+      color: #363636;
+    }
+
+    & .read-more,
+    & .show-less {
+      font-size: 15px;
+      line-height: 21px;
+      color: #ed484f;
+      font-weight: 400;
+    }
+  }
+
+  &-activity {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &-likes {
+    flex: 0 0 100%;
+    padding: 0 10px;
+
+    & .like-widget {
+      margin: 0;
+
+      & ._count {
+        font-size: 13px;
+        line-height: 16px;
+        color: #363636;
+      }
+    }
+  }
+
+  &-activityBtns {
+    flex: 0 0 auto;
+    margin-left: auto;
+    padding: 10px 10px 0;
+  }
+  &-activityBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 125px;
+    margin: 0 15px 0 0;
+    padding: 7px 10px;
+
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #000;
+
+    border-radius: 12px;
+    border: 1px solid #f6f6f6;
+    background: #f6f6f6;
+    outline: 0;
+    transition: 300ms ease-out;
+
+    &:focus,
+    &:hover {
+      border-color: #000;
+      background: #fff;
+    }
+  }
+
+  &-comments {
+    & .Comments {
+      margin: 0;
+      box-shadow: none;
+    }
+  }
+
+  &-main.withGallery {
+    padding: 15px 0 0;
+  }
+
+  &-gallery {
+    position: relative;
+
+    & .slick-dots {
+      position: absolute;
+      bottom: 17px;
+
+      & li button:before {
+        color: #fff;
+        opacity: .5;
+        transition: opacity 300ms ease-out;
+      }
+
+      & li.slick-active button:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-galleryItem {
+    & img {
+      max-width: 100%;
+      height: auto;
+      max-height: 535px;
+      object-fit: cover;
+    }
+  }
+
+  &-galleryArrow {
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+
+    font-size: 0;
+
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &.left {
+      left: 21px;
+
+      transform: translateY(-50%) rotate(180deg);
+    }
+    &.right {
+      right: 21px;
+    }
+
+    & svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+
+      transition: opacity 300ms ease-out;
+    }
+
+    &:hover {
+      & svg {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  &-gallerySlider {
+    & .slick-slide {
+      & > div {
+        font-size: 0;
+      }
+    }
+  }
+
+  @media (min-width: 576px) {
+    &-headingRow {
+      padding: 0 15px;
+    }
+
+    &-colAuthor {
+      flex: 0 0 230px;
+      padding: 0 10px;
+    }
+
+    &-colFollow {
+      flex: 0 0 110px;
+      margin: 0;
+      padding: 0 10px;
+    }
+
+    &-colDate {
+      flex: 0 0 auto;
+      margin-left: auto;
+      padding: 0 10px;
+    }
+
+    &-likes {
+      flex: 0 0 auto;
+    }
+
+    &-activityBtns {
+      flex: 0 0 auto;
+      margin-left: 65px;
+      padding: 0 10px;
+    }
+  }
+
+
+  @media (min-width: 768px) {
+    &-main.withGallery {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      & .Feedback-gallery {
+        position: relative;
+        flex: 0 0 375px;
+        max-width: 375px;
+      }
+      & .Feedback-content {
+        position: relative;
+        flex: 1 1 auto;
+      }
+    }
+  }
+}

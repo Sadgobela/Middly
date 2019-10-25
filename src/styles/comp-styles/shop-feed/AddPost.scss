@@ -1,0 +1,56 @@
+@import 'comp-styles/variables';
+
+.AddPost {
+  margin: 0 0 12px;
+  padding: 12px 15px;
+  background: #fff;
+
+  &-inner {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    cursor: pointer;
+  }
+
+  &-user {
+    position: relative;
+    flex: 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    & img {
+      width: 50px;
+      height: 50px;
+
+      object-fit: cover;
+    }
+  }
+
+  &-text {
+    position: relative;
+    flex: 0 0 auto;
+
+    padding: 0 0 0 15px;
+  }
+  &-message {
+    font-size: 15px;
+    line-height: 17px;
+    color: $color-warm-grey;
+  }
+
+  @media (min-width: 870px) {
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    display: none;
+    visibility: hidden;
+    width: 1px;
+    height: 0;
+  }
+}

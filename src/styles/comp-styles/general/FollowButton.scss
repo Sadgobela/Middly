@@ -1,0 +1,92 @@
+@import "../variables";
+
+$follow-btn-color: $primary-color;
+$followed-btn-color: $color-warm-grey;
+
+.FollowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  min-height: 26px;
+  margin: 0;
+  padding: 0 10px;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: $follow-btn-color;
+  border: 1px solid $follow-btn-color;
+  border-radius: 16px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+
+  &:focus,
+  &:hover {
+    color: #fff;
+    background: $follow-btn-color;
+  }
+
+  & span {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & svg {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px 0 0;
+  }
+
+  &.is-followed {
+    color: $followed-btn-color;
+    border-color: $followed-btn-color;
+
+    &:focus,
+    &:hover {
+      color: $followed-btn-color;
+      border-color: $followed-btn-color;
+      background-color: #fff;
+
+      & svg {
+        fill: $followed-btn-color;
+      }
+    }
+
+    & svg {
+      fill: $followed-btn-color;
+    }
+  }
+
+  &--sm {
+    min-width: 80px;
+    min-height: 22px;
+    padding: 0 7px;
+
+    font-size: 12px;
+    line-height: 14px;
+
+    & svg {
+      width: 10px;
+      height: 10px;
+      margin: 0 2px 0 0;
+    }
+  }
+
+  &--lg {
+    min-width: 100px;
+    min-height: 30px;
+    padding: 0 12px;
+
+    font-size: 16px;
+    line-height: 18px;
+
+    & svg {
+      width: 14px;
+      height: 14px;
+      margin: 0 4px 0 0;
+    }
+  }
+}

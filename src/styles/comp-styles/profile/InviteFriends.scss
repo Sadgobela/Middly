@@ -1,0 +1,195 @@
+@import "../variables";
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+.Friends {
+    text-align: center;
+    color: $main-text-color;
+    padding: 0 30px 30px 30px;
+    
+    &-title {
+        max-width: 450px;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0 auto;
+    }
+    
+    &-subtitle {
+        font-size: 20px;
+        color: $grey;
+        margin: 30px 0 10px;
+    }
+    
+    &-divider {
+        height: 5px;
+        margin: -5px -30px 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    &-continueButton.ant-btn {
+        margin: 50px 0 30px;
+    }
+    
+    &-confirmEmail {
+        padding: 20px;
+        background-color: $light-grey;
+        margin: 0 -30px;
+        
+        
+        button {
+            border-radius: 0;
+            height: 24px;
+            padding: 0 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: $main-text-color;
+        }
+    }
+    &-notYou {
+        color: $color-warm-grey;
+        margin-right: 5px;
+        & + a {
+            color: $main-text-color;
+        }
+    }
+    
+    &-email {
+        font-size: 16px;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        input[type=text] {
+            width: 100%;
+            max-width: 450px;
+            padding: 5px 15px;
+            color: $accent-color;
+            border-width: 1px 0 1px 1px;
+            border-style: solid;
+            border-color: $color-warm-grey;
+        }
+        button.ant-btn {
+            background: none;
+            border-radius: 0;
+            color: $grey;
+            border-width: 1px 1px 1px 0;
+            border-style: solid;
+            border-color: $color-warm-grey;
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            
+            svg {
+                height: 18px;
+                fill: $color-warm-grey;
+            }
+            
+            &:hover {
+                
+                border-color: $color-warm-grey;
+            }
+        }
+    }
+    
+    &-socialNetworks {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        
+        button {
+            width: 146px;
+            height: 44px;
+            border-radius: 3px;
+            margin: 10px 10px 0;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            justify-content: center;
+    
+            & > span {
+                line-height: 12px;
+            }
+        }
+        
+        .Friends-fbBtn {
+            color: $fb-color;
+            border-color: $fb-color;
+            
+            svg {
+                width: 22px;
+                fill: $fb-color;
+            }
+        }
+        
+        .Friends-tweetBtn {
+            color: $tweet-color;
+            border-color: $tweet-color;
+    
+            svg {
+                height: 18px;
+                fill: $tweet-color;
+            }
+        }
+        
+        .Friends-instaBtn {
+            padding: 1px;
+            position: relative;
+            margin: 10px 10px 0;
+            
+            & > span {
+                line-height: 12px;
+            }
+            
+            button {
+                margin: 0;
+                color: #aa1c8b;
+                z-index: 1;
+                border-image: $insta-color;
+                width: 144px;
+                height: 42px;
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+            
+            &:hover:after {
+                background: $accent-color;
+            }
+            
+            &:after {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: $insta-color;
+                content: '';
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .Friends {
+        &-continueButton.ant-btn {
+            font-size: 18px;
+            min-height: 48px;
+            border-radius: 24px;
+            padding: 0 67px;
+        }
+    }
+}
+
+@include phone640 {
+    .Friends-socialNetworks {
+        display: inline-block;
+    }
+}

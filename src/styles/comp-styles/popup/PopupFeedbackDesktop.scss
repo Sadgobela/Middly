@@ -1,0 +1,48 @@
+#popup--feedbackDesktop {
+  display: flex;
+
+  .Popup {
+    &-container {
+      max-width: 1000px;
+      width: 100%;
+      margin: auto;
+      height: auto;
+      min-height: initial;
+      overflow: initial;
+      padding: 0;
+    }
+    &-cross {
+      left: initial;
+      top: 15px;
+      right: 15px;
+    }
+  }
+  .slick {
+    &-slider {
+      width: 100vw !important;
+      height: 100vh !important;
+    }
+    &-track,
+    &-list,
+    &-slider,
+    &-slide {
+      height: 100%;
+      max-height: 100%;
+    }
+    &-slide {
+      > div {
+        height: 100%;
+      }
+    }
+    &-arrow {
+      display: none !important;
+    }
+  }
+  .preview-image {
+    height: 100%;
+
+    img {
+      max-height: 550px !important;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.ShopBrands {
+  &-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  &-item {
+    flex: 0 0 105px;
+    margin: 10px;
+
+    transition: opacity 300ms ease-out;
+
+    &:focus,
+    &:hover {
+      opacity: .75;
+    }
+  }
+
+  &-img {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    & img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

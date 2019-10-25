@@ -1,0 +1,60 @@
+.Feed {
+  padding: 60px 0 15px;
+
+  background: #f6f6f7;
+  &-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &-colFollow,
+  &-colMain {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  &-colActivity {
+    display: none;
+    visibility: hidden;
+  }
+
+  @media (min-width: 640px) {
+    padding-top: 15px;
+  }
+
+  @media (min-width: 880px) {
+    padding: 20px 0;
+
+    &-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    &-colFollow {
+      flex: 0 0 320px;
+      max-width: 320px;
+      margin: 0;
+      padding: 0 10px;
+    }
+
+    &-colMain {
+      flex: 0 0 560px;
+      max-width: 560px;
+      margin: 0;
+      padding: 0 10px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+
+    &-colActivity {
+      display: block;
+      visibility: visible;
+
+      flex: 0 0 320px;
+      max-width: 320px;
+      padding: 0 10px;
+    }
+  }
+}

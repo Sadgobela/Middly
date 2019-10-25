@@ -1,0 +1,290 @@
+@import "comp-styles/variables";
+
+.ProfileEdit {
+  margin: 0 0 30px;
+  padding: 0 0 40px;
+
+  color: #000;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  &--submit {
+    margin: 0;
+    padding: 0 15px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  &-submitBtn {
+    display: block;
+    min-width: 183px;
+    margin: 0 auto;
+    padding: 13px 15px;
+
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    border-radius: 24px;
+  }
+
+  &-heading {
+    margin: 0 0 10px;
+    padding: 20px 30px;
+
+    background: #eeeeee;
+  }
+  &-headingTitle {
+    font-size: 16px;
+    line-height: 19px;
+    color: #404040;
+  }
+
+  &-item {
+    padding: 10px 0;
+  }
+  &-colTitle {
+    margin: 0 0 5px;
+    padding: 0 15px;
+  }
+  &-title {
+    & label {
+      font-size: 14px;
+      line-height: 16px;
+      color: #303030;
+      text-align: right;
+    }
+  }
+  &-colControl {
+    padding: 0 15px;
+
+    & input {
+      display: block;
+      width: 100%;
+      max-width: 450px;
+      margin: 0;
+      padding: 6px 10px;
+
+      font-size: 14px;
+      line-height: 16px;
+      color: #313131;
+
+      border: 1px solid #c0c0c0;
+      background: #fff;
+    }
+
+    & textarea {
+      display: block;
+      width: 100%;
+      max-width: 450px;
+      height: 79px;
+      min-height: 79px;
+      max-height: 250px;
+      margin: 0;
+      padding: 6px 10px;
+
+      font-size: 14px;
+      line-height: 16px;
+      color: #313131;
+
+      border: 1px solid #c0c0c0;
+      background: #fff;
+    }
+
+    & .react-tel-input {
+      & input[type='text'],
+      & input[type='tel'] {
+        padding: 6px 10px 6px 45px;
+
+        border: 1px solid #c0c0c0;
+      }
+
+      & .selected-flag {
+        height: 30px;
+        padding: 0 0 0 10px;
+        border-radius: 0;
+        border: 1px solid #c0c0c0;
+
+        & .flag {
+          margin-top: -7px;
+        }
+      }
+    }
+
+    & .ant-calendar-picker {
+      & .anticon svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      &:focus .ant-calendar-picker-input,
+      &:hover .ant-calendar-picker-input:not(.ant-input-disabled) {
+        border-color: #c0c0c0;
+        box-shadow: none;
+      }
+    }
+    & .ant-calendar-picker-input {
+      height: 30px;
+      border-radius: 0;
+    }
+  }
+
+  &-radioControls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0 0 -10px;
+  }
+
+  &-radioBtn {
+    position: relative;
+    flex: 0 0 88px;
+    margin: 0 20px 10px 0;
+    padding: 6px 7px;
+
+    line-height: 16px;
+    text-align: center;
+    color: #4a90e2;
+    border-radius: 23px;
+    border: 1px solid #4a90e2;
+    background: #fff;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+
+    &.checked {
+      color: #fff;
+      background: #4a90e2;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & input {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    & span {
+      font-size: 14px;
+      line-height: 16px;
+      white-space: nowrap;
+    }
+  }
+
+  &-connectControl {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &-connectControlBtn {
+    flex: 0 0 149px;
+    margin: 0;
+    padding: 6px 5px;
+
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: $primary-color;
+
+    border-radius: 15px;
+    border: 1px solid $primary-color;
+    background: #fff;
+    cursor: pointer;
+
+    &.is-connected {
+      color: #313131;
+      border-color: #313131;
+    }
+  }
+  &-connectControlText {
+    padding: 0 0 0 6px;
+
+    font-size: 12px;
+    line-height: 14px;
+    color: #313131;
+  }
+
+  &-selectControl {
+    & .ant-select-selection--single {
+      height: 30px;
+
+      border-radius: 0;
+    }
+  }
+
+  &-switch {
+    & .ant-switch {
+      margin: 0 0 5px;
+    }
+    & .ant-switch-checked {
+      background: $primary-color;
+    }
+    & [ant-click-animating-without-extra-node]:after,
+    & .ant-click-animating-node {
+      border-color: $primary-color;
+    }
+  }
+  &-switchText {
+    font-size: 12px;
+    line-height: 14px;
+    color: #313131;
+  }
+
+  &-deactivate {
+    padding: 10px 30px;
+  }
+  &-deactivateBtn {
+    display: block;
+    min-width: 183px;
+    max-width: 100%;
+    margin: 0 0 10px;
+    padding: 15px 5px;
+
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: $primary-color;
+
+    border-radius: 23px;
+    border: 1px solid $primary-color;
+    background: #fff;
+    outline: 0;
+    cursor: pointer;
+  }
+  &-deactivateText {
+    font-size: 12px;
+    line-height: 14px;
+    color: #313131;
+  }
+
+  @media (min-width: 600px) {
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      padding: 10px 0;
+    }
+    &-colTitle {
+      flex: 0 0 183px;
+      padding: 0 15px;
+      text-align: right;
+    }
+    &-colControl {
+      flex: 1 1 auto;
+      padding: 0 15px;
+    }
+
+    &-submitBtn {
+      margin: 0;
+    }
+  }
+}

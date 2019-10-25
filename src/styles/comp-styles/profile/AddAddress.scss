@@ -1,0 +1,18 @@
+.AddAddress {
+
+  &-submit {
+    padding: 10px 15px;
+  }
+
+  &-submitBtn {
+    min-width: 180px;
+    max-width: 100%;
+    margin: 7px auto;
+    padding: 7px 12px;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    border-radius: 3px !important;
+  }
+}

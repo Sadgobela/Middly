@@ -1,0 +1,432 @@
+@import "styles/comp-styles/variables";
+
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+/** this is a shit code fix this :S */
+.modal-wrapper.add-form .modal-form {
+  margin: 0 auto;
+}
+.modal-wrapper {
+  max-width: 100%;
+}
+
+.signInModal {
+  justify-content:center;
+
+  .error {
+    color:#d24147;
+    font-size: 13px;
+  }
+
+  .modal-bodyClass {
+    padding: 37px 50px 34px 50px;
+    width:100% !important;
+    box-sizing: border-box;
+  }
+
+  input {
+    height: 36px;
+  }
+  .form-input {
+    margin: 5px 0;
+
+    label {
+      font-size: 14px;
+      margin: 0 0 3px 0;
+      color: #000;
+
+      a {
+        color: #4A90E2;
+        text-decoration: none;
+      }
+    }
+
+    .error {
+      margin: 5px 0 0;
+      top: 100%;
+      left: 0;
+      order: 2;
+    }
+
+    &.is-error > input {
+      border-color: #d24147;
+    }
+
+    & > input:hover {
+      border-color: #A2A2A2;
+    }
+
+    & > input:focus {
+      background: #FAFBFF;
+      border-color: #A3BCFD;
+    }
+
+    &.checkbox-field {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &.checkbox-field > input {
+      order: 1;
+      width: auto;
+      margin-right: 7px;
+    }
+    &.checkbox-field > label {
+      font-size: 12px;
+      order: 2;
+      user-select: none;
+      width: auto;
+    }
+  }
+  .react-tabs {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__tab-list {
+      margin: 0 0 0 10px;
+    }
+    &__tab {
+      width: auto;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #4a90e2;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      border-radius: 0;
+      margin: 0;
+    }
+  }
+  .forgot {
+    width: 100%;
+    text-align: right;
+
+    a {
+      font-size: 14px;
+      color: rgb(74, 144, 226);
+    }
+  }
+  .back {
+    color: rgb(220, 85, 85);
+    position: relative;
+    top: -10px;
+    font-size: 14px;
+  }
+  .signIn-heading {
+    display: block;
+    font-size: 18px;
+  	font-weight: bold;
+  	text-align: center;
+    width: 100%;
+    color: #201e1e;
+    margin-bottom: 25px;
+  }
+  .signIn-extra {
+    width: 100%;
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 20px;
+    > span {
+      color: rgb(74, 144, 226);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .username-check {
+    position: absolute;
+    bottom: 7px;
+    right: 10px;
+    display: flex;
+    max-width: 22px;
+    max-height: 25px;
+  }
+}
+
+.sign-wrapper__social{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+
+  .label {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    opacity: 0.4;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    width: 100%;
+  }
+  .btn {
+    width: calc(50% - 20px) !important;
+    margin: 0 10px !important;
+    background: transparent !important;
+    border: 1px solid #3c7eef !important;
+    border-radius: 3px !important;
+    color: #3c7eef !important;
+    height: 37px !important;
+    font-size: 14px !important;
+    max-width: 146px !important;
+    padding: 10px 25px !important;
+  }
+  @media(max-width: 767px) {
+    flex-wrap: wrap;
+  }
+}
+
+.modal-form {
+  &__title {
+    display: block;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0.9px;
+  }
+  &__subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 10px;
+
+    span {
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: rgba(#000000, .56);
+    }
+  }
+}
+.modal {
+  &-close {
+    right: 0 !important;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  &-overlayClass {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  &-bodyClass {
+    z-index: 10 !important;
+  }
+}
+.modal-form.sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        margin-bottom: 0px;
+    }
+    .underline {
+        margin-left: 10px;
+        cursor: pointer;
+        &:hover {
+            color: #ed484f;
+        }
+    }
+    .react-tabs {
+        width: 100%;
+    }
+    .sign-wrapper {
+        width: 100%;
+        max-width: 400px;
+
+        &__footer {
+          width: 100%;
+          text-align: center;
+
+          .btn {
+            margin: 20px auto 15px !important;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+          }
+        }
+        &__social {
+          display: flex;
+          width: calc(100% + 20px);
+          margin: 0 -10px;
+          flex-direction: initial;
+
+          .btn {
+            background: transparent;
+            border-radius: 3px;
+            border: 1px solid rgb(197, 197, 197);
+            margin: 0 10px !important;
+
+            &.google {
+              color: rgb(220, 75, 62);
+
+              svg {
+                max-width: 18px;
+                max-height: 18px;
+              }
+            }
+            &.facebook {
+              color: rgb(57, 90, 152);
+
+              svg {
+                fill: rgb(57, 90, 152);
+                max-height: 18px;
+                max-width: 18px;
+              }
+            }
+            &:not(:first-child) {
+              @media(max-width: 767px) {
+                margin-top: 10px !important;
+              }
+            }
+          }
+        }
+    }
+    .react-tabs__tab-panel {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+        .or {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: calc(100% + 100px);
+            margin: 20px -50px 34px;
+            .text {
+                color: rgb(197, 197, 197);
+                margin: 0 10px;
+                white-space: nowrap;
+            }
+        }
+        .btn {
+            margin: 20px 0;
+            width: 100%;
+            max-width: none;
+            padding: 0;
+            height: 45px;
+            border-radius: 24px;
+            background-color: #ed494f;
+
+            &.facebook, &.google {
+                max-width: 400px;
+                width: 100%;
+                padding: 10px 30px;
+                font-size: 1em;
+                margin: 10px 0;
+                svg {
+                    margin-right: 10px;
+                }
+            }
+
+            &:disabled {
+              background-color: $grey;
+              cursor: not-allowed;
+            }
+
+        }
+    }
+    .form-input {
+      position: relative;
+    }
+}
+
+.signIn-title{
+    text-align: center;
+    padding: 0 0 19px 0;
+}
+
+.signIn__forgotPassword {
+  padding-top:30px;
+}
+
+.signIn__submit {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+@include tablet768 {
+  .signInModal {
+    .modal-bodyClass {
+      margin-top:0 !important;
+      padding:27px 5px 10px 5px;
+      min-height:100vh;
+    }
+  }
+}

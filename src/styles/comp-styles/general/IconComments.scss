@@ -1,0 +1,25 @@
+.IconComments {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
+
+  & svg {
+    width: 18px;
+    height: 18px;
+    margin: 0 5px 0 0;
+    padding: 0;
+    fill: #666666;
+  }
+
+  & span {
+    font-size: 13px;
+    line-height: 15px;
+    color: #666666;
+  }
+}

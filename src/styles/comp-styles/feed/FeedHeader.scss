@@ -1,0 +1,55 @@
+.FeedHeader {
+  margin: 0 0 5px;
+
+  &-wrapper {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  &-menu {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding: 0 15px;
+
+    color: #000;
+    background: #fff;
+
+    & a {
+      flex: 0 0 33.33%;
+      padding: 9px 0 6px;
+
+      font-size: 18px;
+      line-height: 22px;
+      color: rgba(0, 0, 0, .5);
+      text-align: center;
+
+      border-bottom: 3px solid transparent;
+
+      &:focus,
+      &:hover {
+        color: #000;
+      }
+
+      &.active {
+        color: #000;
+        font-weight: 500;
+
+        border-color: #000;
+      }
+    }
+  }
+
+  @media (min-width: 375px) {
+    &-menu {
+      padding: 0 35px;
+    }
+  }
+
+  @media (min-width: 541px) {
+    margin: 0 0 15px;
+  }
+}

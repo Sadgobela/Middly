@@ -1,0 +1,43 @@
+.ShopFeed {
+  padding: 0 0 30px;
+
+  background: #f6f6f7;
+
+  &-wrapper {
+    max-width: 930px;
+    margin: 0 auto;
+  }
+
+  &-colAside {
+    display: none;
+    visibility: hidden;
+  }
+
+
+  @media (min-width: 870px) {
+    padding: 30px 0;
+    
+    &-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
+    &-colPosts {
+      position: relative;
+      flex: 0 0 530px;
+      max-width: 530px;
+      padding: 0 15px;
+    }
+
+    &-colAside {
+      display: block;
+      visibility: visible;
+      position: relative;
+      flex: 0 0 330px;
+      max-width: 330px;
+      padding: 0 15px;
+    }
+  }
+}

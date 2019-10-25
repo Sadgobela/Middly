@@ -1,0 +1,53 @@
+.SellerButton {
+  display: inline-flex;
+  margin-right: 30px;
+
+  &.is-seller {
+    .SellerButton {
+      &-link {
+        border-radius: 0;
+        border: 0;
+        padding: 0;
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 114px;
+    margin: 0;
+    padding: 10px 15px;
+
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .3);
+
+    transition: border-color 350ms ease-in-out;
+
+    &:focus,
+    &:hover {
+      border-color: #000;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 12px;
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      color: #000;
+    }
+  }
+}

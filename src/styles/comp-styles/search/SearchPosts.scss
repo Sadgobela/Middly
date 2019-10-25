@@ -1,0 +1,26 @@
+.SearchPosts {
+  margin: 0 -15px;
+  padding: 25px 0;
+
+  background: #f9fafb;
+
+  &-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  @media (min-width: 992px) {
+    padding: 40px 0 25px;
+
+    background: #fff;
+  }
+
+  @media (min-width: 1200px) {
+    &-inner {
+      margin: 0 -15px;
+    }
+  }
+
+}

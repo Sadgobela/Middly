@@ -1,0 +1,170 @@
+.PostComments {
+  background: #fff;
+
+  border-top: 1px solid #d8d8d8;
+
+  &-wrapper {}
+
+  &-list {
+    padding: 9px 0;
+  }
+
+  &-accordeon {
+    margin: 0 20px;
+    padding: 9px 0;
+
+    text-align: center;
+
+    border-top: 1px solid #d8d8d8;
+
+    & span {
+      font-size: 14px;
+      line-height: 16px;
+      color: #ed494f;
+      cursor: pointer;
+
+      transition: opacity 300ms ease-in;
+
+      &:focus,
+      &:hover {
+        opacity: .75;
+      }
+    }
+    .PostComments-loader-wrapper{
+      position: relative;
+      display: inline-block;
+      width: 35px;
+    }
+  }
+
+  &-form {
+    margin: 0 20px;
+    padding: 9px 0;
+
+    border-top: 1px solid #e4e4e4;
+  }
+
+  &-formInner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &-formThumb {
+    flex: 0 0 50px;
+    padding: 0 5px;
+
+    & .UserThumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+
+      width: 40px;
+      height: 40px;
+
+      color: #ed484f;
+      border-radius: 50%;
+      border: 1px solid #ececec;
+      overflow: hidden;
+      background: #f5f5f5;
+
+      & img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &-formBody {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  &-formText {
+    flex: 1 1 auto;
+    padding: 0 3px;
+
+    & textarea {
+      display: block;
+      width: 100%;
+
+      margin: 0;
+      padding: 2px;
+
+      font-size: 13px;
+      line-height: 16px;
+      color: #000;
+      border: 0;
+      background-color: transparent;
+      resize: none;
+
+      &::placeholder {
+        color: #818181;
+      }
+      &::-webkit-scrollbar {
+        width: 6px;
+        background: #eee;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #c0c0c0;
+      }
+    }
+  }
+  &-formSubmit {
+    flex: 0 0 auto;
+    margin-left: 5px;
+  }
+  &-formSubmitBtn {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    color: #fff;
+
+    border: 1px solid #ed484f;
+    border-radius: 3px;
+    text-align: center;
+    background: #ed484f;
+    outline: 0;
+    transition: all .3s ease;
+
+    &.withIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin: 0 auto;
+      padding: 2px;
+
+
+      border-radius: 50%;
+
+      & svg {
+        width: 18px;
+        height: 18px;
+        margin: 0 0 0 3px;
+      }
+    }
+    &--disabled {
+      border: 1px solid #ccc;
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  @media (min-width: 541px) {
+    &-form {
+      margin: 0 30px;
+    }
+    &-accordeon {
+      margin: 0 30px;
+    }
+  }
+}

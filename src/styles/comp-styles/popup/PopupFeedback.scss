@@ -1,0 +1,206 @@
+#popup--feedback {
+  .Popup {
+    &-container {
+      display: flex;
+      padding: 40px 15px 15px;
+    }
+    &-cross {
+      top: 7px;
+    }
+  }
+  .ProductMobileInfo {
+    &-feedbackItem {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      display: block;
+
+      .gallery {
+        position: relative;
+        margin: 0 -15px;
+        width: calc(100% + 30px);
+      }
+      .main {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        position: relative;
+        padding-top: 15px;
+      }
+      .info {
+        width: calc(100% - 22.5vw);
+        padding-left: 10px;
+      }
+      .product {
+        margin: 20px -15px 30px;
+        width: calc(100% + 30px);
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border-bottom: 1px solid rgba(#000, .05);
+        border-top: 1px solid rgba(#000, .05);
+
+        .thumb {
+          width: 22.5vw;
+          height: 22.5vw;
+          position: relative;
+          overflow: hidden;
+          border-radius: 0;
+
+          img {
+            width: 22.5vw;
+            height: 22.5vw;
+            object-fit: cover;
+            border-radius: 0;
+          }
+        }
+        .title {
+          font-size: 12px;
+          line-height: 1.2;
+          margin: 0;
+          color: #000;
+        }
+        .rating {
+          margin-top: 2px;
+          display: flex;
+          align-items: center;
+
+          .star {
+            margin-right: 2px;
+            width: 7px;
+            height: 7px;
+            display: flex;
+
+            svg {
+              width: 7px;
+              height: 7px;
+              fill: rgb(155, 155, 155);
+            }
+            &.is-active {
+              svg {
+                fill: #ffc131;
+              }
+            }
+          }
+          .value {
+            display: inline-block;
+            font-size: 9px;
+            line-height: 1;
+            color: rgb(155, 155, 155);
+          }
+        }
+        .price {
+          font-size: 14px;
+          color: #000;
+          font-weight: 700;
+        }
+        .bottom {
+          margin-top: 7px;
+          display: flex;
+          align-items: center;
+        }
+        .btn {
+          padding: 3.5px 15px;
+          font-size: 9px;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+  .slick {
+    &-slider {
+      width: calc(100vw + 2px);
+      height: 100vw;
+      display: flex;
+      margin: 0 -1px;
+      position: relative;
+      z-index: 100;
+    }
+    &-slick {
+      display: flex;
+      height: 100%;
+    }
+    &-track {
+      display: flex;
+      height: 100%;
+      min-width: 100%;
+    }
+    &-list {
+      width: 100%;
+    }
+    &-slide {
+      width: 100%;
+      height: 100%;
+
+      > div {
+        height: 100%;
+      }
+    }
+    &-dots {
+      height: 6px;
+      display: flex !important;
+      bottom: 15px;
+      margin: 0 auto;
+      right: 0;
+      left: 0;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        width: 6px;
+        height: 6px;
+        margin: 0 3px;
+        padding: 0;
+
+        &.slick-active {
+          button {
+            background: rgb(237, 73, 79);
+          }
+        }
+        button {
+          padding: 0;
+          margin: 0;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: rgb(155, 155, 155);
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .ProductMobileMainSlider {
+    &-thumb {
+      height: 100%;
+    }
+    &-image {
+      height: 100%;
+    }
+  }
+  .arrow {
+    position: absolute;
+    padding: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+
+    svg {
+      z-index: 100;
+      position: relative;
+      fill: rgb(155, 155, 155);
+    }
+    &-left {
+      left: 10px;
+      transform: rotate(-180deg) translateY(-50%);
+      top: calc(50% - 28px);
+    }
+    &-right {
+      right: 10px;
+    }
+  }
+}

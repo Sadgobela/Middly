@@ -1,0 +1,75 @@
+.ProfileMenu {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px 0;
+
+  &-menuBtn {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 7px 12px;
+
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    text-transform: uppercase;
+    text-align: center;
+
+    border-radius: 3px;
+    border: 1px solid #eee;
+    background-color: #fff;
+  }
+  &-menuBtnIcon {
+
+  }
+  &-list {
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    border: 1px solid #eee;
+    border-top: 0;
+    background-color: #fff;
+    opacity: 0;
+    overflow: hidden;
+    border-radius: 3px;
+    transition: max-height 0.2s ease-out, background-color 0.2s ease-out;
+    &.is-open {
+      max-height: none;
+      margin-top: -5px;
+      padding: 10px 0 5px;
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    max-width: none;
+    margin: 0;
+    padding: 15px 0;
+
+    &-menuBtn {
+      display: none;
+    }
+
+    &-list {
+      width: 150px;
+      max-height: none;
+      margin: 0 auto;
+      padding: 0;
+
+      border: none;
+      border-radius: 0;
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 992px) {
+    padding: 0;
+
+    &-list {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,175 @@
+.FeedUser {
+  position: relative;
+  max-width: 540px;
+  margin: 0 auto 15px;
+  padding: 20px 10px;
+
+  border-top: 1px solid rgba(151, 151, 151, 0.2);
+  border-bottom: 1px solid rgba(151, 151, 151, 0.2);
+  background: #fff;
+
+  &-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-logo {
+    flex: 0 0 100px;
+    margin: 0 25px 0 0;
+
+    & .ProfileEditAvatar {
+      margin: 0;
+
+      &-avatar {
+        width: 100px;
+        height: 100px;
+      }
+      &-upload {
+        right: 0;
+        & img {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  &-info {
+    flex: 0 1 auto;
+
+    text-align: center;
+  }
+
+  &-name {
+    margin: 0 0 5px;
+    padding: 0;
+
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  &-location {
+    margin: 0 0 7px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #9b9b9b;
+
+    & svg {
+      width: 12px;
+      height: 16px;
+      margin: 0 5px 0 0;
+      fill: #9b9b9b;
+    }
+  }
+
+  &-followers {
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &-followersItem {
+    flex: 0 0 auto;
+    margin: 0 15px;
+    padding: 0 5px;
+
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: opacity 250ms ease-in-out;
+
+    & .num {
+      font-weight: bold;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:focus,
+    &:hover {
+      opacity: .75;
+      outline: 0;
+    }
+  }
+
+  &-link {
+    & a {
+      display: block;
+      width: 140px;
+      margin: 0 auto;
+      padding: 6px 12px;
+
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #979797;
+
+      border-radius: 15px;
+      border: 1px solid #979797;
+
+      &:focus,
+      &:hover {
+        color: #fff;
+        background: #979797;
+      }
+    }
+  }
+
+  @media (min-width: 880px) {
+    max-width: 300px;
+    padding: 30px 15px 25px;
+
+    &-inner {
+      display: block;
+    }
+
+    &-logo {
+      margin: 0 0 16px;
+
+      & .ProfileEditAvatar {
+        margin: 0;
+
+        &-avatar {
+          width: 150px;
+          height: 150px;
+        }
+        &-upload {
+          right: 0;
+          & img {
+            width: 17px;
+            height: 17px;
+          }
+        }
+      }
+    }
+
+    &-name {
+      margin: 0 0 8px;
+    }
+
+    &-location {
+      margin: 0 0 19px;
+    }
+
+    &-followers {
+      margin: 0 0 22px;
+    }
+  }
+
+}

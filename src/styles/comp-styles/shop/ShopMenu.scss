@@ -1,0 +1,63 @@
+@import "comp-styles/variables";
+
+.ShopMenu {
+  margin: 0 -15px;
+
+  background: #fff;
+
+  &-list {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+    overflow-x: auto;
+  }
+
+  &-item {
+    flex: 1 1 0;
+
+    & a {
+      display: block;
+      padding: 14px 15px 12px;
+      font-size: 13px;
+      line-height: 22px;
+      text-align: center;
+      color: #757b75;
+
+      border-bottom: 2px solid transparent;
+
+      &:focus,
+      &:hover {
+        color: #000;
+        outline: 0;
+      }
+    }
+
+    &.active {
+      & a {
+        font-weight: bold;
+        color: #000;
+        border-bottom-color: #000;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    &-item {
+      & a {
+        padding: 17px 15px 14px;
+        font-size: 18px;
+        line-height: 22px;
+        border-bottom: 3px solid $color-warm-grey;
+      }
+    }
+  }
+
+  @media (min-width: 1230px) {
+    margin: 0;
+  }
+}

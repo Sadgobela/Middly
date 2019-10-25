@@ -1,0 +1,47 @@
+.ProfileEditAvatar {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 16px;
+
+  &-error {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  &-avatar {
+    position: relative;
+
+    width: 150px;
+    height: 150px;
+
+    & .Avatar {
+      font-size: 15px;
+      line-height: 19px;
+
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+
+  &-upload {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+
+    font-size: 0;
+
+    & label {
+      display: inline-flex;
+      cursor: pointer;
+    }
+
+    & img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}

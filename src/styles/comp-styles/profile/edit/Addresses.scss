@@ -1,0 +1,138 @@
+.Addresses {
+  margin: 0 0 30px;
+  padding: 0 0 30px;
+  color: #000;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  &-legend {
+    margin: 0 0 10px;
+    padding: 20px 30px;
+
+    font-size: 16px;
+    line-height: 19px;
+    color: #404040;
+    background: #eee;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 0 0;
+  }
+
+  &-itemAdd {
+    position: relative;
+    flex: 0 0 90%;
+    margin: 0 auto 24px;
+    min-height: 132px;
+
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    background: #fff;
+  }
+
+  &-itemAddBtn {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 132px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #949494;
+    background: #fff;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    & .icon-plus {
+      position: relative;
+      width: 47px;
+      height: 47px;
+      margin: 0 0 16px;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: block;
+        width: 5px;
+        height: 100%;
+        background: #d8d8d8;
+        transform: translateX(-50%);
+      }
+
+      &:after {
+        transform: translateX(-50%) rotate(90deg);
+      }
+    }
+  }
+
+  &-item {
+    position: relative;
+    flex: 0 0 90%;
+    margin: 0 auto 24px;
+    padding: 20px 15px;
+
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #303030;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    background: #fff;
+  }
+
+  &-controls {
+    margin: 12px 0 0;
+
+
+    & .ant-btn {
+      margin: 0 3px;
+      padding: 0 12px;
+
+      color: #303030;
+
+      & svg {
+        width: 14px;
+        height: 14px;
+
+        fill: #303030;
+      }
+    }
+  }
+
+  @media (min-width: 450px) {
+    &-itemAdd,
+    &-item {
+      flex: 0 0 45%;
+      margin: 0 2.5% 24px;
+    }
+
+    &-itemAdd {
+      align-self: stretch;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &-list {
+      padding-right: 50px;
+      padding-left: 50px;
+      justify-content: space-between;
+    }
+
+    &-itemAdd,
+    &-item {
+      flex: 0 0 30%;
+      margin: 0 0 24px;
+    }
+  }
+}

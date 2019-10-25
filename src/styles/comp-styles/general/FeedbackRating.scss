@@ -1,0 +1,105 @@
+.FeedbackRating {
+  max-width: 620px;
+  margin: 15px 0;
+  padding: 0;
+
+  &-stats {
+    position: relative;
+  }
+  &-statsItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    margin: 0 0 6px;
+
+    & .type {
+      flex: 0 0 80px;
+      padding: 0 12px;
+
+      font-size: 12px;
+      line-height: 14px;
+      text-align: right;
+      color: #000;
+    }
+
+    & .bar {
+      flex: 0 0 140px;
+      height: 14px;
+      padding: 0;
+
+      border: 1px solid #dadada;
+      background: #fff;
+    }
+    & .barValue {
+      height: 100%;
+      background: #ffc131;
+    }
+
+    & .amount {
+      flex: 0 0 80px;
+      padding: 0 12px;
+
+      font-size: 12px;
+      line-height: 14px;
+      color: #000;
+    }
+  }
+
+  &-total {
+    position: relative;
+    flex: 0 0 auto;
+    margin: 0 0 15px;
+    padding: 0 5px;
+  }
+  &-widget {
+    text-align: center;
+  }
+  &-summary {
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    & span {
+      font-size: 19px;
+      line-height: 24px;
+      font-weight: 500;
+      color: #000;
+    }
+  }
+
+  @media (min-width: 475px) {
+    padding: 0 15px;
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+    }
+
+    &-stats {
+      order: 1;
+      flex: 0 0 300px;
+    }
+
+    &-total {
+      order: 2;
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 576px) {
+    &-stats {
+      order: 1;
+      flex: 0 0 360px;
+    }
+    &-statsItem {
+      & .bar {
+        flex: 0 0 200px;
+      }
+    }
+  }
+
+}

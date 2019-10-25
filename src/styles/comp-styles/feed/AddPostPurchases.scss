@@ -1,0 +1,42 @@
+.AddPostPurchases {
+  flex: 0 0 100%;
+  width: 100%;
+
+  &-subtitle {
+    margin: 0 0 10px;
+
+    font-size: 14px;
+    line-height: 18px;
+    color: #000;
+  }
+
+  &-list {
+    max-height: 300px;
+    margin: 0 0 10px;
+    overflow-y: auto;
+    padding-top: 5px;
+    padding-right: 7px;
+
+    &.expanded {
+      max-height: none;
+    }
+  }
+
+  .PostPurchaseItem {
+    max-width: 345px;
+    margin: 0 auto 12px;
+  }
+
+  @media (min-width: 576px) {
+    &-list {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .PostPurchaseItem {
+      flex: 0 0 48%;
+    }
+  }
+}

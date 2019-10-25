@@ -1,0 +1,26 @@
+/*#region -- Colors -- */
+$primary-color:     #ed484f;
+$color-warm-grey:   #9b9b9b;
+$color-brown:       #444444;
+$accent-color:      #ed484f;
+$grey:              #979797;
+$light-grey:        #d8d8d8;
+$main-text-color:   #201e1e;
+$link-color:        #4a90e2;
+$fb-color:          #395a98;
+$tweet-color:       #48a0eb;
+$insta-color:       linear-gradient(to top, #e09b3d 0%, #C74C4D 30%, #C21975 60%, #7024C4 100%);
+$hr-color:          #e4e4e4;
+
+
+/*#endregion -- Colors -- */
+
+$border-radius:     3px;
+
+//$mainFont:          'HelveticaNeueLTPro-Bd', sans-serif!important; //TODO
+$mainFont: -apple-system,
+BlinkMacSystemFont, "Segoe UI",
+Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+メイリオ, Meiryo, "ＭＳ Ｐゴシック",
+Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;

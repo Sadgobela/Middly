@@ -1,0 +1,238 @@
+.PostProducts {
+  padding: 0 5px;
+
+  &-wrapper {}
+
+  &-list {
+    margin: 0 0 25px;
+  }
+
+  &-item {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+    margin: 0 0 12px;
+    padding: 10px;
+
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+  &-colThumb {
+    position: relative;
+
+    flex: 0 0 70px;
+  }
+  &-thumb {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    &-img {
+      max-width: 100%;
+      height: auto;
+
+      //object-fit: cover;
+    }
+  }
+
+  &-colContent {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0 0 0 20px;
+  }
+  &-title {
+    margin: -5px 0 4px;
+    height: 36px;
+    max-height: 36px;
+
+    font-size: 13px;
+    line-height: 18px;
+    color: #000;
+
+    overflow: hidden;
+    max-width: 200px;
+  }
+  &-contentRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  &-colInfo {
+    flex: 1 1 auto;
+    padding: 0 10px 0 0;
+  }
+  &-cost {
+    margin: 0 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+    & .price {
+      font-size: 15px;
+      line-height: 18px;
+      color: #ed494f;
+    }
+    & .pricePrev {
+      padding-left: 6px;
+
+      font-size: 12px;
+      line-height: 18px;
+      color: #4a4a4a;
+    }
+  }
+  &-rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+    & .full-rating {
+      font-size: 0;
+    }
+
+    & .num {
+      padding-left: 3px;
+      font-size: 10px;
+      line-height: 12px;
+      color: #9b9b9b;
+    }
+  }
+  &-colBtn {
+    flex: 0 0 95px;
+  }
+  &-btnAdd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px 14px;
+
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    background: #ed494f;
+    outline: 0;
+
+    & .icon-basket {
+      padding-right: 12px;
+      font-size: 0;
+
+      & svg {
+        width: 16px;
+        height: 17px;
+        fill: #fff;
+      }
+    }
+
+    & .price {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  &-btnAdded {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px 2px;
+
+    color: #adc698;
+    border-radius: 3px;
+    border: 0;
+    background: #fff;
+    outline: 0;
+
+    & .icon-added {
+      position: relative;
+
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+
+      border-radius: 50%;
+      background: #adc698;
+      overflow: hidden;
+
+      &::before {
+        transform: rotate(45deg);
+        position: absolute;
+        left: 9px;
+        top: 7px;
+        display: table;
+        width: 4px;
+        height: 8px;
+        border: 2px solid #ffffff;
+        border-top: 0;
+        border-left: 0;
+        content: ' ';
+      }
+    }
+
+    & .txt {
+      padding-left: 2px;
+
+      font-size: 13px;
+      line-height: 15px;
+      font-weight: 400;
+    }
+  }
+
+  &-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+  &-controlBtn {
+    flex: 0 0 195px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 2px 5px;
+
+    font-size: 14px;
+    line-height: 16px;
+    color: #dc5555;
+
+    border-radius: 3px;
+    border: 1px solid #dc5555;
+    background: #fff;
+    outline: 0;
+    overflow: hidden;
+  }
+
+  @media (min-width: 576px) {
+    padding: 0 30px;
+
+    &-colBtn {
+      flex: 0 0 115px;
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translate(0, -50%);
+
+      &.is-added {
+        flex: 0 0 130px;
+      }
+    }
+  }
+}

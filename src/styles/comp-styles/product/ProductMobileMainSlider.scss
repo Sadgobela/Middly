@@ -1,0 +1,58 @@
+.ProductMobileMainSlider {
+  position: relative;
+
+  &-image {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vw;
+  }
+  .slick {
+    &-list {
+      max-height: 100vw;
+    }
+    &-dots {
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      text-align: center;
+
+      li {
+        width: 15px;
+        height: 15px;
+        margin: 0;
+
+        &.slick-active button {
+          &:after {
+            background: rgb(237, 73, 79);
+          }
+        }
+        button {
+          width: 15px;
+          height: 15px;
+          padding: 0;
+          position: relative;
+
+          &:before {
+            display: none;
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .3s ease;
+          }
+        }
+      }
+    }
+  }
+}

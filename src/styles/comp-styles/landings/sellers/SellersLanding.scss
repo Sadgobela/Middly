@@ -1,0 +1,392 @@
+.SellersLanding {
+  color: #30373a;
+
+  &-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &-hero {
+    padding: 60px 0 60px;
+
+    background: #fcfcfc;
+  }
+  &-heroInner {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &-heroContent {
+    flex: 0 1 auto;
+    max-width: 450px;
+    padding: 0 15px 0 0;
+
+    & h2 {
+      margin: 0 0 25px;
+
+      font-size: 30px;
+      line-height: 36px;
+      font-weight: bold;
+      color: #30373a;
+    }
+
+    & p {
+      margin: 0 0 82px;
+
+      font-size: 20px;
+      line-height: 24px;
+      color: #30373a;
+    }
+
+    & a {
+      display: block;
+      width: 185px;
+      padding: 11px 15px;
+
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+
+      border-radius: 50px;
+      border: 1px solid #ed484f;
+      background: #ed484f;
+
+      &:focus,
+      &:hover {
+        color: #ed484f;
+        outline: 0;
+        background-color: transparent;
+      }
+    }
+  }
+  &-heroImg {
+    flex: 1 1 auto;
+    text-align: center;
+
+    & img {
+      margin: 0 -124px 0 0;
+    }
+  }
+
+
+  &-info {
+    padding: 60px 0;
+  }
+  &-infoTitle {
+    margin: 0 0 40px;
+
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &-infoCol {
+    width: 280px;
+    margin: 0 auto 30px;
+  }
+  &-infoName {
+    margin: 0 0 21px;
+
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  &-infoText {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+
+  &-features {
+    padding: 80px 0;
+
+    background: #f2dcdc;
+  }
+  &-featuresCol {
+    width: 210px;
+    margin: 0 auto 35px;
+
+    text-align: center;
+  }
+  &-featuresThumb {
+    height: 70px;
+    max-height: 70px;
+    margin: 0 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-featuresName {
+    margin: 0 0 10px;
+
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  &-featuresTxt {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &-promotion {
+    padding: 55px 0;
+  }
+  &-promotionTtl {
+    margin: 0 0 35px;
+
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
+  }
+  &-promotionInner {
+    margin: 0 0 50px;
+  }
+  &-promotionCol {
+    position: relative;
+
+    &--2 {
+      max-width: 406px;
+      margin: 25px auto 0;
+      text-align: right;
+    }
+
+    & .card {
+      z-index: 2;
+      width: 75%;
+      max-width: 375px;
+      height: auto;
+    }
+    & .card-bg {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+
+      transform: translateY(-50%);
+    }
+
+    & .card2 {
+      position: relative;
+      z-index: 2;
+    }
+    & .card2-bg {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      right: 216px;
+
+      transform: translateY(-50%);
+    }
+  }
+
+
+  &-pricing {
+    padding: 50px 0;
+
+    text-align: center;
+  }
+  &-pricingTitle {
+    margin: 0 0 40px;
+
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
+    text-align: left;
+  }
+  &-pricingSubtitle {
+    margin: 0 0 18px;
+
+    font-size: 30px;
+    line-height: 36px;
+  }
+  &-pricingInfo {
+    margin: 0 0 25px;
+
+    font-size: 20px;
+    line-height: 24px;
+    color: #aeb1b7;
+  }
+  &-pricingInner {
+    margin: 0 -15px;
+  }
+
+  &-faq {
+    padding: 70px 0 20px;
+  }
+  &-faqTitle {
+    margin: 0 0 55px;
+
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &-faqCol {
+    max-width: 430px;
+    margin: 0 auto 50px;
+  }
+  &-faqName {
+    margin: 0 0 26px;
+
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+  &-faqTxt {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+
+  &-start {
+    padding: 100px 0 50px;
+
+    text-align: center;
+
+    background: #f2dcdc;
+  }
+  &-startWrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  &-startTitle {
+    margin: 0 0 16px;
+
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
+  }
+  &-startSubTitle {
+    margin: 0 0 70px;
+
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+  &-startLink {
+    & a {
+      display: block;
+      width: 225px;
+      margin: 0 auto;
+      padding: 11px 15px;
+
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+
+      border-radius: 50px;
+      border: 1px solid #30373a;
+      background: #30373a;
+
+      &:focus,
+      &:hover {
+        color: #30373a;
+        outline: 0;
+        background-color: transparent;
+      }
+    }
+  }
+
+
+
+  @media (min-width: 640px) {
+    &-heroImg {
+      & img {
+        margin: 0;
+      }
+    }
+
+
+    &-infoInner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+
+
+    &-featuresInner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    &-infoTitle {
+      max-width: 710px;
+      text-align: left;
+    }
+    &-infoInner {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    &-infoCol {
+      margin: 0 15px 0 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+
+    &-featuresInner {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    &-featuresCol {
+      margin: 0 15px 0 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+
+    &-promotionInner {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    &-promotionCol {
+      flex: 1 1 auto;
+
+      margin: 0 30px 0 0;
+
+      overflow: hidden;
+      &--2 {
+        flex: 0 0 406px;
+        margin: 0;
+      }
+    }
+
+
+    &-faqTitle {
+      text-align: left;
+    }
+    &-faqInner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    &-faqCol {
+      flex: 0 0 50%;
+      margin: 0 0 75px;
+      padding-right: 15px;
+
+      &:nth-child(2n) {
+        padding-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+.ProfilePosts {
+  padding: 30px 0;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+  }
+
+  &-itemAdd {
+    position: relative;
+    flex: 0 0 46%;
+    height: 220px;
+    margin: 0 2% 10px;
+
+    color: #000;
+    border-radius: 3px;
+    background: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 250ms ease-in-out;
+  }
+
+  &-btnAdd {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    line-height: 16px;
+    color: #949494;
+
+    background: #fff;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    & .icon-plus {
+      position: relative;
+      width: 47px;
+      height: 47px;
+      margin: 0 0 16px;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+
+        display: block;
+        width: 5px;
+        height: 100%;
+
+        background: #d8d8d8;
+        transform: translateX(-50%);
+      }
+      &::after {
+        transform: translateX(-50%) rotate(90deg);
+      }
+    }
+  }
+
+
+
+  @media (min-width: 375px) {
+    &-itemAdd {
+      flex: 0 0 172px;
+      height: 220px;
+      margin: 0 5px 10px;
+    }
+  }
+
+  @media (min-width: 610px) {
+    &-itemAdd {
+      flex: 0 0 275px;
+      width: 275px;
+      height: 349px;
+      margin: 0 7px 21px;
+    }
+
+    & .PostCard {
+      margin: 0 7px 21px;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.drawer.is-sizeQuide {
+  & .drawer-content-wrapper {
+    width: 840px;
+    max-width: 100%;
+  }
+}
+
+.SizeQuides {
+  &-heading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+
+    border-bottom: 1px solid #ddd;
+  }
+  &-title {
+    flex: 1 0 auto;
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+  &-closeBtn {
+    position: relative;
+
+    flex: 0 0 35px;
+    height: 24px;
+    margin: 0;
+    margin-left: auto;
+
+    background-color: transparent!important;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 7px;
+
+      display: block;
+      width: 19px;
+      height: 1px;
+
+      background: #000;
+
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &-tabs {
+    padding: 10px 15px;
+
+    & .react-tabs--SizeQuides {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      & .react-tabs__tab-list {
+        flex: 0 0 auto;
+        flex-wrap: nowrap;
+        margin: 0 auto 24px!important;
+        overflow-x: auto;
+      }
+      & .react-tabs__tab-panel {
+        flex: 0 0 100%;
+      }
+    }
+  }
+
+  &-categories {
+    & .react-tabs--SizeQuidesCategories {
+      & .react-tabs__tab-list {
+        flex-wrap: nowrap;
+        margin: 0 !important;
+        overflow-x: auto;
+        border-bottom: 1px solid #000!important;
+      }
+
+      & .react-tabs__tab  {
+        flex: 1 1 auto!important;
+        margin-right: 0!important;
+        padding: 7px 5px!important;
+        border-bottom: 0!important;
+
+        &--selected {
+          font-weight: normal!important;
+          color: #fff!important;
+          background: #000!important;
+          &:hover {
+            color: #fff!important;
+            background: #000!important;
+          }
+        }
+      }
+    }
+  }
+
+  &-table {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+  &-tableRow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin: 0 0 8px;
+    padding: 3px 0;
+  }
+  &-tableCol {
+    position: relative;
+    flex: 0 0 33.33%;
+
+    text-align: center;
+
+    & strong,
+    & span {
+      font-size: 15px;
+      line-height: 21px;
+    }
+    & span {
+      color: #000;
+    }
+  }
+}

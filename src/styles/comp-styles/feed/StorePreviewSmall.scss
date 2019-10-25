@@ -1,0 +1,80 @@
+.StorePreviewSmall {
+  position: relative;
+  padding: 14px 0;
+
+  border-bottom: 1px solid rgba(151, 151, 151, .1);
+
+  &-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &-logo {
+    flex: 0 0 37px;
+  }
+
+  &-logoLink {
+    display: block;
+    width: 37px;
+    height: 37px;
+
+    border: 1px solid rgba(28, 28, 28, 0.2);
+    border-radius: 50%;
+    overflow: hidden;
+
+    & img {
+      width: 37px;
+      height: 37px;
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &-info {
+    flex: 1 1 auto;
+    padding: 0 10px;
+  }
+
+  &-name {
+    display: inline-flex;
+    margin: 0 0 2px;
+
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+    color: #333333;
+
+    transition: opacity 300ms;
+
+    &:focus,
+    &:hover {
+      color: #333333;
+      opacity: .75;
+    }
+  }
+
+  &-followers {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    & span {
+      font-size: 12px;
+      line-height: 14px;
+      color: #979797;
+    }
+
+    & .num {
+      margin: 0 7px 0 0;
+      color: #000;
+    }
+  }
+
+  &-follow {
+    flex: 0 0 auto;
+  }
+}

@@ -1,0 +1,36 @@
+.FilterMobileSort {
+  & ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  & li {
+    margin: 0;
+
+    background: #fff;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  &-sortItem {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 15px;
+    font-size: 0;
+
+    & .name {
+      padding-left: 7px;
+
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    &.is-selected {
+      font-weight: bold;
+      background: #f6f6f7;
+    }
+  }
+}

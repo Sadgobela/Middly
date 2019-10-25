@@ -1,0 +1,30 @@
+@mixin phone640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+.Spinner {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 25px 15px;
+
+  &._desktop {
+    @include phone640 {
+      display: none;
+    }
+  }
+  &._mobile {
+    display: none;
+
+    @include phone640 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

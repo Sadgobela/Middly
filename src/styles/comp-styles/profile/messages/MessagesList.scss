@@ -1,0 +1,66 @@
+.MessagesList {
+  padding: 0 0 21px;
+
+  &-heading {
+    padding: 21px 5px;
+
+    border-bottom: 1px solid #d9d9d9;
+  }
+  &-title {
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+  }
+
+  &-search {
+    padding: 12px 15px;
+
+    border-bottom: 1px solid #d9d9d9;
+  }
+  &-searchField {
+    position: relative;
+  }
+  &-searchInput {
+    display: block;
+    width: 100%;
+    min-height: 35px;
+    margin: 0;
+    padding: 9px 5px 9px 47px;
+
+    font-size: 13px;
+    line-height: 15px;
+    color: #000;
+
+    border: 1px solid #e3e7ed!important;
+    background: #f7f7f8;
+
+    &::placeholder {
+      color: #9faab5;
+    }
+  }
+  &-searchIcon {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+
+    font-size: 0;
+    cursor: pointer;
+
+    & svg {
+      width: 15px;
+      height: 15px;
+      fill: #9ea9b4;
+
+      transition: fill 250ms ease-in;
+
+      &:focus,
+      &:hover {
+        fill: #000;
+      }
+    }
+  }
+}

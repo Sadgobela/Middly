@@ -1,0 +1,44 @@
+@import 'comp-styles/variables';
+
+.Btn {
+  position: relative;
+  display: inline-block;
+
+  margin: 5px;
+  padding: 11px 15px;
+
+  font-size: 12px;
+  line-height: 15px;
+  color: #000;
+  border: 1px solid transparent;
+  background: #f7f7f7;
+
+  cursor: pointer;
+  transition: background 300ms ease-out;
+
+  &--control {
+    padding-right: 25px;
+
+    background: #f6f6f6;
+    border-radius: $border-radius;
+    border-color: #f6f6f6;
+
+    &:focus,
+    &:hover {
+      background: #fff;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+
+    margin-top: -2px;
+    padding: 0;
+    font-size: 21px;
+    line-height: 24px;
+
+    transform: translateY(-50%);
+  }
+}

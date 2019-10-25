@@ -1,0 +1,174 @@
+.FiltersList {
+  margin: 0 -15px;
+
+  &.isMobile {
+    margin: 0;
+    padding: 0 7px;
+  }
+
+  & .ReactCollapse--collapse {
+    margin: 5px 0 0;
+  }
+
+  &-heading {
+    margin: 0 0 12px;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  &-title {
+    & span {
+      font-size: 18px;
+      line-height: 24px;
+      color: #000;
+      font-weight: 500;
+    }
+  }
+
+  &-mainList {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    & li {
+      display: block;
+    }
+  }
+
+  &-subList {
+    margin: 0;
+    padding: 0 0 6px 16px;
+
+    & li:last-child .FiltersList-control {
+      margin: 0;
+    }
+  }
+
+  &-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    margin: 0 0 5px;
+    padding: 6px 5px;
+
+    &.is-topLevel {
+      padding: 6px 5px 6px 15px;
+
+      background: #f7f7f7;
+
+      + .ReactCollapse--collapse {
+        padding: 0 0 0 11px;
+      }
+    }
+
+    &.is-active {
+      & .FiltersList-controlIndicator {
+          & svg {
+            transform: rotate(0);
+          }
+      }
+    }
+
+    & label {
+      flex: 0 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      cursor: pointer;
+    }
+
+    & .name {
+      position: relative;
+      padding: 0 5px;
+
+      font-size: 12px;
+      line-height: 14px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 5px;
+        right: 5px;
+        display: block;
+
+        border-bottom: 1px solid transparent;
+        transition: border-bottom-color 180ms ease-out 0ms;
+      }
+      &:hover::after {
+        border-bottom-color: #000;
+      }
+    }
+  }
+  &-controlBtn {
+    display: block;
+    margin: 0;
+    padding: 0 2px;
+
+    font-size: 0;
+    border: 0;
+    outline: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  &-controlIndicator {
+    font-size: 0;
+    & svg {
+      width: 10px;
+      height: 10px;
+
+      transform: rotate(-90deg);
+      transition: transform 300ms ease-in-out;
+    }
+  }
+
+  &-drawerTabs {
+    & .react-tabs__tab-list {
+      margin: 0!important;
+      border-bottom: 0;
+
+      & .react-tabs__tab {
+        flex: 0 0 50%;
+        margin: 0;
+        padding: 9px 7px!important;
+
+        font-size: 14px!important;
+        line-height: 18px!important;
+        font-weight: 500!important;
+        text-align: center;
+
+        background: #f7f7f7!important;
+        border-bottom: 2px solid #f7f7f7!important;
+
+        &--selected {
+          color: #000!important;
+          font-weight: 600!important;
+          letter-spacing: 1px;
+          background: #fff!important;
+          border-bottom: 2px solid #000!important;
+        }
+      }
+    }
+  }
+
+  &-mobileControlBtn {
+    padding: 12px 15px;
+
+    background: #fff;
+    border-bottom: 1px solid #dddddd;
+
+    & .Btn {
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

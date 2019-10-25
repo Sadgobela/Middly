@@ -1,0 +1,118 @@
+@import './../../comp-styles/variables';
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    z-index: 1000;
+    cursor: pointer;
+
+    &.is-left {
+        left: -60px;
+
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+    &.is-right {
+        right: -60px;
+    }
+    &:hover {
+        svg {
+            fill: #ed484f;
+        }
+    }
+    svg {
+        fill: #fff;
+        transition: all .3s ease;
+    }
+}
+
+.GalleryModal {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &-preview {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .product-page__gallery {
+        flex-grow: 1;
+        
+        .slider {
+            display: none;
+        }
+        
+        .product-page__preview {
+            .arrow {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: 0;
+                padding: 0;
+                
+                svg {
+                    height: 21px;
+                    fill: $color-brown;
+                }
+            }
+            
+            img {
+                max-height: 450px;
+            }
+        }
+        
+        .gallery-image img {
+            cursor: default;
+        }
+
+        .slick-slide {
+            padding: 0;
+        }
+    }
+}
+
+.ProductMinView {
+    margin: 20px 0 20px 20px;
+
+    &-info {
+        padding-left: 10px;
+    }
+}
+
+.FeedbackList {
+    padding: 20px 20px 20px 40px;
+    width: 50%;
+}
+
+@include phone640 {
+    .GalleryModal {
+        display: block;
+        
+        &-preview {
+            width: 100%;
+        }
+        
+        .product-page__gallery .slider {
+            display: block;
+        }
+        
+        .FeedbackList {
+            width: 100%;
+        }
+    }
+    .ProductMinView {
+        margin-top: 60px;
+        margin-right: 20px;
+    }
+}

@@ -1,0 +1,74 @@
+.ShareWidget {
+  position: relative;
+
+  font-size: 0;
+  line-height: 0;
+
+  &-toggleBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    background-color: transparent;
+    outline: 0;
+
+    &:focus,
+    &:hover {
+      border: 0;
+      outline: 0;
+    }
+
+    & svg {
+      margin: 0;
+      width: 16px;
+      height: 18px;
+
+      fill: #656565;
+
+      transition: fill 300ms ease-in;
+    }
+
+    &:hover svg {
+      fill: #ed484f;
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: -6px -12px;
+    padding: 0;
+  }
+
+  &-item {
+    flex: 0 0 auto;
+    margin: 0 2px;
+    padding: 2px;
+
+    font-size: 0;
+
+    cursor: pointer;
+
+    & svg {
+      width: 22px;
+      height: 22px;
+      margin: 0;
+      padding: 0;
+
+      fill: #bec0c3;
+
+      transition: fill 300ms ease-in-out;
+    }
+
+    &:hover {
+      & svg {
+        fill: #ed494f;
+      }
+    }
+  }
+}

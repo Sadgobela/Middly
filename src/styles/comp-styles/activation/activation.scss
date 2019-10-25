@@ -1,0 +1,44 @@
+@import "comp-styles/variables";
+
+.email-activation-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 15px;
+  min-height: 60vh;
+  position: relative;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  .email-activation-loading {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  .loading-text {
+    text-align: center;
+    position: relative;
+    bottom: -60px;
+  }
+  .email-activation-success {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    h4{
+      position: relative;
+      bottom: -20px;
+    }
+  }
+  .email-activation-error {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    h4{
+      position: relative;
+      bottom: -15px;
+    }
+  }
+  svg{
+    width: 50px;
+    height: 50px;
+  }
+}

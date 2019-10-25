@@ -1,0 +1,146 @@
+@mixin display1600 {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin display1400 {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin display1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tablet768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone320 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+.UserLayout {
+  &-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 0;
+
+    &-left {
+      flex: 0 0 auto;
+      flex-basis: 25%;
+      max-width: 25%;
+      padding-right: 15px;
+    }
+
+    &-center {
+      flex: 0 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+
+    &-right {
+      flex: 0 0 auto;
+      flex-basis: 25%;
+      max-width: 25%;
+      padding-left: 15px;
+    }
+  }
+
+  &-seller {
+    width: 150px;
+    font-size: 12px;
+    & > button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 6px 10px;
+    }
+  }
+}
+
+@include tablet {
+  .UserLayout {
+    &-body {
+      &-center {
+        flex-basis: 75%;
+        max-width: 75%;
+      }
+    }
+  }
+}
+
+@include tablet768 {
+  .UserLayout {
+    &-body {
+      &-left {
+        min-width: 250px;
+      }
+    }
+  }
+}
+
+@include phone640 {
+  .UserLayout {
+    &-body {
+      flex-direction: column;
+
+      &-left {
+        flex-basis: 100%;
+        max-width: 100%;
+        padding-right: 0;
+      }
+
+      &-center {
+        padding-left: 0;
+        padding-right: 0;
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+
+      &-right {
+        flex-basis: 100%;
+        max-width: 100%;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.user-small-avatar{
+  overflow: hidden;
+  border-radius: 50%;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border: 1px solid #dfe3e9;
+  margin-right: 20px;
+}

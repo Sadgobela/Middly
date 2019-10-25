@@ -1,0 +1,94 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.user {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 110px;
+  margin: 0 15px 0 0;
+  padding: 0;
+
+  cursor: pointer;
+
+  &.not-logged {
+    margin: 0 25px 0 0;
+  }
+
+  .sign-in,
+  .sign-up {
+    margin: 0;
+    padding: 2px 5px;
+
+    font-size: 14px;
+    line-height: 17px;
+    color: #000;
+    font-weight: 600;
+    transition: color 350ms ease-in-out;
+
+    &:hover {
+      color: #ed484f;
+    }
+  }
+
+  .sign-divider {
+    margin: 0 5px;
+
+    font-size: 14px;
+    line-height: 17px;
+    color: #cccccc;
+  }
+}
+
+@include tablet768 {
+  .user {
+    display:none;
+  }
+}

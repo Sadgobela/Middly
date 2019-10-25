@@ -1,0 +1,156 @@
+.CategoriesSlider {
+  position: relative;
+
+  padding: 35px 0;
+
+  color: #000;
+  background: #F5F5F5;
+
+  &-wrapper {
+    position: relative;
+
+    max-width: 1190px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &-heading {
+    margin: 0 0 7px;
+  }
+
+  &-title {
+    margin: 0 0 7px;
+    padding: 0;
+
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+
+  &--fashion {
+    .FeaturedProduct {
+      &-pricePrev {
+        color: #a4a4a4;
+      }
+    }
+    @media (max-width: 939px) {
+      .ItemsSection {
+        padding-top: 0;
+      }
+      .slick {
+        &-slider {
+          margin-right: -20px;
+          margin-left: -20px;
+        }
+        &-slide {
+          display: flex;
+          flex-wrap: wrap;
+          width: 87vw !important;
+          height: auto;
+          max-width: 87vw !important;
+
+          > div {
+            width: 50%;
+            margin-left: 0;
+            margin-right: auto;
+            box-shadow: none;
+          }
+        }
+        &-track {
+          display: flex;
+          background: #fff;
+          border-radius: 3px;
+          box-shadow: 0 2px 4px 0 rgba(#000000, .2);
+
+          &:before,
+          &:after {
+            display: none;
+          }
+        }
+        &-list {
+          padding-left: 15px;
+          padding-right: 20px;
+          padding-bottom: 10px;
+          overflow-y: hidden;
+          overflow-x: auto;
+        }
+        &-dots {
+          display: none !important;
+        }
+      }
+      .FeaturedProduct {
+        width: 100%;
+        border-bottom: 0;
+        padding: 10px;
+
+        &-inner {
+          flex-wrap: wrap;
+        }
+        &-img {
+          width: 100%;
+          height: 46.3vw;
+        }
+        &-photo {
+          width: 100%;
+          flex: initial;
+          height: 46.3vw;
+          margin-bottom: 10px;
+        }
+        &-activityInfo {
+          display: none;
+        }
+        &-info {
+          padding-left: 0;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+        &-title {
+          order: 1;
+        }
+        &-pricing {
+          order: 2;
+        }
+      }
+      .FeaturedProductsSlider {
+        &-link a {
+          width: 50%;
+        }
+      }
+      .HorizontalTabs {
+        &-list {
+          padding-bottom: 0;
+
+          &:before {
+            display: none;
+          }
+        }
+        &-item {
+          font-size: 14px;
+          line-height: 26px;
+          padding: 0;
+          border-bottom-width: 1px;
+          margin-bottom: 0;
+          font-weight: 700;
+
+          &.is-active {
+            border-bottom-width: 1px;
+          }
+          &:not(:last-child) {
+            margin-right: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 591px) {
+    background: #fff;
+
+    .FeaturedProduct {
+      &-pricePrev {
+        margin-top: -6px;
+      }
+    }
+  }
+}
