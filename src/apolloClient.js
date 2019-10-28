@@ -48,12 +48,12 @@ const requestLink = new ApolloLink(
 
 const middlyLink = new HttpLink({
   uri: 'https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/graphql',
-  credentials: 'include',
+  // credentials: 'include',
 });
 const magentoLink = new HttpLink({
   uri:
     ' https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/magento/graphql',
-  credentials: 'include',
+  // credentials: 'include',
 });
 
 const httpLink = new RetryLink().split(
@@ -73,7 +73,7 @@ export const client = new ApolloClient({
         // logoutUser();
       }
     }),
-    requestLink,
+    // requestLink,
     withClientState({
       defaults: {
         isConnected: true,
