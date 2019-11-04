@@ -1,5 +1,22 @@
+html,
 body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e5e5e5;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0;
+  padding: 0;
 }

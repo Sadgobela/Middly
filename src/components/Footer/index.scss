@@ -1,0 +1,84 @@
+.Footer {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 40px 0;
+
+  &__social {
+    display: flex;
+    justify-content: space-around;
+    a img {
+      display: flex;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__surface {
+    align-items: center;
+    background: rgba(228, 228, 228, 0.2);
+    border: 1px solid rgba(195, 195, 195, 0.2);
+    box-sizing: border-box;
+    border-radius: 19px;
+    color: #333333;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-around;
+    height: 36px;
+    margin: 26px 0 26px 0;
+
+    > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__pay {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 24px;
+  }
+
+  &__apps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    a {
+      color: #333333;
+      display: inline-block;
+      margin-bottom: 8px;
+      text-decoration: none;
+    }
+
+    &--secondary {
+      margin-top: 30px;
+      a {
+        color: #1f6bc4;
+      }
+    }
+  }
+
+  &__links-col {
+    display: flex;
+    flex-direction: column;
+    width: 33.3333%;
+  }
+
+  &__copyright {
+    align-items: center;
+    display: flex;
+    background: #efefef;
+    color: #999999;
+    font-size: 12px;
+    justify-content: center;
+    height: 40px;
+    margin: 24px -40px 0;
+  }
+}

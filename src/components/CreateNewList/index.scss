@@ -1,0 +1,22 @@
+.CreateNewList {
+  align-items: center;
+  background: white;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  color: #3a3a3a;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: center;
+  min-height: 72px;
+  max-width: 320px;
+  margin-bottom: 16px;
+  text-decoration: none;
+  width: 100%;
+
+  img {
+    height: 14px;
+    margin-right: 20px;
+    width: 14px;
+  }
+}

@@ -8,8 +8,14 @@ function Card() {
       <header className="Card__header">
         <h3 className="Card__title">List Name</h3>
       </header>
-      <div className="Card__foto">
-        <img src="https://picsum.photos/249/208" alt="" />
+      <div className="Card__images">
+        <div className="left-col">
+          <img src="https://picsum.photos/172/208" alt="" />
+        </div>
+        <div className="right-col">
+          <img src="https://picsum.photos/130/100" alt="" />
+          <img src="https://picsum.photos/130/100" alt="" />
+        </div>
       </div>
       <footer className="Card__footer">
         <span className="Card__metrics">
@@ -20,9 +26,9 @@ function Card() {
             <strong>890</strong> Purchsed
           </span>
         </span>
-        <button className="Card__more-button">
+        <a className="Card__more-button" href="#0">
           <img src={Horizontal} alt="" />
-        </button>
+        </a>
       </footer>
     </div>
   )
