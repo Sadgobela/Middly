@@ -1,4 +1,4 @@
-# Middly Frontent buyers UI
+# Middly Frontend buyers UI
 
 This project contains the code for Middly Buyer/Store frontend developed in Vennila ReactJs + Apollo GraphQL + AWS Amplify
 
