@@ -1,0 +1,14 @@
+export const mainWhiteColor = '#FFFFFF';
+export const headerShadowColor = '#E4E4E4';
+export const disabledLinkColor = '#7A7A7A;';
+export const mainBlackColor = '#000000';
+export const primaryColor = '#ED484F';
+export const headerSelectColor = 'rgba(228,228,228,0.64)';
+export const headerSearchColor = 'rgba(228,228,228,0.32)';
+export const secondaryColor = '#F0646A';
+export const secondaryTextColor = '#464646';
+export const transparentTextColor = '#8F8F8F';
+export const bookmarkFillColor = '#666666';
+export const starFillColor = '#F5D823';
+export const grayTextColor = '#545454';
+export const grayBackroundColor = '#C3C3C3';
