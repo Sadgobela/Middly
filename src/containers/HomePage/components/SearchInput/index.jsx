@@ -1,13 +1,14 @@
 import React from 'react';
 import { Select } from 'antd';
-import { FlexContainer } from '../../../../globalStyles';
-import SearchIcon from '../../../../assets/SearchIcon';
-import { SearchButton, StyledSelect, StyledInput } from './styled';
+
+import SearchIcon from 'assets/SearchIcon';
+
+import { SearchButton, StyledSelect, StyledInput, SearchContainer } from './styled';
 
 const { Option } = Select;
 
 const SearchInput = () => (
-  <FlexContainer justifyContent="center">
+  <SearchContainer>
     <StyledInput />
     <StyledSelect value="Brands">
       <Option value="Brands">Brands</Option>
@@ -15,7 +16,7 @@ const SearchInput = () => (
     <SearchButton>
       <SearchIcon />
     </SearchButton>
-  </FlexContainer>
+  </SearchContainer>
 );
 
 export default SearchInput;

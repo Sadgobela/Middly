@@ -7,9 +7,7 @@ const MakeEastAdvert = () => (
       Our marketplace makes it easy to buy directly the most important things in
       one place!
     </WideTitle>
-    <SecondaryText>
-      Wanna start shoping? <Link>Click here</Link>
-    </SecondaryText>
+    <SecondaryText>Wanna start shoping? <Link>Click here</Link></SecondaryText>
   </Box>
 );
 

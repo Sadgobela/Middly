@@ -7,9 +7,7 @@ const SaleAdvertContent = () => (
   <Wrapper>
     <Title>Sale 30% OFF</Title>
     <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
+      Our marketplace makes it easy to buy directly the most important things in one place!
     </Description>
     <BuyButton>Buy now</BuyButton>
   </Wrapper>

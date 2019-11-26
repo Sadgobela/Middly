@@ -2,7 +2,6 @@
 endOfLine: auto
 arrowParens: always
 bracketSpacing: false
-endOfLine: 'lf'
 jsxBracketSameLine: false
 printWidth: 120
 singleQuote: true

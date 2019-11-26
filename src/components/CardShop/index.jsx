@@ -2,12 +2,12 @@ import React from 'react';
 import { string, number, bool } from 'prop-types';
 import StarRatings from 'react-star-ratings';
 import { Icon } from 'antd';
-import { CardFooter, Image, Card, Title } from './styled';
+import { CardFooter, Image, Card, Title, FollowersContainer } from './styled';
 import {
   FlexContainer,
   FollowButton,
   FollowersCount
-} from '../../globalStyles';
+} from 'globalStyles';
 import { starFillColor } from '../../constants/colors';
 
 const CardShop = ({ title, imgSrc, rating, isFollowing }) => (
@@ -15,7 +15,7 @@ const CardShop = ({ title, imgSrc, rating, isFollowing }) => (
     <Image src={imgSrc} alt="product" />
     <CardFooter>
       <Title>{title}</Title>
-      <FlexContainer width="100%">
+      <FollowersContainer>
         <FollowersCount>128k followers</FollowersCount>
         <StarRatings
           numberOfStars={5}
@@ -24,7 +24,7 @@ const CardShop = ({ title, imgSrc, rating, isFollowing }) => (
           starDimension="9px"
           starSpacing="1px"
         />
-      </FlexContainer>
+      </FollowersContainer>
       <FollowButton isFollowing={isFollowing}>
         {isFollowing ? (
           <div>Following</div>
@@ -43,7 +43,7 @@ CardShop.propTypes = {
   title: string.isRequired,
   imgSrc: string.isRequired,
   rating: number.isRequired,
-  isFollowing: bool.isRequired
+  isFollowing: bool
 };
 
 export default CardShop;

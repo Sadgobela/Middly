@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { mainWhiteColor, mainBlackColor } from '../../constants/colors';
-import { FlexContainer } from '../../globalStyles';
+import {mainWhiteColor, mainBlackColor} from '../../constants/colors';
+import {FlexContainer} from '../../globalStyles';
 
 export const Card = styled(FlexContainer)`
   position: relative;
@@ -13,6 +13,11 @@ export const Card = styled(FlexContainer)`
   margin: 10px;
 `;
 
+export const FollowersContainer = styled(FlexContainer)`
+  width: 100%;
+  margin-bottom: 9px;
+`;
+
 export const Image = styled.img`
   width: 100%;
   height: 100px;
@@ -22,7 +27,7 @@ export const CardFooter = styled(FlexContainer)`
   width: 100%;
   height: 112px;
   flex-direction: column;
-  padding: 10px 14px 16px 14px;
+  padding: 9px 15px 15px 15px;
 `;
 
 export const Title = styled.div`

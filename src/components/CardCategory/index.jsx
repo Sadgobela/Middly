@@ -12,7 +12,7 @@ const CardCategory = ({ title, imgSrc, isFollowing }) => (
   <Card>
     <Image src={imgSrc} alt="product" />
     <CardFooter>
-      <FlexContainer alignItems="flex-start" flexDirection="column">
+      <FlexContainer alignItems="flex-start" flexDirection="column" style={{ lineHeight: 1.8 }}>
         <Title>{title}</Title>
         <FollowersCount>128k followers</FollowersCount>
       </FlexContainer>
@@ -34,7 +34,7 @@ const CardCategory = ({ title, imgSrc, isFollowing }) => (
 CardCategory.propTypes = {
   title: string.isRequired,
   imgSrc: string.isRequired,
-  isFollowing: bool.isRequired
+  isFollowing: bool
 };
 
 export default CardCategory;

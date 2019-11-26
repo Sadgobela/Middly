@@ -1,29 +1,83 @@
 import styled from 'styled-components';
-import { FlexContainer } from '../../globalStyles';
-import { primaryColor, mainBlackColor } from '../../constants/colors';
+import {FlexContainer} from 'globalStyles';
+import {primaryColor, mainBlackColor, grayBackroundColor} from 'constants/colors';
 
 export const Header = styled(FlexContainer)`
   border-bottom: 2px ${primaryColor} solid;
+  padding-bottom: 7px;
 `;
 
 export const Title = styled.div`
   font-size: 32px;
+  letter-spacing: 0.5px;
   color: ${mainBlackColor};
   font-weight: bold;
 `;
 
 export const Thumb = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
+  position: relative;
+  top: 5px;
+
   img {
     margin-left: 10px;
   }
 `;
 
 export const SliderWrapper = styled.div`
-  padding: 36px 0;
+  padding: ${({padding}) => (padding ? padding : '32px 45px')};
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 0;
+
+  .slick {
+    &-list {
+      padding: 0 0 10px;
+    }
+
+    &-prev {
+      left: -45px;
+    }
+
+    &-next {
+      right: -35px;
+    }
+
+    &-dots {
+      bottom: -35px !important;
+
+      li {
+        &.slick-active button {
+          &:after {
+            background: #656565;
+            width: 8px;
+            height: 8px;
+          }
+        }
+        button {
+          position: relative;
+          padding: 0;
+
+          &:before {
+            display: none;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: ${grayBackroundColor};
+            border-radius: 50%;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
 `;
 
 export const SeeMoreButton = styled(FlexContainer)`

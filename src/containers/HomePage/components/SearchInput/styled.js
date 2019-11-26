@@ -1,11 +1,23 @@
 import styled from 'styled-components';
-import { Input, Select, Button } from 'antd';
-import {
-  primaryColor,
-  headerSelectColor,
-  headerSearchColor,
-  mainBlackColor,
-} from '../../../../constants/colors';
+import {Input, Select, Button} from 'antd';
+import {primaryColor, headerSelectColor, headerSearchColor, mainBlackColor} from '../../../../constants/colors';
+
+export const SearchContainer = styled.div`
+  margin-left: 38px;
+  display: flex;
+
+  .ant-input {
+    max-width: 207px;
+  }
+
+  .ant-select-selection-selected-value {
+    letter-spacing: -0.4px;
+  }
+
+  .ant-select-selection__rendered {
+    margin-left: 16px;
+  }
+`;
 
 export const StyledInput = styled(Input)`
   width: 274px !important;
@@ -28,7 +40,7 @@ export const StyledSelect = styled(Select)`
     color: ${mainBlackColor}!important;
     .ant-select-selection__rendered {
       height: 100% !important;
-      line-height: 39px !important;
+      line-height: 40px !important;
     }
   }
 `;
@@ -40,6 +52,7 @@ export const SearchButton = styled(Button)`
   justify-content: center !important;
   align-items: center !important;
   padding: 0 !important;
+  border: 0 !important;
   background: ${primaryColor}!important;
   border-radius: 0 4px 4px 0 !important;
 `;

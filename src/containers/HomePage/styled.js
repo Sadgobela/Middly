@@ -1,24 +1,19 @@
 import styled from 'styled-components';
-import { Input, Button } from 'antd';
-import { FlexContainer } from '../../globalStyles';
-import {
-  primaryColor,
-  mainWhiteColor,
-  mainBlackColor,
-  headerShadowColor
-} from '../../constants/colors';
+import {Input, Button} from 'antd';
+import {FlexContainer} from '../../globalStyles';
+import {primaryColor, mainWhiteColor, mainBlackColor, headerShadowColor} from '../../constants/colors';
+import media from 'constants/media';
 
 export const MainColor = styled.span`
   color: ${primaryColor};
 `;
 
 export const BoldText = styled.strong`
-  margin-left: 10px;
+  margin-left: 8px;
 `;
 
 export const ShopsWrapper = styled.div`
-  margin-top: 50px;
-  padding-top: 90px;
+  margin-top: 89px;
   padding-bottom: 50px;
   background: ${mainWhiteColor};
 `;
@@ -26,14 +21,55 @@ export const ShopsWrapper = styled.div`
 export const SubscribeBlock = styled(FlexContainer)`
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 89px;
-  padding-top: 89px;
+  padding-bottom: 116px;
+  padding-top: 56px;
+  ${({backgroundImage}) => (backgroundImage ? `background-image: url(${backgroundImage});` : '')}
+  
+  @media(max-width: ${media.mobileMax}) {
+    padding: 13px 16px 24px;
+    flex-wrap: wrap;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    
+    > div {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  }
+`;
+
+export const SellTitle = styled(FlexContainer)`
+  justify-content: center;
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+
+  span {
+    position: relative;
+    top: 1px;
+  }
 `;
 
 export const SubscribeTitle = styled.div`
   font-size: 22px;
   color: ${mainBlackColor};
-  margin-bottom: 24px;
+  margin-bottom: 26px;
+  letter-spacing: 0.7px;
+
+  @media (max-width: ${media.mobileMax}) {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 132%;
+    text-align: center;
+    letter-spacing: 0.016em;
+    color: #000000;
+    margin-bottom: 24px;
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const StyledEmailInput = styled(Input)`
@@ -46,11 +82,18 @@ export const StyledEmailInput = styled(Input)`
   &:focus {
     box-shadow: none !important;
   }
+
+  @media (max-width: ${media.mobileMax}) {
+    width: 100% !important;
+    height: 48px !important;
+  }
 `;
 
 export const SubscribeButton = styled(Button)`
+  width: 152px !important;
   min-width: 40px !important;
-  height: 48px !important;
+  height: 46px !important;
+  border: 0 !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -61,4 +104,11 @@ export const SubscribeButton = styled(Button)`
   background: ${primaryColor}!important;
   border: 0;
   border-radius: 0 4px 4px 0 !important;
+
+  @media (max-width: ${media.mobileMax}) {
+    width: 100% !important;
+    height: 46px !important;
+    margin-top: 24px !important;
+    border-radius: 4px !important;
+  }
 `;

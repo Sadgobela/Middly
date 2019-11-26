@@ -51,7 +51,7 @@ CardNewArrival.propTypes = {
   isLiked: bool.isRequired,
   isWished: bool.isRequired,
   newPrice: number.isRequired,
-  oldPrice: number.isRequired,
+  oldPrice: number,
   likesCount: number.isRequired
 };
 
