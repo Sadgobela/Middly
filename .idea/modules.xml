@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Middly-Buyer-UI.iml" filepath="$PROJECT_DIR$/.idea/Middly-Buyer-UI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/middly-buyer-ui.iml" filepath="$PROJECT_DIR$/.idea/middly-buyer-ui.iml" />
     </modules>
   </component>
 </project>

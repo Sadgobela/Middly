@@ -28,10 +28,14 @@ import category1 from '../images/categories/category1.jpg';
 import category2 from '../images/categories/category2.jpg';
 import category3 from '../images/categories/category3.jpg';
 import category4 from '../images/categories/category4.jpg';
+import category5 from '../images/categories/category5.jpg';
+import category6 from '../images/categories/category6.jpg';
 import productImage from '../images/productImage.png';
 import arrivalImage from '../images/arrivalImage.png';
 import shopImage from '../images/shopImage.png';
 import snickers from '../images/snickers.png';
+
+import slide1 from 'images/slides/slide1.jpg';
 
 export const defaultCategories = ['Clothing', 'Shoes', 'Bags & Accessories', 'Beauty & Health', 'Electronics', 'Deals'];
 
@@ -731,5 +735,55 @@ export const shops = [
     imgSrc: shop4,
     rating: 4,
     isFollowing: false
+  }
+];
+
+export const mainSlides = [
+  {
+    id: 1,
+    image: slide1,
+    title: 'Shop <br>Directly',
+    description: 'Discover new <br>collection with friends',
+    url: '/'
+  },
+  {
+    id: 1,
+    image: slide1,
+    title: 'Shop <br>Directly',
+    description: 'Discover new <br>collection with friends',
+    url: '/'
+  }
+];
+
+export const categoriesMobile = [
+  {
+    title: 'Fashion',
+    url: '/',
+    imgSrc: category5
+  },
+  {
+    title: 'Man’s Clothes',
+    url: '/',
+    imgSrc: category6
+  },
+  {
+    title: 'Shoes',
+    url: '/',
+    imgSrc: category1
+  },
+  {
+    title: 'Backpacks',
+    url: '/',
+    imgSrc: category2
+  },
+  {
+    title: 'Jackets',
+    url: '/',
+    imgSrc: category3
+  },
+  {
+    title: 'Shirts',
+    url: '/',
+    imgSrc: category4
   }
 ];

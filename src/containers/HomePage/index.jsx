@@ -3,8 +3,7 @@ import { useWindowSize } from "@reach/window-size";
 
 import { FlexContainer } from "globalStyles";
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Layout from 'containers/Layout';
 import HomePageDesktop from './HomePageDesktop';
 import HomePageMobile from './HomePageMobile';
 
@@ -15,9 +14,7 @@ const HomePage = () => {
   const isMobile = width <= 767;
 
   return (
-    <>
-      <Header isMobile={isMobile}/>
-
+    <Layout>
       {isMobile ? <HomePageMobile/> : <HomePageDesktop/>}
 
       <SubscribeBlock>
@@ -28,9 +25,7 @@ const HomePage = () => {
           <SubscribeButton type="button">Subscribe</SubscribeButton>
         </FlexContainer>
       </SubscribeBlock>
-
-      <Footer isMobile={isMobile}/>
-    </>
+    </Layout>
   )
 };
 

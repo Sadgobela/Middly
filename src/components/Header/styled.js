@@ -1,12 +1,22 @@
 import styled from 'styled-components';
 import {Button, Badge} from 'antd';
 
+import media from 'constants/media';
+
 import {mainWhiteColor, disabledLinkColor, mainBlackColor, primaryColor} from 'constants/colors';
 import {FlexContainer} from 'globalStyles';
 
 export const HeaderWrapper = styled.div`
   background: ${mainWhiteColor};
   box-shadow: 0px 1px 1px rgba(46, 46, 46, 0.06);
+
+  @media (max-width: ${media.mobileMax}) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
 `;
 
 export const HeaderContainer = styled(FlexContainer)`
