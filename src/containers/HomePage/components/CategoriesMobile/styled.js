@@ -8,7 +8,11 @@ export const Wrapper = styled.div`
     height: 1px !important;
     border-radius: 2px !important;
     background: #c4c4c4 !important;
-    overflow: initial !important .ScrollbarsCustom-ThumbX {
+    overflow: initial !important;
+    width: calc(100% - 32px) !important;
+    left: 16px !important;
+
+    .ScrollbarsCustom-ThumbX {
       height: 2px !important;
       margin-top: -1px;
       background: #666666 !important;
