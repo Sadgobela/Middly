@@ -112,3 +112,74 @@ export const SubscribeButton = styled(Button)`
     border-radius: 4px !important;
   }
 `;
+
+export const SliderContainer = styled.div`
+  padding: 15px 0 10px;
+
+  .slick {
+    &-list {
+      padding: 0 12px 10px !important;
+    }
+
+    &-slide {
+      width: 159px !important;
+      max-width: 159px;
+      margin: 0 4px;
+    }
+  }
+`;
+
+export const SliderContainerList = styled.div`
+  padding: 15px 0 10px;
+
+  .slick {
+    &-track {
+      align-items: flex-start;
+    }
+
+    &-list {
+      padding: 0 0 10px !important;
+    }
+
+    &-slide {
+      margin: 0 32px;
+      flex-wrap: wrap;
+
+      > div {
+        width: 100%;
+      }
+    }
+
+    &-dots {
+      position: static;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 0 24px;
+
+      li {
+        margin: auto 6px;
+        width: 8px;
+        height: 8px;
+
+        &.slick-active button {
+          background: ${primaryColor};
+        }
+
+        button {
+          padding: 0;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: ${headerShadowColor};
+          transition: all 0.3s ease;
+
+          &:before,
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+`;

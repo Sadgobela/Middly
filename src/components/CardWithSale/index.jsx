@@ -1,17 +1,16 @@
 import React from 'react';
 import { string, number } from 'prop-types';
-import { FlexContainer } from '../../globalStyles';
-import { CardFooter, Image, Card, Title, Price, Views, Sale } from './styled';
+import { CardFooter, CardFooterArea, Image, Card, Title, Price, Views, Sale, Free, CardInline, ImageInline, CardFooterInline } from './styled';
 
-const CardWithSale = ({ title, imgSrc, countOfViews, price, sale }) => (
+const CardWithSale = ({ title, imgSrc, countOfViews, price, sale, inline }) => (
   <Card>
     <Sale>{sale}%</Sale>
-    <Image src={imgSrc} alt="product" />
+    <Image src={imgSrc} alt="product"/>
     <CardFooter>
-      <FlexContainer width="100%">
+      <CardFooterArea>
         <Title>{title}</Title>
         <Price>{price}$</Price>
-      </FlexContainer>
+      </CardFooterArea>
       <Views>{countOfViews} views</Views>
     </CardFooter>
   </Card>

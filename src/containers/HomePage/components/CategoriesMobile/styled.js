@@ -22,7 +22,6 @@ export const Wrapper = styled.div`
 
 export const Title = styled.p`
   font-size: 18px;
-  font-weight: 700;
   line-height: 21px;
   color: #343434;
   margin-bottom: 24px;

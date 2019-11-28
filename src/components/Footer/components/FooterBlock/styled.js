@@ -97,7 +97,7 @@ export const CustomLink = styled.a`
   }
 `;
 
-export const IconArrowFooter = styled.div`
+export const IconArrowFooter = styled.span`
   position: absolute;
   top: 50%;
   right: 5px;
