@@ -11,6 +11,8 @@ import {
   Title,
   Shipping,
   Price,
+  Tools,
+  Info,
   OldPrice
 } from './styled';
 import Bookmark from '../../assets/Bookmark';
@@ -22,25 +24,26 @@ const CardNewArrival = ({
   isWished,
   newPrice,
   oldPrice,
-  likesCount
+  likesCount,
+  inline
 }) => (
-  <Card>
-    <Image src={imgSrc} alt="product" />
-    <CardFooter>
-      <FlexContainer width="100%">
-        <Price>
+  <Card inline={inline}>
+    <Image src={imgSrc} alt="product" inline={inline} />
+    <CardFooter inline={inline}>
+      <Info inline={inline}>
+        <Price inline={inline}>
           ${newPrice}
           {oldPrice && <OldPrice>{oldPrice}$</OldPrice>}
         </Price>
-        <Shipping>Free Shipping</Shipping>
-      </FlexContainer>
-      <Title>{title}</Title>
-      <FlexContainer alignItems="center" width="100%">
+        <Shipping inline={inline}>Free Shipping</Shipping>
+      </Info>
+      <Title inline={inline}>{title}</Title>
+      <Tools inline={inline}>
         <Likes>
           <Heart isLiked={isLiked} /> <LikesCount>{likesCount}</LikesCount>
         </Likes>
         <Bookmark isWished={isWished} />
-      </FlexContainer>
+      </Tools>
     </CardFooter>
   </Card>
 );
@@ -51,7 +54,7 @@ CardNewArrival.propTypes = {
   isLiked: bool.isRequired,
   isWished: bool.isRequired,
   newPrice: number.isRequired,
-  oldPrice: number.isRequired,
+  oldPrice: number,
   likesCount: number.isRequired
 };
 

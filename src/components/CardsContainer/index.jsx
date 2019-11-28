@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string, element } from 'prop-types';
+import { number, string, any } from 'prop-types';
 import { ContentWrapper, FlexContainer } from '../../globalStyles';
 import { Header, Title, Wrapper } from './styled';
 
@@ -18,7 +18,7 @@ const CardsContainer = ({ paddingTop, title, children }) => (
 CardsContainer.propTypes = {
   paddingTop: number,
   title: string.isRequired,
-  children: element.isRequired
+  children: any.isRequired
 };
 
 CardsContainer.defaultProps = {

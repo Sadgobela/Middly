@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { element, string, number, bool } from 'prop-types';
+import { any, string, number, bool } from 'prop-types';
 import { ContentWrapper } from '../../globalStyles';
 import arrow from '../../images/arrow.png';
 import {
@@ -14,7 +14,7 @@ import {
 } from './styled';
 import Arrow from '../../assets/Arrow';
 
-const WithSlider = ({ children, title, withSeeMore, marginTop, ...rest }) => {
+const WithSlider = ({ children, title, withSeeMore, marginTop, padding, ...rest }) => {
   const settings = {
     dots: !withSeeMore,
     ...rest
@@ -35,7 +35,7 @@ const WithSlider = ({ children, title, withSeeMore, marginTop, ...rest }) => {
           />
         </Thumb>
       </Header>
-      <SliderWrapper>
+      <SliderWrapper padding={padding}>
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Slider {...settings}>
           {children}
@@ -55,7 +55,7 @@ const WithSlider = ({ children, title, withSeeMore, marginTop, ...rest }) => {
 
 WithSlider.propTypes = {
   title: string.isRequired,
-  children: element.isRequired,
+  children: any,
   marginTop: number,
   withSeeMore: bool
 };

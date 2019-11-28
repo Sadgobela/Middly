@@ -3,8 +3,8 @@ import { string, element } from 'prop-types';
 import { ContentWrapper } from '../../../../globalStyles';
 import { ContainerWrapper } from './styled';
 
-const ContentWithBackround = ({ background, children }) => (
-  <ContainerWrapper background={background}>
+const ContentWithBackround = ({ background, children, style }) => (
+  <ContainerWrapper background={background} style={style}>
     <ContentWrapper>{children}</ContentWrapper>
   </ContainerWrapper>
 );
