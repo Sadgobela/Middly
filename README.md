@@ -35,19 +35,25 @@ Api gateway has been configured as below,
 
 Magento2 GraphQL:
 
-    POST - https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/magento/graphql
+    POST - https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/test/graphql
 
     Document Reference:
     https://devdocs.magento.com/guides/v2.3/graphql/
 
     Graphiql Reference:
-    https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/test/graphql
+    https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/test/graphiql
+
+    Sample component:
+    "\middly-buyer-ui\src\Magento2Test.jsx"
 
 Social & Others endpoints:
 
     POST - https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/graphql
 
     GET - https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/graphiql
+
+    Sample component:
+    "\middly-buyer-ui\src\NonMagento2Test.jsx"
 
 ## Multiple Apollo Clients & GraphQL Sources
 
