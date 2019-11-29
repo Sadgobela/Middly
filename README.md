@@ -40,6 +40,9 @@ Magento2 GraphQL:
     Document Reference:
     https://devdocs.magento.com/guides/v2.3/graphql/
 
+    Graphiql Reference:
+    https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/test/graphql
+
 Social & Others endpoints:
 
     POST - https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/graphql
