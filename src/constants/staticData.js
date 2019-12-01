@@ -33,7 +33,14 @@ import category6 from '../images/categories/category6.jpg';
 import productImage from '../images/productImage.png';
 import arrivalImage from '../images/arrivalImage.png';
 import shopImage from '../images/shopImage.png';
+import gucci from 'images/products/gucci.png';
+import gallery1 from 'images/gallery/gallery1.jpg';
+import gallery2 from 'images/gallery/gallery2.jpg';
+import gallery3 from 'images/gallery/gallery3.jpg';
+import shopNow1 from 'images/shopNow1.png';
+import shopNow2 from 'images/shopNow2.png';
 import snickers from '../images/snickers.png';
+import avatar from '../images/avatar.png';
 
 import slide1 from 'images/slides/slide1.jpg';
 
@@ -43,22 +50,26 @@ export const categoriesCards = [
   {
     title: 'Shoes',
     imgSrc: category1,
-    isFollowing: false
+    isFollowing: false,
+    followers: 129
   },
   {
     title: 'Backpacks',
     imgSrc: category2,
-    isFollowing: false
+    isFollowing: false,
+    followers: 129
   },
   {
     title: 'Jackets',
     imgSrc: category3,
-    isFollowing: false
+    isFollowing: false,
+    followers: 129
   },
   {
     title: 'Shirts',
     imgSrc: category4,
-    isFollowing: true
+    isFollowing: true,
+    followers: 129
   }
 ];
 
@@ -785,5 +796,342 @@ export const categoriesMobile = [
     title: 'Shirts',
     url: '/',
     imgSrc: category4
+  }
+];
+
+export const popularStores = [
+  {
+    avatar: gucci,
+    title: 'GUCCI Official',
+    country: 'Atlanta, US',
+    gallery: [gallery1, gallery2, gallery3]
+  },
+  {
+    avatar: gucci,
+    title: 'GUCCI Official',
+    country: 'Atlanta, US',
+    gallery: [gallery1, gallery2, gallery3]
+  },
+  {
+    avatar: gucci,
+    title: 'GUCCI Official',
+    country: 'Atlanta, US',
+    gallery: [gallery1, gallery2, gallery3]
+  },
+  {
+    avatar: gucci,
+    title: 'GUCCI Official',
+    country: 'Atlanta, US',
+    gallery: [gallery1, gallery2, gallery3]
+  },
+  {
+    avatar: gucci,
+    title: 'GUCCI Official',
+    country: 'Atlanta, US',
+    gallery: [gallery1, gallery2, gallery3]
+  }
+];
+
+export const shopNow = [
+  {
+    image: shopNow1,
+    title: 'Apple Watch Series 4',
+    price: '999',
+    newPrice: '499',
+    url: '/'
+  },
+  {
+    image: shopNow2,
+    title: 'Fenty Beauty Kiss Lipsticks',
+    price: '44',
+    newPrice: '15',
+    url: '/'
+  }
+];
+
+export const categories = [
+  {
+    name: 'Clothing',
+    subCategories: [
+      {
+        name: 'Clothing 1',
+        url: '/'
+      },
+      {
+        name: 'Clothing 2',
+        url: '/'
+      },
+      {
+        name: 'Clothing 3',
+        url: '/'
+      },
+      {
+        name: 'Clothing 4',
+        url: '/'
+      }
+    ],
+    url: '/'
+  },
+  {
+    name: 'Bag & Accessories ',
+    subCategories: [
+      {
+        name: 'Bag & Accessories  1',
+        url: '/'
+      },
+      {
+        name: 'Bag & Accessories  2',
+        url: '/'
+      },
+      {
+        name: 'Bag & Accessories  3',
+        url: '/'
+      },
+      {
+        name: 'Bag & Accessories  4',
+        url: '/'
+      }
+    ],
+    url: '/'
+  },
+  {
+    name: 'Shoes',
+    subCategories: [
+      {
+        name: 'Shoes 1',
+        url: '/'
+      },
+      {
+        name: 'Shoes 2',
+        url: '/'
+      },
+      {
+        name: 'Shoes 3',
+        url: '/'
+      },
+      {
+        name: 'Shoes 4',
+        url: '/'
+      }
+    ],
+    url: '/'
+  },
+  {
+    name: 'Beauty & Health',
+    subCategories: [
+      {
+        name: 'Beauty & Health 1',
+        url: '/'
+      },
+      {
+        name: 'Beauty & Health 2',
+        url: '/'
+      },
+      {
+        name: 'Beauty & Health 3',
+        url: '/'
+      },
+      {
+        name: 'Beauty & Health 4',
+        url: '/'
+      }
+    ],
+    url: '/'
+  },
+  {
+    name: 'Electronics',
+    subCategories: [
+      {
+        name: 'Electronics 1',
+        url: '/'
+      },
+      {
+        name: 'Electronics 2',
+        url: '/'
+      },
+      {
+        name: 'Electronics 3',
+        url: '/'
+      },
+      {
+        name: 'Electronics 4',
+        url: '/'
+      }
+    ],
+    url: '/'
+  }
+];
+
+export const user = {
+  avatar: avatar,
+  firstName: 'Maria',
+  lastName: 'Podrezova',
+  messages: 1,
+  notifications: 11,
+  rewards: 10000
+};
+
+export const messages = [
+  {
+    avatar: avatar,
+    name: 'Jorge Webb',
+    text: 'I would like to return the dress lorem ipsum is',
+    date: 'Today, 10:30 pm',
+    count: 1,
+    online: true
+  },
+  {
+    avatar: avatar,
+    name: 'Pit Weny',
+    text: 'I would like to return the dress lorem ipsum is',
+    date: 'Today, 10:30 pm',
+    count: 3,
+    online: true
+  },
+  {
+    avatar: avatar,
+    name: 'Deny Smitt',
+    text: 'Hello, this dress is 100% silk. ',
+    date: 'Wed',
+    count: 0,
+    online: false
+  },
+  {
+    avatar: avatar,
+    name: 'Maria Podrezova',
+    text: 'Me too))))',
+    date: 'Wed',
+    count: 0,
+    online: false
+  },
+  {
+    avatar: avatar,
+    name: 'Anna Tvildy',
+    text: 'So cute. I agree with you. If you wan',
+    date: 'Sun',
+    count: 0,
+    online: false
+  },
+  {
+    avatar: avatar,
+    name: 'Olga Milkey',
+    text: 'So cute. I agree with you. If you wan',
+    date: 'Sun',
+    count: 0,
+    online: false
+  },
+  {
+    avatar: avatar,
+    name: 'Olga Milkey',
+    text: 'So cute. I agree with you. If you wan',
+    date: 'Sun',
+    count: 0,
+    online: false
+  },
+  {
+    avatar: avatar,
+    name: 'Olga Milkey',
+    text: 'So cute. I agree with you. If you wan',
+    date: 'Sun',
+    count: 0,
+    online: false
+  }
+];
+
+export const notifications = [
+  {
+    avatar: avatar,
+    name: 'Jorge Webb',
+    text: 'It’s nice)))',
+    date: '4h replited to your post:',
+    follow: null,
+    thumb: product15
+  },
+  {
+    avatar: avatar,
+    name: 'Oleg Welton',
+    text: 'Wow! So good suit and tie, I like it very much',
+    date: '1d replited to your post',
+    follow: null,
+    thumb: product13
+  },
+  {
+    avatar: avatar,
+    name: 'Jorge Webb',
+    text: 'Could you give me one?',
+    date: '2d mentioned you',
+    follow: null,
+    thumb: product10
+  },
+  {
+    avatar: avatar,
+    name: 'Nika Pink',
+    text: null,
+    date: '1w liked your photo.',
+    follow: false,
+    thumb: null
+  },
+  {
+    avatar: avatar,
+    name: 'Nika Pink',
+    text: null,
+    date: '2w started following you.',
+    follow: true,
+    thumb: null
+  },
+  {
+    avatar: avatar,
+    name: 'Jorge Webb',
+    text: 'It’s nice)))',
+    date: '4h replited to your post:',
+    follow: null,
+    thumb: product15
+  },
+  {
+    avatar: avatar,
+    name: 'Oleg Welton',
+    text: 'Wow! So good suit and tie, I like it very much',
+    date: '1d replited to your post',
+    follow: null,
+    thumb: product13
+  },
+  {
+    avatar: avatar,
+    name: 'Jorge Webb',
+    text: 'Could you give me one?',
+    date: '2d mentioned you',
+    follow: null,
+    thumb: product10
+  },
+  {
+    avatar: avatar,
+    name: 'Nika Pink',
+    text: null,
+    date: '1w liked your photo.',
+    follow: false,
+    thumb: null
+  },
+  {
+    avatar: avatar,
+    name: 'Nika Pink',
+    text: null,
+    date: '2w started following you.',
+    follow: true,
+    thumb: null
+  }
+];
+
+export const cart = [
+  {
+    thumb: product2,
+    title: 'Winter coat',
+    price: '132',
+    quantity: 1
+  },
+  {
+    thumb: product7,
+    title: 'Sneakers MIU MIU',
+    price: '262',
+    quantity: 1
   }
 ];

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import Slider from 'react-slick';
 
 import {MainSliderWrapper, SlideWrapper, SlideContent, SlideTitle, SlideDescription, SlideButton} from './styled';
@@ -9,8 +9,47 @@ const MainSlider = ({slides}) => {
     arrows: false
   };
 
+  let firstClientX, clientX;
+
+  const preventTouch = (e) => {
+    const minValue = 5;
+
+    clientX = e.touches[0].clientX - firstClientX;
+
+    if (Math.abs(clientX) > minValue) {
+      e.preventDefault();
+      e.returnValue = false;
+
+      return false;
+    }
+  };
+
+  const touchStart = (e) => {
+    firstClientX = e.touches[0].clientX;
+  };
+
+  let containerRef = useRef();
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.addEventListener('touchstart', touchStart);
+      containerRef.current.addEventListener('touchmove', preventTouch, {
+        passive: false
+      });
+    }
+
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.removeEventListener('touchstart', touchStart);
+        containerRef.current.removeEventListener('touchmove', preventTouch, {
+          passive: false
+        });
+      }
+    };
+  });
+
   return (
-    <MainSliderWrapper>
+    <MainSliderWrapper ref={containerRef}>
       <Slider {...settings}>
         {slides
           ? slides.map((slide) => {

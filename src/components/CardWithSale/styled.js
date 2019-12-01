@@ -14,7 +14,8 @@ export const Card = styled(FlexContainer)`
   margin: 0;
 
   @media (max-width: ${media.mobileMax}) {
-    width: 159px;
+    min-width: 159px;
+    margin: 0 4px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
   }
 `;

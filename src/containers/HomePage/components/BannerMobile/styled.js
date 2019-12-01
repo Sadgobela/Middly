@@ -23,7 +23,7 @@ export const Background = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left top;
-  background-image: ${({background}) => `url(${background})` || 'transparent'};
+  background-image: ${({background}) => `url(${background})` || 'none'};
 `;
 
 export const Title = styled.p`

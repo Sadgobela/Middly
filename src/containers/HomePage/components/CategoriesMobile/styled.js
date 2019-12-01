@@ -22,6 +22,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.p`
   font-size: 18px;
+  font-weight: 700;
   line-height: 21px;
   color: #343434;
   margin-bottom: 24px;
@@ -70,7 +71,7 @@ export const Thumb = styled.div`
 export const Name = styled.p`
   margin: auto 0 auto 10px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: normal;
   font-size: 16px;
   line-height: 20px;
   color: #000000;
