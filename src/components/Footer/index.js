@@ -80,6 +80,12 @@ const Footer = ({isMobile}) => (
 
         {!isMobile && (
           <FooterPay>
+            {/*links={[*/}
+              {/*{image: Cash, alt: 'Cash'},*/}
+              {/*{image: Visa, alt: 'Visa'},*/}
+              {/*{image: Paypall, alt: 'Paypall'},*/}
+              {/*{image: Mastercard, alt: 'Mastercard'}*/}
+            {/*]}*/}
             <img src={Cash} alt="" />
             <img src={Visa} alt="" />
             <img src={Paypall} alt="" />

@@ -7,7 +7,16 @@ export const SearchContainer = styled.div`
   display: flex;
 
   .ant-input {
-    max-width: 207px;
+    max-width: 100%;
+    background: ${headerSearchColor}!important;
+    opacity: 0.32;
+    border-radius: 4px 0 0 4px !important;
+    font-size: 14px !important;
+    color: ${mainBlackColor};
+    
+    &:placeholders {
+      color: ${mainBlackColor};
+    }
   }
 
   .ant-select-selection-selected-value {
@@ -17,9 +26,15 @@ export const SearchContainer = styled.div`
   .ant-select-selection__rendered {
     margin-left: 16px;
   }
+  
+  .certain-category-search-wrapper {
+    display: flex;
+    width: 350px;
+  }
 `;
 
-export const StyledInput = styled(Input)`
+
+export const AutoCompleteStyles = styled(Input)`
   width: 274px !important;
   height: 40px !important;
   background: ${headerSearchColor}!important;

@@ -17,6 +17,27 @@ export const ContentWrapper = styled.div`
   margin-top: ${({marginTop}) => marginTop || 0}px;
   width: 100%;
   max-width: 1170px;
+  position: relative;
+  
+  .ant-dropdown {
+    width: 100%;  
+  }
+  
+  .menu-item {
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 0;
+    padding: 40px 25px;
+    position: relative;
+    display: block;
+  
+    &:hover {
+      color: #ED484F;
+    }
+  }
 `;
 
 export const FollowButton = styled(Button)`

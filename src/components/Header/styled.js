@@ -20,15 +20,14 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const HeaderContainer = styled(FlexContainer)`
-  height: ${({isMobile}) => (isMobile ? '64px' : '80px')};
-  max-width: 1218px;
+  min-height: ${({isMobile}) => (isMobile ? '64px' : '80px')};
   margin: 0 auto;
-  padding: 0 24px;
-  justify-content: inherit;
-  position: relative;
+  padding: 0 15px;
+  justify-content: center;
+  max-width: 1200px
 `;
 
-export const StyledLink = styled.div`
+export const StyledLink = styled.a`
   padding: 4px 8px;
   cursor: pointer;
   color: ${disabledLinkColor};
@@ -41,7 +40,7 @@ export const StyledLink = styled.div`
   &:not(:last-child) {
     margin-right: 26px;
   }
-
+  
   &:hover {
     color: ${mainBlackColor};
     padding-bottom: 2px;
@@ -71,7 +70,7 @@ export const SellButton = styled(Button)`
   }
 `;
 
-export const StyledName = styled.span`
+export const StyledName = styled.div`
   font-weight: bold;
   white-space: nowrap;
   width: 70px;
@@ -80,14 +79,14 @@ export const StyledName = styled.span`
 `;
 
 export const AvatarContainer = styled(FlexContainer)`
-  width: 110px;
+  max-width: 150px;
   height: 40px;
   margin-right: 10px;
   cursor: pointer;
   margin-left: 30px;
 
   img {
-    width: 32px;
+    min-width: 32px;
     height: 32px;
     border-radius: 50%;
     margin-right: 5px;
@@ -95,12 +94,10 @@ export const AvatarContainer = styled(FlexContainer)`
 `;
 
 export const StyledHi = styled.div`
-  align-self: flex-start;
 `;
 
 export const BadgesContainer = styled(FlexContainer)`
   width: ${({isMobile}) => (isMobile ? 'auto' : '120px')};
-  margin-left: auto;
 
   span {
     cursor: pointer;
@@ -117,22 +114,21 @@ export const BadgesContainer = styled(FlexContainer)`
   }
 `;
 
-export const Burger = styled.div`
+export const Burger = styled.button`
+  background: none;
+  border: none;
   cursor: pointer;
   height: 50px;
-  width: 50px;
-  margin: 0 0 0 -13px;
+  width: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: ${({isMobile}) => (isMobile ? '18px' : '-31px')};
-  transform: translate(0, -50%);
+  left: ${({isMobile}) => (isMobile ? '18px' : '0')};
 `;
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled.a`
   padding-top: 6px;
+  margin-left: 20px;
 
   ${({isMobile}) =>
     isMobile
@@ -149,15 +145,11 @@ export const LogoContainer = styled.div`
 export const LinksContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: -6px;
-  margin-left: 97px;
   letter-spacing: 0.6px;
+  margin-left: 40px;
 `;
 
 export const Name = styled.div`
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
   font-size: 14px;
   line-height: 17px;
   margin-left: 10px;
