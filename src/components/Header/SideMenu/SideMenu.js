@@ -1,23 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import BurgerIcon from 'assets/BurgerIcon';
+import {Menu} from 'antd';
 
-import {
-  defaultCategories,
-} from 'constants/staticData';
+import {defaultCategories} from 'constants/staticData';
 
-import { Menu } from 'antd';
+import {Burger} from '../styled';
 
-const { SubMenu } = Menu;
+import {MenuContainer, MenuContentWrapper, LinksList, MenuGroup, MenuTitle} from './styled';
 
-import {
-  Burger,
-  LinksContainer,
-  StyledLink,
-} from '../styled';
-
-import {
-  MenuContainer,
-} from './styled';
+const {SubMenu} = Menu;
 
 function handleClick(e) {
   console.log('click', e);
@@ -25,20 +16,26 @@ function handleClick(e) {
 
 export default class SideMenu extends Component {
   state = {
-    isMenuOpened: true,
+    isMenuOpened: true
   };
 
   toggleNav = () => {
+    const {isMenuOpened} = this.state;
+    if (isMenuOpened) {
+      document.body.classList.add('menu-opened');
+    } else {
+      document.body.classList.remove('menu-opened');
+    }
+
     this.setState(() => {
-      const { isMenuOpened } = this.state;
       return {
-        isMenuOpened: !isMenuOpened,
+        isMenuOpened: !isMenuOpened
       };
     });
   };
 
   render() {
-    const { isMenuOpened } = this.state;
+    const {isMenuOpened} = this.state;
 
     console.log(defaultCategories);
 
@@ -48,30 +45,33 @@ export default class SideMenu extends Component {
           <BurgerIcon />
         </Burger>
         <MenuContainer isMenuOpened={isMenuOpened}>
-          <LinksContainer>
-            <StyledLink classNmae="active">Marketplace</StyledLink>
-            <StyledLink>Feed</StyledLink>
-          </LinksContainer>
-          <div>Categories</div>
-          <Menu onClick={handleClick} style={{ width: 256 }} mode="vertical">
-            {defaultCategories.map((cat, index) => (
-              <SubMenu
-                key={cat}
-                title={
-                  <span>
-                  <span>{cat}</span>
-                </span>
-                }
-              >
-                {index === 0 && <Menu.ItemGroup title={cat}>
-                  <Menu.Item key="1">Option 1</Menu.Item>
-                  <Menu.Item key="2">Option 2</Menu.Item>
-                </Menu.ItemGroup>}
-              </SubMenu>
-            ))}
-          </Menu>
+          <MenuContentWrapper>
+            <LinksList>
+              <li>
+                <a href="#">Marketplace</a>
+              </li>
+              <li>
+                <a href="#">Feed</a>
+              </li>
+            </LinksList>
+            <MenuGroup>
+              <MenuTitle>Categories</MenuTitle>
+              <Menu onClick={handleClick} mode="vertical">
+                {defaultCategories.map((cat, index) => (
+                  <SubMenu key={cat} title={<span>{cat}</span>}>
+                    {index === 0 && (
+                      <Menu.ItemGroup title={<MenuTitle>{cat}</MenuTitle>}>
+                        <Menu.Item key="1">Option 1</Menu.Item>
+                        <Menu.Item key="2">Option 2</Menu.Item>
+                      </Menu.ItemGroup>
+                    )}
+                  </SubMenu>
+                ))}
+              </Menu>
+            </MenuGroup>
+          </MenuContentWrapper>
         </MenuContainer>
       </>
-    )
+    );
   }
 }

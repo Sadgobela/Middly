@@ -2,13 +2,15 @@ import styled from 'styled-components';
 import {Button, Badge} from 'antd';
 
 import media from 'constants/media';
+import {headerHeight, mobileHeaderHeight} from './constants';
 
-import {mainWhiteColor, disabledLinkColor, mainBlackColor, primaryColor} from 'constants/colors';
+import {mainWhiteColor, disabledLinkColor, mainBlackColor, primaryColor, headerShadowColor} from 'constants/colors';
+
 import {FlexContainer} from 'globalStyles';
 
 export const HeaderWrapper = styled.div`
   background: ${mainWhiteColor};
-  box-shadow: 0px 1px 1px rgba(46, 46, 46, 0.06);
+  box-shadow: inset 0px -1px 1px ${headerShadowColor};
 
   @media (max-width: ${media.mobileMax}) {
     position: fixed;
@@ -20,11 +22,11 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const HeaderContainer = styled(FlexContainer)`
-  min-height: ${({isMobile}) => (isMobile ? '64px' : '80px')};
+  height: ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)};
   margin: 0 auto;
   padding: 0 15px;
   justify-content: center;
-  max-width: 1200px
+  max-width: 1200px;
 `;
 
 export const StyledLink = styled.a`
@@ -40,7 +42,7 @@ export const StyledLink = styled.a`
   &:not(:last-child) {
     margin-right: 26px;
   }
-  
+
   &:hover {
     color: ${mainBlackColor};
     padding-bottom: 2px;
@@ -93,8 +95,7 @@ export const AvatarContainer = styled(FlexContainer)`
   }
 `;
 
-export const StyledHi = styled.div`
-`;
+export const StyledHi = styled.div``;
 
 export const BadgesContainer = styled(FlexContainer)`
   width: ${({isMobile}) => (isMobile ? 'auto' : '120px')};

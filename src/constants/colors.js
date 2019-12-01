@@ -5,6 +5,7 @@ export const mainBlackColor = '#000';
 export const primaryColor = '#ED484F';
 export const headerSelectColor = 'rgba(228,228,228,0.64)';
 export const headerSearchColor = 'rgba(228,228,228,0.32)';
+export const menuTitleColor = '#A7A7A7';
 export const secondaryColor = '#F0646A';
 export const secondaryTextColor = '#464646';
 export const transparentTextColor = '#8F8F8F';

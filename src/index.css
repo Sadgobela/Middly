@@ -9,6 +9,10 @@ body {
   background: #fff;
 }
 
+body.menu-opened {
+  overflow: hidden;
+}
+
 #root {
   overflow: hidden;
   position: relative;
@@ -64,8 +68,8 @@ code {
 }
 
 .certain-category-search:focus {
-   box-shadow: none !important;
- }
+  box-shadow: none !important;
+}
 
 .certain-category-search.ant-select-auto-complete .ant-input-affix-wrapper .ant-input-suffix {
   right: 12px;
@@ -99,6 +103,7 @@ code {
   right: 16px;
 }
 
+.ant-menu-vertical,
 .ant-menu-submenu-active {
   border: none !important;
 }

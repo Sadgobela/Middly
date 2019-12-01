@@ -2,11 +2,11 @@ import React from 'react';
 
 import { AutoComplete } from 'antd';
 
-const { Option, OptGroup } = AutoComplete;
-
 import SearchIcon from 'assets/SearchIcon';
 
 import { SearchButton, StyledSelect, SearchContainer } from './styled';
+
+const { Option, OptGroup } = AutoComplete;
 
 const dataSource = [
   {
