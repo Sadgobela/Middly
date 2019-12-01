@@ -9,6 +9,11 @@ body {
   background: #fff;
 }
 
+#root {
+  overflow: hidden;
+  position: relative;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
@@ -47,4 +52,58 @@ code {
 .slick-track {
   display: flex !important;
   align-items: center;
+}
+
+/* default */
+
+.certain-category-search {
+  width: 274px !important;
+  height: 40px !important;
+  border: none !important;
+  border-radius: 4px 0 0 4px !important;
+}
+
+.certain-category-search:focus {
+   box-shadow: none !important;
+ }
+
+.certain-category-search.ant-select-auto-complete .ant-input-affix-wrapper .ant-input-suffix {
+  right: 12px;
+}
+
+.certain-category-search-dropdown .ant-select-dropdown-menu-item-group-title {
+  color: #666;
+  font-weight: bold;
+}
+
+.certain-category-search-dropdown .ant-select-dropdown-menu-item-group {
+  border-bottom: 1px solid #f6f6f6;
+}
+
+.certain-category-search-dropdown .ant-select-dropdown-menu-item {
+  padding-left: 16px;
+}
+
+.certain-category-search-dropdown .ant-select-dropdown-menu-item.show-all {
+  text-align: center;
+  cursor: default;
+}
+
+.certain-category-search-dropdown .ant-select-dropdown-menu {
+  max-height: 300px;
+}
+
+.certain-search-item-count {
+  position: absolute;
+  color: #999;
+  right: 16px;
+}
+
+.ant-menu-submenu-active {
+  border: none !important;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none;
+  position: relative;
 }
