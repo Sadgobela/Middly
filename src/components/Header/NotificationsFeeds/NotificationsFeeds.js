@@ -25,18 +25,16 @@ const menu = (
   </Menu>
 );
 
-export default class NotificationsFeeds extends Component {
-  render() {
-    return (
-      <>
-        <div id="components-dropdown-demo-dropdown-button">
-          <Dropdown overlay={menu}>
-            <Badge count={0}>
-              <BellIcon />
-            </Badge>
-          </Dropdown>
-        </div>
-      </>
-    )
-  }
-}
+export const NotificationsFeeds = () => {
+  return (
+    <>
+      <div id="components-dropdown-demo-dropdown-button">
+        <Dropdown overlay={menu}>
+          <Badge count={0}>
+            <BellIcon />
+          </Badge>
+        </Dropdown>
+      </div>
+    </>
+  )
+};

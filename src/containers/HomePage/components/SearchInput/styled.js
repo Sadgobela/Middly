@@ -13,6 +13,7 @@ export const SearchContainer = styled.div`
     border-radius: 4px 0 0 4px !important;
     font-size: 14px !important;
     color: ${mainBlackColor};
+    height: 36px !important;
     
     &:placeholders {
       color: ${mainBlackColor};

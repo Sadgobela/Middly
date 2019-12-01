@@ -99,6 +99,7 @@ export const StyledHi = styled.div``;
 
 export const BadgesContainer = styled(FlexContainer)`
   width: ${({isMobile}) => (isMobile ? 'auto' : '120px')};
+  margin-left: ${({isMobile}) => (isMobile ? 'auto' : '0')};
 
   span {
     cursor: pointer;
@@ -125,6 +126,7 @@ export const Burger = styled.button`
   align-items: center;
   justify-content: center;
   left: ${({isMobile}) => (isMobile ? '18px' : '0')};
+  position: ${({isMobile}) => (isMobile ? 'absolute' : 'relative')};
 `;
 
 export const LogoContainer = styled.a`

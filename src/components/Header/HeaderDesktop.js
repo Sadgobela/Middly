@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import NotificationsFeeds from './NotificationsFeeds/NotificationsFeeds';
-import Messages from "./Messages/Messages";
-import MyCart from "./MyCart/MyCart";
-import SideMenu from "./SideMenu/SideMenu";
+import { NotificationsFeeds } from './NotificationsFeeds/NotificationsFeeds';
+import { Messages } from "./Messages/Messages";
+import { MyCart } from "./MyCart/MyCart";
+import { SideMenu } from "./SideMenu/SideMenu";
 
 import LogoIcon from 'assets/LogoIcon';
 

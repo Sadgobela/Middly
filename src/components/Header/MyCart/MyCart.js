@@ -25,18 +25,16 @@ const menu = (
   </Menu>
 );
 
-export default class MyCart extends Component {
-  render() {
-    return (
-      <>
-        <div id="components-dropdown-demo-dropdown-button">
-          <Dropdown overlay={menu}>
-            <Badge count={0}>
-              <ShoppingCart />
-            </Badge>
-          </Dropdown>
-        </div>
-      </>
-    )
-  }
-}
+export const MyCart = () => {
+  return (
+    <>
+      <div id="components-dropdown-demo-dropdown-button">
+        <Dropdown overlay={menu}>
+          <Badge count={0}>
+            <ShoppingCart />
+          </Badge>
+        </Dropdown>
+      </div>
+    </>
+  )
+};

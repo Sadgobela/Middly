@@ -25,18 +25,16 @@ const menu = (
   </Menu>
 );
 
-export default class Messages extends Component {
-  render() {
-    return (
-      <>
-        <div id="components-dropdown-demo-dropdown-button">
-          <Dropdown overlay={menu}>
-            <Badge count={1}>
-              <LetterIcon />
-            </Badge>
-          </Dropdown>
-        </div>
-      </>
-    )
-  }
-}
+export const Messages = () => {
+  return (
+    <>
+      <div id="components-dropdown-demo-dropdown-button">
+        <Dropdown overlay={menu}>
+          <Badge count={1}>
+            <LetterIcon />
+          </Badge>
+        </Dropdown>
+      </div>
+    </>
+  )
+};
