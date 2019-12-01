@@ -15,7 +15,8 @@ This project contains the code for Middly Buyer/Store frontend developed in Venn
       * Code Quality
       * No Code Smells
 
-    NOTE: Code will not be accepted/merged to develop branch if you are not statisfying all above rules
+    NOTE1: Code will not be accepted/merged to develop branch if you are not statisfying all above rules
+    NOTE2: We are following AirBnB Javascript Style code for both Javascript and ReactJs. Both the below configuration will be included in all the projects
 
 ## Project configured
 
