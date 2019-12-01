@@ -2,6 +2,21 @@
 
 This project contains the code for Middly Buyer/Store frontend developed in Vennila ReactJs + Apollo GraphQL + AWS Amplify
 
+# MUST READ: Objective
+
+    * React Hooks (class, redux is not allowed)
+    * We will use only GraphQL endpoints
+       * Apollo Hooks only (pre-configured)
+       * No Restfull calls
+    * Pure ReactJS + Styled-components
+    * User/Login session will be handled by React Amplify (AWS)
+    * Our Goal
+      * Very High Preformance
+      * Code Quality
+      * No Code Smells
+
+    NOTE: Code will not be accepted/merged to develop branch if you are not statisfying all above rules
+
 ## Project configured
 
 Required packages are already added to this project,
@@ -96,24 +111,3 @@ const { loading, error, data } = useQuery(GET_DOGS{
     </select>
   );
 ```
-
-# Objective
-
-    * Moving from NextJs to ReactJS
-    * Migrating Restful API to GrapphQL
-        * Backend [Magento endpoints are wired, social most are wired few addli. WIP]
-    * Immediate Task List
-    * Migrate only the ReactJS component from buy-sell-frontend project to New Middly-buyer-UI
-        * Discard any Redux, Restful, Routers etc
-        * All we need Pure ReactJS + CSS components
-
-### Task 1:
-
-    * Migration of Landing Page to new architecutre, and after inital review we can proceed.
-
-    Our goal
-        * Very High Preformance
-        * React Hooks
-        * Apollo Hooks Concept only
-        * Code Quality
-        * Code Smells
