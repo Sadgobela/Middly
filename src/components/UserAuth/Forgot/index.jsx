@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
 	Overlay,
 	SignForm,
@@ -42,7 +42,7 @@ const Forgot = ({ form }) => {
 
 	const onSubmitHandler = e => {
 		e.preventDefault();
-		form.validateFields((err, values) => {
+		validateFields((err, values) => {
 			if (!err) {
 				console.log('Received values of form: ', values);
 			}
@@ -57,7 +57,7 @@ const Forgot = ({ form }) => {
 				<FieldsWrap>
 					{
 						formData.fields.map( field =>
-							<FormItem key={field.label} style={{width: field.width + 'px' || null}} label={field.label}>
+							<FormItem key={field.label} style={{width: `${field.width  }px` || null}} label={field.label}>
 								{
 									getFieldDecorator(field.label.replace(/ /gi, ''), {
 										rules: [{ required: field.isRequired, message: field.errorMessage }],
@@ -77,8 +77,8 @@ const Forgot = ({ form }) => {
 
 const WrappedForgot = SignForm.create({ name: 'forgot' })(Forgot);
 
-// SignIn.propTypes = {
-
-// };
+Forgot.propTypes = {
+	form: PropTypes.isRequired,
+};
 
 export default WrappedForgot;

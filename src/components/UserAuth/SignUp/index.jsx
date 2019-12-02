@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
 	Overlay,
 	SignForm,
@@ -58,7 +58,7 @@ const SignUp = ({ form }) => {
 
 	const onSubmitHandler = e => {
 		e.preventDefault();
-		form.validateFields((err, values) => {
+		validateFields((err, values) => {
 			if (!err) {
 				console.log('Received values of form: ', values);
 			}
@@ -116,8 +116,8 @@ const SignUp = ({ form }) => {
 
 const WrappedSignUp = SignForm.create({ name: 'sign_up' })(SignUp);
 
-// SignIn.propTypes = {
-
-// };
+SignUp.propTypes = {
+	form: PropTypes.isRequired,
+};
 
 export default WrappedSignUp;
