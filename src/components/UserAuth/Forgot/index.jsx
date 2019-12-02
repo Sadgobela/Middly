@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 // import PropTypes from 'prop-types';
 import {
 	Overlay,
@@ -29,52 +29,51 @@ const formData =
 	}
 ;
 
-class Forgot extends React.Component {
-	onSubmitHandler = e => {
+const Forgot = ({ form }) => {
+
+	useEffect(() => {
+		document.body.style.overflow = 'hidden';
+		return () => {
+			document.body.style.overflow = 'visible';
+		};
+	});
+
+	const { getFieldDecorator, validateFields } = form;
+
+	const onSubmitHandler = e => {
 		e.preventDefault();
-		this.props.form.validateFields((err, values) => {
+		form.validateFields((err, values) => {
 			if (!err) {
 				console.log('Received values of form: ', values);
 			}
 		});
 	};
 
-	componentDidMount() {
-		document.body.style.overflow = 'hidden';
-	}
-
-	componentWillUnmount() {
-		document.body.style.overflow = 'hidden';
-	}
-
-	render() {
-		const { getFieldDecorator } = this.props.form;
-		return (
-			<Overlay>
-				<SignForm onSubmit={this.onSubmitHandler}>
-					<Heading>{formData.heading}</Heading>
-					<Title>{formData.title}</Title>
-					<FieldsWrap>
-						{
-							formData.fields.map( field =>
-								<FormItem key={field.label} style={{width: field.width + 'px' || null}} label={field.label}>
-									{
-										getFieldDecorator(field.label.replace(/ /gi, ''), {
-											rules: [{ required: field.isRequired, message: field.errorMessage }],
-										})( <Field type={field.type} />,)
-									}
-								</FormItem>
-							)
-						}
-					</FieldsWrap>
-					<Submit type="primary" htmlType="submit">
-						{formData.submitTitle}
-					</Submit>
-				</SignForm>
-			</Overlay>
-		);
-	}
-}
+	return (
+		<Overlay>
+			<SignForm onSubmit={onSubmitHandler}>
+				<Heading>{formData.heading}</Heading>
+				<Title>{formData.title}</Title>
+				<FieldsWrap>
+					{
+						formData.fields.map( field =>
+							<FormItem key={field.label} style={{width: field.width + 'px' || null}} label={field.label}>
+								{
+									getFieldDecorator(field.label.replace(/ /gi, ''), {
+										rules: [{ required: field.isRequired, message: field.errorMessage }],
+									})( <Field type={field.type} />,)
+								}
+							</FormItem>
+						)
+					}
+				</FieldsWrap>
+				<Submit type="primary" htmlType="submit">
+					{formData.submitTitle}
+				</Submit>
+			</SignForm>
+		</Overlay>
+	)
+};
 
 const WrappedForgot = SignForm.create({ name: 'forgot' })(Forgot);
 
