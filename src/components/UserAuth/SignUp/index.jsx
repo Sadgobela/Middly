@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
+import CreateFields from "../CreateFields";
 import {
 	Overlay,
 	SignForm,
-	Icons,
-	Field,
 	Submit,
 	FormItem,
 	Checked,
@@ -71,19 +70,12 @@ const SignUp = ({ form }) => {
 				<Heading>{formData.heading}</Heading>
 				<Title>{formData.title} <LinkTo to="/sign-in" >Log in</LinkTo></Title>
 				<FieldsWrap>
-					{
-						formData.fields.map( field =>
-							<FormItem key={field.label} style={{width: field.width + 'px' || null}} label={field.label}>
-								{
-									getFieldDecorator(field.label.replace(/ /gi, ''), {
-										rules: [{ required: field.isRequired, message: field.errorMessage }],
-									})( <Field type={field.type} />,)
-								}
-							</FormItem>
-						)
-					}
-					<FormItem>
+					{CreateFields(form, formData)}
+					<FormItem checkbox>
 						{getFieldDecorator('agreement', {
+							rules: [{ required: true, message: 'Please accept terms and conditions' }],
+						},
+						{
 							valuePropName: 'checked',
 							initialValue: false,
 						})(<Checked>

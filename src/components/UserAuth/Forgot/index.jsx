@@ -1,19 +1,13 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
+import CreateFields from "../CreateFields";
 import {
 	Overlay,
 	SignForm,
-	Field,
 	Submit,
-	FormItem,
 	Heading,
 	FieldsWrap,
 	Title,
-	WithGoogle,
-	WithFacebook,
-	SocialName,
-	Line,
-	LinkTo,
 } from './styled';
 
 const formData =
@@ -38,7 +32,7 @@ const Forgot = ({ form }) => {
 		};
 	});
 
-	const { getFieldDecorator, validateFields } = form;
+	const { validateFields } = form;
 
 	const onSubmitHandler = e => {
 		e.preventDefault();
@@ -55,17 +49,7 @@ const Forgot = ({ form }) => {
 				<Heading>{formData.heading}</Heading>
 				<Title>{formData.title}</Title>
 				<FieldsWrap>
-					{
-						formData.fields.map( field =>
-							<FormItem key={field.label} style={{width: `${field.width  }px` || null}} label={field.label}>
-								{
-									getFieldDecorator(field.label.replace(/ /gi, ''), {
-										rules: [{ required: field.isRequired, message: field.errorMessage }],
-									})( <Field type={field.type} />,)
-								}
-							</FormItem>
-						)
-					}
+					{CreateFields(form, formData)}
 				</FieldsWrap>
 				<Submit type="primary" htmlType="submit">
 					{formData.submitTitle}

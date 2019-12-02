@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import {Form, Icon, Input, Button, Checkbox} from 'antd';
-import {Link} from 'react-router-dom';
-import google from './img/google.svg';
-import facebook from './img/facebook.svg';
+import {Form, Input, Button} from 'antd';
 
 export const Overlay = styled.div`
   position: fixed;
@@ -54,13 +51,6 @@ export const Title = styled.span`
   max-width: 280px;
 `;
 
-export const LinkTo = styled(Link)`
-  display: inline-block;
-  color: #4a90e2;
-  margin: 0;
-  white-space: nowrap;
-`;
-
 export const FieldsWrap = styled.div`
   display: flex;
   justify-content: space-between;
@@ -68,21 +58,6 @@ export const FieldsWrap = styled.div`
   width: 100%;
   padding: 0 22px;
   margin-top: 26px;
-`;
-
-export const SocialName = styled.i`
-  font-size: inherit;
-  font-weight: 700;
-  color: ${({color}) => color};
-  margin-left: 4px;
-  font-style: normal;
-`;
-
-export const Line = styled.i`
-  width: 100%;
-  height: 1px;
-  background: #e4e4e4;
-  margin: 28px 0;
 `;
 
 export const FormItem = styled(Form.Item)`
@@ -129,15 +104,7 @@ export const Field = styled(Input)`
     //border-color: #C3C3C3;
   }
 `;
-export const Checked = styled(Checkbox)`
-  &&& {
-    display: flex;
-    align-items: flex-start;
-    &::after {
-      display: none !important;
-    }
-  }
-`;
+
 export const Submit = styled(Button)`
   &&& {
     display: flex;
@@ -154,45 +121,3 @@ export const Submit = styled(Button)`
     border: none;
   }
 `;
-
-export const WithGoogle = styled(Button)`
-  &&& {
-    position: relative;
-    width: 266px;
-    height: 48px;
-    border-color: #3d82f0;
-    border-radius: 4px;
-    margin: 0 0 0 8px;
-
-    &::before {
-      display: block;
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: auto;
-      bottom: auto;
-      left: 10px;
-      width: 28px;
-      height: 24px;
-      background: url(${google}) no-repeat center;
-      background-size: contain;
-      opacity: 1;
-      transform: translateY(-50%);
-    }
-  }
-`;
-
-export const WithFacebook = styled(WithGoogle)`
-  &&& {
-    margin-top: 22px;
-    &::before {
-      left: 14px;
-      width: 20px;
-      height: 20px;
-      background: url(${facebook}) no-repeat center;
-      background-size: contain;
-    }
-  }
-`;
-
-export const Icons = styled(Icon)``;

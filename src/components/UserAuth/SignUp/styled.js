@@ -3,6 +3,9 @@ import {Form, Icon, Input, Button, Checkbox} from 'antd';
 import {Link} from 'react-router-dom';
 import google from './img/google.svg';
 import facebook from './img/facebook.svg';
+import eye from './img/eye.svg';
+import cancel from './img/cancel.svg';
+// import eyeOff from './img/eye-off.svg.svg';
 
 export const Overlay = styled.div`
   position: fixed;
@@ -117,6 +120,8 @@ export const FormItem = styled(Form.Item)`
       font-size: 12px;
       line-height: 16px;
       margin: 2px 0 0 0;
+      color: #ed484f;
+      ${({checkbox}) => (checkbox ? 'margin-left: 29px' : null)}
     }
 
     & label {
@@ -214,3 +219,12 @@ export const WithFacebook = styled(WithGoogle)`
 `;
 
 export const Icons = styled(Icon)``;
+
+export const EyeIcon = styled.i`
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(${({type}) => (type === 'password' ? eye : cancel)}) no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+`;
