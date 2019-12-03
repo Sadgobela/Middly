@@ -11,7 +11,7 @@ import {headerHeight, mobileHeaderHeight, sideMenuWidth} from '../constants';
 
 export const MenuContainer = styled.div`
   position: absolute;
-  left: ${({isMenuOpened}) => (isMenuOpened ? `-${sideMenuWidth}` : '0')};
+  left: 0;
   top: ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)};
   transition: left 0.3s ease-in-out;
   z-index: 1024;
@@ -21,7 +21,7 @@ export const MenuContainer = styled.div`
 
   &:after {
     position: absolute;
-    ${({isMenuOpened}) => (isMenuOpened ? '' : "content: '';")};
+    content: '';
     top: 0;
     left: 0;
     right: -2000px;

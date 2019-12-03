@@ -24,9 +24,9 @@ export const HeaderWrapper = styled.div`
 export const HeaderContainer = styled(FlexContainer)`
   height: ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)};
   margin: 0 auto;
-  padding: 0 15px;
-  justify-content: center;
-  max-width: 1200px;
+  padding: 0 72px 0 69px;
+  justify-content: space-between;
+  max-width: 1440px;
 `;
 
 export const StyledLink = styled.a`
@@ -38,6 +38,14 @@ export const StyledLink = styled.a`
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0;
+  ${({active}) =>
+    active
+      ? ` 
+    color: ${mainBlackColor};
+    padding-bottom: 2px;
+    border-bottom: 2px solid ${primaryColor};
+    `
+      : null};
 
   &:not(:last-child) {
     margin-right: 26px;

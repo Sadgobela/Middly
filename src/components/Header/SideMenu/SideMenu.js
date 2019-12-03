@@ -1,10 +1,7 @@
-import React, {useState} from 'react';
-import BurgerIcon from 'assets/BurgerIcon';
+import React, {useEffect} from 'react';
 import {Menu} from 'antd';
 
 import {defaultCategories} from 'constants/staticData';
-
-import {Burger} from '../styled';
 
 import {MenuContainer, MenuContentWrapper, LinksList, MenuGroup, MenuTitle} from './styled';
 
@@ -15,24 +12,16 @@ function handleClick(e) {
 }
 
 export const SideMenu = () => {
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
-
-  const toggleNav = () => {
-    if (isMenuOpened) {
-      document.body.classList.add('menu-opened');
-    } else {
+  useEffect(() => {
+    document.body.classList.add('menu-opened');
+    return () => {
       document.body.classList.remove('menu-opened');
-    }
-
-    setIsMenuOpened(!isMenuOpened);
-  };
+    };
+  });
 
   return (
     <>
-      <Burger onClick={() => toggleNav()}>
-        <BurgerIcon />
-      </Burger>
-      <MenuContainer isMenuOpened={isMenuOpened}>
+      <MenuContainer>
         <MenuContentWrapper>
           <LinksList>
             <li>
