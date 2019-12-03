@@ -17,7 +17,7 @@ const formData =
 		submitTitle: 'Submit',
 		fields: [
 			{
-				label: 'Email', type: 'text', errorMessage: 'Error text', isRequired: true,
+				label: 'Email', type: 'email', errorMessage: 'Please enter your Email', isRequired: true,
 			},
 		],
 	}

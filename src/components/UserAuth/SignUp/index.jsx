@@ -68,17 +68,15 @@ const SignUp = ({ form }) => {
 		<Overlay>
 			<SignForm onSubmit={onSubmitHandler}>
 				<Heading>{formData.heading}</Heading>
-				<Title>{formData.title} <LinkTo to="/sign-in" >Log in</LinkTo></Title>
+				<Title>{formData.title} <LinkTo block to="/sign-in" >Log in</LinkTo></Title>
 				<FieldsWrap>
 					{CreateFields(form, formData)}
 					<FormItem checkbox>
-						{getFieldDecorator('agreement', {
-							rules: [{ required: true, message: 'Please accept terms and conditions' }],
-						},
-						{
-							valuePropName: 'checked',
-							initialValue: false,
-						})(<Checked>
+						{getFieldDecorator('agreement',
+							{
+								valuePropName: 'checked',
+								rules: [{ required: true, message: 'Please accept terms and conditions', type: 'boolean' }],
+							})(<Checked>
 								<Agreement>
 									I have read and I agree to comply with the&#160;
 									<LinkTo to="/sign-up" >Terms & Conditions</LinkTo>&#160;

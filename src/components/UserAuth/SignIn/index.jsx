@@ -22,10 +22,10 @@ const formData =
 		submitTitle: 'Sign In',
 		fields: [
 			{
-				label: 'Email / Username', type: 'text', errorMessage: 'Error text', isRequired: true,
+				label: 'Email / Username', type: 'text', errorMessage: 'Please enter your Email', isRequired: true,
 			},
 			{
-				label: 'Password', type: 'password', errorMessage: 'Error text', isRequired: true,
+				label: 'Password', type: 'password', errorMessage: 'Please enter a password (minimum 8 symbols)', isRequired: true,
 			},
 		],
 	}
@@ -55,7 +55,7 @@ const SignIn = ({ form }) => {
 		<Overlay>
 			<SignForm onSubmit={onSubmitHandler}>
 				<Heading>{formData.heading}</Heading>
-				<Title>{formData.title} <LinkTo to="/sign-up" >Create account</LinkTo></Title>
+				<Title>{formData.title} <LinkTo block to="/sign-up" >Create account</LinkTo></Title>
 				<FieldsWrap>
 					{CreateFields(form, formData)}
 					<LinkTo right to="/forgot" >Forgot Password?</LinkTo>

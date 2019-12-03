@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import {Form, Input, Button, Checkbox} from 'antd';
+import {Form, Button} from 'antd';
 import {Link} from 'react-router-dom';
+import media from '../../../constants/media';
 import google from './img/google.svg';
 import facebook from './img/facebook.svg';
 
@@ -13,7 +14,7 @@ export const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 999;
   overflow: auto;
 `;
@@ -29,6 +30,13 @@ export const SignForm = styled(Form)`
     border-radius: 4px;
     padding: 47px 0 40px;
     margin: 48px 0;
+
+    @media (max-width: ${media.mobileMax}) {
+      width: 100%;
+      margin: 64px 0 0 0;
+      padding: 32px 0 60px;
+      min-height: 100vh;
+    }
   }
 `;
 
@@ -41,6 +49,11 @@ export const Heading = styled.span`
   letter-spacing: 0.011em;
   color: #000;
   margin: 0 auto;
+
+  @media (max-width: ${media.mobileMax}) {
+    font-size: 22px;
+    line-height: 27px;
+  }
 `;
 
 export const Title = styled.span`
@@ -50,6 +63,10 @@ export const Title = styled.span`
   line-height: 20px;
   text-align: center;
   color: #464646;
+
+  @media (max-width: ${media.mobileMax}) {
+    margin-top: 12px;
+  }
 `;
 
 export const LinkTo = styled(Link)`
@@ -57,7 +74,11 @@ export const LinkTo = styled(Link)`
   color: #4a90e2;
   margin: 0;
   white-space: nowrap;
-  ${({right}) => (right ? 'width: 100%; text-align: right; margin-bottom: 36px' : null)}
+  ${({right}) => (right ? 'width: 100%; text-align: right; margin-bottom: 36px' : null)};
+
+  @media (max-width: ${media.mobileMax}) {
+    display: ${({block}) => (block ? 'block' : 'inline-block')};
+  }
 `;
 
 export const FieldsWrap = styled.div`
@@ -83,62 +104,6 @@ export const Line = styled.i`
   margin: 28px 0;
 `;
 
-export const FormItem = styled(Form.Item)`
-  &&& {
-    width: 100%;
-
-    &:nth-child(1) {
-      margin-bottom: 28px;
-    }
-
-    & .ant-form-item-label {
-      line-height: 20px;
-      margin-bottom: 8px;
-    }
-
-    & .ant-form-explain {
-      font-size: 12px;
-      line-height: 16px;
-      margin: 2px 0 0 0;
-    }
-
-    & label {
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 20px;
-      color: #464646;
-
-      &::before {
-        content: none;
-      }
-
-      &::after {
-        display: inline-block;
-        margin-right: 4px;
-        color: #ed484f;
-        font-size: 14px;
-        line-height: 1;
-        content: '*';
-      }
-    }
-  }
-`;
-export const Field = styled(Input)`
-  &&& {
-    height: 40px;
-    border-radius: 2px;
-    //border-color: #C3C3C3;
-  }
-`;
-export const Checked = styled(Checkbox)`
-  &&& {
-    display: flex;
-    align-items: flex-start;
-    &::after {
-      display: none !important;
-    }
-  }
-`;
 export const Submit = styled(Button)`
   &&& {
     display: flex;

@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import {Form, Icon, Input, Button, Checkbox} from 'antd';
+import {Form, Input, Button, Checkbox} from 'antd';
 import {Link} from 'react-router-dom';
+import media from '../../../constants/media';
 import google from './img/google.svg';
 import facebook from './img/facebook.svg';
-import eye from './img/eye.svg';
-import cancel from './img/cancel.svg';
-// import eyeOff from './img/eye-off.svg.svg';
 
 export const Overlay = styled.div`
   position: fixed;
@@ -16,7 +14,7 @@ export const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 999;
   overflow: auto;
 `;
@@ -32,6 +30,13 @@ export const SignForm = styled(Form)`
     border-radius: 4px;
     padding: 47px 0 40px;
     margin: 48px 0;
+
+    @media (max-width: ${media.mobileMax}) {
+      width: 100%;
+      margin: 64px 0 0 0;
+      padding: 32px 0 60px;
+      min-height: 100vh;
+    }
   }
 `;
 
@@ -44,6 +49,11 @@ export const Heading = styled.span`
   letter-spacing: 0.011em;
   color: #000;
   margin: 0 auto;
+
+  @media (max-width: ${media.mobileMax}) {
+    font-size: 22px;
+    line-height: 27px;
+  }
 `;
 
 export const Title = styled.span`
@@ -53,6 +63,10 @@ export const Title = styled.span`
   line-height: 20px;
   text-align: center;
   color: #464646;
+
+  @media (max-width: ${media.mobileMax}) {
+    margin-top: 12px;
+  }
 `;
 
 export const LinkTo = styled(Link)`
@@ -60,6 +74,10 @@ export const LinkTo = styled(Link)`
   color: #4a90e2;
   margin: 0;
   white-space: nowrap;
+
+  @media (max-width: ${media.mobileMax}) {
+    display: ${({block}) => (block ? 'block' : 'inline-block')};
+  }
 `;
 
 export const Agreement = styled.span`
@@ -72,15 +90,6 @@ export const Agreement = styled.span`
   color: #464646;
   top: -2px;
   padding-left: 4px;
-
-  &::after {
-    display: inline-block;
-    margin-right: 4px;
-    color: #ed484f;
-    font-size: 16px;
-    line-height: 1;
-    content: '*';
-  }
 `;
 
 export const FieldsWrap = styled.div`
@@ -124,11 +133,20 @@ export const FormItem = styled(Form.Item)`
       ${({checkbox}) => (checkbox ? 'margin-left: 29px' : null)}
     }
 
+    &.ant-form-item-with-help .ant-checkbox-inner {
+      border-color: #ed484f;
+    }
+
     & label {
       font-weight: bold;
       font-size: 14px;
       line-height: 20px;
       color: #464646;
+
+      @media (max-width: ${media.mobileMax}) {
+        font-weight: 400;
+        line-height: 17px;
+      }
 
       &::before {
         content: none;
@@ -145,13 +163,7 @@ export const FormItem = styled(Form.Item)`
     }
   }
 `;
-export const Field = styled(Input)`
-  &&& {
-    height: 40px;
-    border-radius: 2px;
-    //border-color: #C3C3C3;
-  }
-`;
+
 export const Checked = styled(Checkbox)`
   &&& {
     display: flex;
@@ -216,15 +228,4 @@ export const WithFacebook = styled(WithGoogle)`
       background-size: contain;
     }
   }
-`;
-
-export const Icons = styled(Icon)``;
-
-export const EyeIcon = styled.i`
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: url(${({type}) => (type === 'password' ? eye : cancel)}) no-repeat center;
-  background-size: contain;
-  cursor: pointer;
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import {Form, Input, Button} from 'antd';
+import {Form, Button} from 'antd';
+import media from '../../../constants/media';
 
 export const Overlay = styled.div`
   position: fixed;
@@ -10,7 +11,7 @@ export const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 999;
   overflow: auto;
 `;
@@ -26,6 +27,13 @@ export const SignForm = styled(Form)`
     border-radius: 4px;
     padding: 30px 0 80px;
     margin: 48px 0;
+
+    @media (max-width: ${media.mobileMax}) {
+      width: 100%;
+      margin: 64px 0 0 0;
+      padding: 32px 0 60px;
+      min-height: 100vh;
+    }
   }
 `;
 
@@ -39,6 +47,11 @@ export const Heading = styled.span`
   color: #000;
   max-width: 200px;
   margin: 0 auto;
+
+  @media (max-width: ${media.mobileMax}) {
+    font-size: 22px;
+    line-height: 27px;
+  }
 `;
 
 export const Title = styled.span`
@@ -49,6 +62,10 @@ export const Title = styled.span`
   text-align: center;
   color: #464646;
   max-width: 280px;
+
+  @media (max-width: ${media.mobileMax}) {
+    margin-top: 12px;
+  }
 `;
 
 export const FieldsWrap = styled.div`
@@ -58,51 +75,6 @@ export const FieldsWrap = styled.div`
   width: 100%;
   padding: 0 22px;
   margin-top: 26px;
-`;
-
-export const FormItem = styled(Form.Item)`
-  &&& {
-    width: 100%;
-    margin-bottom: 28px;
-
-    & .ant-form-item-label {
-      line-height: 20px;
-      margin-bottom: 8px;
-    }
-
-    & .ant-form-explain {
-      font-size: 12px;
-      line-height: 16px;
-      margin: 2px 0 0 0;
-    }
-
-    & label {
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 20px;
-      color: #464646;
-
-      &::before {
-        content: none;
-      }
-
-      &::after {
-        display: inline-block;
-        margin-right: 4px;
-        color: #ed484f;
-        font-size: 14px;
-        line-height: 1;
-        content: '*';
-      }
-    }
-  }
-`;
-export const Field = styled(Input)`
-  &&& {
-    height: 40px;
-    border-radius: 2px;
-    //border-color: #C3C3C3;
-  }
 `;
 
 export const Submit = styled(Button)`
