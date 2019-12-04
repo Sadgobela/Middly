@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 import {Button, Badge} from 'antd';
-
 import media from 'constants/media';
-import {headerHeight, mobileHeaderHeight} from './constants';
-
-import {mainWhiteColor, disabledLinkColor, mainBlackColor, primaryColor, headerShadowColor} from 'constants/colors';
-
 import {FlexContainer} from 'globalStyles';
+import {mainWhiteColor, disabledLinkColor, mainBlackColor, primaryColor, headerShadowColor} from 'constants/colors';
+import {headerHeight, mobileHeaderHeight} from './constants';
 
 export const HeaderWrapper = styled.div`
   background: ${mainWhiteColor};
@@ -21,11 +18,12 @@ export const HeaderWrapper = styled.div`
   }
 `;
 
-export const HeaderContainer = styled(FlexContainer)`
+export const HeaderContainer = styled.header`
+  display: flex;
+  align-items: center;
   height: ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)};
   margin: 0 auto;
   padding: 0 72px 0 69px;
-  justify-content: space-between;
   max-width: 1440px;
 `;
 
@@ -59,24 +57,39 @@ export const StyledLink = styled.a`
 `;
 
 export const SellButton = styled(Button)`
-  width: 87px !important;
-  height: 36px !important;
-  border: 1px solid #c3c3c3 !important;
-  border-radius: 24px !important;
-  background: ${mainWhiteColor}!important;
-  text-transform: uppercase;
-  font-weight: bold;
-  display: inline-flex !important;
-  justify-content: space-between;
-  align-items: center;
-  color: ${mainBlackColor}!important;
-  margin-left: 37px;
-  font-weight: 700 !important;
-  padding: 0 13px 0 15px !important;
-  line-height: 32px !important;
+  &&& {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 87px;
+    height: 36px;
+    color: ${mainBlackColor};
+    font-weight: 700;
+    background: ${mainWhiteColor};
+    text-transform: uppercase;
+    padding: 0 13px 0 15px;
+    line-height: 32px;
+    border: 1px solid #c3c3c3;
+    border-radius: 24px;
+    margin: 0 2.4%;
 
-  &:hover {
-    color: ${mainBlackColor}!important;
+    &:hover {
+      color: ${mainBlackColor};
+    }
+  }
+`;
+
+export const AvatarContainer = styled(FlexContainer)`
+  max-width: 150px;
+  height: 40px;
+  margin: 0 3.3% 0 0;
+  cursor: pointer;
+
+  img {
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 16px;
   }
 `;
 
@@ -88,19 +101,10 @@ export const StyledName = styled.div`
   text-overflow: ellipsis;
 `;
 
-export const AvatarContainer = styled(FlexContainer)`
-  max-width: 150px;
-  height: 40px;
-  margin-right: 10px;
-  cursor: pointer;
-  margin-left: 30px;
-
-  img {
-    min-width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin-right: 5px;
-  }
+export const Name = styled.div`
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
 `;
 
 export const StyledHi = styled.div``;
@@ -125,22 +129,22 @@ export const BadgesContainer = styled(FlexContainer)`
 `;
 
 export const Burger = styled.button`
-  background: none;
-  border: none;
-  cursor: pointer;
-  height: 50px;
-  width: 40px;
+  position: ${({isMobile}) => (isMobile ? 'absolute' : 'relative')};
+  left: ${({isMobile}) => (isMobile ? '18px' : '0')};
   display: flex;
   align-items: center;
   justify-content: center;
-  left: ${({isMobile}) => (isMobile ? '18px' : '0')};
-  position: ${({isMobile}) => (isMobile ? 'absolute' : 'relative')};
+  padding: 0;
+  margin: 0 2.2% 0 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
 `;
 
 export const LogoContainer = styled.a`
   padding-top: 6px;
-  margin-left: 20px;
-
+  margin-right: 5.7%;
   ${({isMobile}) =>
     isMobile
       ? `
@@ -157,14 +161,6 @@ export const LinksContainer = styled.div`
   display: flex;
   align-items: center;
   letter-spacing: 0.6px;
-  margin-left: 40px;
-`;
-
-export const Name = styled.div`
-  font-size: 14px;
-  line-height: 17px;
-  margin-left: 10px;
-  color: #000;
 `;
 
 export const CustomBadge = styled(Badge)`

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Menu} from 'antd';
 import {
   mainWhiteColor,
   headerShadowColor,
@@ -13,11 +14,12 @@ export const MenuContainer = styled.div`
   position: absolute;
   left: 0;
   top: ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)};
-  transition: left 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   z-index: 1024;
   width: ${sideMenuWidth};
   height: calc(100vh - ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)});
   line-height: 1.4;
+  transform: translateX(-100%);
 
   &:after {
     position: absolute;
@@ -28,6 +30,24 @@ export const MenuContainer = styled.div`
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
     z-index: -1;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  &.sideMenu-enter-active {
+    transform: translateX(0px);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &.sideMenu-enter-done {
+    transform: none;
+
+    &::after {
+      opacity: 1;
+    }
   }
 `;
 
@@ -60,12 +80,54 @@ export const LinksList = styled.ul`
 
 export const MenuGroup = styled.div`
   padding: 25px 0 25px 15px;
+`;
 
-  .ant-menu {
-    &-submenu-vertical {
-      & > .ant-menu-submenu-title {
-        & > span,
-        & > a {
+export const MenuList = styled(Menu)`
+  &&& {
+    .ant-menu-submenu-title {
+      padding-left: 0;
+      padding-right: 20px;
+
+      .ant-menu-submenu-arrow {
+        right: 10px;
+      }
+    }
+  }
+
+  .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+  .ant-menu-submenu-active,
+  .ant-menu-submenu-title:hover {
+    color: ${primaryColor};
+  }
+`;
+
+export const ItemGroup = styled(Menu.ItemGroup)``;
+
+export const Item = styled(Menu.Item)`
+  &&& {
+    &.ant-menu-item-active {
+      color: ${primaryColor};
+    }
+
+    &:hover {
+      color: ${primaryColor};
+    }
+  }
+`;
+
+export const MenuTitle = styled.span`
+  font-weight: bold;
+  font-size: 18px;
+  color: ${menuTitleColor};
+  margin: 0 0 15px 0;
+`;
+
+export const SubMenu = styled(Menu.SubMenu)`
+  &&& {
+    &.ant-menu-submenu-vertical {
+      & .ant-menu-submenu-title {
+        & span,
+        & a {
           color: ${mainBlackColor};
         }
 
@@ -96,29 +158,5 @@ export const MenuGroup = styled.div`
         }
       }
     }
-
-    .ant-menu-submenu-title {
-      padding-left: 0;
-      padding-right: 20px;
-
-      .ant-menu-submenu-arrow {
-        right: 10px;
-      }
-    }
   }
-
-  .ant-menu-item:hover,
-  .ant-menu-item-active,
-  .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
-  .ant-menu-submenu-active,
-  .ant-menu-submenu-title:hover {
-    color: ${primaryColor};
-  }
-`;
-
-export const MenuTitle = styled.div`
-  font-weight: bold;
-  font-size: 18px;
-  color: ${menuTitleColor};
-  margin-bottom: 15px;
 `;

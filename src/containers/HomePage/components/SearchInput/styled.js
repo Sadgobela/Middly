@@ -3,7 +3,7 @@ import {Input, Select, Button} from 'antd';
 import {primaryColor, headerSelectColor, headerSearchColor, mainBlackColor} from '../../../../constants/colors';
 
 export const SearchContainer = styled.div`
-  margin-left: 38px;
+  margin: 0 0 0 4.9%;
   display: flex;
 
   .ant-input {
@@ -13,8 +13,8 @@ export const SearchContainer = styled.div`
     border-radius: 4px 0 0 4px !important;
     font-size: 14px !important;
     color: ${mainBlackColor};
-    height: 36px !important;
-    
+    height: 40px !important;
+
     &:placeholders {
       color: ${mainBlackColor};
     }
@@ -27,22 +27,23 @@ export const SearchContainer = styled.div`
   .ant-select-selection__rendered {
     margin-left: 16px;
   }
-  
+
   .certain-category-search-wrapper {
     display: flex;
-    width: 350px;
+    width: 423px;
   }
 `;
 
-
 export const AutoCompleteStyles = styled(Input)`
-  width: 274px !important;
-  height: 40px !important;
-  background: ${headerSearchColor}!important;
-  border: none !important;
-  border-radius: 4px 0 0 4px !important;
-  &:focus {
-    box-shadow: none !important;
+  &&& {
+    width: 274px;
+    height: 40px;
+    background: ${headerSearchColor};
+    border: none;
+    border-radius: 4px 0 0 4px;
+    &:focus {
+      box-shadow: none;
+    }
   }
 `;
 
@@ -62,13 +63,15 @@ export const StyledSelect = styled(Select)`
 `;
 
 export const SearchButton = styled(Button)`
-  min-width: 40px !important;
-  height: 40px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: ${primaryColor}!important;
-  border-radius: 0 4px 4px 0 !important;
+  &&& {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: ${primaryColor};
+    border-radius: 0 4px 4px 0;
+  }
 `;
