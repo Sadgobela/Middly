@@ -17,7 +17,7 @@ function handleClick(e) {
   console.log('click', e);
 }
 
-export const SideMenu = () => {
+export const SideMenu = ({setIsMenuOpened}) => {
   useEffect(() => {
     document.body.classList.add('menu-opened');
     return () => {
@@ -25,9 +25,15 @@ export const SideMenu = () => {
     };
   });
 
+  const close = ev => {
+    if(ev.target.classList.contains('sideMenu-enter-done')) {
+      setIsMenuOpened(false);
+    }
+  };
+
   return (
       <>
-        <MenuContainer>
+        <MenuContainer onClick={ ev => close(ev) }>
           <MenuContentWrapper>
             <LinksList>
               <li>

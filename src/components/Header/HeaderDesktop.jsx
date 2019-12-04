@@ -37,7 +37,7 @@ const Header = () => {
           <BurgerIcon />
         </Burger>
         <CSSTransition in={isMenuOpened} timeout={300} classNames={'sideMenu'} unmountOnExit>
-          <SideMenu />
+          <SideMenu setIsMenuOpened={ setIsMenuOpened } />
         </CSSTransition>
         <LogoContainer href="#">
           <LogoIcon />

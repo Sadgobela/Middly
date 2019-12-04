@@ -43,7 +43,7 @@ export const MenuContainer = styled.div`
   }
 
   &.sideMenu-enter-done {
-    transform: none;
+    transform: translateX(0px);
 
     &::after {
       opacity: 1;
