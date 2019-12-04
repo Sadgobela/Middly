@@ -10,7 +10,7 @@ import {
 
 import {headerHeight, mobileHeaderHeight, sideMenuWidth} from '../constants';
 
-export const MenuContainer = styled.div`
+export const MenuContainer = styled.aside`
   position: absolute;
   left: 0;
   top: ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)};

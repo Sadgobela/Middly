@@ -19,9 +19,9 @@ function handleClick(e) {
 
 export const SideMenu = ({setIsMenuOpened}) => {
   useEffect(() => {
-    document.body.classList.add('menu-opened');
+    document.body.classList.add('overflow-hidden');
     return () => {
-      document.body.classList.remove('menu-opened');
+      document.body.classList.remove('overflow-hidden');
     };
   });
 

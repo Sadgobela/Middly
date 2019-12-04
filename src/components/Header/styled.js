@@ -4,8 +4,10 @@ import media from 'constants/media';
 import {FlexContainer} from 'globalStyles';
 import {mainWhiteColor, disabledLinkColor, mainBlackColor, primaryColor, headerShadowColor} from 'constants/colors';
 import {headerHeight, mobileHeaderHeight} from './constants';
+import {ItemFollow} from '../../containers/HomePage/components/SearchInput/styled';
 
 export const HeaderWrapper = styled.div`
+  position: relative;
   background: ${mainWhiteColor};
   box-shadow: inset 0px -1px 1px ${headerShadowColor};
 
@@ -25,6 +27,7 @@ export const HeaderContainer = styled.header`
   margin: 0 auto;
   padding: 0 72px 0 69px;
   max-width: 1440px;
+  background: ${mainWhiteColor};
 `;
 
 export const StyledLink = styled.a`
@@ -109,25 +112,6 @@ export const Name = styled.div`
 
 export const StyledHi = styled.div``;
 
-export const BadgesContainer = styled(FlexContainer)`
-  width: ${({isMobile}) => (isMobile ? 'auto' : '120px')};
-  margin-left: ${({isMobile}) => (isMobile ? 'auto' : '0')};
-
-  span {
-    cursor: pointer;
-  }
-
-  .ant-badge-count {
-    width: 16px;
-    height: 16px;
-    font-size: 12px;
-    line-height: 16px;
-    border-radius: 50%;
-    padding: 0;
-    min-width: 16px;
-  }
-`;
-
 export const Burger = styled.button`
   position: ${({isMobile}) => (isMobile ? 'absolute' : 'relative')};
   left: ${({isMobile}) => (isMobile ? '18px' : '0')};
@@ -161,6 +145,46 @@ export const LinksContainer = styled.div`
   display: flex;
   align-items: center;
   letter-spacing: 0.6px;
+  transition: 0.5s;
+  z-index: -1;
+  ${({mobile}) =>
+    mobile
+      ? `
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    & a {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+    }
+  `
+      : null};
+  ${({show}) => (show ? 'top: -100%;' : null)};
+`;
+
+export const BadgesContainer = styled(FlexContainer)`
+  position: relative;
+  width: ${({isMobile}) => (isMobile ? 'auto' : '120px')};
+  margin-left: ${({isMobile}) => (isMobile ? 'auto' : '0')};
+
+  span {
+    cursor: pointer;
+  }
+
+  .ant-badge-count {
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 50%;
+    padding: 0;
+    min-width: 16px;
+  }
 `;
 
 export const CustomBadge = styled(Badge)`
@@ -180,4 +204,104 @@ export const CustomBadge = styled(Badge)`
     }
   `
       : ''}
+`;
+
+export const NotificationBar = styled.div`
+  position: absolute;
+  right: 0;
+  top: calc(100% + 28px);
+  z-index: 999;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -70vw;
+    height: 200vh;
+    width: 200vw;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+`;
+
+export const BarContainer = styled.div`
+  transform: translateX(72px);
+  width: 375px;
+  height: 500px;
+  background: #fff;
+`;
+
+export const BarHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 73px;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0 24.5px 0 19px;
+`;
+
+export const BarHeading = styled.span`
+  font-size: 16px;
+  line-height: 22px;
+  color: #000;
+`;
+
+export const BarTitle = styled.span`
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+`;
+
+export const NotificationsItem = styled.div`
+  display: flex;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0 16px;
+`;
+
+export const ItemDescription = styled.div`
+  margin: 0 0 0 12px;
+`;
+
+export const ItemPic = styled.img`
+  display: block;
+  width: 40px;
+  height: 40px;
+`;
+
+export const ItemHeading = styled.span`
+  display: block;
+
+  &::after {
+    ${({info}) =>
+      info
+        ? `
+      content: '${info}';
+      font-size: 12px;
+      margin: 0 0 0 12px;
+    `
+        : null}
+  }
+`;
+
+export const ItemTitle = styled.span`
+  display: block;
+`;
+
+export const ItemFollowing = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 84px;
+  height: 28px;
+  background: transparent;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  border-radius: 24px;
+  margin: 0 0 0 auto;
+  color: #545454;
+  border: 1px solid #c3c3c3;
 `;

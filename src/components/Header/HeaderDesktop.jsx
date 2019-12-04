@@ -23,12 +23,58 @@ import {
   LinksContainer,
   HeaderWrapper,
   Name,
-  Burger
+  Burger,
+  NotificationBar,
+  BarContainer,
+  BarHeader,
+  BarHeading,
+  BarTitle,
+  NotificationsItem,
+  ItemPic,
+  ItemDescription,
+  ItemHeading,
+  ItemTitle,
+  ItemFollowing,
 } from './styled';
 import BurgerIcon from '../../assets/BurgerIcon';
 
+function getItem(name){
+	if(name === 'notifications'){
+		return (
+		  <>
+			<NotificationsItem>
+				<ItemPic src={defaultAvatar} />
+				<ItemDescription>
+					<ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
+					<ItemTitle>started following you.</ItemTitle>
+				</ItemDescription>
+				<ItemFollowing>Following</ItemFollowing>
+			</NotificationsItem>
+
+        <NotificationsItem>
+          <ItemPic src={defaultAvatar} />
+          <ItemDescription>
+            <ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
+            <ItemTitle>started following you.</ItemTitle>
+          </ItemDescription>
+          <ItemFollowing>Following</ItemFollowing>
+        </NotificationsItem>
+        <NotificationsItem>
+          <ItemPic src={defaultAvatar} />
+          <ItemDescription>
+            <ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
+            <ItemTitle>started following you.</ItemTitle>
+          </ItemDescription>
+          <ItemFollowing>Following</ItemFollowing>
+        </NotificationsItem>
+        </>
+		)
+	}
+}
+
 const Header = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [isNotificationBar, toggleNotificationBar] = useState(false);
 
   return (
     <HeaderWrapper>
@@ -59,10 +105,24 @@ const Header = () => {
           </Name>
         </AvatarContainer>
 
-        <BadgesContainer>
+        <BadgesContainer onClick={()=> toggleNotificationBar(!isNotificationBar)}>
           <NotificationsFeeds />
           <Messages />
           <MyCart />
+          {
+            isNotificationBar ?
+              <NotificationBar>
+                <BarContainer>
+                  <BarHeader>
+                    <BarHeading>Notifications</BarHeading>
+                    <BarTitle>View All</BarTitle>
+                  </BarHeader>
+                  {getItem('notifications')}
+                </BarContainer>
+              </NotificationBar>
+              : null
+          }
+
         </BadgesContainer>
       </HeaderContainer>
     </HeaderWrapper>

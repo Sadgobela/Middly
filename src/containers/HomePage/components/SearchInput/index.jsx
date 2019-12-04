@@ -1,103 +1,114 @@
-import React from 'react';
-
-import { AutoComplete } from 'antd';
-
+import React, { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import SearchIcon from 'assets/SearchIcon';
+import avatar from './img/avatar.jpg';
+import avatar2 from './img/avatar2.jpg';
+import avatar3 from './img/avatar3.jpg';
+import avatar4 from './img/avatar4.jpg';
+import {
+  Search,
+  SearchButton,
+  StyledSelect,
+  SearchContainer,
+  Option,
+  Result,
+  ResultContainer,
+  ResultCategory,
+  CategoryHeading,
+  CategoryHeader,
+  ViewAll,
+  Response,
+  ResponseTitle,
+  CategoryItem,
+  ItemPic,
+  ItemName,
+  ItemTitle,
+  ItemRating,
+  ItemFollow,
+  ItemView,
+  ItemFrom,
+  ItemDescription,
+} from './styled';
 
-import { SearchButton, StyledSelect, SearchContainer } from './styled';
+const avatars = [avatar, avatar2, avatar3, avatar4];
+const category = ['Products', 'Stores', 'Posts'];
+const items = [1, 2];
 
-const { Option, OptGroup } = AutoComplete;
-
-const dataSource = [
-  {
-    title: 'Libraries',
-    children: [
-      {
-        title: 'AntDesign',
-        count: 10000,
-      },
-      {
-        title: 'AntDesign UI',
-        count: 10600,
-      },
-    ],
-  },
-  {
-    title: 'Solutions',
-    children: [
-      {
-        title: 'AntDesign UI',
-        count: 60100,
-      },
-      {
-        title: 'AntDesign',
-        count: 30010,
-      },
-    ],
-  },
-  {
-    title: 'Articles',
-    children: [
-      {
-        title: 'AntDesign design language',
-        count: 100000,
-      },
-    ],
-  },
-];
-
-function renderTitle(title) {
-  return (
-    <span>
-      {title}
-      <a
-        style={{ float: 'right' }}
-        href="https://www.google.com/search?q=antd"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        more
-      </a>
-    </span>
-  );
+function getItem(name){
+  name = name.toLowerCase();
+  if(name === 'products'){
+    return (
+      <CategoryItem>
+        <ItemPic src={avatar} />
+        <ItemDescription>
+          <ItemName>Reebok Crossfit</ItemName>
+          <ItemRating>x x x x x (335)</ItemRating>
+        </ItemDescription>
+        <ItemFrom>From BD119</ItemFrom>
+      </CategoryItem>
+    );
+  }
+  if(name === 'stores'){
+    return (
+      <CategoryItem>
+        <ItemPic src={avatar3} />
+        <ItemDescription>
+          <ItemName>Reebok</ItemName>
+          <ItemTitle>112k followers</ItemTitle>
+        </ItemDescription>
+        <ItemFollow>Follow</ItemFollow>
+      </CategoryItem>
+    );
+  }
+  if(name === 'posts'){
+    return (
+      <CategoryItem>
+        <ItemPic src={avatar4} />
+        <ItemDescription>
+          <ItemName>Nike Seller</ItemName>
+          <ItemTitle>Cream canvas Big Sad Wolf</ItemTitle>
+        </ItemDescription>
+        <ItemView>View</ItemView>
+      </CategoryItem>
+    );
+  }
 }
 
-const options = dataSource
-  .map(group => (
-    <OptGroup key={group.title} label={renderTitle(group.title)}>
-      {group.children.map(opt => (
-        <Option key={opt.title} value={opt.title}>
-          {opt.title}
-          <span className="certain-search-item-count">{opt.count} people</span>
-        </Option>
-      ))}
-    </OptGroup>
-  ))
-  .concat([
-    <Option disabled key="all" className="show-all">
-      <a href="https://www.google.com/search?q=antd" target="_blank" rel="noopener noreferrer">
-        View all results
-      </a>
-    </Option>,
-  ]);
-
-
-function Complete() {
+function getCategory(arr) {
   return (
-    <div className="certain-category-search-wrapper">
-      <AutoComplete
-        className="certain-category-search"
-        dropdownClassName="certain-category-search-dropdown"
-        dropdownMatchSelectWidth={false}
-        dropdownStyle={{ width: 300 }}
-        size="large"
-        style={{ width: '100%' }}
-        dataSource={options}
-        placeholder="Thirts, Shoes"
-        optionLabelProp="value"
-      >
-      </AutoComplete>
+    arr.map( item =>
+      <ResultCategory>
+        <CategoryHeader>
+          <CategoryHeading>{item}</CategoryHeading>
+          <ViewAll>View All</ViewAll>
+        </CategoryHeader>
+        {items.map( () => getItem(item) )}
+      </ResultCategory>
+    )
+  )
+}
 
+const SearchInput = () => {
+
+  const [isShow, showResult] = useState(false);
+
+  const closeHandler = () => {
+    document.addEventListener('click', ev => {
+      const t = ev.target;
+      const close = !t.closest('.search-result-container');
+      if(close){
+        showResult(false);
+      }
+    });
+  };
+
+  const open = () => {
+    showResult(true);
+  };
+
+  return (
+    <SearchContainer>
+      <Search onInput={ open } />
       <StyledSelect value="Brands">
         <Option value="Brands">Brands</Option>
         <Option value="Brands">Brands</Option>
@@ -105,14 +116,31 @@ function Complete() {
       <SearchButton>
         <SearchIcon />
       </SearchButton>
-    </div>
-  );
-}
+      {
+        <CSSTransition
+          in={isShow}
+          timeout={300}
+          classNames={'autocomplete'}
+          unmountOnExit
+        >
+          <>
+            {closeHandler()}
+            <Result>
+              <ResultContainer className="search-result-container">
+                <Response>
+                  <ResponseTitle>Response Title</ResponseTitle>
+                </Response>
+                {
+                  getCategory(category)
+                }
+              </ResultContainer>
+            </Result>
+          </>
 
-const SearchInput = () => (
-  <SearchContainer>
-    <Complete />
-  </SearchContainer>
-);
+        </CSSTransition>
+      }
+    </SearchContainer>
+  )
+};
 
 export default SearchInput;

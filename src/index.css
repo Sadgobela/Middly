@@ -9,7 +9,7 @@ body {
   background: #fff;
 }
 
-body.menu-opened {
+body.overflow-hidden {
   overflow: hidden;
 }
 
