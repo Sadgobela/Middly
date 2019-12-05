@@ -102,20 +102,6 @@ export const MenuList = styled(Menu)`
   }
 `;
 
-export const ItemGroup = styled(Menu.ItemGroup)``;
-
-export const Item = styled(Menu.Item)`
-  &&& {
-    &.ant-menu-item-active {
-      color: ${primaryColor};
-    }
-
-    &:hover {
-      color: ${primaryColor};
-    }
-  }
-`;
-
 export const MenuTitle = styled.span`
   font-weight: bold;
   font-size: 18px;

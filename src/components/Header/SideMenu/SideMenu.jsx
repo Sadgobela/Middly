@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {defaultCategories} from 'constants/staticData';
 import { CSSTransition } from 'react-transition-group';
+import SubcategoryPopup from '../../../containers/HomePage/components/SubcategoryPopup';
 
 import {
   MenuContainer,
@@ -9,12 +10,8 @@ import {
   MenuGroup,
   MenuTitle,
   MenuList,
-  ItemGroup,
-  Item,
   SubMenu
 } from './styled';
-import SubcategoryPopup from "../../../containers/HomePage/components/SubcategoryPopup";
-import {CategoriesWrapper} from "../../../containers/HomePage/components/CategoriesList/styled";
 
 function handleClick(e) {
   console.log('click', e);

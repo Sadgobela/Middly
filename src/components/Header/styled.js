@@ -4,7 +4,6 @@ import media from 'constants/media';
 import {FlexContainer} from 'globalStyles';
 import {mainWhiteColor, disabledLinkColor, mainBlackColor, primaryColor, headerShadowColor} from 'constants/colors';
 import {headerHeight, mobileHeaderHeight} from './constants';
-import {ItemFollow} from '../../containers/HomePage/components/SearchInput/styled';
 
 export const HeaderWrapper = styled.div`
   position: relative;

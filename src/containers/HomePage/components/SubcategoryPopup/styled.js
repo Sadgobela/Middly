@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: absolute;
   top: ${({aside}) => (aside ? '0px' : 'calc(100% + 2px)')};
-  left: ${({aside}) => (aside ? '100%' : 'calc(100% + 2px)')};
+  left: ${({aside}) => (aside ? '100%' : '0')};
   width: 1200px;
   height: 600px;
   background: #fff;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: ${({aside}) => (aside ? 'none' : '0px 4px 15px rgba(0, 0, 0, 0.1)')};
   border-radius: 4px;
   z-index: 10;
   padding: 32px 0 33px 46px;
