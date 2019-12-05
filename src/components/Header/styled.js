@@ -27,7 +27,6 @@ export const HeaderContainer = styled.header`
   margin: 0 auto;
   padding: 0 72px 0 69px;
   max-width: 1440px;
-  background: ${mainWhiteColor};
 `;
 
 export const StyledLink = styled.a`

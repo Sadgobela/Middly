@@ -93,7 +93,7 @@ const HomePageDesktop = () => (
         marginTop={0}
         infinite={false}
         slidesToShow={5}
-        padding={'23px 45px 30px'}
+        padding="23px 45px 30px"
       >
         {shops.map((shop, index) => (
           <CardShop key={index} {...shop} />

@@ -1,22 +1,25 @@
 import styled from 'styled-components';
 import {FlexContainer} from '../../../../globalStyles';
-import {mainBlackColor, primaryColor} from '../../../../constants/colors';
+import {primaryColor} from '../../../../constants/colors';
 
 export const CategoriesWrapper = styled(FlexContainer)`
-  padding: 0 15px;
+  position: relative;
+  margin: 30px 15px;
 `;
 
 export const CategoryItem = styled.a`
-  font-size: 16px;
-  color: ${mainBlackColor};
+  font-size: 14px;
+  line-height: 20px;
+  color: #545454;
   margin-right: 49px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   letter-spacing: 0;
-  padding: 26px 24px
-  
+  padding: 0 19px 6px;
+
   &:hover {
-    color: ${primaryColor};
+    color: #000;
+    box-shadow: 0 2px 0 0 #000;
   }
 `;

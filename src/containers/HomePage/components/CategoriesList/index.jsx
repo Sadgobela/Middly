@@ -1,32 +1,38 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import { arrayOf, string } from 'prop-types';
 import { CategoryItem, CategoriesWrapper } from './styled';
 import { ContentWrapper } from '../../../../globalStyles';
+import SubcategoryPopup from '../SubcategoryPopup';
 
-export default class CategoriesList extends Component {
-  state = {
-    current: 'mail',
-  };
+const CategoriesList = ({list})=> {
+  const [isSubcategoryOpen, toggleSubcategoryOpen] = useState(false);
 
-  render() {
-    const { list } = this.props;
-
-    return (
-      <ContentWrapper>
-        <CategoriesWrapper justifyContent="flex-start">
-          {list.map(category => (
-            <CategoryItem className="menu-item"
-                          key={category}
-            >
-              {category}
-            </CategoryItem>
-          ))}
-        </CategoriesWrapper>
-      </ContentWrapper>
-    );
-  }
-}
+  return (
+    <ContentWrapper>
+      <CategoriesWrapper
+        onMouseEnter={()=>toggleSubcategoryOpen(!isSubcategoryOpen)}
+        onMouseLeave={()=>toggleSubcategoryOpen(!isSubcategoryOpen)}
+        justifyContent="flex-start">
+        {list.map(category => (
+          <CategoryItem key={category} >
+            {category}
+          </CategoryItem>
+        ))}
+        <CSSTransition
+          in={isSubcategoryOpen}
+          timeout={300}
+          classNames={'subcategory'}
+        >
+          <SubcategoryPopup/>
+        </CSSTransition>
+      </CategoriesWrapper>
+    </ContentWrapper>
+  );
+};
 
 CategoriesList.propTypes = {
   list: arrayOf(string).isRequired
 };
+
+export default CategoriesList;

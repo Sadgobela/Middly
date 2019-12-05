@@ -41,16 +41,6 @@ import BurgerIcon from '../../assets/BurgerIcon';
 function getItem(name){
 	if(name === 'notifications'){
 		return (
-		  <>
-			<NotificationsItem>
-				<ItemPic src={defaultAvatar} />
-				<ItemDescription>
-					<ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
-					<ItemTitle>started following you.</ItemTitle>
-				</ItemDescription>
-				<ItemFollowing>Following</ItemFollowing>
-			</NotificationsItem>
-
         <NotificationsItem>
           <ItemPic src={defaultAvatar} />
           <ItemDescription>
@@ -59,15 +49,6 @@ function getItem(name){
           </ItemDescription>
           <ItemFollowing>Following</ItemFollowing>
         </NotificationsItem>
-        <NotificationsItem>
-          <ItemPic src={defaultAvatar} />
-          <ItemDescription>
-            <ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
-            <ItemTitle>started following you.</ItemTitle>
-          </ItemDescription>
-          <ItemFollowing>Following</ItemFollowing>
-        </NotificationsItem>
-        </>
 		)
 	}
 }
