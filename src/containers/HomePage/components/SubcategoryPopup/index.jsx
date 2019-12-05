@@ -103,11 +103,11 @@ function getContent(data){
 		<>
 			{
 				data.map(content =>
-					<Column>
+					<Column key={content.heading}>
 						<Heading>{content.heading}</Heading>
 						{
 							content.list.map(item =>
-								<Item>{item}</Item>
+								<Item key={item}>{item}</Item>
 							)
 						}
 					</Column>

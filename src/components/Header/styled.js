@@ -254,9 +254,9 @@ export const BarTitle = styled.span`
 export const NotificationsItem = styled.div`
   display: flex;
   align-items: center;
-  height: 80px;
-  border-bottom: 1px solid #e4e4e4;
-  padding: 0 16px;
+  min-height: 80px;
+  border-bottom: 1px solid #efefef;
+  padding: 16px;
 `;
 
 export const ItemDescription = styled.div`
@@ -271,14 +271,18 @@ export const ItemPic = styled.img`
 
 export const ItemHeading = styled.span`
   display: block;
-
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
   &::after {
     ${({info}) =>
       info
         ? `
       content: '${info}';
-      font-size: 12px;
       margin: 0 0 0 12px;
+      font-size: 14px;
+      line-height: 17px;
+      color: #999999;
     `
         : null}
   }
@@ -286,6 +290,18 @@ export const ItemHeading = styled.span`
 
 export const ItemTitle = styled.span`
   display: block;
+  max-width: 227px;
+  font-size: 14px;
+  line-height: 16px;
+  color: ${({gray}) => (gray ? '#999' : '#000')};
+`;
+
+export const PostTitle = styled.span`
+  max-width: 227px;
+  font-size: 14px;
+  line-height: 17px;
+  color: #999;
+  margin: 0 4px 0 0;
 `;
 
 export const ItemFollowing = styled.a`
@@ -295,12 +311,35 @@ export const ItemFollowing = styled.a`
   text-align: center;
   width: 84px;
   height: 28px;
-  background: transparent;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 14px;
   text-decoration: none;
   border-radius: 24px;
+  color: #fff;
   margin: 0 0 0 auto;
-  color: #545454;
-  border: 1px solid #c3c3c3;
+  background: #ed484f;
+  text-transform: capitalize;
+
+  &::before {
+    content: '+';
+    color: #fff;
+    margin-right: 10px;
+  }
+
+  ${({type}) =>
+    type === 'following'
+      ? `
+    background: transparent;
+    color: #666;
+    border: 1px solid #666;
+    &::before{
+      content: none;
+    }
+    `
+      : null};
+`;
+
+export const ItemReplied = styled.img`
+  display: block;
+  max-width: 100%;
 `;

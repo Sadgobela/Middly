@@ -8,7 +8,7 @@ export const Container = styled.div`
   height: 600px;
   background: #fff;
   box-shadow: ${({aside}) => (aside ? 'none' : '0px 4px 15px rgba(0, 0, 0, 0.1)')};
-  border-radius: 4px;
+  border-radius: ${({aside}) => (aside ? 'none' : '4px')};
   z-index: 10;
   padding: 32px 0 33px 46px;
   transition: 0.3s;

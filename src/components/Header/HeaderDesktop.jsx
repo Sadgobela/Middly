@@ -10,6 +10,8 @@ import LogoIcon from 'assets/LogoIcon';
 import SearchInput from 'containers/HomePage/components/SearchInput';
 import BoxIcon from 'assets/BoxIcon';
 import defaultAvatar from 'images/defaultAvatar.png';
+import userAvatar from './img/userAvatar.png';
+import postPic from './img/postPic.jpg';
 
 import {
   HeaderContainer,
@@ -35,27 +37,118 @@ import {
   ItemHeading,
   ItemTitle,
   ItemFollowing,
+  ItemReplied,
+  PostTitle,
 } from './styled';
 import BurgerIcon from '../../assets/BurgerIcon';
 
+const templateData = {
+  notifications: [
+    {
+      avatar: userAvatar,
+      heading: 'Kevin Baltimorian',
+      title: 'started following you.',
+      info: '3min ',
+      type: 'following',
+    },
+    {
+      avatar: userAvatar,
+      heading: 'Nika Pink',
+      title: 'following you.',
+      info: '2w started ',
+      type: 'follow',
+    },
+    {
+      avatar: userAvatar,
+      postPreview: postPic,
+      heading: 'Oleg Welton',
+      title: 'Wow! So good suit and tie, I like it very much. Please, give me the contact of the store where you bought it.',
+      info: '1d replited to you',
+      type: 'replied',
+      post: 'your post:',
+    },
+    {
+      avatar: userAvatar,
+      postPreview: postPic,
+      heading: 'Oleg Welton',
+      title: 'Wow! So good suit and tie, I like it very much. Please, give me the contact of the store where you bought it.',
+      info: '1d replited to you',
+      type: 'replied',
+      post: 'post:',
+    },
+  ],
+};
+
 function getItem(name){
 	if(name === 'notifications'){
+
 		return (
-        <NotificationsItem>
-          <ItemPic src={defaultAvatar} />
-          <ItemDescription>
-            <ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
-            <ItemTitle>started following you.</ItemTitle>
-          </ItemDescription>
-          <ItemFollowing>Following</ItemFollowing>
-        </NotificationsItem>
+
+        <>
+          {
+            templateData[name].map(item =>
+              <NotificationsItem key={item.heading}>
+                <ItemPic src={item.avatar} />
+                <ItemDescription>
+                  <ItemHeading info={item.info} >{item.heading}</ItemHeading>
+                  <ItemTitle gray>
+                    {
+                      item.post ? <PostTitle>{item.post}</PostTitle> : null
+                    }
+                    {item.title}
+                  </ItemTitle>
+                </ItemDescription>
+                {
+                  item.type === 'follow' || item.type === 'following'
+                    ? <ItemFollowing type={item.type}>{item.type}</ItemFollowing>
+                    : <ItemReplied src={item.postPreview} />
+                }
+              </NotificationsItem>
+            )
+          }
+        </>
 		)
 	}
+  if(name === 'message'){
+    return (
+      <NotificationsItem>
+        <ItemPic src={defaultAvatar} />
+        <ItemDescription>
+          <ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
+          <ItemTitle>started following you.</ItemTitle>
+        </ItemDescription>
+        <ItemFollowing>Following</ItemFollowing>
+      </NotificationsItem>
+    )
+  }
+  if(name === 'cart'){
+    return (
+      <NotificationsItem>
+        <ItemPic src={defaultAvatar} />
+        <ItemDescription>
+          <ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
+          <ItemTitle>started following you.</ItemTitle>
+        </ItemDescription>
+        <ItemFollowing>Following</ItemFollowing>
+      </NotificationsItem>
+    )
+  }
 }
 
 const Header = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const [isNotificationBar, toggleNotificationBar] = useState(false);
+  const [isNotificationBar, setBarState] = useState(false);
+  const [barContentType, setBarContentType] = useState('');
+
+  function getBarContent(type) {
+    return getItem(type);
+  }
+
+  function getContentType(ev) {
+    // setBarContentType(ev.target.getAttribute('name'));
+    setBarContentType('notifications');
+    setBarState(!isNotificationBar);
+  }
 
   return (
     <HeaderWrapper>
@@ -86,23 +179,27 @@ const Header = () => {
           </Name>
         </AvatarContainer>
 
-        <BadgesContainer onClick={()=> toggleNotificationBar(!isNotificationBar)}>
+        <BadgesContainer onClick={ ev => getContentType(ev) }>
           <NotificationsFeeds />
           <Messages counter={1} />
           <MyCart />
-          {
-            isNotificationBar ?
-              <NotificationBar>
-                <BarContainer>
-                  <BarHeader>
-                    <BarHeading>Notifications</BarHeading>
-                    <BarTitle>View All</BarTitle>
-                  </BarHeader>
-                  {getItem('notifications')}
-                </BarContainer>
-              </NotificationBar>
-              : null
-          }
+
+          <CSSTransition
+            in={isNotificationBar}
+            timeout={300}
+            classNames="notificationBar"
+            unmountOnExit
+          >
+            <NotificationBar>
+              <BarContainer>
+                <BarHeader>
+                  <BarHeading>Notifications</BarHeading>
+                  <BarTitle>View All</BarTitle>
+                </BarHeader>
+                {getBarContent(barContentType)}
+              </BarContainer>
+            </NotificationBar>
+          </CSSTransition>
 
         </BadgesContainer>
       </HeaderContainer>
