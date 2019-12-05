@@ -23,6 +23,7 @@ const CategoriesList = ({list})=> {
           in={isSubcategoryOpen}
           timeout={300}
           classNames={'subcategory'}
+          unmountOnExit
         >
           <SubcategoryPopup/>
         </CSSTransition>

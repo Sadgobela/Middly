@@ -1,5 +1,6 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {defaultCategories} from 'constants/staticData';
+import { CSSTransition } from 'react-transition-group';
 
 import {
   MenuContainer,
@@ -12,12 +13,15 @@ import {
   Item,
   SubMenu
 } from './styled';
+import SubcategoryPopup from "../../../containers/HomePage/components/SubcategoryPopup";
+import {CategoriesWrapper} from "../../../containers/HomePage/components/CategoriesList/styled";
 
 function handleClick(e) {
   console.log('click', e);
 }
 
 export const SideMenu = ({setIsMenuOpened}) => {
+  const [isSubcategoryOpen, toggleSubcategoryOpen] = useState(false);
   useEffect(() => {
     document.body.classList.add('overflow-hidden');
     return () => {
@@ -43,20 +47,23 @@ export const SideMenu = ({setIsMenuOpened}) => {
                 <a href="#">Feed</a>
               </li>
             </LinksList>
-            <MenuGroup>
+            <MenuGroup
+              onMouseEnter={()=>toggleSubcategoryOpen(!isSubcategoryOpen)}
+              onMouseLeave={()=>toggleSubcategoryOpen(!isSubcategoryOpen)}>
               <MenuTitle>Categories</MenuTitle>
               <MenuList onClick={handleClick} mode="vertical">
                 {defaultCategories.map((cat, index) => (
-                    <SubMenu key={cat} title={<span>{cat}</span>}>
-                      {index === 0 && (
-                          <ItemGroup title={<MenuTitle>{cat}</MenuTitle>}>
-                            <Item key="1">Option 1</Item>
-                            <Item key="2">Option 2</Item>
-                          </ItemGroup>
-                      )}
-                    </SubMenu>
+                    <SubMenu key={cat} title={<span>{cat}</span>} />
                 ))}
               </MenuList>
+              <CSSTransition
+                in={isSubcategoryOpen}
+                timeout={300}
+                classNames={'subcategory'}
+                unmountOnExit
+              >
+                <SubcategoryPopup aside mainHeading={'Clothings'}/>
+              </CSSTransition>
             </MenuGroup>
           </MenuContentWrapper>
         </MenuContainer>

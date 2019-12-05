@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: absolute;
-  top: calc(100% + 2px);
-  left: 0;
-  display: flex;
+  top: ${({aside}) => (aside ? '0px' : 'calc(100% + 2px)')};
+  left: ${({aside}) => (aside ? '100%' : 'calc(100% + 2px)')};
   width: 1200px;
   height: 600px;
   background: #fff;
@@ -28,6 +27,15 @@ export const Column = styled.div`
   margin: 0 54px 0 0;
 `;
 
+export const MainHeading = styled.span`
+  display: block;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 21px 4px;
+`;
+
 export const Heading = styled.span`
   display: block;
   font-size: 16px;
@@ -43,4 +51,8 @@ export const Item = styled.a`
   color: #000;
   margin: 0 0 8px 0;
   text-decoration: none;
+`;
+
+export const Row = styled.div`
+  display: flex;
 `;

@@ -79,6 +79,7 @@ export const LinksList = styled.ul`
 `;
 
 export const MenuGroup = styled.div`
+  position: relative;
   padding: 25px 0 25px 15px;
 `;
 

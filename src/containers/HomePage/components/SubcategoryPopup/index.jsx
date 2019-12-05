@@ -4,7 +4,10 @@ import {
 	Column,
 	Heading,
 	Item,
+	MainHeading,
+	Row,
 } from './styled';
+import {ContentWrapper} from "../../../../globalStyles";
 
 const templateData = [
 	{
@@ -114,11 +117,17 @@ function getContent(data){
 	)
 }
 
-const SubcategoryPopup = ()=> {
+const SubcategoryPopup = ({mainHeading, aside}) => {
 
 	return (
-		<Container>
-			{getContent(templateData)}
+		<Container aside={aside}>
+			{
+				mainHeading ? <MainHeading>{mainHeading}</MainHeading> : null
+			}
+			<Row>
+				{ getContent(templateData) }
+			</Row>
+
 		</Container>
 	)
 
