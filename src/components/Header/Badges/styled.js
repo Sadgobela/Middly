@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Badge = styled.button`
+const Badge = styled.button`
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -11,10 +11,20 @@ export const Badge = styled.button`
   padding: 0;
   border: none;
   outline: none;
+  cursor: pointer;
+
+  & .badge--active path {
+    fill: #ed494f;
+  }
+
+  &:hover path {
+    fill: #ed494f;
+  }
+
   &::before {
-    content: '1';
+    content: ${({counter}) => (counter ? `'${counter}'` : 'none')};
     position: absolute;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -30,3 +40,5 @@ export const Badge = styled.button`
     border-radius: 50%;
   }
 `;
+
+export default Badge;

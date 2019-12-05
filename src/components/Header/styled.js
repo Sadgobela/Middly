@@ -226,7 +226,8 @@ export const NotificationBar = styled.div`
 export const BarContainer = styled.div`
   transform: translateX(72px);
   width: 375px;
-  height: 500px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
   background: #fff;
 `;
 
@@ -252,6 +253,7 @@ export const BarTitle = styled.span`
 `;
 
 export const NotificationsItem = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   min-height: 80px;
@@ -269,11 +271,21 @@ export const ItemPic = styled.img`
   height: 40px;
 `;
 
+export const MessageDate = styled.span`
+  position: absolute;
+  right: 17.5px;
+  top: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999;
+`;
+
 export const ItemHeading = styled.span`
   display: block;
   font-size: 14px;
   line-height: 17px;
   font-weight: 400;
+  color: #000;
   &::after {
     ${({info}) =>
       info
@@ -293,6 +305,7 @@ export const ItemTitle = styled.span`
   max-width: 227px;
   font-size: 14px;
   line-height: 16px;
+  color: #000;
   color: ${({gray}) => (gray ? '#999' : '#000')};
 `;
 
@@ -342,4 +355,65 @@ export const ItemFollowing = styled.a`
 export const ItemReplied = styled.img`
   display: block;
   max-width: 100%;
+`;
+
+export const Cart = styled.div``;
+
+export const CartHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 73px;
+  padding: 0 0 0 16px;
+  border-bottom: 1px solid #e4e4e4;
+`;
+
+export const CartHeading = styled.span`
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000;
+`;
+
+export const CartCounter = styled.span`
+  display: block;
+`;
+
+export const Quantity = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const QuantityTitle = styled.span`
+  margin: 0 16px 0 0;
+`;
+
+export const QuantityCounter = styled.input`
+  display: inline-flex;
+  background: transparent;
+  border: none;
+  margin: 0 11px;
+  width: 7px;
+`;
+
+export const QuantityAdd = styled.button`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 21px;
+  background: #efefef;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+
+  &::before {
+    content: '+';
+  }
+`;
+
+export const QuantityRemove = styled(QuantityAdd)`
+  &::before {
+    content: '-';
+  }
 `;

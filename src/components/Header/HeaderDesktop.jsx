@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import {CSSTransition} from 'react-transition-group';
-import {NotificationsFeeds} from './NotificationsFeeds/NotificationsFeeds';
-import {Messages} from './Messages/Messages';
-import {MyCart} from './MyCart/MyCart';
+import Badges from './Badges';
 import {SideMenu} from './SideMenu/SideMenu';
 
 import LogoIcon from 'assets/LogoIcon';
@@ -39,6 +37,16 @@ import {
   ItemFollowing,
   ItemReplied,
   PostTitle,
+  Cart,
+  CartHeader,
+  Quantity,
+  QuantityAdd,
+  QuantityRemove,
+  QuantityTitle,
+  QuantityCounter,
+  CartHeading,
+  CartCounter,
+  MessageDate,
 } from './styled';
 import BurgerIcon from '../../assets/BurgerIcon';
 
@@ -77,21 +85,84 @@ const templateData = {
       post: 'post:',
     },
   ],
+  message: [
+    {
+      avatar: userAvatar,
+      heading: 'Jorge Webb',
+      title: 'I would like to return th dress can be... ',
+      date: 'Today, 10:30 pm ',
+      counter: '1',
+      status: true
+    },
+    {
+      avatar: userAvatar,
+      heading: 'Jorge Webb',
+      title: 'I would like to return th dress can be... ',
+      date: 'Today, 10:30 pm ',
+      counter: '1',
+      status: true
+    },
+    {
+      avatar: userAvatar,
+      heading: 'Jorge Webb',
+      title: 'I would like to return th dress can be... ',
+      date: 'Today, 10:30 pm ',
+      counter: '1',
+      status: true
+    },
+    {
+      avatar: userAvatar,
+      heading: 'Jorge Webb',
+      title: 'I would like to return th dress can be... ',
+      date: 'Today, 10:30 pm ',
+      counter: '1',
+      status: true
+    },
+    {
+      avatar: userAvatar,
+      heading: 'Jorge Webb',
+      title: 'I would like to return th dress can be... ',
+      date: 'Today, 10:30 pm ',
+      counter: '1',
+      status: true
+    },
+    {
+      avatar: userAvatar,
+      heading: 'Jorge Webb',
+      title: 'I would like to return th dress can be... ',
+      date: 'Today, 10:30 pm ',
+      counter: '1',
+      status: true
+    },
+  ],
+  cart: [
+    {
+      pic: postPic,
+      name: 'Winter coat',
+      price: 132,
+      currency: '$',
+    },
+    {
+      pic: postPic,
+      name: 'Sneakers MIU MIU',
+      price: 292,
+      currency: '$',
+    },
+  ]
 };
 
 function getItem(name){
 	if(name === 'notifications'){
 
 		return (
-
         <>
           {
-            templateData[name].map(item =>
-              <NotificationsItem key={item.heading}>
+            templateData[name].map((item, i) =>
+              <NotificationsItem key={item.heading + i}>
                 <ItemPic src={item.avatar} />
                 <ItemDescription>
                   <ItemHeading info={item.info} >{item.heading}</ItemHeading>
-                  <ItemTitle gray>
+                  <ItemTitle gray={item.type !== 'replied'}>
                     {
                       item.post ? <PostTitle>{item.post}</PostTitle> : null
                     }
@@ -111,26 +182,51 @@ function getItem(name){
 	}
   if(name === 'message'){
     return (
-      <NotificationsItem>
-        <ItemPic src={defaultAvatar} />
-        <ItemDescription>
-          <ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
-          <ItemTitle>started following you.</ItemTitle>
-        </ItemDescription>
-        <ItemFollowing>Following</ItemFollowing>
-      </NotificationsItem>
+      <>
+        {
+          templateData[name].map((item, i) =>
+            <NotificationsItem key={item.heading + i}>
+              <ItemPic src={item.avatar} />
+              <ItemDescription>
+                <ItemHeading info={item.info} >{item.heading}</ItemHeading>
+                <ItemTitle>
+                  {item.title}
+                </ItemTitle>
+              </ItemDescription>
+              <MessageDate>{item.date}</MessageDate>
+            </NotificationsItem>
+          )
+        }
+      </>
     )
   }
   if(name === 'cart'){
     return (
-      <NotificationsItem>
-        <ItemPic src={defaultAvatar} />
-        <ItemDescription>
-          <ItemHeading info='3min' >Kevin Baltimorian</ItemHeading>
-          <ItemTitle>started following you.</ItemTitle>
-        </ItemDescription>
-        <ItemFollowing>Following</ItemFollowing>
-      </NotificationsItem>
+      <Cart>
+        <CartHeader>
+          <CartHeading>My cart</CartHeading>
+          <CartCounter>2 item</CartCounter>
+        </CartHeader>
+        {
+          templateData[name].map( item =>
+            <NotificationsItem key={item.name}>
+              <ItemPic src={item.pic} />
+              <ItemDescription>
+                <ItemHeading >{item.name}</ItemHeading>
+                <ItemTitle>
+                  {item.price}
+                </ItemTitle>
+                <Quantity>
+                  <QuantityTitle>Quantity:</QuantityTitle>
+                  <QuantityRemove/>
+                  <QuantityCounter value={1}/>
+                  <QuantityAdd/>
+                </Quantity>
+              </ItemDescription>
+            </NotificationsItem>
+          )
+        }
+      </Cart>
     )
   }
 }
@@ -145,9 +241,8 @@ const Header = () => {
   }
 
   function getContentType(ev) {
-    // setBarContentType(ev.target.getAttribute('name'));
-    setBarContentType('notifications');
-    setBarState(!isNotificationBar);
+    setBarContentType(ev.target.closest('button').getAttribute('name'));
+    setBarState(true);
   }
 
   return (
@@ -179,10 +274,10 @@ const Header = () => {
           </Name>
         </AvatarContainer>
 
-        <BadgesContainer onClick={ ev => getContentType(ev) }>
-          <NotificationsFeeds />
-          <Messages counter={1} />
-          <MyCart />
+        <BadgesContainer>
+          <Badges barToggle={ getContentType } name='notifications' />
+          <Badges barToggle={ getContentType } name='message' counter='4' />
+          <Badges barToggle={ getContentType } name='cart' />
 
           <CSSTransition
             in={isNotificationBar}
@@ -190,12 +285,17 @@ const Header = () => {
             classNames="notificationBar"
             unmountOnExit
           >
-            <NotificationBar>
+            <NotificationBar onClick={()=> setBarState(false)}>
               <BarContainer>
-                <BarHeader>
-                  <BarHeading>Notifications</BarHeading>
-                  <BarTitle>View All</BarTitle>
-                </BarHeader>
+                {
+                  barContentType !== 'cart'
+                    ?
+                    <BarHeader>
+                      <BarHeading>Notifications</BarHeading>
+                      <BarTitle>View All</BarTitle>
+                    </BarHeader>
+                    : null
+                }
                 {getBarContent(barContentType)}
               </BarContainer>
             </NotificationBar>
