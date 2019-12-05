@@ -107,7 +107,7 @@ const Header = () => {
 
         <BadgesContainer onClick={()=> toggleNotificationBar(!isNotificationBar)}>
           <NotificationsFeeds />
-          <Messages />
+          <Messages counter={1} />
           <MyCart />
           {
             isNotificationBar ?

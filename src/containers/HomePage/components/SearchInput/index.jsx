@@ -108,7 +108,7 @@ const SearchInput = () => {
 
   return (
     <SearchContainer>
-      <Search onInput={ open } />
+      <Search placeholder="Thirts, Shoes" onInput={ open } />
       <StyledSelect value="Brands">
         <Option value="Brands">Brands</Option>
         <Option value="Brands">Brands</Option>

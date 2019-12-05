@@ -62,16 +62,17 @@ export const StyledLink = styled.a`
 export const SellButton = styled(Button)`
   &&& {
     display: inline-flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 87px;
-    height: 36px;
+    height: 28px;
     color: ${mainBlackColor};
     font-weight: 700;
     background: ${mainWhiteColor};
     text-transform: uppercase;
-    padding: 0 13px 0 15px;
-    line-height: 32px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
     border: 1px solid #c3c3c3;
     border-radius: 24px;
     margin: 0 2.4%;
@@ -145,8 +146,6 @@ export const LinksContainer = styled.div`
   display: flex;
   align-items: center;
   letter-spacing: 0.6px;
-  transition: 0.5s;
-  z-index: -1;
   ${({mobile}) =>
     mobile
       ? `
@@ -155,12 +154,14 @@ export const LinksContainer = styled.div`
     left: 0;
     width: 100%;
     background: #fff;
+    transition: 0.5s;
+    z-index: -1;
     & a {
       width: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 50px;
+      height: 40px;
     }
   `
       : null};

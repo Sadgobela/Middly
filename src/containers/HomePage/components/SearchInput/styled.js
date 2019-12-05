@@ -10,10 +10,13 @@ export const SearchContainer = styled.div`
 
 export const Search = styled(Input)`
   &&& {
+    caret-color: #ed484f;
     width: 274px;
     height: 40px;
     background: ${headerSearchColor};
     border: none;
+    font-size: 14px;
+    line-height: 20px;
     border-radius: 4px 0 0 4px;
     &:focus {
       box-shadow: none;

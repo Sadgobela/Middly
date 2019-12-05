@@ -22,11 +22,11 @@ const Header = ({isMobile}) => {
   const scrollHandler = ev => {
 
     console.log(lastScroll, window.pageYOffset);
-    if(lastScroll > window.pageYOffset){
+    if(lastScroll < window.pageYOffset){
       ToggleLinks(true);
       setLastScroll(window.pageYOffset);
     } else {
-      ToggleLinks(false)
+      ToggleLinks(false);
       setLastScroll(window.pageYOffset);
     }
   };
