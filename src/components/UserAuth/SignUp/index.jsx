@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
+import Social from '../Social';
 import CreateFields from "../CreateFields";
 import Close from '../CloseButton';
 import {
@@ -11,9 +12,6 @@ import {
 	Heading,
 	FieldsWrap,
 	Title,
-	WithGoogle,
-	WithFacebook,
-	SocialName,
 	Agreement,
 	Line,
 	LinkTo,
@@ -94,12 +92,7 @@ const SignUp = ({ form }) => {
 					{formData.submitTitle}
 				</Submit>
 				<Line/>
-				<WithGoogle>
-					Continue with <SocialName color="#287BDD">Google</SocialName>
-				</WithGoogle>
-				<WithFacebook>
-					Continue with <SocialName color="#175195">Facebook</SocialName>
-				</WithFacebook>
+				<Social />
 				<Title>Already have an account? <LinkTo to="/sign-in" >Sign In</LinkTo></Title>
 			</SignForm>
 		</Overlay>

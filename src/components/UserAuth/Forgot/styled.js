@@ -35,6 +35,7 @@ export const SignForm = styled(Form)`
       margin: 64px 0 0 0;
       padding: 39px 0 60px;
       min-height: 100vh;
+      border-radius: 0px;
     }
   }
 `;
@@ -53,6 +54,7 @@ export const Heading = styled.span`
   @media (max-width: ${media.mobileMax}) {
     font-size: 22px;
     line-height: 27px;
+    font-weight: 500;
   }
 `;
 
@@ -97,6 +99,13 @@ export const Submit = styled(Button)`
     line-height: 140%;
     border: none;
     margin-top: 16px;
+
+    @media (max-width: ${media.mobileMax}) {
+      width: 168px;
+      height: 40px;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
   }
 `;
 

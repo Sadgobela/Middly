@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import {Form, Input, Button, Checkbox} from 'antd';
 import {Link} from 'react-router-dom';
 import media from '../../../constants/media';
-import google from './img/google.svg';
-import facebook from './img/facebook.svg';
 
 export const Overlay = styled.div`
   position: fixed;
@@ -37,6 +35,7 @@ export const SignForm = styled(Form)`
       margin: 64px 0 0 0;
       padding: 39px 0 60px;
       min-height: 100vh;
+      border-radius: 0px;
     }
   }
 `;
@@ -54,6 +53,7 @@ export const Heading = styled.span`
   @media (max-width: ${media.mobileMax}) {
     font-size: 22px;
     line-height: 27px;
+    font-weight: 500;
   }
 `;
 
@@ -117,6 +117,10 @@ export const Line = styled.i`
   height: 1px;
   background: #e4e4e4;
   margin: 28px 0;
+
+  @media (max-width: ${media.mobileMax}) {
+    display: none;
+  }
 `;
 
 export const FormItem = styled(Form.Item)`
@@ -195,45 +199,12 @@ export const Submit = styled(Button)`
     font-size: 14px;
     line-height: 140%;
     border: none;
-  }
-`;
 
-export const WithGoogle = styled(Button)`
-  &&& {
-    position: relative;
-    width: 266px;
-    height: 48px;
-    border-color: #3d82f0;
-    border-radius: 4px;
-    margin: 0 0 0 8px;
-
-    &::before {
-      display: block;
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: auto;
-      bottom: auto;
-      left: 10px;
-      width: 28px;
-      height: 24px;
-      background: url(${google}) no-repeat center;
-      background-size: contain;
-      opacity: 1;
-      transform: translateY(-50%);
-    }
-  }
-`;
-
-export const WithFacebook = styled(WithGoogle)`
-  &&& {
-    margin-top: 24px;
-    &::before {
-      left: 14px;
-      width: 20px;
-      height: 20px;
-      background: url(${facebook}) no-repeat center;
-      background-size: contain;
+    @media (max-width: ${media.mobileMax}) {
+      width: 168px;
+      height: 40px;
+      margin-bottom: 40px;
+      font-weight: 500;
     }
   }
 `;

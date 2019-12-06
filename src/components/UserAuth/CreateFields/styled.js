@@ -85,10 +85,10 @@ export const Field = styled(Input)`
 export const EyeIcon = styled.i`
   position: relative;
   display: block;
-  width: ${({type}) => (type === 'password' ? '16px' : '20px')};
-  height: ${({type}) => (type === 'password' ? '12px' : '20px')};
+  width: 24px;
+  height: 24px;
   background: url(${({type}) => (type === 'password' ? eye : cancel)}) no-repeat center;
-  background-size: cover;
+  background-size: contain;
   cursor: pointer;
 
   &.suffix-showPassword {
@@ -101,7 +101,7 @@ export const EyeIcon = styled.i`
       width: 2px;
       background: #8f8f8f;
       border-radius: 2px;
-      transform: translate(7px, -50%) rotate(-45deg);
+      transform: translate(11px, -50%) rotate(-45deg);
     }
   }
 `;
