@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {Button} from 'antd';
-import google from '../SignIn/img/google.svg';
-import facebook from '../SignIn/img/facebook.svg';
+import google from './img/google.svg';
+import facebook from './img/facebook.svg';
 
 export const SocialName = styled.i`
   font-size: inherit;
