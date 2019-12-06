@@ -43,6 +43,7 @@ export const FormItem = styled(Form.Item)`
       @media (max-width: ${media.mobileMax}) {
         font-weight: 400;
         line-height: 17px;
+        margin-bottom: 0;
       }
 
       &::before {

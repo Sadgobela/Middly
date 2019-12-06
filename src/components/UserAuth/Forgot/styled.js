@@ -33,7 +33,7 @@ export const SignForm = styled(Form)`
     @media (max-width: ${media.mobileMax}) {
       width: 100%;
       margin: 64px 0 0 0;
-      padding: 32px 0 60px;
+      padding: 39px 0 60px;
       min-height: 100vh;
     }
   }
@@ -77,6 +77,9 @@ export const FieldsWrap = styled.div`
   width: 100%;
   padding: 0 22px;
   margin-top: 30px;
+  @media (max-width: ${media.mobileMax}) {
+    padding: 0 24px;
+  }
 `;
 
 export const Submit = styled(Button)`
@@ -110,4 +113,8 @@ export const BackToSign = styled(Link)`
   margin: 0;
   padding: 0;
   cursor: pointer;
+
+  @media (max-width: ${media.mobileMax}) {
+    top: 37px;
+  }
 `;

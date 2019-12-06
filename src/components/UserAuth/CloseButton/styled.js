@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import media from '../../../constants/media';
 
 export const CloseButton = styled(Link)`
   position: absolute;
@@ -14,4 +15,8 @@ export const CloseButton = styled(Link)`
   margin: 0;
   padding: 0;
   cursor: pointer;
+
+  @media (max-width: ${media.mobileMax}) {
+    top: 41px;
+  }
 `;

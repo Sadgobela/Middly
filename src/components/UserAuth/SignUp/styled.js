@@ -35,7 +35,7 @@ export const SignForm = styled(Form)`
     @media (max-width: ${media.mobileMax}) {
       width: 100%;
       margin: 64px 0 0 0;
-      padding: 32px 0 60px;
+      padding: 39px 0 60px;
       min-height: 100vh;
     }
   }
@@ -99,6 +99,9 @@ export const FieldsWrap = styled.div`
   flex-wrap: wrap;
   padding: 0 22px;
   margin-top: 26px;
+  @media (max-width: ${media.mobileMax}) {
+    padding: 0 24px;
+  }
 `;
 
 export const SocialName = styled.i`
