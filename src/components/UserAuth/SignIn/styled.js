@@ -21,6 +21,7 @@ export const Overlay = styled.div`
 
 export const SignForm = styled(Form)`
   &&& {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,7 +75,7 @@ export const LinkTo = styled(Link)`
   color: #4a90e2;
   margin: 0;
   white-space: nowrap;
-  ${({right}) => (right ? 'width: 100%; text-align: right; margin-bottom: 36px' : null)};
+  ${({right}) => (right ? 'width: 100%; text-align: right; margin-bottom: 43px' : null)};
 
   @media (max-width: ${media.mobileMax}) {
     display: ${({block}) => (block ? 'block' : 'inline-block')};
@@ -86,7 +87,7 @@ export const FieldsWrap = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 22px;
-  margin-top: 26px;
+  margin-top: 36px;
 `;
 
 export const SocialName = styled.i`
@@ -101,7 +102,7 @@ export const Line = styled.i`
   width: 100%;
   height: 1px;
   background: #e4e4e4;
-  margin: 28px 0;
+  margin: 44px 0 28px;
 `;
 
 export const Submit = styled(Button)`
@@ -150,7 +151,7 @@ export const WithGoogle = styled(Button)`
 
 export const WithFacebook = styled(WithGoogle)`
   &&& {
-    margin-top: 22px;
+    margin-top: 24px;
     &::before {
       left: 14px;
       width: 20px;

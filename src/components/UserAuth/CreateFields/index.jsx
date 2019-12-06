@@ -36,8 +36,8 @@ const CreateFields = (form, data) => {
 	return (
 			<>
 				{
-					data.fields.map( field =>
-						<FormItem key={field.label} width={field.width || null} label={field.label}>
+					data.fields.map( (field, i) =>
+						<FormItem last={i === data.fields.length - 1} key={field.label} width={field.width || null} label={field.label}>
 							{
 								getFieldDecorator(field.label.replace(/ /gi, ''), {
 									rules: [{ required: field.isRequired, message: field.errorMessage }],

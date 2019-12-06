@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import CreateFields from "../CreateFields";
+import Close from '../CloseButton';
+import Arrow from 'assets/ArrowLeft';
 import {
 	Overlay,
 	SignForm,
@@ -8,6 +10,7 @@ import {
 	Heading,
 	FieldsWrap,
 	Title,
+	BackToSign,
 } from './styled';
 
 const formData =
@@ -46,6 +49,10 @@ const Forgot = ({ form }) => {
 	return (
 		<Overlay>
 			<SignForm onSubmit={onSubmitHandler}>
+				<BackToSign to='/sign-in'>
+					<Arrow />
+				</BackToSign>
+				<Close />
 				<Heading>{formData.heading}</Heading>
 				<Title>{formData.title}</Title>
 				<FieldsWrap>

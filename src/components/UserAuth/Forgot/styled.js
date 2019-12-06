@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {Form, Button} from 'antd';
 import media from '../../../constants/media';
+import {Link} from 'react-router-dom';
 
 export const Overlay = styled.div`
   position: fixed;
@@ -18,6 +19,7 @@ export const Overlay = styled.div`
 
 export const SignForm = styled(Form)`
   &&& {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +27,7 @@ export const SignForm = styled(Form)`
     background: #fff;
     box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.07);
     border-radius: 4px;
-    padding: 30px 0 80px;
+    padding: 30px 0 88px;
     margin: 48px 0;
 
     @media (max-width: ${media.mobileMax}) {
@@ -56,8 +58,8 @@ export const Heading = styled.span`
 
 export const Title = styled.span`
   display: block;
-  margin: 26px auto 0;
-  font-size: 14px;
+  margin: 20px auto 0;
+  font-size: 16px;
   line-height: 20px;
   text-align: center;
   color: #464646;
@@ -74,7 +76,7 @@ export const FieldsWrap = styled.div`
   flex-wrap: wrap;
   width: 100%;
   padding: 0 22px;
-  margin-top: 26px;
+  margin-top: 30px;
 `;
 
 export const Submit = styled(Button)`
@@ -91,5 +93,21 @@ export const Submit = styled(Button)`
     font-size: 14px;
     line-height: 140%;
     border: none;
+    margin-top: 16px;
   }
+`;
+
+export const BackToSign = styled(Link)`
+  position: absolute;
+  top: 16px;
+  left: 15px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 `;

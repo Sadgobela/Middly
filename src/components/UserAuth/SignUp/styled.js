@@ -21,6 +21,7 @@ export const Overlay = styled.div`
 
 export const SignForm = styled(Form)`
   &&& {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +59,7 @@ export const Heading = styled.span`
 
 export const Title = styled.span`
   display: block;
-  margin: 26px auto 0;
+  margin: 28px auto 0;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
@@ -131,6 +132,10 @@ export const FormItem = styled(Form.Item)`
       margin: 2px 0 0 0;
       color: #ed484f;
       ${({checkbox}) => (checkbox ? 'margin-left: 29px' : null)}
+    }
+
+    & .ant-checkbox-inner {
+      border-color: #545454;
     }
 
     &.ant-form-item-with-help .ant-checkbox-inner {
@@ -219,7 +224,7 @@ export const WithGoogle = styled(Button)`
 
 export const WithFacebook = styled(WithGoogle)`
   &&& {
-    margin-top: 22px;
+    margin-top: 24px;
     &::before {
       left: 14px;
       width: 20px;

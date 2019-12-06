@@ -8,7 +8,7 @@ import cancel from './img/cancel.svg';
 export const FormItem = styled(Form.Item)`
   &&& {
     width: ${({width}) => (width ? `${width}px` : '100%')};
-    margin-bottom: 28px;
+    margin-bottom: ${({last}) => (last ? '12px' : '28px')};
 
     @media (max-width: ${media.mobileMax}) {
       margin-bottom: 16px;
@@ -33,10 +33,12 @@ export const FormItem = styled(Form.Item)`
     }
 
     & label {
+      display: block;
       font-weight: bold;
       font-size: 14px;
       line-height: 20px;
       color: #464646;
+      margin-bottom: 8px;
 
       @media (max-width: ${media.mobileMax}) {
         font-weight: 400;
@@ -65,6 +67,10 @@ export const Field = styled(Input)`
     border-radius: 2px;
     //border-color: #C3C3C3;
 
+    & .ant-input {
+      border-radius: 2px;
+    }
+
     & .ant-input-suffix {
       opacity: 0;
     }
@@ -78,10 +84,10 @@ export const Field = styled(Input)`
 export const EyeIcon = styled.i`
   position: relative;
   display: block;
-  width: 20px;
-  height: 20px;
+  width: ${({type}) => (type === 'password' ? '16px' : '20px')};
+  height: ${({type}) => (type === 'password' ? '12px' : '20px')};
   background: url(${({type}) => (type === 'password' ? eye : cancel)}) no-repeat center;
-  background-size: contain;
+  background-size: cover;
   cursor: pointer;
 
   &.suffix-showPassword {
@@ -94,7 +100,7 @@ export const EyeIcon = styled.i`
       width: 2px;
       background: #8f8f8f;
       border-radius: 2px;
-      transform: translate(9px, -50%) rotate(-45deg);
+      transform: translate(7px, -50%) rotate(-45deg);
     }
   }
 `;

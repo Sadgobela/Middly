@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import CreateFields from "../CreateFields";
+import Close from '../CloseButton';
 import {
 	Overlay,
 	SignForm,
@@ -22,7 +23,7 @@ const formData =
 		submitTitle: 'Sign In',
 		fields: [
 			{
-				label: 'Email / Username', type: 'text', errorMessage: 'Please enter your Email', isRequired: true,
+				label: 'Email', type: 'email', errorMessage: 'Please enter your Email', isRequired: true,
 			},
 			{
 				label: 'Password', type: 'password', errorMessage: 'Please enter a password (minimum 8 symbols)', isRequired: true,
@@ -54,11 +55,12 @@ const SignIn = ({ form }) => {
 	return (
 		<Overlay>
 			<SignForm onSubmit={onSubmitHandler}>
+				<Close />
 				<Heading>{formData.heading}</Heading>
-				<Title>{formData.title} <LinkTo block to="/sign-up" >Create account</LinkTo></Title>
+				<Title>{formData.title} <LinkTo block='true' to="/sign-up" >Create account</LinkTo></Title>
 				<FieldsWrap>
 					{CreateFields(form, formData)}
-					<LinkTo right to="/forgot" >Forgot Password?</LinkTo>
+					<LinkTo right="true" to="/forgot" >Forgot Password?</LinkTo>
 				</FieldsWrap>
 				<Submit type="primary" htmlType="submit">
 					{formData.submitTitle}
