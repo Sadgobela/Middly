@@ -11,8 +11,20 @@ body {
   background: #fff;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+html.overflow-hidden {
+  overflow: hidden;
+  height: 100%;
+}
+
 body.overflow-hidden {
   overflow: hidden;
+  height: 100%;
 }
 
 #root {

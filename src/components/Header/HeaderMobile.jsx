@@ -17,12 +17,11 @@ import {
 
 const Header = ({isMobile}) => {
 
-  const [isShow, ToggleLinks] = useState(true);
+  const [isHide, ToggleLinks] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
   const scrollHandler = ev => {
 
-    console.log(lastScroll, window.pageYOffset);
-    if(lastScroll < window.pageYOffset){
+    if(lastScroll > 0 && lastScroll < window.pageYOffset){
       ToggleLinks(true);
       setLastScroll(window.pageYOffset);
     } else {
@@ -30,12 +29,14 @@ const Header = ({isMobile}) => {
       setLastScroll(window.pageYOffset);
     }
   };
-  window.addEventListener('scroll', scrollHandler);
+  setTimeout(()=>{
+    window.addEventListener('scroll', scrollHandler);
+  }, 1000);
 
 
   return (
     <HeaderWrapper>
-      <LinksContainer show={isShow} mobile>
+      <LinksContainer className='testLinksContainer' hide={isHide} mobile>
         <StyledLink active>Marketplace</StyledLink>
         <StyledLink>Feed</StyledLink>
       </LinksContainer>

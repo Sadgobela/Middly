@@ -19,6 +19,7 @@ export const WithGoogle = styled(Button)`
     border-color: #3d82f0;
     border-radius: 4px;
     margin: 0 0 0 8px;
+    color: #464646;
 
     &::before {
       display: block;

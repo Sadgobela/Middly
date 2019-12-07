@@ -10,7 +10,7 @@ export const CategoriesWrapper = styled(FlexContainer)`
 export const CategoryItem = styled.a`
   font-size: 14px;
   line-height: 20px;
-  color: #545454;
+  color: #000;
   margin-right: 49px;
   font-weight: 500;
   cursor: pointer;

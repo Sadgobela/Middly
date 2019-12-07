@@ -32,7 +32,7 @@ export const SignForm = styled(Form)`
 
     @media (max-width: ${media.mobileMax}) {
       width: 100%;
-      margin: 64px 0 0 0;
+      margin: 57px 0 0 0;
       padding: 39px 0 60px;
       min-height: 100vh;
       border-radius: 0px;
@@ -60,7 +60,7 @@ export const Heading = styled.span`
 export const Title = styled.span`
   display: block;
   margin: 28px auto 0;
-  font-size: 14px;
+  font-size: ${({forgot}) => (forgot ? '16px' : '14px')};
   line-height: 20px;
   text-align: center;
   max-width: 275px;
@@ -76,6 +76,7 @@ export const LinkTo = styled(Link)`
   color: #4a90e2;
   margin: 0;
   white-space: nowrap;
+  font-weight: 500;
   ${({right}) => (right ? 'width: 100%; text-align: right; margin-bottom: 43px' : null)};
 
   @media (max-width: ${media.mobileMax}) {
@@ -97,8 +98,8 @@ export const Agreement = styled.span`
 `;
 
 export const FieldsWrap = styled.div`
-  display: flex;
   width: 100%;
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 22px;
@@ -138,8 +139,21 @@ export const FormItem = styled(Form.Item)`
       ${({checkbox}) => (checkbox ? 'margin-left: 29px' : null)}
     }
 
+    & .ant-checkbox-checked .ant-checkbox-inner {
+      background: #000;
+      border: none;
+    }
+
+    & .ant-checkbox-checked::after {
+      content: none;
+    }
+
     & .ant-checkbox-inner {
       border-color: #545454;
+
+      @media (max-width: ${media.mobileMax}) {
+        border-color: #666;
+      }
     }
 
     &.ant-form-item-with-help .ant-checkbox-inner {
@@ -150,7 +164,7 @@ export const FormItem = styled(Form.Item)`
       font-weight: bold;
       font-size: 14px;
       line-height: 20px;
-      color: #464646;
+      color: #000;
 
       @media (max-width: ${media.mobileMax}) {
         font-weight: 400;

@@ -26,25 +26,36 @@ export const HeaderContainer = styled.header`
   margin: 0 auto;
   padding: 0 72px 0 69px;
   max-width: 1440px;
+
+  @media (max-width: ${media.mobileMax}) {
+    padding: 0 16px;
+    background: ${mainWhiteColor};
+  }
 `;
 
 export const StyledLink = styled.a`
   padding: 4px 8px;
   cursor: pointer;
-  color: ${disabledLinkColor};
+  color: #999;
   border: none;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0;
+
   ${({active}) =>
     active
       ? ` 
-    color: ${mainBlackColor};
-    padding-bottom: 2px;
-    border-bottom: 2px solid ${primaryColor};
-    `
+      color: ${mainBlackColor};
+      padding-bottom: 2px;
+      font-weight: 700;
+      border-bottom: 2px solid ${primaryColor};
+      `
       : null};
+
+  @media (max-width: 767px) {
+    ${({active}) => (active ? null : 'border-bottom: 2px solid #EFEFEF;')};
+  }
 
   &:not(:last-child) {
     margin-right: 26px;
@@ -126,6 +137,7 @@ export const Burger = styled.button`
 `;
 
 export const LogoContainer = styled.a`
+  width: 114px;
   padding-top: 6px;
   margin-right: 5.7%;
   ${({isMobile}) =>
@@ -136,6 +148,7 @@ export const LogoContainer = styled.a`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 91px;
   `
       : ''}
 `;
@@ -160,10 +173,11 @@ export const LinksContainer = styled.div`
       justify-content: center;
       align-items: center;
       height: 40px;
+      margin: 0 !important;
     }
   `
       : null};
-  ${({show}) => (show ? 'top: -100%;' : null)};
+  ${({hide}) => (hide ? 'top: -100%;' : null)};
 `;
 
 export const BadgesContainer = styled(FlexContainer)`

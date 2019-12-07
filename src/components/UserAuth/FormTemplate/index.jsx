@@ -22,9 +22,19 @@ import {
 const FormTemplate = ({ form, formData, formType }) => {
 
 	useEffect(() => {
-		document.body.style.overflow = 'hidden';
+		document.querySelector('body').classList.add('overflow-hidden');
+		document.querySelector('html').classList.add('overflow-hidden');
+		try{
+			document.querySelector('.testLinksContainer').style.top = '-100%';
+			document.querySelector('.testLinksContainer').nextElementSibling.style.background = 'transparent';
+		} catch (e) { }
 		return () => {
-			document.body.style.overflow = 'visible';
+			document.querySelector('body').classList.remove('overflow-hidden');
+			document.querySelector('html').classList.remove('overflow-hidden');
+			try{
+				document.querySelector('.testLinksContainer').style.top = '';
+				document.querySelector('.testLinksContainer').nextElementSibling.style.background = '';
+			} catch (e) { }
 		};
 	});
 
@@ -55,7 +65,7 @@ const FormTemplate = ({ form, formData, formType }) => {
 				: null
 				}
 				<Heading>{formData.heading}</Heading>
-				<Title>{formData.title}&#160;
+				<Title forgot={isForgot}>{formData.title}&#160;
 					{
 						!isForgot
 						? <LinkTo block='true' to={formType === 'signIn' ? '/sign-up' : '/sign-in'} >

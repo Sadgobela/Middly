@@ -28,7 +28,7 @@ export const FormItem = styled(Form.Item)`
       margin: 2px 0 0 0;
     }
 
-    &.ant-form-item-with-help .ant-input-suffix {
+    &.ant-form-item-with-help .ant-input-suffix:valid {
       opacity: 1 !important;
     }
 
@@ -69,6 +69,7 @@ export const Field = styled(Input)`
     //border-color: #C3C3C3;
 
     & .ant-input {
+      box-shadow: none;
       border-radius: 2px;
     }
 
@@ -91,17 +92,21 @@ export const EyeIcon = styled.i`
   background-size: contain;
   cursor: pointer;
 
+  &::before {
+    ${({type}) => (type === 'password' ? 'content: ""' : null)};
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 30px;
+    width: 2px;
+    background: #8f8f8f;
+    border-radius: 2px;
+    transform: translate(11px, -50%) rotate(-45deg);
+  }
+
   &.suffix-showPassword {
     &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      height: 30px;
-      width: 2px;
-      background: #8f8f8f;
-      border-radius: 2px;
-      transform: translate(11px, -50%) rotate(-45deg);
+      content: none;
     }
   }
 `;
