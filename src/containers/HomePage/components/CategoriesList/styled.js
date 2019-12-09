@@ -4,7 +4,11 @@ import {primaryColor} from '../../../../constants/colors';
 
 export const CategoriesWrapper = styled(FlexContainer)`
   position: relative;
-  margin: 30px 15px;
+  margin: 30px 0 30px -19px;
+
+  @media (max-width: 1260px) {
+    margin-left: 25px;
+  }
 `;
 
 export const CategoryItem = styled.a`

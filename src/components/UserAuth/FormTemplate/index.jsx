@@ -4,6 +4,7 @@ import Social from '../Social';
 import CreateFields from "../CreateFields";
 import Close from '../CloseButton';
 import Arrow from 'assets/ArrowLeft';
+import Logo from 'assets/LogoIcon';
 import {
 	Overlay,
 	SignForm,
@@ -17,24 +18,17 @@ import {
 	Line,
 	LinkTo,
 	BackToSign,
+	Header,
 } from './styled';
 
-const FormTemplate = ({ form, formData, formType }) => {
+const FormTemplate = ({ form, formData, formType, validator }) => {
 
 	useEffect(() => {
 		document.querySelector('body').classList.add('overflow-hidden');
 		document.querySelector('html').classList.add('overflow-hidden');
-		try{
-			document.querySelector('.testLinksContainer').style.top = '-100%';
-			document.querySelector('.testLinksContainer').nextElementSibling.style.background = 'transparent';
-		} catch (e) { }
 		return () => {
 			document.querySelector('body').classList.remove('overflow-hidden');
 			document.querySelector('html').classList.remove('overflow-hidden');
-			try{
-				document.querySelector('.testLinksContainer').style.top = '';
-				document.querySelector('.testLinksContainer').nextElementSibling.style.background = '';
-			} catch (e) { }
 		};
 	});
 
@@ -55,6 +49,9 @@ const FormTemplate = ({ form, formData, formType }) => {
 
 	return (
 		<Overlay>
+			<Header>
+				<Logo />
+			</Header>
 			<SignForm onSubmit={onSubmitHandler}>
 				<Close />
 				{isForgot

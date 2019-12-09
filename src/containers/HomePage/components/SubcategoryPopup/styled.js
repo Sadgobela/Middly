@@ -14,6 +14,10 @@ export const Container = styled.div`
   transition: 0.3s;
   opacity: 0;
 
+  @media (max-width: 1300px) {
+    width: 980px;
+  }
+
   &.subcategory-enter-active {
     opacity: 1;
   }
@@ -25,6 +29,10 @@ export const Container = styled.div`
 
 export const Column = styled.div`
   margin: 0 54px 0 0;
+
+  @media (max-width: 1300px) {
+    margin-right: 45px;
+  }
 `;
 
 export const MainHeading = styled.span`

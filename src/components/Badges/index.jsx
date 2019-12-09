@@ -4,18 +4,22 @@ import Badge from './styled';
 import LetterIcon from 'assets/LetterIcon';
 import ShoppingCart from 'assets/ShoppingCart';
 import BellIcon from 'assets/BellIcon';
+import Search from 'assets/Search';
 
-const Badges = ({name, counter, barToggle}) => {
+const Badges = ({name, counter, action}) => {
 
 	function getIcon(name) {
 		if(name === 'notifications'){
-			return <BellIcon/>
+			return <BellIcon />
 		}
 		if(name === 'message'){
-			return <LetterIcon/>
+			return <LetterIcon />
 		}
 		if(name === 'cart'){
-			return <ShoppingCart/>
+			return <ShoppingCart />
+		}
+		if(name === 'search'){
+			return <Search color='#000' />
 		}
 	}
 
@@ -25,7 +29,7 @@ const Badges = ({name, counter, barToggle}) => {
 			activeBadge.classList.remove('badge--active');
 		}
 		ev.target.classList.add('badge--active');
-		barToggle(ev);
+		action(ev);
 	}
 
 	return(

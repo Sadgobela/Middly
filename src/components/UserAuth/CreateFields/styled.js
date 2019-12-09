@@ -83,6 +83,16 @@ export const Field = styled(Input)`
   }
 `;
 
+export const CheckUsername = styled.i`
+  &.username-field {
+    display: none;
+  }
+
+  &.validUsername {
+    display: block;
+  }
+`;
+
 export const EyeIcon = styled.i`
   position: relative;
   display: block;

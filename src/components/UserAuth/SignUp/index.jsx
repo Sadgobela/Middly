@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import FormTemplate from "../FormTemplate";
 
 const formData =
@@ -17,7 +17,7 @@ const formData =
 				label: 'Email', type: 'email', errorMessage: 'Please enter your Email', isRequired: true,
 			},
 			{
-				label: 'Select Username', type: 'text', errorMessage: 'Please enter Username', isRequired: true,
+				label: 'Select Username', name: 'username', type: 'text', errorMessage: 'Please enter Username', isRequired: true,
 			},
 			{
 				label: 'Password', type: 'password', errorMessage: 'Please enter a password (minimum 8 symbols)', isRequired: true,
@@ -28,6 +28,22 @@ const formData =
 ;
 
 const SignUp = () => {
+
+	const checkUsername = ev =>{
+		if(ev.target.value.length > 3){
+			ev.target.parentNode.querySelector('.username-field').classList.add('validUsername');
+		} else {
+			ev.target.parentNode.querySelector('.username-field').classList.remove('validUsername');
+		}
+	};
+
+	useEffect(() => {
+		const field = document.querySelector('.username-field').parentNode.querySelector('input');
+		field.addEventListener('input', checkUsername);
+		return () => {
+			field.removeEventListener('input', checkUsername);
+		};
+	});
 
 	return (
 		<FormTemplate formData={formData} formType='signUp' />

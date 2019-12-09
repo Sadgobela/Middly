@@ -13,8 +13,30 @@ export const Overlay = styled.div`
   justify-content: center;
   align-items: flex-start;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 999;
+  z-index: 1100;
   overflow: auto;
+`;
+
+export const Header = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  width: 100%;
+  height: 57px;
+
+  & svg {
+    width: 91px;
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+  }
 `;
 
 export const SignForm = styled(Form)`

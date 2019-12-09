@@ -12,6 +12,17 @@ const Badge = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+  margin: 0 20px 0 0;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 0 24px 0 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 
   & .badge--active path {
     fill: #ed494f;

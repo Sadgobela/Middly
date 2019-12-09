@@ -23,9 +23,14 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   height: ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)};
+  justify-content: space-between;
   margin: 0 auto;
   padding: 0 72px 0 69px;
   max-width: 1440px;
+
+  @media (max-width: 1360px) {
+    padding: 0 30px;
+  }
 
   @media (max-width: ${media.mobileMax}) {
     padding: 0 16px;
@@ -84,10 +89,18 @@ export const SellButton = styled(Button)`
     line-height: 20px;
     border: 1px solid #c3c3c3;
     border-radius: 24px;
-    margin: 0 2.4%;
+    margin: 0 2.4% 0 0;
+
+    & svg {
+      margin-right: 6px;
+    }
 
     &:hover {
       color: ${mainBlackColor};
+    }
+
+    @media (max-width: 1250px) {
+      display: none;
     }
   }
 `;
@@ -104,6 +117,10 @@ export const AvatarContainer = styled(FlexContainer)`
     border-radius: 50%;
     margin-right: 16px;
   }
+
+  @media (max-width: 1150px) {
+    display: none;
+  }
 `;
 
 export const StyledName = styled.div`
@@ -118,6 +135,12 @@ export const Name = styled.div`
   font-size: 14px;
   line-height: 17px;
   color: #000;
+`;
+
+export const BarControls = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: ${({isMobile}) => (isMobile ? 'auto' : '0')};
 `;
 
 export const StyledHi = styled.div``;
@@ -137,7 +160,7 @@ export const Burger = styled.button`
 `;
 
 export const LogoContainer = styled.a`
-  width: 114px;
+  min-width: 114px;
   padding-top: 6px;
   margin-right: 5.7%;
   ${({isMobile}) =>
@@ -148,7 +171,7 @@ export const LogoContainer = styled.a`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 91px;
+    min-width: 91px;
   `
       : ''}
 `;
@@ -183,7 +206,6 @@ export const LinksContainer = styled.div`
 export const BadgesContainer = styled(FlexContainer)`
   position: relative;
   width: ${({isMobile}) => (isMobile ? 'auto' : '120px')};
-  margin-left: ${({isMobile}) => (isMobile ? 'auto' : '0')};
 
   span {
     cursor: pointer;

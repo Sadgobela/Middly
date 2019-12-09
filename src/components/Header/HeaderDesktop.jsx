@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {CSSTransition} from 'react-transition-group';
-import Badges from './Badges';
+import Badges from '../Badges';
 import {SideMenu} from './SideMenu/SideMenu';
 import NotificationBar from '../NotificationBar';
 import LogoIcon from 'assets/LogoIcon';
@@ -21,55 +21,87 @@ import {
   HeaderWrapper,
   Name,
   Burger,
+  BarControls,
 } from './styled';
 import BurgerIcon from '../../assets/BurgerIcon';
 
-const Header = () => {
+const Header = ({isMobile}) => {
 
   const [isNotificationBar, setBarState] = useState(false);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [barContentType, setBarContentType] = useState('');
 
   function getContentType(ev) {
+    if(ev === 'profile'){
+      setBarContentType(ev);
+      setBarState(true);
+      return;
+    }
     setBarContentType(ev.target.closest('button').getAttribute('name'));
     setBarState(true);
   }
 
   return (
     <HeaderWrapper>
-      <HeaderContainer>
-        <Burger onClick={() => setIsMenuOpened(!isMenuOpened)}>
+      <HeaderContainer isMobile={isMobile}>
+        <Burger isMobile={isMobile} onClick={() => setIsMenuOpened(!isMenuOpened)}>
           <BurgerIcon />
         </Burger>
         <CSSTransition in={isMenuOpened} timeout={300} classNames={'sideMenu'} unmountOnExit>
           <SideMenu setIsMenuOpened={ setIsMenuOpened } />
         </CSSTransition>
-        <LogoContainer href="#">
+        <LogoContainer isMobile={isMobile} href="#">
           <LogoIcon />
         </LogoContainer>
-        <LinksContainer>
+        <LinksContainer mobile={isMobile}>
           <StyledLink active>Marketplace</StyledLink>
           <StyledLink>Feed</StyledLink>
         </LinksContainer>
-        <SearchInput />
-        <SellButton>
-          <BoxIcon />
-          Sell
-        </SellButton>
-        <AvatarContainer>
-          <img src={defaultAvatar} alt="avatar" />
-          <Name flexDirection="column">
-            <StyledHi>Hi,</StyledHi>
-            <StyledName>Kathryn</StyledName>
-          </Name>
-        </AvatarContainer>
+        {
+          isMobile ?
+            null
+            :
+            <>
+              <SearchInput isMobile={isMobile} />
+              <SellButton>
+                <BoxIcon />
+                Sell
+              </SellButton>
+            </>
+        }
 
-        <BadgesContainer>
-          <Badges barToggle={ getContentType } name='notifications' />
-          <Badges barToggle={ getContentType } name='message' counter='4' />
-          <Badges barToggle={ getContentType } name='cart' />
+        <BarControls isMobile={isMobile} className='barControls'>
+          {
+            isMobile ?
+              null
+              :
+              <AvatarContainer onClick={() => getContentType('profile')}>
+                <img src={defaultAvatar} alt="avatar" />
+                <Name flexDirection="column">
+                  <StyledHi>Hi,</StyledHi>
+                  <StyledName>Kathryn</StyledName>
+                </Name>
+              </AvatarContainer>
+          }
 
-        </BadgesContainer>
+          <BadgesContainer isMobile={isMobile} className='badgesContainer'>
+            {
+              isMobile
+              ?
+                <>
+                  <SearchInput isMobile={isMobile} />
+                  <Badges action={ getContentType } name='cart' />
+                </>
+              :
+              <>
+                <Badges action={ getContentType } name='notifications' />
+                <Badges action={ getContentType } name='message' counter='4' />
+                <Badges action={ getContentType } name='cart' />
+              </>
+            }
+          </BadgesContainer>
+        </BarControls>
+
       </HeaderContainer>
 
       <CSSTransition
@@ -78,9 +110,7 @@ const Header = () => {
         classNames="notificationBar"
         unmountOnExit
       >
-        <NotificationBar contentType={barContentType} closeHandler={setBarState}>
-
-        </NotificationBar>
+        <NotificationBar contentType={barContentType} closeHandler={setBarState} />
       </CSSTransition>
     </HeaderWrapper>
   );

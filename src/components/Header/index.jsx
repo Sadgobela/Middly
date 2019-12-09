@@ -5,7 +5,7 @@ import HeaderMobile from './HeaderMobile';
 
 const Header = ({isMobile}) => {
   return (
-    isMobile ? <HeaderMobile isMobile={isMobile}/> : <HeaderDesktop/>
+    <HeaderDesktop isMobile={isMobile}/>
   );
 };
 

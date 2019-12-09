@@ -1,9 +1,11 @@
 import React from 'react';
 import {
 	EyeIcon,
+	CheckUsername,
 	Field,
 	FormItem,
 } from './styled';
+import Check from 'assets/Check'
 
 const CreateFields = (form, data) => {
 
@@ -30,6 +32,9 @@ const CreateFields = (form, data) => {
 		if(type === 'email'){
 			return <EyeIcon type={type} onClick={ ev => clear(ev.target)} />
 		}
+		if(type === 'username'){
+			return <CheckUsername className='username-field'><Check /></CheckUsername>
+		}
 		return null;
 	};
 
@@ -40,8 +45,14 @@ const CreateFields = (form, data) => {
 						<FormItem last={i === data.fields.length - 1} key={field.label} width={field.width || null} label={field.label}>
 							{
 								getFieldDecorator(field.label.replace(/ /gi, ''), {
-									rules: [{ required: field.isRequired, message: field.errorMessage }],
-								})( <Field suffix={setIcon(field.type)} type={field.type} />,)
+									rules: [{ required: field.isRequired, message: field.errorMessage },
+									],
+								})( <Field
+									className={field.name === 'username' ? 'username-field' : null}
+									autoComplete='off'
+									suffix={setIcon( field.name === 'username' ? 'username' : field.type)}
+									type={field.type} />,
+								)
 							}
 						</FormItem>
 					)

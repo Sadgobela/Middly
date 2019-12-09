@@ -36,7 +36,7 @@ const Header = ({isMobile}) => {
 
   return (
     <HeaderWrapper>
-      <LinksContainer className='testLinksContainer' hide={isHide} mobile>
+      <LinksContainer hide={isHide} mobile>
         <StyledLink active>Marketplace</StyledLink>
         <StyledLink>Feed</StyledLink>
       </LinksContainer>

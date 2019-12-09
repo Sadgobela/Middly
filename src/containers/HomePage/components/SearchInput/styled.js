@@ -5,21 +5,68 @@ import {primaryColor, headerSelectColor, headerSearchColor, mainBlackColor} from
 export const SearchContainer = styled.div`
   position: relative;
   display: flex;
-  margin: 0 0 0 4.9%;
+  flex-grow: 1;
+  margin: 0 2.4% 0 4.9%;
+
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background: #fff;
+    padding: 16px 0;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(-30px);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.14);
+  }
+
+  &.autocomplete-enter-active {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  &.autocomplete-enter-done {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 `;
 
 export const Search = styled(Input)`
   &&& {
     caret-color: #ed484f;
-    width: 274px;
     height: 40px;
     background: ${headerSearchColor};
     border: none;
     font-size: 14px;
     line-height: 20px;
     border-radius: 4px 0 0 4px;
-    &:focus {
+    outline: none;
+    box-shadow: none;
+
+    & .ant-input {
+      outline: none;
+      border: none;
       box-shadow: none;
+
+      @media (max-width: 767px) {
+        padding-left: 46px;
+        background: #efefef;
+        border: none;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+      background: #fff;
+      margin-left: 17px;
     }
   }
 `;
@@ -67,6 +114,10 @@ export const Result = styled.div`
   transition: 0.3s;
   opacity: 0;
 
+  @media (max-width: 767px) {
+    top: 100%;
+  }
+
   &.autocomplete-enter-active {
     opacity: 1;
   }
@@ -94,11 +145,25 @@ export const ResultContainer = styled.div`
   width: 100%;
   background: #fff;
   border-radius: 4px;
+  @media (max-width: 767px) {
+    height: 100vh;
+  }
 `;
 
 export const Response = styled.div`
   margin: 0 0 24px 0;
   padding: 0 0 0 16px;
+
+  @media (max-width: 767px) {
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06), inset 0px 1px 1px rgba(0, 0, 0, 0.06);
+    border-radius: 0px 0px 4px 4px;
+    padding: 21px 0 20px 0;
+  }
 `;
 
 export const ResponseTitle = styled.span`
@@ -106,6 +171,14 @@ export const ResponseTitle = styled.span`
   line-height: 16px;
   color: #7a7a7a;
   margin: 8px 0 0 0;
+
+  @media (max-width: 767px) {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+    margin: 8px 0 0 16px;
+  }
 `;
 
 export const ResultCategory = styled.div`
@@ -154,13 +227,24 @@ export const ItemDescription = styled.div`
 
 export const ItemName = styled.span`
   display: block;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
 `;
 
 export const ItemTitle = styled.span`
   display: block;
+  font-size: 12px;
+  line-height: 16px;
+  color: #7a7a7a;
+  margin-top: 4px;
 `;
 
-export const ItemRating = styled.span``;
+export const ItemRating = styled.span`
+  font-size: 12px;
+  line-height: 16px;
+  color: #464646;
+`;
 
 export const ItemFollow = styled.a`
   display: flex;
@@ -201,4 +285,121 @@ export const ItemFrom = styled.a`
   line-height: 20px;
   color: #ed484f;
   margin: 0 0 0 auto;
+`;
+
+export const TabList = styled.div`
+  display: flex;
+  margin-bottom: 16px;
+`;
+
+export const Tab = styled.button`
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex-basis: 25%;
+  height: 40px;
+  margin: 0 8px 0 0;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: ${({active}) => (active ? 700 : 400)};
+  background: transparent;
+  border: none;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: ${({active}) => (active ? '#ED484F' : '#EFEFEF')};
+    border-radius: 10px;
+  }
+`;
+
+export const RecentlyHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const SearchCancel = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 9px 0 16px;
+  color: #ed484f;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  background: transparent;
+  border: none;
+  outline: none;
+`;
+
+export const RecentlyList = styled.div`
+  & svg {
+    transform: rotate(45deg);
+    margin-left: auto;
+  }
+`;
+
+export const SearchInputWrap = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+`;
+
+export const RecentlyItem = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 17.5px 0 16px;
+  margin: 16px 0 0 0;
+  color: #000;
+`;
+
+export const ClearRecently = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 9px 0 16px;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-decoration: underline;
+`;
+
+export const ProductItem = styled.div`
+  display: flex;
+  align-items: center;
+  height: 90px;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  margin: 0 16px 8px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+export const ProductItemDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ProductItemPic = styled.img`
+  display: block;
+  max-width: 100%;
+  width: 90px;
+  height: 90px;
+  margin: 0 16px 0 0;
+  border-radius: 4px;
 `;
