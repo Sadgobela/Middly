@@ -100,14 +100,15 @@ const SearchInput = ({isMobile}) => {
   return (
     isMobile
       ?
-      <SearchInputMobile
-        getItem={getItem}
+      <SearchInputMobile />
+      :
+      < SearchInputDesktop
+        getCategory={getCategory}
         closeHandler={closeHandler}
         isShow={isShow}
         open={showResult}
       />
-      :
-      <SearchInputDesktop />
+      
   )
 };
 
