@@ -89,18 +89,18 @@ export default function UIkit() {
   return (
     <Container>
       <KitHeading>UI kit</KitHeading>
-      <Title xl capitalize text>Title font-size: 42px;</Title>
-      <Title lg capitalize doveGray>H1 title font-size: 32px;</Title>
-      <TitleH2 md dark>H2 thin Title font-size: 28px;</TitleH2>
-      <TitleH3 mdSmall black>H3 Title font-size: 18px;</TitleH3>
-      <TitleH4 nm black thin>H4 thin Title font-size: 16px;</TitleH4>
-      <TitleH5 sm black>H5 Title font-size: 16px;</TitleH5>
-      <Text nm doveGray thin>Text font-size: 16px;</Text>
+      <Title xl capitalize text name="h1">Title font-size: 42px;</Title>
+      <Title lg capitalize doveGray name="h1">H1 title font-size: 32px;</Title>
+      <TitleH2 md dark name="h2">H2 thin Title font-size: 28px;</TitleH2>
+      <TitleH3 mdSmall black name="h3">H3 Title font-size: 18px;</TitleH3>
+      <TitleH4 nm black thin name="h4">H4 thin Title font-size: 16px;</TitleH4>
+      <TitleH5 sm black name="h5">H5 Title font-size: 16px;</TitleH5>
+      <Text nm doveGray thin name="text">Text font-size: 16px;</Text>
       <HorizontalDevider />
-      <Button>Normal</Button>
-      <Button red>Primary</Button>
-      <Button red radius>Primary</Button>
-      <Button radius>Primary</Button>
+      <Button name="button">Normal</Button>
+      <Button red name="button">Primary</Button>
+      <Button red radius name="button">Primary</Button>
+      <Button radius name="button">Primary</Button>
     </Container>
   );
 }
