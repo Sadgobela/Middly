@@ -26,81 +26,11 @@ import productPic from './img/productPic.png';
 
 const category = ['Products', 'Stores', 'Posts', 'Lists'];
 
-const SearchInputMobile = ({ getItem, closeHandler, isShow, open }) => {
-	const [isSearch, setSearchState] = useState(false);
+const SearchInputMobile = () => {
 
 	return (
-		<>
-			<Badges action={ ()=> setSearchState(!isSearch) } name='search' />
+		<Badges action={ ()=> console.log('search') } name='search' />
 
-			<CSSTransition
-				in={isSearch}
-				timeout={300}
-				classNames={'autocomplete'}
-				unmountOnExit
-			>
-				<SearchContainer>
-					<SearchInputWrap style={{display: 'flex'}}>
-						<Search autoFocus className='site-search' prefix={<SearchIcon color='#999' />} placeholder="Search" onInput={ () => open(true) } />
-						<SearchCancel>Cancel</SearchCancel>
-					</SearchInputWrap>
-
-					<Response>
-						<RecentlyHeader>
-							<ResponseTitle>Recently search</ResponseTitle>
-							<ClearRecently>Clear</ClearRecently>
-						</RecentlyHeader>
-
-						<RecentlyList>
-							<RecentlyItem>
-								Boots
-								<RecentlyLink />
-							</RecentlyItem>
-							<RecentlyItem>
-								Fashion Trends
-								<RecentlyLink />
-							</RecentlyItem>
-							<RecentlyItem>
-								Denim Jeans
-								<RecentlyLink />
-							</RecentlyItem>
-						</RecentlyList>
-
-					</Response>
-					{
-						<CSSTransition
-							in={isShow}
-							timeout={300}
-							classNames={'autocomplete'}
-							unmountOnExit
-						>
-							<>
-								{closeHandler()}
-								<Result>
-									<ResultContainer className="search-result-container">
-										<TabList>
-											{category.map( (item, i) => <Tab active={!i} >{item}</Tab>)}
-										</TabList>
-										{
-											category.map(()=>
-												<ProductItem>
-													<ProductItemPic src={productPic} />
-													<ProductItemDescription>
-														<span>White X Jacket</span>
-														<span>$345</span>
-														<span>21 in stock</span>
-													</ProductItemDescription>
-												</ProductItem>)
-										}
-									</ResultContainer>
-								</Result>
-							</>
-
-						</CSSTransition>
-					}
-				</SearchContainer>
-			</CSSTransition>
-		</>
 	)
 };
 

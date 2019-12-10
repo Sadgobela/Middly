@@ -44,7 +44,7 @@ const Header = ({isMobile}) => {
   return (
     <HeaderWrapper>
       <HeaderContainer isMobile={isMobile}>
-        <Burger isMobile={isMobile} onClick={() => setIsMenuOpened(!isMenuOpened)}>
+        <Burger isMobile={isMobile}>
           <BurgerIcon />
         </Burger>
         <CSSTransition in={isMenuOpened} timeout={300} classNames={'sideMenu'} unmountOnExit>
@@ -90,7 +90,7 @@ const Header = ({isMobile}) => {
               ?
                 <>
                   <SearchInput isMobile={isMobile} />
-                  <Badges action={ getContentType } name='cart' />
+                  <Badges action={ ()=> console.log('cart') } name='cart' />
                 </>
               :
               <>

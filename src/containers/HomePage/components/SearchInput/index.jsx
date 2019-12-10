@@ -107,12 +107,7 @@ const SearchInput = ({isMobile}) => {
         open={showResult}
       />
       :
-      <SearchInputDesktop
-        getCategory={getCategory}
-        closeHandler={closeHandler}
-        isShow={isShow}
-        open={showResult}
-      />
+      <SearchInputDesktop />
   )
 };
 
