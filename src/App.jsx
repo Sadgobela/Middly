@@ -6,8 +6,14 @@ import SignIn from './components/UserAuth/SignIn';
 import SignUp from './components/UserAuth/SignUp';
 import Forgot from './components/UserAuth/Forgot';
 import apolloClient from './apolloClient';
+import UIkit from './components/UI-kit';
 
 const routes = [
+  { path: '/', name: 'HomePage', Component: HomePage },
+  { path: '/ui-kit', name: 'UIkit', Component: UIkit },
+];
+
+const auth = [
   { path: '/sign-in', name: 'SignIn', Component: SignIn },
   { path: '/sign-up', name: 'SignUp', Component: SignUp },
   { path: '/forgot', name: 'Forgot', Component: Forgot },
@@ -17,8 +23,12 @@ function App() {
   return (
     <Router>
       <ApolloProvider client={apolloClient}>
-          <HomePage />
           {routes.map(({ path, Component }) => (
+            <Route key={path} exact path={path}>
+              {({ match }) => match !== null ? <Component/> : null }
+            </Route>
+          ))}
+          {auth.map(({ path, Component }) => (
             <Route key={path} exact path={path}>
               {({ match }) => match !== null ? <Component/> : null }
             </Route>
