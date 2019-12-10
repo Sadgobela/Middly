@@ -78,60 +78,70 @@ export const defaultShops = [
     title: 'Simply Cosy',
     imgSrc: shopImage,
     rating: 4,
+    reviews: 821,
     isFollowing: false
   },
   {
     title: 'Open UP',
     imgSrc: shopImage,
     rating: 4,
+    reviews: 821,
     isFollowing: true
   },
   {
     title: 'Hair Business',
     imgSrc: shopImage,
     rating: 3,
+    reviews: 821,
     isFollowing: false
   },
   {
     title: 'HONEST X RIRI',
     imgSrc: shopImage,
     rating: 4,
+    reviews: 821,
     isFollowing: false
   },
   {
     title: 'Simply Cosy',
     imgSrc: shopImage,
     rating: 4,
+    reviews: 821,
     isFollowing: false
   },
   {
     title: 'Simply Cosy',
     imgSrc: shopImage,
     rating: 4,
+    reviews: 821,
     isFollowing: false
   },
   {
     title: 'Open UP',
     imgSrc: shopImage,
     rating: 4,
+    reviews: 821,
     isFollowing: true
   },
   {
     title: 'Hair Business',
     imgSrc: shopImage,
     rating: 3,
+    reviews: 821,
     isFollowing: false
   },
   {
     title: 'HONEST X RIRI',
     imgSrc: shopImage,
     rating: 4,
+    reviews: 821,
     isFollowing: false
   },
   {
     title: 'Simply Cosy',
     imgSrc: shopImage,
     rating: 4,
+    reviews: 821,
     isFollowing: false
   }
 ];
@@ -160,6 +170,7 @@ export const defaultArrivals = [
     imgSrc: arrivalImage,
     isLiked: true,
     isWished: true,
+    stock: 21,
     newPrice: 120,
     oldPrice: 243,
     likesCount: 142
@@ -169,6 +180,7 @@ export const defaultArrivals = [
     imgSrc: arrivalImage,
     isLiked: true,
     isWished: true,
+    stock: 21,
     newPrice: 120,
     oldPrice: 243,
     likesCount: 142
@@ -278,7 +290,8 @@ export const deals = [
     imgSrc: product1,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -287,7 +300,8 @@ export const deals = [
     imgSrc: product2,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -296,7 +310,8 @@ export const deals = [
     imgSrc: product3,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -305,7 +320,8 @@ export const deals = [
     imgSrc: product4,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -314,7 +330,8 @@ export const deals = [
     imgSrc: product1,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -323,7 +340,8 @@ export const deals = [
     imgSrc: product2,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -332,7 +350,8 @@ export const deals = [
     imgSrc: product3,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -341,7 +360,8 @@ export const deals = [
     imgSrc: product4,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   }
 ];
 
@@ -354,7 +374,8 @@ export const featuredProducts = [
     imgSrc: product5,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -364,7 +385,8 @@ export const featuredProducts = [
     imgSrc: product6,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -374,7 +396,8 @@ export const featuredProducts = [
     imgSrc: product7,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   }
 ];
 
@@ -387,7 +410,8 @@ export const newArrivals = [
     imgSrc: product7,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -397,7 +421,8 @@ export const newArrivals = [
     imgSrc: product8,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -407,7 +432,8 @@ export const newArrivals = [
     imgSrc: product9,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -417,7 +443,8 @@ export const newArrivals = [
     imgSrc: product10,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -427,7 +454,8 @@ export const newArrivals = [
     imgSrc: product7,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -436,7 +464,8 @@ export const newArrivals = [
     imgSrc: product8,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -445,7 +474,8 @@ export const newArrivals = [
     imgSrc: product9,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -454,7 +484,8 @@ export const newArrivals = [
     imgSrc: product10,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   }
 ];
 
@@ -467,7 +498,8 @@ export const fashion = [
     imgSrc: product11,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'YSL Bag Real Leather',
@@ -476,7 +508,8 @@ export const fashion = [
     imgSrc: product12,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Western Hat Brown',
@@ -486,7 +519,8 @@ export const fashion = [
     imgSrc: product13,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Grey T-Shirt Oversize',
@@ -496,7 +530,8 @@ export const fashion = [
     imgSrc: product14,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Leather Jacket',
@@ -505,7 +540,8 @@ export const fashion = [
     imgSrc: product11,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'YSL Bag Real Leather',
@@ -514,7 +550,8 @@ export const fashion = [
     imgSrc: product12,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Western Hat Brown',
@@ -523,7 +560,8 @@ export const fashion = [
     imgSrc: product13,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Grey T-Shirt Oversize',
@@ -532,7 +570,8 @@ export const fashion = [
     imgSrc: product14,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   }
 ];
 
@@ -545,7 +584,8 @@ export const electronics = [
     imgSrc: product15,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Apple iPad Pro',
@@ -554,7 +594,8 @@ export const electronics = [
     imgSrc: product16,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Apple iPhone 11',
@@ -564,7 +605,8 @@ export const electronics = [
     imgSrc: product17,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Apple iPhone 11 Pro',
@@ -574,7 +616,8 @@ export const electronics = [
     imgSrc: product18,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Apple Airpods Pro',
@@ -584,7 +627,8 @@ export const electronics = [
     imgSrc: product15,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Apple iPad Pro',
@@ -593,7 +637,8 @@ export const electronics = [
     imgSrc: product16,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Apple iPhone 11',
@@ -603,7 +648,8 @@ export const electronics = [
     imgSrc: product17,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Apple iPhone 11 Pro',
@@ -613,7 +659,8 @@ export const electronics = [
     imgSrc: product18,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   }
 ];
 
@@ -626,7 +673,8 @@ export const recentlyViewed = [
     imgSrc: product19,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -635,7 +683,8 @@ export const recentlyViewed = [
     imgSrc: product20,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'KENZO fall collection',
@@ -645,7 +694,8 @@ export const recentlyViewed = [
     imgSrc: product21,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Gucci Red Bag',
@@ -655,7 +705,8 @@ export const recentlyViewed = [
     imgSrc: product22,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Cropped Mom Jeans',
@@ -665,7 +716,8 @@ export const recentlyViewed = [
     imgSrc: product19,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Autumn winter fashion',
@@ -674,7 +726,8 @@ export const recentlyViewed = [
     imgSrc: product20,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'KENZO fall collection',
@@ -684,7 +737,8 @@ export const recentlyViewed = [
     imgSrc: product21,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   },
   {
     title: 'Gucci Red Bag',
@@ -694,7 +748,8 @@ export const recentlyViewed = [
     imgSrc: product22,
     sale: -40,
     likesCount: 142,
-    isWished: true
+    isWished: true,
+    stock: 21
   }
 ];
 
@@ -703,48 +758,56 @@ export const shops = [
     title: 'Simply Cosy',
     imgSrc: shop1,
     rating: 4,
+    reviews: 25,
     isFollowing: false
   },
   {
     title: 'Open UP',
     imgSrc: shop2,
-    rating: 4,
+    rating: 1,
+    reviews: 24,
     isFollowing: true
   },
   {
     title: 'Hair Business',
     imgSrc: shop3,
     rating: 3,
+    reviews: 821,
     isFollowing: false
   },
   {
     title: 'HONEST X RIRI',
     imgSrc: shop4,
     rating: 4,
+    reviews: 14,
     isFollowing: false
   },
   {
     title: 'Simply Cosy',
     imgSrc: shop1,
     rating: 4,
+    reviews: 4,
     isFollowing: false
   },
   {
     title: 'Open UP',
     imgSrc: shop2,
     rating: 4,
+    reviews: 821,
     isFollowing: true
   },
   {
     title: 'Hair Business',
     imgSrc: shop3,
     rating: 3,
+    reviews: 821,
     isFollowing: false
   },
   {
     title: 'HONEST X RIRI',
     imgSrc: shop4,
     rating: 4,
+    reviews: 821,
     isFollowing: false
   }
 ];
@@ -1133,5 +1196,107 @@ export const cart = [
     title: 'Sneakers MIU MIU',
     price: '262',
     quantity: 1
+  }
+];
+
+export const posts = [
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product11,
+    likes: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product12,
+    likes: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product13,
+    likes: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product14,
+    likes: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product15,
+    likes: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product16,
+    likes: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product17,
+    likes: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product18,
+    likes: 961
+  }
+];
+
+export const lists = [
+  {
+    title: 'Beautiful',
+    username: 'username',
+    imgSrc: product11,
+    followers: 961
+  },
+  {
+    title: 'Beautiful',
+    username: 'username',
+    imgSrc: product12,
+    followers: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product13,
+    followers: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product14,
+    followers: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product15,
+    followers: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product16,
+    followers: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product17,
+    followers: 961
+  },
+  {
+    title: 'Post Title',
+    username: 'username',
+    imgSrc: product18,
+    followers: 961
   }
 ];

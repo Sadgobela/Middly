@@ -12,7 +12,7 @@ import {Wrapper, Rewards, RewardsLabel, Pin, PinCount, Divider} from './styled';
 const Tools = ({me, tab, setTab}) => {
   return (
     <Wrapper>
-      <Rewards me={me}>
+      <Rewards me={me} onClick={() => setTab(0)}>
         <IconRewards />
         {me ? (
           <RewardsLabel me={me}>

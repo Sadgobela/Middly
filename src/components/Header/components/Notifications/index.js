@@ -38,7 +38,7 @@ const Notifications = ({setShowHamburger, setShowNotifications}) => {
       <Div100vh
         style={{
           height: '100vh',
-          maxHeight: 'calc(100rvh - 292px)',
+          maxHeight: 'calc(100rvh - 84px - 74px - 54px - 80px)', // 84px (profile), 74px (tabs), 54px (header of section), 80px (navigation in footer)
           overflowX: 'hidden',
           overflowY: 'auto',
           borderTop: '1px solid #EFEFEF',

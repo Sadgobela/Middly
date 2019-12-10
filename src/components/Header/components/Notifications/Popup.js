@@ -39,7 +39,7 @@ const NotificationsPopup = ({showNotifications, setShowHamburger, setShowNotific
       <Div100vh
         style={{
           height: '100vh',
-          maxHeight: 'calc(100rvh - 134px)',
+          maxHeight: 'calc(100rvh - 57px - 70px)', // 57px (header), 70px (header of the popup)
           overflowX: 'hidden',
           overflowY: 'auto',
           borderTop: '1px solid #EFEFEF'

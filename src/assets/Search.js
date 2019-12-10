@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Search = ({width, height, color}) => (
-  <svg width={width} height={height} viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+const Search = ({width, height, color, style}) => (
+  <svg width={width} height={height} style={style} viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
       clipRule="evenodd"

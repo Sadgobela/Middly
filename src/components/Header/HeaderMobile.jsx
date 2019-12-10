@@ -8,8 +8,18 @@ import Search from 'assets/Search';
 import Hamburger from './components/Hamburger';
 import NotificationsPopup from './components/Notifications/Popup';
 import MessagesPopup from './components/Messages/Popup';
+import SearchPopup from './components/Search';
 
-import {HeaderContainer, BadgesContainer, Burger, LogoContainer, HeaderWrapper, CustomBadge} from './styled';
+import {
+  HeaderContainer,
+  BadgesContainer,
+  Burger,
+  LogoContainer,
+  HeaderWrapper,
+  CustomBadge,
+  StyledLink,
+  LinksContainer
+} from './styled';
 
 const Header = ({isMobile}) => {
   const [showHamburger, setShowHamburger] = useState(false);
@@ -17,12 +27,13 @@ const Header = ({isMobile}) => {
   const [showMessages, setShowMessages] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [subCategoryActive, setSubCategoryActive] = useState(null);
+  const [showSearch, setShowSearch] = useState(false);
 
   useEffect(() => {
-    if (showHamburger || showNotifications || showMessages) {
-      document.body.classList.add('no-scroll');
+    if (showHamburger || showNotifications || showMessages || showSearch) {
+      document.body.classList.add('overflow-hidden');
     } else {
-      document.body.classList.remove('no-scroll');
+      document.body.classList.remove('overflow-hidden');
     }
   });
 
@@ -50,8 +61,19 @@ const Header = ({isMobile}) => {
             <LogoIcon />
           </LogoContainer>
 
+          <LinksContainer mobile={isMobile}>
+            <StyledLink active>Marketplace</StyledLink>
+            <StyledLink>Feed</StyledLink>
+          </LinksContainer>
+
           <BadgesContainer isMobile={isMobile}>
-            <CustomBadge count={0} isMobile={isMobile}>
+            <CustomBadge
+              count={0}
+              isMobile={isMobile}
+              onClick={() => {
+                setShowSearch(!showSearch);
+              }}
+            >
               <Search />
             </CustomBadge>
             <CustomBadge
@@ -90,6 +112,11 @@ const Header = ({isMobile}) => {
         showMessages={showMessages}
         setShowHamburger={setShowHamburger}
         setShowMessages={setShowMessages}
+      />
+
+      <SearchPopup
+        showSearch={showSearch}
+        setShowSearch={setShowSearch}
       />
     </>
   );

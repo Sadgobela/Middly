@@ -42,7 +42,14 @@ const MessagesPopup = ({showMessages, setShowHamburger, setShowMessages}) => {
           style={{position: 'absolute', top: 'calc(50% + 3px)', right: 16, transform: 'translate(0, -50%)'}}
         />
       </HeaderPopup>
-      <Div100vh style={{height: '100vh', maxHeight: 'calc(100rvh - 134px)', overflowX: 'hidden', overflowY: 'auto'}}>
+      <Div100vh
+        style={{
+          height: '100vh',
+          maxHeight: 'calc(100rvh - 57px - 70px)', // 57px (header), 70px (header of the popup)
+          overflowX: 'hidden',
+          overflowY: 'auto'
+        }}
+      >
         <Content>
           <SearchContainer>
             <SearchIcon fill="#999999" />

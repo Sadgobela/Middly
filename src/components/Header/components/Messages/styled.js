@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 
 export const WrapperPopup = styled.div`
   position: fixed;
-  top: 64px;
+  top: 57px;
   left: 0;
   right: 0;
   bottom: 0;
