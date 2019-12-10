@@ -35,7 +35,7 @@ const SearchInputDesktop = ({ getCategory, closeHandler, isShow, open }) => {
 					<RecentlyItem>
 						Boots
 						<RecentlyLink />
-					</RecentlyItem>ё
+					</RecentlyItem>
 				</RecentlyList>
 			</RecentlySearch>
 
