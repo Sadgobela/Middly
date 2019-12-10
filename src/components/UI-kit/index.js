@@ -61,6 +61,30 @@ const Text = styled(Paragraph)`
   line-height: 26px;
 `;
 
+// Button Styles
+
+const Button = styled.button`
+  /* Adapt the colors based on primary prop */
+  background: ${props => {
+    if (props.red) return theme.colors.red;
+    if (props.white) return theme.colors.white;
+    return "white";
+  }};
+  color: ${props => props.red ? "white" : "palevioletred"};
+
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 1px solid palevioletred;
+  border-radius: ${props => props.radius ? "30px" : "3px"};
+  cursor: pointer;
+  transition: all 0.3s;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
 export default function UIkit() {
   return (
     <Container>
@@ -73,6 +97,10 @@ export default function UIkit() {
       <TitleH5 sm black>H5 Title font-size: 16px;</TitleH5>
       <Text nm doveGray thin>Text font-size: 16px;</Text>
       <HorizontalDevider />
+      <Button>Normal</Button>
+      <Button red>Primary</Button>
+      <Button red radius>Primary</Button>
+      <Button radius>Primary</Button>
     </Container>
   );
 }
