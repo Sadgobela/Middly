@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import { any, string, number, bool } from 'prop-types';
 import { ContentWrapper } from '../../globalStyles';
@@ -20,6 +20,46 @@ const WithSlider = ({ children, title, withSeeMore, marginTop, padding, ...rest 
     ...rest
   };
 
+  let firstClientX, clientX;
+
+  const preventTouch = e => {
+    const minValue = 5; // threshold
+
+    clientX = e.touches[0].clientX - firstClientX;
+
+    // Vertical scrolling does not work when you start swiping horizontally.
+    if (Math.abs(clientX) > minValue) {
+      e.preventDefault();
+      e.returnValue = false;
+
+      return false;
+    }
+  };
+
+  const touchStart = e => {
+    firstClientX = e.touches[0].clientX;
+  };
+
+  let containerRef = useRef();
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.addEventListener("touchstart", touchStart);
+      containerRef.current.addEventListener("touchmove", preventTouch, {
+        passive: false
+      });
+    }
+
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.removeEventListener("touchstart", touchStart);
+        containerRef.current.removeEventListener("touchmove", preventTouch, {
+          passive: false
+        });
+      }
+    };
+  });
+
   return (
     <ContentWrapper marginTop={marginTop}>
       <Header>
@@ -35,7 +75,7 @@ const WithSlider = ({ children, title, withSeeMore, marginTop, padding, ...rest 
           />
         </Thumb>
       </Header>
-      <SliderWrapper padding={padding}>
+      <SliderWrapper padding={padding} ref={containerRef}>
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Slider {...settings}>
           {children}

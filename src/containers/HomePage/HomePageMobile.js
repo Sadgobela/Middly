@@ -1,10 +1,20 @@
 import React from 'react';
 
 import WithSlider from 'components/WithSlider';
+import WithScroll from 'components/WithScroll';
 import CardWithSale from 'components/CardWithSale';
 import CardNewArrival from 'components/CardNewArrival';
 
-import {mainSlides, categoriesMobile, deals, featuredProducts, newArrivals} from 'constants/staticData';
+import {
+  mainSlides,
+  categoriesMobile,
+  deals,
+  featuredProducts,
+  newArrivals,
+  popularStores,
+  shopNow,
+  categoriesCards
+} from 'constants/staticData';
 import {primaryColor} from 'constants/colors';
 import {SliderContainer, SliderContainerList} from './styled';
 
@@ -13,11 +23,16 @@ import Text from './components/Text';
 import CategoriesMobile from './components/CategoriesMobile';
 import Divider from './components/Divider';
 import BannerMobile from './components/BannerMobile';
+import Explore from './components/Explore';
+import PopularStores from './components/PopularStores';
+import ShopNow from './components/ShopNow';
+import Sell from './components/Sell';
+import PopularCategories from './components/PopularCategories';
 
 const HomePageMobile = () => {
   return (
     <>
-      <MainSlider slides={mainSlides} />
+      <MainSlider slides={mainSlides} touchThreshold={8} speed={100} waitForAnimate={false} />
       <Text>
         Do you have products to Sell?
         <br />
@@ -28,37 +43,19 @@ const HomePageMobile = () => {
       <CategoriesMobile list={categoriesMobile} />
       <Divider />
       <SliderContainer>
-        <WithSlider
-          marginTop={0}
-          title="Deals"
-          withSeeMore
-          slidesToScroll={1}
-          infinite={false}
-          slidesToShow={2}
-          arrows={false}
-          variableWidth={true}
-        >
+        <WithScroll marginTop={0} title="Deals" withSeeMore height={244}>
           {deals.map((product, index) => (
             <CardWithSale key={index} {...product} />
           ))}
-        </WithSlider>
+        </WithScroll>
       </SliderContainer>
       <Divider height={40} />
       <SliderContainer>
-        <WithSlider
-          marginTop={0}
-          title="Most Liked"
-          withSeeMore
-          slidesToScroll={1}
-          infinite={false}
-          slidesToShow={2}
-          arrows={false}
-          variableWidth={true}
-        >
+        <WithScroll marginTop={0} title="Most Liked" withSeeMore height={261}>
           {featuredProducts.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
-        </WithSlider>
+        </WithScroll>
       </SliderContainer>
       <Divider height={40} />
       <BannerMobile />
@@ -73,6 +70,8 @@ const HomePageMobile = () => {
           arrows={false}
           dots={true}
           rows={3}
+          swipeToSlide={true}
+          touchThreshold={8}
         >
           {newArrivals.map((product, index) => (
             <CardNewArrival key={index} {...product} inline />
@@ -80,21 +79,16 @@ const HomePageMobile = () => {
         </WithSlider>
       </SliderContainerList>
 
+      <Explore />
+      <PopularStores list={popularStores} />
+      <ShopNow list={shopNow} />
+
       <SliderContainer>
-        <WithSlider
-          marginTop={0}
-          title="Fashion"
-          withSeeMore
-          slidesToScroll={1}
-          infinite={false}
-          slidesToShow={2}
-          arrows={false}
-          variableWidth={true}
-        >
+        <WithScroll marginTop={0} title="Fashion" withSeeMore height={261}>
           {featuredProducts.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
-        </WithSlider>
+        </WithScroll>
       </SliderContainer>
       <Divider height={40} />
       <SliderContainerList>
@@ -107,12 +101,17 @@ const HomePageMobile = () => {
           arrows={false}
           dots={true}
           rows={3}
+          touchThreshold={8}
         >
           {newArrivals.map((product, index) => (
             <CardNewArrival key={index} {...product} inline />
           ))}
         </WithSlider>
       </SliderContainerList>
+      <Divider />
+      <Sell />
+      <Divider />
+      <PopularCategories list={categoriesCards} />
     </>
   );
 };

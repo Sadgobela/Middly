@@ -13,3 +13,6 @@ export const bookmarkFillColor = '#666';
 export const starFillColor = '#F5D823';
 export const grayTextColor = '#545454';
 export const grayBackroundColor = '#C3C3C3';
+export const textGray = '#999';
+export const bgLightGray = '#ccc';
+export const bgSuperLightGray = '#FAFAFA';

@@ -130,7 +130,7 @@ export const SliderContainer = styled.div`
 `;
 
 export const SliderContainerList = styled.div`
-  padding: 15px 0 10px;
+  padding: 15px 0 0;
 
   .slick {
     &-track {
@@ -147,6 +147,10 @@ export const SliderContainerList = styled.div`
 
       > div {
         width: 100%;
+
+        &:not(:first-child) {
+          margin-top: -1px;
+        }
       }
     }
 

@@ -21,6 +21,7 @@ export const Card = styled(FlexContainer)`
   @media(max-width: ${media.mobileMax}) {
     width: 159px;
     height: auto;
+    margin: 0 4px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
     
     svg {

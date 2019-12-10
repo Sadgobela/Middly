@@ -24,7 +24,7 @@ export const Title = styled.div`
 
   @media (max-width: ${media.mobileMax}) {
     font-style: normal;
-    font-weight: normal;
+    font-weight: 700;
     font-size: 18px;
     line-height: 21px;
     color: #343434;
