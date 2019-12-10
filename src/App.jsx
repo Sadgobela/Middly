@@ -30,7 +30,12 @@ function App() {
           ))}
           {auth.map(({ path, Component }) => (
             <Route key={path} exact path={path}>
-              {({ match }) => match !== null ? <Component/> : null }
+              {({ match }) => match !== null ? 
+              <>
+              <HomePage />
+              <Component/>
+              </> 
+              : null }
             </Route>
           ))}
       </ApolloProvider>
