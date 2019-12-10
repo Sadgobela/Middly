@@ -5,17 +5,33 @@ import {primaryColor, headerSelectColor, headerSearchColor, mainBlackColor} from
 export const SearchContainer = styled.div`
   position: relative;
   display: flex;
-  flex-grow: 1;
   margin: 0 2.4% 0 4.9%;
+  z-index: 999;
+`;
 
-  &.autocomplete-enter-active {
+export const CloseOverlay = styled.div`
+  display: ${({overlay}) => (overlay ? 'block' : 'none')};
+  position: absolute;
+  top: calc(100% + 16px);
+  right: -70vw;
+  width: 200vw;
+  height: 200vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+`;
+
+export const SearchPopup = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  & .autocomplete-enter-active {
     opacity: 1;
-    transform: translateY(0px);
   }
 
-  &.autocomplete-enter-done {
+  & .autocomplete-enter-done {
     opacity: 1;
-    transform: translateY(0px);
   }
 `;
 
@@ -30,7 +46,7 @@ export const Search = styled(Input)`
     border-radius: 4px 0 0 4px;
     outline: none;
     box-shadow: none;
-    max-width: 267px;
+    width: 267px;
 
     & .ant-input {
       outline: none;
@@ -61,6 +77,15 @@ export const StyledSelect = styled(Select)`
       background: ${headerSelectColor};
       border-radius: 0;
       color: ${mainBlackColor};
+    }
+
+    & svg {
+      fill: #000;
+    }
+
+    & .ant-select-selection-selected-value {
+      font-size: 14px;
+      font-weight: 500;
     }
 
     & .ant-select-selection__rendered {
@@ -94,25 +119,6 @@ export const Result = styled.div`
   z-index: 9999;
   transition: 0.3s;
   opacity: 0;
-
-  &.autocomplete-enter-active {
-    opacity: 1;
-  }
-
-  &.autocomplete-enter-done {
-    opacity: 1;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 14px;
-    right: -70vw;
-    width: 200vw;
-    height: 200vh;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: -1;
-  }
 `;
 
 export const ResultContainer = styled.div`
@@ -130,6 +136,7 @@ export const Response = styled.div`
 `;
 
 export const ResponseTitle = styled.span`
+  display: block;
   font-size: 12px;
   line-height: 16px;
   color: #7a7a7a;
@@ -332,6 +339,9 @@ export const RecentlySearch = styled.div`
   z-index: 1;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  padding: 8px 0 12px 0;
+  transition: 0.3s;
+  opacity: 0;
 `;
 
 export const RecentlyHeader = styled.div`
@@ -341,28 +351,38 @@ export const RecentlyHeader = styled.div`
   padding: 0 16px;
 `;
 
-export const RecentTitle = styled.span``;
+export const RecentTitle = styled.span`
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+`;
 
 export const RecentlyList = styled.div`
   & svg {
     transform: rotate(45deg);
     margin-left: auto;
+    width: 16px;
+    height: 16px;
   }
 `;
 
 export const RecentlyItem = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 17.5px 0 16px;
+  font-family: Helvetica Neue, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 12px 0 16px;
   margin: 16px 0 0 0;
   color: #000;
+  cursor: pointer;
 `;
 
 export const ClearRecently = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 9px 0 16px;
+  margin: 0;
   color: #000;
   font-weight: 400;
   font-size: 14px;
@@ -371,4 +391,5 @@ export const ClearRecently = styled.button`
   border: none;
   outline: none;
   text-decoration: underline;
+  padding: 0;
 `;

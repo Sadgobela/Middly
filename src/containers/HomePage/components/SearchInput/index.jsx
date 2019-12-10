@@ -86,15 +86,19 @@ function getCategory(arr) {
 const SearchInput = ({isMobile}) => {
 
   const [isShow, showResult] = useState(false);
+  const [isFocus, showRecent] = useState(false);
+
+  document.addEventListener('click', ev => {
+    const t = ev.target;
+    const close = t.classList.contains('close-search-popup');
+    if(close){
+      showResult(false);
+      showRecent(false);
+    }
+  });
 
   const closeHandler = () => {
-    document.addEventListener('click', ev => {
-      const t = ev.target;
-      const close = !t.closest('.search-result-container');
-      if(close){
-        showResult(false);
-      }
-    });
+
   };
 
   return (
@@ -107,6 +111,8 @@ const SearchInput = ({isMobile}) => {
         closeHandler={closeHandler}
         isShow={isShow}
         open={showResult}
+        isFocus={isFocus}
+        hint={showRecent}
       />
       
   )
