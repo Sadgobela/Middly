@@ -10,9 +10,10 @@ export const Wrapper = styled.div`
 
 export const FooterArea = styled(ContentWrapper)`
   width: 100%;
+  max-width: 1440px;
   display: flex;
   flex-wrap: wrap;
-  padding: 59px 0 55px;
+  padding: 59px 132px 55px;
 
   @media (max-width: ${media.mobileMax}) {
     padding: 18px 32px 0;
@@ -91,6 +92,10 @@ export const CopyrightLinks = styled.ul`
 
   li {
     margin-right: 25px;
+  }
+
+  a {
+    color: #000000;
   }
 
   @media (max-width: ${media.mobileMax}) {

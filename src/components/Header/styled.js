@@ -25,7 +25,7 @@ export const HeaderContainer = styled.header`
   height: ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)};
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0 72px 0 69px;
+  padding: 0 70px;
   max-width: 1440px;
 
   @media (max-width: 1360px) {

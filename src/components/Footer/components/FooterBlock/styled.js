@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.p`
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 18px;
   line-height: 132%;
   letter-spacing: -0.384px;

@@ -44,6 +44,7 @@ export const Search = styled(Input)`
     border-radius: 4px 0 0 4px;
     outline: none;
     box-shadow: none;
+    max-width: 267px;
 
     & .ant-input {
       outline: none;
