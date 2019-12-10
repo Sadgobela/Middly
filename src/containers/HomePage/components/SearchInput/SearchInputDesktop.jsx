@@ -11,7 +11,14 @@ import {
 	ResultContainer,
 	Response,
 	ResponseTitle,
+	RecentlySearch,
+	RecentlyList,
+	ClearRecently,
+	RecentlyHeader,
+	RecentTitle,
+	RecentlyItem,
 } from './styled';
+import RecentlyLink from 'assets/ArrowLeft';
 
 const category = ['Products', 'Stores', 'Posts'];
 
@@ -19,6 +26,19 @@ const SearchInputDesktop = ({ getCategory, closeHandler, isShow, open }) => {
 
 	return (
 		<SearchContainer>
+			<RecentlySearch>
+				<RecentlyHeader>
+					<RecentTitle>Recent Searches</RecentTitle>
+					<ClearRecently>Clear</ClearRecently>
+				</RecentlyHeader>
+				<RecentlyList>
+					<RecentlyItem>
+						Boots
+						<RecentlyLink />
+					</RecentlyItem>ё
+				</RecentlyList>
+			</RecentlySearch>
+
 			<Search placeholder="Thirts, Shoes" onInput={ open } />
 			<StyledSelect value="Brands">
 				<Option value="Brands">Brands</Option>

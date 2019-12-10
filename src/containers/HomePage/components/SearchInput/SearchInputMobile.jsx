@@ -20,9 +20,6 @@ import {
 	ProductItemDescription,
 } from './styled';
 import Badges from '../../../../components/Badges';
-import SearchIcon from 'assets/Search';
-import RecentlyLink from 'assets/ArrowLeft';
-import productPic from './img/productPic.png';
 
 const category = ['Products', 'Stores', 'Posts', 'Lists'];
 
