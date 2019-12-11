@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-export const CardDescription = styled.div`
+export const Description = styled.div`
   width: 394px;
   background: #fff;
   padding: 24px 25px 21px;
-  margin: 0 0 0 24px;
 `;
 
-export const CardTitle = styled.span`
+export const Title = styled.span`
   display: block;
   font-weight: 600;
   font-size: 20px;
@@ -16,7 +15,7 @@ export const CardTitle = styled.span`
   padding-bottom: 12px;
 `;
 
-export const CardRating = styled.div`
+export const Rating = styled.div`
   display: flex;
   align-items: center;
   & svg {
@@ -27,7 +26,7 @@ export const CardRating = styled.div`
   }
 `;
 
-export const CardLikesNumber = styled.div`
+export const LikesNumber = styled.div`
   display: block;
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 400;
@@ -37,13 +36,13 @@ export const CardLikesNumber = styled.div`
   margin-left: 4px;
 `;
 
-export const CardDeliver = styled.div`
+export const Deliver = styled.div`
   display: flex;
   align-items: center;
   margin-top: 6px;
 `;
 
-export const CardDeliverDescription = styled.div`
+export const DeliverDescription = styled.div`
   display: block;
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 400;
@@ -53,7 +52,7 @@ export const CardDeliverDescription = styled.div`
   margin-right: 3px;
 `;
 
-export const CardDeliverCity = styled.div`
+export const DeliverCity = styled.div`
   display: block;
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 700;
@@ -69,7 +68,7 @@ export const VerticalDivider = styled.i`
   margin: 0 12px;
 `;
 
-export const CardDeliverCost = styled.div`
+export const DeliverCost = styled.div`
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -79,7 +78,7 @@ export const CardDeliverCost = styled.div`
   margin-right: 3px;
 `;
 
-export const CardDeliverDate = styled.div`
+export const DeliverDate = styled.div`
   font-family: SF Pro Display, sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -87,13 +86,13 @@ export const CardDeliverDate = styled.div`
   color: #208c4e;
 `;
 
-export const CardPrice = styled.div`
+export const Price = styled.div`
   display: flex;
   align-items: center;
   margin: 12px 0 25px;
 `;
 
-export const CardPriceDescription = styled.div`
+export const PriceDescription = styled.div`
   display: block;
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 400;
@@ -113,7 +112,7 @@ export const CardPriceDescription = styled.div`
       : null};
 `;
 
-export const CardCoins = styled.div`
+export const Coins = styled.div`
   display: flex;
   align-items: center;
   font-family: 'SF Pro Display', sans-serif;
@@ -124,7 +123,7 @@ export const CardCoins = styled.div`
   margin-left: 14px;
 `;
 
-export const CardCoinsNumber = styled.div`
+export const CoinsNumber = styled.div`
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -139,17 +138,17 @@ export const HorizontalDivider = styled.i`
   background: #e4e4e4;
 `;
 
-export const CardDetailes = styled.div`
+export const Detailes = styled.div`
   margin: 20px 0 29px;
 `;
 
-export const CardFeature = styled.div`
+export const Feature = styled.div`
   display: flex;
   align-items: ${({alignTop}) => (alignTop ? 'flex-start' : 'flex-end')};
   margin-bottom: 24px;
 `;
 
-export const CardFeatureName = styled.div`
+export const FeatureName = styled.div`
   display: block;
   width: 79px;
   font-family: 'SF Pro Display', sans-serif;
@@ -161,7 +160,7 @@ export const CardFeatureName = styled.div`
   margin-right: 16px;
 `;
 
-export const CardText = styled.div`
+export const Text = styled.div`
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -169,7 +168,7 @@ export const CardText = styled.div`
   color: #464646;
 `;
 
-export const CardSize = styled.div`
+export const Size = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,7 +188,7 @@ export const CardSize = styled.div`
   border: ${({active}) => (active ? '1px solid #000000' : 'none')};
 `;
 
-export const CardColorWrap = styled.div`
+export const ColorWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,14 +202,14 @@ export const CardColorWrap = styled.div`
   cursor: pointer;
 `;
 
-export const CardColor = styled.div`
+export const Color = styled.div`
   width: 23px;
   height: 15px;
   border: none;
   background: ${({color}) => (color ? `${color}` : 'none')};
 `;
 
-export const CardCounter = styled.div`
+export const Counter = styled.div`
   display: flex;
   align-items: center;
   font-family: Helvetica;
@@ -219,7 +218,7 @@ export const CardCounter = styled.div`
   color: #666666;
 `;
 
-export const CardCounterButton = styled.button`
+export const CounterButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -232,51 +231,17 @@ export const CardCounterButton = styled.button`
   outline: none;
 `;
 
-export const CardCount = styled.span`
+export const Count = styled.span`
   margin: 0 11px;
 `;
 
-export const CardButtons = styled.div`
+export const Buttons = styled.div`
   display: flex;
+  justify-content: space-between;
   margin-bottom: 24px;
 `;
 
-export const CardAddBtn = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 160px;
-  height: 36px;
-  background: #ffffff;
-  border: 1px solid #ed484f;
-  border-radius: 24px;
-  font-family: Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 140%;
-  color: #ed484f;
-  margin-right: 24px;
-  cursor: pointer;
-`;
-
-export const CardBuyBtn = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 160px;
-  height: 36px;
-  background: #ed484f;
-  border: 1px solid #ed484f;
-  border-radius: 24px;
-  font-family: Helvetica Neue;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 140%;
-  color: #ffffff;
-  cursor: pointer;
-`;
-
-export const CardReturn = styled.div`
+export const Return = styled.div`
   display: block;
   font-family: 'SF Pro Display', sans-serif;
   font-size: 12px;
@@ -286,7 +251,7 @@ export const CardReturn = styled.div`
   margin-top: 2px;
 `;
 
-export const CardPayment = styled.div`
+export const Payment = styled.div`
   display: flex;
   align-items: center;
   & svg {
@@ -297,7 +262,7 @@ export const CardPayment = styled.div`
   }
 `;
 
-export const CardPaymentCash = styled.div`
+export const PaymentCash = styled.div`
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 500;
   font-size: 9px;
@@ -305,12 +270,12 @@ export const CardPaymentCash = styled.div`
   color: #000000;
 `;
 
-export const CardBottom = styled.div`
+export const Bottom = styled.div`
   display: flex;
   margin: 18px 0 0 26px;
 `;
 
-export const CardIcon = styled.i`
+export const Icon = styled.i`
   display: flex;
   align-items: center;
   font-family: 'SF Pro Display', sans-serif;
