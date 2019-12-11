@@ -3,11 +3,17 @@ import styled from 'styled-components';
 import media from 'constants/media';
 import theme from "./theme";
 import Button from '../Buttons';
+import Icon from '../Icon';
 
 const Container = styled.div`
   padding: 60px 60px;
   & button{
     margin-right: 30px;
+  }
+  & .icons{
+    & svg{
+    margin-right: 15px;
+    }
   }
 `;
 
@@ -19,7 +25,7 @@ const KitHeading = styled.h1`
 
 const HorizontalDevider = styled.div`
   border-bottom: 1px solid #000;
-  margin: 20px 0;
+  margin: 50px 0;
 `;
 
 // Typography Styles
@@ -82,6 +88,20 @@ export default function UIkit() {
       <Button type='buy' action={ ()=> alert('button action')} />
       <Button type='seeMore' withText action={ ()=> alert('button action')} />
       <Button type='seeMore' action={ ()=> alert('button action')} />
+      <HorizontalDevider />
+      <h1>Icons</h1>
+      <div className='icons'>
+        <Icon type='addMessage' action={ ()=> alert('icon action')} />
+        <Icon type='arrow' action={ ()=> alert('icon action')} />
+        <Icon type='arrowFooter' action={ ()=> alert('icon action')} />
+        <Icon type='bellIcon' action={ ()=> alert('icon action')} />
+        <Icon type='burgerIcon' action={ ()=> alert('icon action')} />
+        <Icon type='bookmark' action={ ()=> alert('icon action')} />
+        <Icon type='boxIcon' action={ ()=> alert('icon action')} />
+        <Icon type='check' action={ ()=> alert('icon action')} />
+      </div>
+
+      <HorizontalDevider />
     </Container>
   );
 }
