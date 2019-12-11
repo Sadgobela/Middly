@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import theme from "./theme";
 import media from 'constants/media';
+import theme from "./theme";
+import Button from '../Buttons';
 
 const Container = styled.div`
-  padding: 40px 60px;
+  padding: 60px 60px;
+  & button{
+    margin-right: 30px;
+  }
 `;
 
 const KitHeading = styled.h1`
@@ -61,30 +65,6 @@ const Text = styled(Paragraph)`
   line-height: 26px;
 `;
 
-// Button Styles
-
-const Button = styled.button`
-  /* Adapt the colors based on primary prop */
-  background: ${props => {
-    if (props.red) return theme.colors.red;
-    if (props.white) return theme.colors.white;
-    return "white";
-  }};
-  color: ${props => props.red ? "white" : "palevioletred"};
-
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 1px solid palevioletred;
-  border-radius: ${props => props.radius ? "30px" : "3px"};
-  cursor: pointer;
-  transition: all 0.3s;
-  
-  &:hover {
-    opacity: 0.7;
-  }
-`;
-
 export default function UIkit() {
   return (
     <Container>
@@ -97,10 +77,11 @@ export default function UIkit() {
       <TitleH5 sm black name="h5">H5 Title font-size: 16px;</TitleH5>
       <Text nm doveGray thin name="text">Text font-size: 16px;</Text>
       <HorizontalDevider />
-      <Button name="button">Normal</Button>
-      <Button red name="button">Primary</Button>
-      <Button red radius name="button">Primary</Button>
-      <Button radius name="button">Primary</Button>
+      <h1>Buttons</h1>
+      <Button type='addToCart' action={ ()=> alert('button action')} />
+      <Button type='buy' action={ ()=> alert('button action')} />
+      <Button type='seeMore' withText action={ ()=> alert('button action')} />
+      <Button type='seeMore' action={ ()=> alert('button action')} />
     </Container>
   );
 }
