@@ -21,6 +21,7 @@ import {
 	CloseOverlay,
 } from './styled';
 import RecentlyLink from 'assets/ArrowLeft';
+import ArrowDown from 'assets/ArrowDown';
 
 const category = ['Products', 'Stores', 'Posts'];
 const response = ['Rings', 'Reunion', 'Room Dividers & Shelvinh'];
@@ -76,9 +77,9 @@ const SearchInputDesktop = ({ getCategory, isShow, open, isFocus, hint }) => {
 					onFocus={ ev => setValue(ev) }
 					onBlur={ ev => closeHint(ev) }
 			/>
-			<StyledSelect value="Brands">
-				<Option value="Brands">Brands</Option>
-				<Option value="Brands">Brands</Option>
+			<StyledSelect suffixIcon={<ArrowDown />} value="Stores">
+				<Option value="Brands">Stores</Option>
+				<Option value="Brands">Products</Option>
 			</StyledSelect>
 			<SearchButton>
 				<SearchIcon />

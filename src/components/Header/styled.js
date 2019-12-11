@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 import {Button, Badge} from 'antd';
 import {FlexContainer} from 'globalStyles';
 import media from 'constants/media';
@@ -78,14 +79,12 @@ export const SellButton = styled(Button)`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 87px;
-    height: 28px;
+    height: 30px;
     color: ${mainBlackColor};
     font-weight: 700;
     background: ${mainWhiteColor};
-    text-transform: uppercase;
-    padding: 0;
     font-size: 14px;
+    padding: 0 16px;
     line-height: 20px;
     border: 1px solid #c3c3c3;
     border-radius: 24px;
@@ -205,7 +204,6 @@ export const LinksContainer = styled.div`
 
 export const BadgesContainer = styled(FlexContainer)`
   position: relative;
-  width: ${({isMobile}) => (isMobile ? 'auto' : '120px')};
 
   span {
     cursor: pointer;
@@ -239,4 +237,31 @@ export const CustomBadge = styled(Badge)`
     }
   `
       : ''}
+`;
+
+export const AuthControls = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 45px 0 0;
+`;
+
+export const AuthSign = styled(Link)`
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  outline: none;
+  color: #000;
+`;
+
+export const AuthCreate = styled(AuthSign)`
+  color: #ed494f;
+  font-weight: 700;
+`;
+
+export const AuthDivider = styled.i`
+  width: 2px;
+  height: 24px;
+  background: #e4e4e4;
+  border-radius: 10px;
+  margin: 0 16px;
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route  } from 'react-router-dom';
 import HomePage from './containers/HomePage';
 import SignIn from './components/UserAuth/SignIn';
 import SignUp from './components/UserAuth/SignUp';

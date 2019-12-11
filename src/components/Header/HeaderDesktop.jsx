@@ -22,8 +22,18 @@ import {
   Name,
   Burger,
   BarControls,
+  AuthControls,
+  AuthCreate,
+  AuthSign,
+  AuthDivider,
 } from './styled';
 import BurgerIcon from '../../assets/BurgerIcon';
+
+const userType = 'anonymous';
+const btnText = {
+  withShop: 'My Store',
+  noShop: 'SELL'
+};
 
 const Header = ({isMobile}) => {
 
@@ -43,38 +53,30 @@ const Header = ({isMobile}) => {
 
   return (
     <HeaderWrapper>
-      <HeaderContainer isMobile={isMobile}>
-        <Burger isMobile={isMobile}>
+      <HeaderContainer>
+        <Burger>
           <BurgerIcon />
         </Burger>
         <CSSTransition in={isMenuOpened} timeout={300} classNames={'sideMenu'} unmountOnExit>
           <SideMenu setIsMenuOpened={ setIsMenuOpened } />
         </CSSTransition>
-        <LogoContainer isMobile={isMobile} href="#">
+        <LogoContainer href="#">
           <LogoIcon />
         </LogoContainer>
-        <LinksContainer mobile={isMobile}>
+        <LinksContainer>
           <StyledLink active>Marketplace</StyledLink>
           <StyledLink>Feed</StyledLink>
         </LinksContainer>
-        {
-          isMobile ?
-            null
-            :
-            <>
-              <SearchInput isMobile={isMobile} />
-              <SellButton>
-                <BoxIcon />
-                Sell
-              </SellButton>
-            </>
-        }
+        <SearchInput />
+        <SellButton>
+          <BoxIcon />
+          { userType === 'withShop' ? btnText.withShop : btnText.noShop}
+        </SellButton>
 
-        <BarControls isMobile={isMobile} className='barControls'>
+        <BarControls className='barControls'>
           {
-            isMobile ?
-              null
-              :
+            userType !== 'anonymous'
+              ?
               <AvatarContainer onClick={() => getContentType('profile')}>
                 <img src={defaultAvatar} alt="avatar" />
                 <Name flexDirection="column">
@@ -82,22 +84,27 @@ const Header = ({isMobile}) => {
                   <StyledName>Kathryn</StyledName>
                 </Name>
               </AvatarContainer>
+              :
+              <AuthControls>
+                <AuthSign to='/sign-in'>Sign In</AuthSign>
+                <AuthDivider />
+                <AuthCreate to='/sign-up'>Create Account</AuthCreate>
+              </AuthControls>
           }
 
-          <BadgesContainer isMobile={isMobile} className='badgesContainer'>
+          <BadgesContainer className='badgesContainer'>
             {
-              isMobile
+              userType !== 'anonymous'
               ?
                 <>
-                  <SearchInput isMobile={isMobile} />
-                  <Badges action={ ()=> console.log('cart') } name='cart' />
+                  <Badges action={ getContentType } name='notifications' />
+                  <Badges action={ getContentType } name='message' counter='4' />
+                  <Badges action={ getContentType } name='cart' />
                 </>
               :
-              <>
-                <Badges action={ getContentType } name='notifications' />
-                <Badges action={ getContentType } name='message' counter='4' />
-                <Badges action={ getContentType } name='cart' />
-              </>
+                <>
+                  <Badges action={ getContentType } counter='1' name='cart' />
+                </>
             }
           </BadgesContainer>
         </BarControls>

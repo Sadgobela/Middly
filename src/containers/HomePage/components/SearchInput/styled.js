@@ -5,7 +5,7 @@ import {primaryColor, headerSelectColor, headerSearchColor, mainBlackColor} from
 export const SearchContainer = styled.div`
   position: relative;
   display: flex;
-  margin: 0 2.4% 0 4.9%;
+  margin: 0 24px 0 4.9%;
   z-index: 999;
 `;
 
@@ -79,10 +79,6 @@ export const StyledSelect = styled(Select)`
       color: ${mainBlackColor};
     }
 
-    & svg {
-      fill: #000;
-    }
-
     & .ant-select-selection-selected-value {
       font-size: 14px;
       font-weight: 500;
@@ -91,6 +87,12 @@ export const StyledSelect = styled(Select)`
     & .ant-select-selection__rendered {
       height: 100%;
       line-height: 40px;
+      margin-left: 16px;
+    }
+
+    & .ant-select-arrow {
+      top: 47%;
+      right: 16px;
     }
   }
 `;
