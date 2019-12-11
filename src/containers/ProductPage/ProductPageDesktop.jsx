@@ -12,7 +12,7 @@ import {
 	SliderControl,
 } from './styled';
 import OrderInfo from './Components/OrderInfo';
-import Breadcrumbs from 'components/UI-kit/Breadcrumbs';
+import Breadcrumbs from 'components/Breadcrumbs';
 import slidePic from './img/slidePic.jpg';
 import preview from './img/preview.jpg';
 import preview1 from './img/preview1.jpg';
