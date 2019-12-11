@@ -5,12 +5,14 @@ import HomePage from './containers/HomePage';
 import SignIn from './components/UserAuth/SignIn';
 import SignUp from './components/UserAuth/SignUp';
 import Forgot from './components/UserAuth/Forgot';
+import ProductPage from './containers/ProductPage';
 import apolloClient from './apolloClient';
 import UIkit from './components/UI-kit';
 
 const routes = [
   { path: '/', name: 'HomePage', Component: HomePage },
   { path: '/ui-kit', name: 'UIkit', Component: UIkit },
+  { path: '/product', name: 'Product', Component: ProductPage },
 ];
 
 const auth = [
