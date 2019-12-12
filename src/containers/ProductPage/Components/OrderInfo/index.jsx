@@ -50,20 +50,7 @@ import Visa from 'assets/ProductPage/Visa';
 const colors = ['#F5D823', '#139AD6', '#DB95D1', '#ED494F'];
 const sizes = ['XS', 'S', 'M', 'L'];
 
-function setRating(value) {
-	let Rating = [];
-	for(let i = 0; i < value; i++){
-		Rating.push(<Star />)
-	}
-	if(value < 5){
-		for(let i = 0; i < 5 - value; i++){
-			Rating.push(<Star color='#efefef' />)
-		}
-	}
-	return Rating;
-}
-
-const OrderInfo = ()=> {
+const OrderInfo = ({setRating})=> {
 
 	return (
 		<Description>

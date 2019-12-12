@@ -17,12 +17,11 @@ export const Row = styled.div`
   margin: 26px 0 0 0;
 `;
 
-export const Column = styled.div`
-  margin: 0 0 0 24px;
-`;
+export const Column = styled.div``;
 
 export const Slider = styled.div`
   display: flex;
+  margin: 0 24px 0 0;
 `;
 
 export const SliderTabList = styled.div``;

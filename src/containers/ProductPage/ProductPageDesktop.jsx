@@ -16,6 +16,7 @@ import {
 } from './styled';
 import OrderInfo from './Components/OrderInfo';
 import Comments from 'components/Comments';
+import SellerInfo from './Components/SellerInfo';
 import Breadcrumbs from 'components/Breadcrumbs';
 import slidePic from './img/full-slide.png';
 import preview from './img/preview.jpg';
@@ -23,11 +24,25 @@ import preview1 from './img/preview1.jpg';
 import preview2 from './img/preview2.jpg';
 import preview3 from './img/preview3.jpg';
 import preview4 from './img/preview4.jpg';
+import Star from "../../assets/ProductPage/Star";
 
 const sliderPreview = [preview,preview1,preview2,preview3,preview4];
 const hashtags = ['#Cream', '#canvas', '#Big', '#tags' ];
 
 const ProductPageDesktop = ()=>{
+
+	function setRating(value) {
+		let Rating = [];
+		for(let i = 0; i < value; i++){
+			Rating.push(<Star />)
+		}
+		if(value < 5){
+			for(let i = 0; i < 5 - value; i++){
+				Rating.push(<Star color='#efefef' />)
+			}
+		}
+		return Rating;
+	}
 
 	const mouseMoveHandler = ev =>{
 		let t = ev.target;
@@ -76,10 +91,11 @@ const ProductPageDesktop = ()=>{
 					</Column>
 
 					<Column>
-						<OrderInfo />
+						<OrderInfo setRating={setRating} />
 						<Comments />
 					</Column>
 				</Row>
+				<SellerInfo setRating={setRating} />
 			</Container>
 		</PageWrap>
 
