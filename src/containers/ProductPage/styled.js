@@ -80,3 +80,24 @@ export const Tag = styled.a`
   color: #ed494f;
   margin: 0 16px 0 0;
 `;
+
+export const Similar = styled.div`
+  margin-top: 24px;
+  background: #ffffff;
+  padding: 22px 95px;
+`;
+
+export const SimilarHeading = styled.span`
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  background: #fff;
+`;
+
+export const Recently = styled.div`
+  background: #fff;
+  padding: 68px 0 0 0;
+  margin: 24px 0 0 0;
+`;

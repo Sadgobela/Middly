@@ -13,6 +13,9 @@ import {
 	Column,
 	Hashtags,
 	Tag,
+	Similar,
+	SimilarHeading,
+	Recently,
 } from './styled';
 import OrderInfo from './Components/OrderInfo';
 import Comments from 'components/Comments';
@@ -25,6 +28,10 @@ import preview2 from './img/preview2.jpg';
 import preview3 from './img/preview3.jpg';
 import preview4 from './img/preview4.jpg';
 import Star from "../../assets/ProductPage/Star";
+import WithSlider from "../../components/WithSlider";
+import {recentlyViewed} from "../../constants/staticData";
+import CardNewArrival from "../../components/CardNewArrival";
+import SlickSlider from 'react-slick';
 
 const sliderPreview = [preview,preview1,preview2,preview3,preview4];
 const hashtags = ['#Cream', '#canvas', '#Big', '#tags' ];
@@ -96,7 +103,21 @@ const ProductPageDesktop = ()=>{
 					</Column>
 				</Row>
 				<SellerInfo setRating={setRating} />
+				<Similar>
+					<SimilarHeading>
+						Similar Items
+					</SimilarHeading>
+
+				</Similar>
 			</Container>
+			<Recently>
+
+				<WithSlider marginTop={0} title="Recently Viewed" slidesToScroll={4} infinite={false} withSeeMore slidesToShow={4} dots={true}>
+					{recentlyViewed.map((arrival, index) => (
+						<CardNewArrival key={index} {...arrival} />
+					))}
+				</WithSlider>
+			</Recently>
 		</PageWrap>
 
 	)

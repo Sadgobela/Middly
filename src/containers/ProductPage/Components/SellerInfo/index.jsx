@@ -51,6 +51,7 @@ import CardNewArrival from "../../../../components/CardNewArrival";
 import Button from "../../../../components/Buttons";
 import Slider from 'react-slick';
 import Statistics from "../Statisctics";
+import Feedback from '../Feedback';
 
 const feedbacks = ['', '','','','',''];
 
@@ -172,6 +173,7 @@ const SellerInfo = ({setRating}) => {
 					</Slider>
 
 				</FeedbackList>
+				<Feedback setRating={setRating} />
 			</CustomerFeedbacks>
 		</Container>
 	)
