@@ -60,7 +60,7 @@ const Header = ({isMobile}) => {
         <CSSTransition in={isMenuOpened} timeout={300} classNames={'sideMenu'} unmountOnExit>
           <SideMenu setIsMenuOpened={ setIsMenuOpened } />
         </CSSTransition>
-        <LogoContainer href="#">
+        <LogoContainer to='/'>
           <LogoIcon />
         </LogoContainer>
         <LinksContainer>

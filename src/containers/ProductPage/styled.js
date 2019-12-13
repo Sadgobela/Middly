@@ -83,8 +83,16 @@ export const Tag = styled.a`
 
 export const Similar = styled.div`
   margin-top: 24px;
+  padding-top: 24px;
   background: #ffffff;
-  padding: 22px 95px;
+`;
+
+export const SliderContainer = styled.div`
+  padding: 0 95px;
+
+  & .slick-list {
+    padding: 24px 0;
+  }
 `;
 
 export const SimilarHeading = styled.span`
@@ -94,6 +102,7 @@ export const SimilarHeading = styled.span`
   line-height: 22px;
   color: #000000;
   background: #fff;
+  margin: 0 0 0 36px;
 `;
 
 export const Recently = styled.div`

@@ -11,6 +11,7 @@ export const Row = styled.div`
 
 export const SellerProfile = styled.div`
   padding: 33px 0 34px 32px;
+  background: #fff;
 `;
 
 export const MoreSameSellerTitle = styled.span`

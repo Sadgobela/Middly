@@ -17,18 +17,22 @@ const colors = ['#208C4E', '#2ECC71', '#FFC131', '#FF7F0B', '#E4171F'];
 
 const Statistics = ({setRating})=>{
 
+	function getItems(){
+		return (
+			statisticsData.map( (count, i) =>
+				<Item key={count}>
+					<Title>{5 - i} stars</Title>
+					<Rating color={colors[i]} count={count} />
+					<Percents>{count}%</Percents>
+				</Item>
+			)
+		)
+	}
+
 	return (
 		<Container>
 			<List>
-				{
-					statisticsData.map( (count, i) =>
-						<Item key={count}>
-							<Title>5 stars</Title>
-							<Rating color={colors[i]} count={count} />
-							<Percents>${count}%</Percents>
-						</Item>
-					)
-				}
+				{ getItems() }
 			</List>
 			<Total>
 				<TotalTitle>4,7

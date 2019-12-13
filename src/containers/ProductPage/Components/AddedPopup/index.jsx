@@ -20,8 +20,8 @@ import {
 
 import pic from './img/item.png';
 
-const AddedPopup = () => (
-	<Overlay>
+const AddedPopup = ({close}) => (
+	<Overlay onClick={ev => close(false)}>
 		<Added>
 			<Header>1 item added to cart</Header>
 			<Product>
@@ -42,7 +42,7 @@ const AddedPopup = () => (
 				<Heading>People who bought this item also bought</Heading>
 				<Item space>
 					<Card>
-						<ProductItem/>
+						<ProductItem src={pic}/>
 						<ProductName>Black suit for men</ProductName>
 						<Wrap flex>
 							<Price small>$124,99</Price>

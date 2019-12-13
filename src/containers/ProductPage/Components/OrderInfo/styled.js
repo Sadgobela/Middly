@@ -160,6 +160,22 @@ export const FeatureName = styled.div`
   margin-right: 16px;
 `;
 
+export const SizeGuideLink = styled.button`
+  display: block;
+  width: 79px;
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 132%;
+  color: #ed484f;
+  background: transparent;
+  border: none;
+  margin-right: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+`;
+
 export const Text = styled.div`
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 400;

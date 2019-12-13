@@ -10,6 +10,7 @@ import {
 	SliderPreview,
 	SliderTabList,
 	SliderControl,
+	SliderContainer,
 	Column,
 	Hashtags,
 	Tag,
@@ -32,11 +33,35 @@ import WithSlider from "../../components/WithSlider";
 import {recentlyViewed} from "../../constants/staticData";
 import CardNewArrival from "../../components/CardNewArrival";
 import SlickSlider from 'react-slick';
-import SizeGuide from "./Components/SizeGuide";
-import AddedPopup from "./Components/AddedPopup";
 
 const sliderPreview = [preview,preview1,preview2,preview3,preview4];
 const hashtags = ['#Cream', '#canvas', '#Big', '#tags' ];
+
+function getTabs() {
+	return (
+		sliderPreview.map( (item, i) =>
+			<SliderTab active={i === sliderPreview.length -1}>
+				<SliderPreview src={item} />
+			</SliderTab>
+		)
+	)
+}
+
+function getSlickSlides() {
+	return(
+		recentlyViewed.map((arrival, index) => (
+			<CardNewArrival key={index} {...arrival} />
+		))
+	)
+}
+
+function getRecentlySlides() {
+	return(
+		recentlyViewed.map((arrival, index) => (
+			<CardNewArrival key={index} {...arrival} />
+		))
+	)
+}
 
 const ProductPageDesktop = ()=>{
 
@@ -77,13 +102,7 @@ const ProductPageDesktop = ()=>{
 					<Column>
 						<Slider>
 							<SliderTabList>
-								{
-									sliderPreview.map( (item, i) =>
-										<SliderTab active={i === sliderPreview.length -1}>
-											<SliderPreview src={item} />
-										</SliderTab>
-									)
-								}
+								{ getTabs() }
 							</SliderTabList>
 							<SliderSlide>
 								<SliderPic
@@ -108,6 +127,11 @@ const ProductPageDesktop = ()=>{
 				<Similar>
 					<SimilarHeading>
 						Similar Items
+						<SliderContainer>
+							<SlickSlider slidesToShow={4} arrows={true} slidesToScroll={4}>
+								{ getSlickSlides() }
+							</SlickSlider>
+						</SliderContainer>
 					</SimilarHeading>
 
 				</Similar>
@@ -115,13 +139,10 @@ const ProductPageDesktop = ()=>{
 			<Recently>
 
 				<WithSlider marginTop={0} title="Recently Viewed" slidesToScroll={4} infinite={false} withSeeMore slidesToShow={4} dots={true}>
-					{recentlyViewed.map((arrival, index) => (
-						<CardNewArrival key={index} {...arrival} />
-					))}
+					{ getRecentlySlides() }
 				</WithSlider>
 			</Recently>
-			<SizeGuide />
-			<AddedPopup />
+
 		</PageWrap>
 
 	)

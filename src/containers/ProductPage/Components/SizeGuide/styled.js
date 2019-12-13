@@ -10,9 +10,6 @@ export const Overlay = styled.div`
   justify-content: flex-end;
   z-index: 1111;
   background: rgba(0, 0, 0, 0.5);
-  //-----------------------------
-  display: none; //!!!!!!!!!!!!! ЭТО ПОКА РАБОТАЕШЬ НАД SIZE GUIDE
-  //-----------------------------
 `;
 
 export const Guide = styled.div`
@@ -32,13 +29,13 @@ export const Heading = styled.span`
   margin: 32px 0 30px 0;
 `;
 
-export const Tab = styled.ul`
+export const TabList = styled.ul`
   display: flex;
   list-style: none;
   margin-bottom: 0;
 `;
 
-export const Link = styled.a`
+export const Tab = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,11 +44,11 @@ export const Link = styled.a`
   font-family: Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
+  background: transparent;
+  border: none;
   text-decoration: none;
   color: ${({active}) => (active ? '#000000' : '#7A7A7A')};
-  border-bottom-width: ${({active}) => (active ? '2px' : '0px')};
-  border-bottom-color: ${({active}) => (active ? '#000000' : 'none')};
-  border-bottom-style: ${({active}) => (active ? 'solid' : 'none')};
+  border-bottom: ${({active}) => (active ? '2px solid #000' : 'none')};
 `;
 
 export const Table = styled.div`
@@ -63,11 +60,7 @@ export const Table = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const Header = styled.div`
-  display: flex;
-  height: 51px;
+  align-items: center;
 `;
 
 export const Wrap = styled.div`
@@ -75,21 +68,29 @@ export const Wrap = styled.div`
 `;
 
 export const Row = styled.div`
-	display:flex;
-	flex-direction: column;
-	margin-right: ${({right}) => (right ? '30px' : '0px')}
-	text-align:center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: ${({single}) => (single ? '28px 0 0 0' : '0')};
+  ${({double}) =>
+    double
+      ? `
+		margin-right: 30px;
+		&:last-child{
+			margin-right: 0;
+		}
+	`
+      : null};
 `;
 
 export const Title = styled.span`
-  display: block;
   font-family: Helvetica, sans-serif;
   font-weight: 700;
   font-size: 12px;
   line-height: 120%;
   letter-spacing: 0.06em;
   color: #000000;
-  padding-bottom: ${({bottom}) => (bottom ? '32px' : '8px')};
+  padding-bottom: 8px;
   text-align: center;
 `;
 
@@ -98,8 +99,13 @@ export const Item = styled.span`
   font-family: Helvetica, sans-serif;
   font-size: 12px;
   line-height: 120%;
-  font-weight: ${({subtitle}) => (subtitle ? '700' : '400')};
-  padding-bottom: ${({subtitle}) => (subtitle ? '14px' : '32px')};
-  color: #545454;
+  font-weight: ${({bold}) => (bold ? '700' : '400')};
+  padding-bottom: 32px;
+  color: ${({bold}) => (bold ? '#000' : '#545454')};
   text-align: center;
+`;
+
+export const Unit = styled(Item)`
+  padding: 0 0 14px 0;
+  font-weight: 700;
 `;

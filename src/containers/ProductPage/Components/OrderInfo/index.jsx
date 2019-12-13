@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
 	Bottom,
 	Buttons,
@@ -28,6 +28,7 @@ import {
 	Size,
 	Text,
 	Title,
+	SizeGuideLink,
 	VerticalDivider,
 	HorizontalDivider,
 	Count,
@@ -46,11 +47,18 @@ import Plus from 'assets/ProductPage/Plus';
 import Star from 'assets/ProductPage/Star';
 import Paypal from 'assets/ProductPage/Paypal';
 import Visa from 'assets/ProductPage/Visa';
+import {PageWrap, Recently} from "../../styled";
+import AddedPopup from "../AddedPopup";
+import SizeGuide from "../SizeGuide";
+import {CSSTransition} from 'react-transition-group';
 
 const colors = ['#F5D823', '#139AD6', '#DB95D1', '#ED494F'];
 const sizes = ['XS', 'S', 'M', 'L'];
 
 const OrderInfo = ({setRating})=> {
+
+	const [isAddedToCart, setIsAddedToCart] = useState(false);
+	const [isOpenGuide, setIsOpenGuide] = useState(false);
 
 	return (
 		<Description>
@@ -113,7 +121,7 @@ const OrderInfo = ({setRating})=> {
 							<Size key={size} active={!i}>{size}</Size>
 						)
 					}
-					<FeatureName red>Size Guide</FeatureName>
+					<SizeGuideLink onClick={()=>setIsOpenGuide(true)} >Size Guide</SizeGuideLink>
 				</Feature>
 				<Feature>
 					<FeatureName>
@@ -142,7 +150,7 @@ const OrderInfo = ({setRating})=> {
 					</Counter>
 				</Feature>
 				<Buttons>
-					<Button type='addToCart' action={()=> null} />
+					<Button type='addToCart' action={()=> setIsAddedToCart(true)} />
 					<Button type='buy' action={()=> null} />
 				</Buttons>
 				<Feature alignTop>
@@ -176,6 +184,20 @@ const OrderInfo = ({setRating})=> {
 				<Icon><Links />675</Icon>
 				<Icon><Bookmarks />256</Icon>
 			</Bottom>
+			<CSSTransition
+				in={isAddedToCart}
+				timeOut={300}
+				unmountOnExit
+			>
+				<AddedPopup close={setIsAddedToCart} />
+			</CSSTransition>
+			<CSSTransition
+				in={isOpenGuide}
+				timeOut={300}
+				unmountOnExit
+			>
+				<SizeGuide close={setIsOpenGuide} />
+			</CSSTransition>
 		</Description>
 	)
 };
