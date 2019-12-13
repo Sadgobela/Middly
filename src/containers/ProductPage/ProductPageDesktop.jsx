@@ -32,6 +32,8 @@ import WithSlider from "../../components/WithSlider";
 import {recentlyViewed} from "../../constants/staticData";
 import CardNewArrival from "../../components/CardNewArrival";
 import SlickSlider from 'react-slick';
+import SizeGuide from "./Components/SizeGuide";
+import AddedPopup from "./Components/AddedPopup";
 
 const sliderPreview = [preview,preview1,preview2,preview3,preview4];
 const hashtags = ['#Cream', '#canvas', '#Big', '#tags' ];
@@ -118,6 +120,8 @@ const ProductPageDesktop = ()=>{
 					))}
 				</WithSlider>
 			</Recently>
+			<SizeGuide />
+			<AddedPopup />
 		</PageWrap>
 
 	)
