@@ -1,11 +1,11 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { string, number } from 'prop-types';
 import { primaryColor } from '../constants/colors';
 
-const CloseIcon = ({ color }) => (
+const CloseIcon = ({ width, height, color }) => (
   <svg
-    width="24"
-    height="24"
+    width={width}
+    height={height}
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -14,10 +14,14 @@ const CloseIcon = ({ color }) => (
 );
 
 CloseIcon.propTypes = {
+  width: number,
+  height: number,
   color: string
 };
 
 CloseIcon.defaultProps = {
+  width: 24,
+  height: 24,
   color: '#C3C3C3'
 };
 

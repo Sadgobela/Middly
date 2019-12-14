@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {Button, Badge} from 'antd';
 import {FlexContainer} from 'globalStyles';
 import media from 'constants/media';
-import {mainWhiteColor, mainBlackColor, primaryColor, headerShadowColor} from 'constants/colors';
+import {mainWhiteColor, mainBlackColor, primaryColor, headerShadowColor, bgLightGray} from 'constants/colors';
 import {headerHeight, mobileHeaderHeight} from './constants';
 
 export const HeaderWrapper = styled.div`
@@ -17,6 +17,7 @@ export const HeaderWrapper = styled.div`
     left: 0;
     right: 0;
     z-index: 1000;
+    border-bottom: 1px solid ${bgLightGray};
   }
 `;
 
@@ -189,6 +190,7 @@ export const LinksContainer = styled.div`
     background: #fff;
     transition: 0.5s;
     z-index: -1;
+    border-top: 1px solid ${bgLightGray};
     & a {
       width: 50%;
       display: flex;
