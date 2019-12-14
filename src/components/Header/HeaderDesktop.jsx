@@ -54,7 +54,7 @@ const Header = ({isMobile}) => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <Burger>
+        <Burger onClick={()=> setIsMenuOpened(!isMenuOpened)}>
           <BurgerIcon />
         </Burger>
         <CSSTransition in={isMenuOpened} timeout={300} classNames={'sideMenu'} unmountOnExit>
