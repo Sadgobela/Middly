@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  margin: 0 0 26px 0;
+`;
 
 export const Location = styled.a`
   display: inline-flex;
