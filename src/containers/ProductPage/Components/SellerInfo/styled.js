@@ -34,7 +34,7 @@ export const MoreSameSellerList = styled.div`
   justify-content: space-between;
 
   & button {
-    margin: 0 51px 0 0;
+    margin-right: 51px;
   }
 `;
 

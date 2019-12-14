@@ -29,7 +29,7 @@ import {
 } from './styled';
 import BurgerIcon from '../../assets/BurgerIcon';
 
-const userType = 'anonymous';
+const userType = 'withShop';
 const btnText = {
   withShop: 'My Store',
   noShop: 'SELL'

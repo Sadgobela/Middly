@@ -10,6 +10,7 @@ import BurgerIcon from "../../assets/BurgerIcon";
 import Bookmark from "../../assets/Bookmark";
 import BoxIcon from "../../assets/BoxIcon";
 import Check from "../../assets/Check";
+import Plus from "../../assets/Plus";
 
 const icons = {
 	addMessage: AddMessage,
@@ -20,12 +21,13 @@ const icons = {
 	bookmark: Bookmark,
 	boxIcon: BoxIcon,
 	check: Check,
+	plus: Plus,
 };
 
-const Icons = ({type, action})=> {
+const Icons = ({type, props})=> {
 	const Icon = icons[type];
 	return (
-		<Container onClick={action}>
+		<Container {...props}>
 			<Icon  />
 		</Container>
 

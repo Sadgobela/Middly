@@ -150,8 +150,8 @@ const OrderInfo = ({setRating})=> {
 					</Counter>
 				</Feature>
 				<Buttons>
-					<Button type='addToCart' action={()=> setIsAddedToCart(true)} />
-					<Button type='buy' action={()=> null} />
+					<Button type='addToCart' props={{onClick: ()=> setIsAddedToCart(true)}} />
+					<Button type='buy'/>
 				</Buttons>
 				<Feature alignTop>
 					<FeatureName dark>

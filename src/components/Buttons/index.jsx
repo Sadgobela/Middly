@@ -3,33 +3,49 @@ import {
 	AddToCart,
 	Buy,
 	SeeMore,
+	Follow,
+	Following,
 } from './styled';
-import Arrow from 'assets/Arrow';
+import Icons from "../Icon";
 
 const components = {
-	addToCart: AddToCart,
-	buy: Buy,
-	seeMore: SeeMore,
+	addToCart: {
+		component: AddToCart,
+		text: 'Add to cart'
+	},
+	buy: {
+		component: Buy,
+		text: 'Buy now'
+	},
+	seeMore: {
+		component: SeeMore,
+		icon: 'arrow'
+	},
+	follow: {
+		component: Follow,
+		text: 'Follow',
+		icon: 'plus'
+	},
+	following: {
+		component: Following,
+		text: 'Following',
+	},
 };
 
-const Button = ({type, action, withText=null})=> {
-	if(type === 'addToCart'){
-		return (
-			<AddToCart onClick={action} >Add to Cart</AddToCart>
-		) 
-	}
-	if(type === 'buy'){
-		return (
-			<Buy onClick={action}>Buy Now</Buy>
-		)
-	}
-	if(type === 'seeMore'){
-		return (
-			<SeeMore withText={withText} onClick={action}>
-				<Arrow />
-			</SeeMore>
-		)
-	}
+const Button = ({type, props})=> {
+
+	const Component = components[type].component;
+	const text = components[type].text || null;
+	const icon = components[type].icon;
+
+	return(
+		<Component {...props}>
+			{ icon ? <Icons type={icon} /> : null}
+			{text}
+		</Component>
+	)
+
+
 
 };
 

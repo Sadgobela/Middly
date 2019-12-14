@@ -113,7 +113,7 @@ const SellerInfo = ({setRating}) => {
 						{products.map((arrival, index) => (
 							index < 4 ? <CardNewArrival key={index} {...arrival} /> : null
 						))}
-						<Button type='seeMore' withText />
+						<Button type='seeMore' props={{withText: true}} />
 					</MoreSameSellerList>
 				</MoreSameSeller>
 			</SellerProfile>

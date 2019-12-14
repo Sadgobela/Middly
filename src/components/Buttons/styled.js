@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import theme from "../UI-kit/theme";
 
 const Parent = styled.button`
   display: inline-flex;
@@ -9,6 +8,7 @@ const Parent = styled.button`
   border: none;
   outline: none;
   text-decoration: none;
+  font-family: Helvetica Neue, sans-serif;
   cursor: pointer;
 `;
 
@@ -39,6 +39,7 @@ export const SeeMore = styled(Parent)`
   line-height: 140%;
   text-align: center;
   color: #000000;
+  margin: ${({withText}) => (withText ? '0 0 24px 0' : '0')};
   &::before {
     content: ${({withText}) => (withText ? `'See more'` : null)};
     position: absolute;
@@ -49,24 +50,21 @@ export const SeeMore = styled(Parent)`
   }
 `;
 
-// const Button = styled.button`
-//   /* Adapt the colors based on primary prop */
-//   background: ${props => {
-// 	if (props.red) return theme.colors.red;
-// 	if (props.white) return theme.colors.white;
-// 	return "white";
-// }};
-//   color: ${props => props.red ? "white" : "palevioletred"};
-//
-//   font-size: 1em;
-//   margin: 1em;
-//   padding: 0.25em 1em;
-//   border: 1px solid palevioletred;
-//   border-radius: ${props => props.radius ? "30px" : "3px"};
-//   cursor: pointer;
-//   transition: all 0.3s;
-//
-//   &:hover {
-//     opacity: 0.7;
-//   }
-// `;
+export const Follow = styled(Parent)`
+  width: 99px;
+  height: 29px;
+  font-size: 14px;
+  line-height: 140%;
+  color: #ed484f;
+  border: 1px solid #ed484f;
+  border-radius: 24px;
+
+  & svg {
+    margin-right: 8px;
+  }
+`;
+
+export const Following = styled(Follow)`
+  color: #545454;
+  border: 1px solid #c3c3c3;
+`;
