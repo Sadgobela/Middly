@@ -159,7 +159,7 @@ export const Burger = styled.button`
   outline: none;
 `;
 
-export const LogoContainer = styled.a`
+export const LogoContainer = styled(Link)`
   min-width: 114px;
   padding-top: 6px;
   margin-right: 5.7%;

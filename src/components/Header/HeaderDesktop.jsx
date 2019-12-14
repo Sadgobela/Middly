@@ -29,7 +29,7 @@ import {
 } from './styled';
 import BurgerIcon from '../../assets/BurgerIcon';
 
-const userType = 'anonymous';
+const userType = 'withShop';
 const btnText = {
   withShop: 'My Store',
   noShop: 'SELL'
@@ -60,7 +60,7 @@ const Header = ({isMobile}) => {
         <CSSTransition in={isMenuOpened} timeout={300} classNames={'sideMenu'} unmountOnExit>
           <SideMenu setIsMenuOpened={ setIsMenuOpened } />
         </CSSTransition>
-        <LogoContainer href="#">
+        <LogoContainer to='/'>
           <LogoIcon />
         </LogoContainer>
         <LinksContainer>
