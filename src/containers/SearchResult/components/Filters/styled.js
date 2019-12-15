@@ -41,8 +41,28 @@ export const Filter = styled(Select)`
 
 export const FilterOption = styled(Select.Option)``;
 
-export const SelectedFilter = styled.button``;
+export const SelectedFilter = styled.button`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 22px 0 0;
+  padding: 6px 18px 6px 12px;
+  background: #e4e4e4;
+  border-radius: 24px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+`;
 
-export const SelectedList = styled.div``;
-
-export const Clear = styled.button``;
+export const Clear = styled.button`
+  font-family: Helvetica Neue, sans-serif;
+  width: 131px;
+  font-size: 14px;
+  line-height: 140%;
+  color: #ed494f;
+  text-align: left;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+`;

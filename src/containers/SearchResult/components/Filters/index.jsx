@@ -5,7 +5,6 @@ import {
 	Filter,
 	FilterOption,
 	SelectedFilter,
-	SelectedList,
 	Clear,
 } from './styled';
 import Grid from 'components/Grid';
@@ -24,18 +23,27 @@ function getFilters() {
 const Filters = ()=> {
 	return (
 		<Container>
-			<Grid type='row'>
+			<Grid container aic>
 				<Title>Filters</Title>
 				{getFilters()}
 			</Grid>
-			<SelectedList>
-				<SelectedFilter>
-					Women's clothing
-				</SelectedFilter>
+			<Grid container sb margin='24px 0 0 0'>
+				<Grid container>
+					<SelectedFilter>
+						Women's clothing X
+					</SelectedFilter>
+					<SelectedFilter>
+						All brands X
+					</SelectedFilter>
+					<SelectedFilter>
+						Off White X
+					</SelectedFilter>
+				</Grid>
+
 				<Clear>
-					Clear all filtres
+					Clear all filters
 				</Clear>
-			</SelectedList>
+			</Grid>
 		</Container>
 	)
 };

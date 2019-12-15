@@ -11,6 +11,10 @@ import Bookmark from "../../assets/Bookmark";
 import BoxIcon from "../../assets/BoxIcon";
 import Check from "../../assets/Check";
 import Plus from "../../assets/Plus";
+import Heart from "../../assets/Heart";
+import Like from "../../assets/Like";
+import Shop from "../../assets/Shop";
+import Bags from "../../assets/Bags";
 
 const icons = {
 	addMessage: AddMessage,
@@ -22,6 +26,10 @@ const icons = {
 	boxIcon: BoxIcon,
 	check: Check,
 	plus: Plus,
+	heart: Heart,
+	like: Like,
+	shop: Shop,
+	bags: Bags,
 };
 
 const Icons = ({type, props})=> {

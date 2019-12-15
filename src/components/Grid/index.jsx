@@ -1,19 +1,28 @@
 import React from 'react';
 import {
 	PageContainer,
-	Row,
+	Container,
 } from './styled';
 
 const components = {
 	pageContainer: PageContainer,
-	row: Row,
-
+	container: Container,
 };
 
-const Grid = ({type, props, children})=> {
-	const Component = components[type];
+const Grid = ({container, aic, children, sb, center, column, margin, padding, width, wrap, height})=> {
+	const Component = container ? Container : PageContainer;
 	return (
-		<Component {...props}>
+		<Component
+			width={width}
+			aic={aic}
+			sb={sb}
+			center={center}
+			column={column}
+			margin={margin}
+			padding={padding}
+			wrap={wrap}
+			height={height}
+		>
 			{children}
 		</Component>
 	)
