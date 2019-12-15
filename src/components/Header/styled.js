@@ -16,7 +16,6 @@ export const HeaderWrapper = styled.div`
     left: 0;
     right: 0;
     z-index: 1000;
-    border-bottom: 1px solid ${bgLightGray};
   }
 `;
 
@@ -36,6 +35,7 @@ export const HeaderContainer = styled.header`
   @media (max-width: ${media.mobileMax}) {
     padding: 0 16px;
     background: ${mainWhiteColor};
+    border-bottom: 1px solid ${bgLightGray};
   }
 `;
 
@@ -185,13 +185,11 @@ export const LinksContainer = styled.div`
     mobile
       ? `
     position: absolute;
-    top: 100%;
+    top: 57px;
     left: 0;
     width: 100%;
     background: #fff;
-    transition: 0.5s;
-    z-index: -1;
-    border-top: 1px solid ${bgLightGray};
+    z-index: 1;
     & a {
       width: 50%;
       display: flex;

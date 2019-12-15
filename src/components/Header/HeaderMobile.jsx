@@ -61,11 +61,6 @@ const Header = ({isMobile}) => {
             <LogoIcon />
           </LogoContainer>
 
-          <LinksContainer mobile={isMobile}>
-            <StyledLink active>Marketplace</StyledLink>
-            <StyledLink>Feed</StyledLink>
-          </LinksContainer>
-
           <BadgesContainer isMobile={isMobile}>
             <CustomBadge
               count={0}
@@ -91,6 +86,11 @@ const Header = ({isMobile}) => {
           </BadgesContainer>
         </HeaderContainer>
       </HeaderWrapper>
+
+      <LinksContainer mobile={isMobile}>
+        <StyledLink active>Marketplace</StyledLink>
+        <StyledLink>Feed</StyledLink>
+      </LinksContainer>
       <Hamburger
         showHamburger={showHamburger}
         setShowHamburger={setShowHamburger}

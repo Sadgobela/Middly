@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import Div100vh from 'react-div-100vh';
 
 import Shop from 'assets/Shop';
 import Logout from 'assets/Logout';
 
-import {Wrapper, Overlay, Content, ShopContainer, LogoutContainer, LogoutLink, Settings} from './styled';
+import {Wrapper, WrapperInner, Overlay, Content, ShopContainer, LogoutContainer, LogoutLink, Settings} from './styled';
 import User from '../User';
 import Tools from '../Tools';
 import Menu from '../Menu';
@@ -15,6 +15,7 @@ import Messages from '../Messages';
 import Notifications from '../Notifications';
 import Navigation from '../Navigation';
 import Cart from '../Cart';
+import Swipe from '../Swipe';
 
 const Hamburger = ({
   showHamburger,
@@ -27,37 +28,44 @@ const Hamburger = ({
   setSubCategoryActive
 }) => {
   const [me, setMe] = useState(null);
+  const wrapperInner = useRef(null);
+
+  useEffect(() => {
+    if (wrapperInner && wrapperInner.current && subCategoryActive !== null) {
+      wrapperInner.current.scrollTo(0, 0);
+    }
+  });
 
   const renderTabs = () => {
     switch (tab) {
       case 4:
         return (
-          <>
+          <Swipe active={me !== null} tab={tab} setTab={setTab}>
             <Cart />
             {me && <Navigation tab={tab} setTab={setTab} />}
-          </>
+          </Swipe>
         );
 
       case 3:
         return (
-          <>
+          <Swipe active={me !== null} tab={tab} setTab={setTab}>
             <Notifications setShowNotifications={setShowNotifications} setShowHamburger={setShowHamburger} />
             {me && <Navigation tab={tab} setTab={setTab} />}
-          </>
+          </Swipe>
         );
 
       case 2:
         return (
-          <>
+          <Swipe active={me !== null} tab={tab} setTab={setTab}>
             <Messages setShowHamburger={setShowHamburger} setShowMessages={setShowMessages} />
             {me && <Navigation tab={tab} setTab={setTab} />}
-          </>
+          </Swipe>
         );
 
       case 1:
       default:
         return (
-          <>
+          <Swipe active={me !== null} tab={tab} setTab={setTab}>
             <Menu />
             <Categories setSubCategoryActive={setSubCategoryActive} />
             <ShopContainer>
@@ -84,7 +92,7 @@ const Hamburger = ({
                 </LogoutLink>
               </LogoutContainer>
             )}
-          </>
+          </Swipe>
         );
     }
   };
@@ -92,19 +100,20 @@ const Hamburger = ({
   return (
     <Wrapper>
       <Overlay active={showHamburger} onClick={() => setShowHamburger(false)} />
-      <Div100vh style={{maxHeight: '100rvh)'}}>
-        <Content active={showHamburger}>
-          {subCategoryActive ? (
-            <SubCategory category={subCategoryActive} setSubCategoryActive={setSubCategoryActive} />
-          ) : (
-            <>
-              <User me={me} setMe={setMe} />
-              <Tools tab={tab} me={me} setTab={setTab} />
-              {renderTabs()}
-            </>
-          )}
-        </Content>
-      </Div100vh>
+      <WrapperInner active={showHamburger} style={subCategoryActive && {overflow: 'hidden'}} ref={wrapperInner}>
+        <Div100vh
+          style={{
+            maxHeight: '100rvh'
+          }}
+        >
+          <Content>
+            <User me={me} setMe={setMe} />
+            <Tools tab={tab} me={me} setTab={setTab} />
+            {renderTabs()}
+          </Content>
+        </Div100vh>
+        <SubCategory category={subCategoryActive} setSubCategoryActive={setSubCategoryActive} />
+      </WrapperInner>
     </Wrapper>
   );
 };
@@ -122,7 +131,7 @@ Hamburger.defaultProps = {
 
 Hamburger.propTypes = {
   showHamburger: PropTypes.bool,
-  subCategoryActive: PropTypes.bool,
+  subCategoryActive: PropTypes.object,
   tab: PropTypes.number,
   setShowHamburger: PropTypes.func,
   setTab: PropTypes.func,
