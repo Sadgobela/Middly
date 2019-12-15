@@ -9,12 +9,14 @@ import ProductPage from './containers/ProductPage';
 import apolloClient from './apolloClient';
 import UIkit from './components/UI-kit';
 import SearchResult from './containers/SearchResult';
+import MyProfile from 'containers/MyProfile';
 
 const routes = [
   { path: '/', name: 'HomePage', Component: HomePage },
   { path: '/ui-kit', name: 'UIkit', Component: UIkit },
   { path: '/product', name: 'Product', Component: ProductPage },
   { path: '/search', name: 'Search', Component: SearchResult },
+  { path: '/profile', name: 'Profile', Component: MyProfile },
 ];
 
 const auth = [

@@ -15,6 +15,8 @@ import Heart from "../../assets/Heart";
 import Like from "../../assets/Like";
 import Shop from "../../assets/Shop";
 import Bags from "../../assets/Bags";
+import Pencil from "../../assets/Pencil";
+import Marker from "../../assets/Marker";
 
 const icons = {
 	addMessage: AddMessage,
@@ -30,6 +32,8 @@ const icons = {
 	like: Like,
 	shop: Shop,
 	bags: Bags,
+	pencil: Pencil,
+	marker: Marker,
 };
 
 const Icons = ({type, props})=> {
