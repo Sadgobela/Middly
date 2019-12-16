@@ -52,7 +52,7 @@ const SideBar = ()=>{
 					<Icon type='marker' />
 					{profile.location}
 				</Location>
-				<Grid container sb>
+				<Grid sb>
 					<Statistic margin>
 						<StatisticCount>{profile.followers}</StatisticCount>
 						followers

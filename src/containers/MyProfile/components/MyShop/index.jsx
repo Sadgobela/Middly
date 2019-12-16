@@ -13,7 +13,7 @@ import Icons from "components/Icon";
 export default function () {
 	return(
 		<Container>
-			<Grid container aic>
+			<Grid aic>
 				<Logo>
 					<Icons type='shop'/>
 				</Logo>

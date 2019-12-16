@@ -23,12 +23,12 @@ function getFilters() {
 const Filters = ()=> {
 	return (
 		<Container>
-			<Grid container aic>
+			<Grid aic>
 				<Title>Filters</Title>
 				{getFilters()}
 			</Grid>
-			<Grid container sb margin='24px 0 0 0'>
-				<Grid container>
+			<Grid sb margin='24px 0 0 0'>
+				<Grid>
 					<SelectedFilter>
 						Women's clothing X
 					</SelectedFilter>
