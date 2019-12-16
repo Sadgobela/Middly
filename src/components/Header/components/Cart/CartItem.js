@@ -27,7 +27,7 @@ const CartItem = ({item}) => {
           <ItemQuantityLabel>Quantity: </ItemQuantityLabel>
 
           <ItemQuantityMinus onClick={() => setQuantity(quantity - 1)}>–</ItemQuantityMinus>
-          <ItemQuantityField value={quantity} />
+          <ItemQuantityField value={quantity} onChange={(e) => setQuantity(e.target.value)} />
           <ItemQuantityPlus onClick={() => setQuantity(quantity + 1)}>+</ItemQuantityPlus>
         </ItemQuantity>
       </ItemContent>

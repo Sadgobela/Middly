@@ -224,8 +224,8 @@ export const BadgesContainer = styled(FlexContainer)`
 `;
 
 export const CustomBadge = styled(Badge)`
-  ${({isMobile}) =>
-    isMobile
+  ${({ismobile}) =>
+    ismobile
       ? `
     width: 40px;
     height: 40px;

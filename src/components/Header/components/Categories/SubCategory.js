@@ -1,11 +1,10 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 import Div100vh from 'react-div-100vh';
 
 import Arrow from 'assets/Arrow';
 
 import {WrapperSubCategory, TitleSubCategory, CustomLink, Header, Back} from './styled';
-import {Wrapper} from '../Swipe/styled';
 
 const SubCategory = ({category, setSubCategoryActive}) => {
   const wrapper = useRef(null);
@@ -16,10 +15,8 @@ const SubCategory = ({category, setSubCategoryActive}) => {
   const touchStart = (e) => {
     startX = e.targetTouches[0].clientX;
 
-    if (startX > 0 && startX <= 40 && wrapper && wrapper.current && wrapper.current.contains(e.target)) {
+    if (wrapper && wrapper.current && wrapper.current.contains(e.target)) {
       moving = true;
-    } else {
-      moving = false;
     }
   };
 
@@ -43,6 +40,8 @@ const SubCategory = ({category, setSubCategoryActive}) => {
         wrapper.current.style = '';
       } else {
         movedX = null;
+        moving = false;
+        wrapper.current.style.transform = 'translate(0, 0)';
       }
     }
   };

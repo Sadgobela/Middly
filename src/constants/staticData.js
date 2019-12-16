@@ -375,6 +375,7 @@ export const featuredProducts = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -386,6 +387,7 @@ export const featuredProducts = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -397,6 +399,7 @@ export const featuredProducts = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   }
 ];
@@ -411,6 +414,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -422,6 +426,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -433,6 +438,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -444,6 +450,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -455,6 +462,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -465,6 +473,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -475,6 +484,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -485,6 +495,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   }
 ];

@@ -6,7 +6,7 @@ import {Wrapper, Header, Title, Items, Content, FreeShipping, Subtotal, Subtotal
 import {cart} from 'constants/staticData';
 import CartItem from './CartItem';
 
-const Cart = ({}) => {
+const Cart = ({me}) => {
   return (
     <Wrapper>
       <Header>
@@ -15,7 +15,14 @@ const Cart = ({}) => {
           {cart.length} item{cart.length > 1 ? 's' : ''}
         </Items>
       </Header>
-      <Div100vh style={{height: '100vh', maxHeight: 'calc(100rvh - 292px)', overflowX: 'hidden', overflowY: 'auto'}}>
+      <Div100vh
+        style={{
+          height: '100vh',
+          maxHeight: me ? 'calc(100rvh - 292px)' : 'calc(100rvh - 212px)',
+          overflowX: 'hidden',
+          overflowY: 'auto'
+        }}
+      >
         <Content>
           {cart && cart.length && cart.map((item, key) => item && <CartItem item={item} key={key} />)}
           <FreeShipping>Free shipping on orders over $200</FreeShipping>
@@ -29,8 +36,12 @@ const Cart = ({}) => {
   );
 };
 
-Cart.defaultProps = {};
+Cart.defaultProps = {
+  me: {}
+};
 
-Cart.propTypes = {};
+Cart.propTypes = {
+  me: PropTypes.object
+};
 
 export default Cart;

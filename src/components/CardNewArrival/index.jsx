@@ -53,7 +53,7 @@ CardNewArrival.propTypes = {
   imgSrc: string.isRequired,
   isLiked: bool.isRequired,
   isWished: bool.isRequired,
-  newPrice: number.isRequired,
+  newPrice: number,
   oldPrice: number,
   likesCount: number.isRequired
 };

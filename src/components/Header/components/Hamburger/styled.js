@@ -114,3 +114,21 @@ export const Settings = styled.div`
     }
   }
 `;
+
+export const SliderWrapper = styled.div`
+  .slick {
+    &-slide {
+      > div {
+        width: 100%;
+      }
+    }
+    &-track {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+`;
+
+export const SliderSlide = styled.div`
+  width: 100%;
+`;
