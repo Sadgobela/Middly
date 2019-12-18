@@ -18,6 +18,7 @@ export const Container = styled.div`
   align-items: ${(props) => {
     if (props.aic) return 'center';
     if (props.center) return 'center';
+    if (props.aife) return 'flex-end';
     return 'flex-start';
   }};
   justify-content: ${(props) => {
@@ -29,6 +30,7 @@ export const Container = styled.div`
   ${(props) => {
     if (props.bsh) return `box-shadow: ${props.bsh};`;
     if (props.bg) return `background: ${props.bg};`;
+    if (props.bd) return `border: ${props.bd};`;
     return null;
   }};
 `;
