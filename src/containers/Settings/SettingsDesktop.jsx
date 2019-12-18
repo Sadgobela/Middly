@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
 	Aside,
 	BackTo,
@@ -18,16 +18,25 @@ import Preferences from "./components/Preferences";
 const locations = ['Home', 'Profile', 'Account Settings', 'Notifications'];
 const links = ['Preferences','Addresses','Notifications'];
 
-function getLinks() {
+function getLinks(activeLink, setActiveLink) {
 	return (
 		links.map( (item, i) =>
 			<Item key={item}>
-				<Link active={i === 2}>{item}</Link>
+				<Link
+						name={item}
+						onClick={ev => changeContent(ev, setActiveLink)}
+						active={item === activeLink}>{item}</Link>
 			</Item>)
 	)
 }
 
+function changeContent(ev, setActiveLink) {
+	const activeLink = ev.target.getAttribute('name');
+	setActiveLink(activeLink);
+}
+
 const MyProfileDesktop = ()=> {
+	const [activeLink, setActiveLink] = useState('Preferences');
 	return (
 		<Grid pageContainer>
 			<Breadcrumbs locations={locations} />
@@ -40,16 +49,30 @@ const MyProfileDesktop = ()=> {
 					<MenuBar>
 						<Heading>Account Settings</Heading>
 						<List>
-							{getLinks()}
+							{getLinks(activeLink, setActiveLink)}
 						</List>
 					</MenuBar>
 				</Aside>
+				{
+					activeLink === 'Notifications' ?
+						<ProfileContent heading='Notifications for email'>
+							<Notifications />
+						</ProfileContent>
+						: null
+				}
+				{
+					activeLink === 'Addresses' ?
 
-				{/*<ProfileContent heading='Notifications for email'>*/}
-				{/*	/!*<Notifications />*!/*/}
-				{/*	/!*<Addresses />*!/*/}
-				{/*</ProfileContent>*/}
-				<Preferences />
+						<ProfileContent heading='Addresses'>
+							<Addresses />
+						</ProfileContent>
+						: null
+				}
+				{
+					activeLink === 'Preferences' ?
+						<Preferences />
+						: null
+				}
 			</Grid>
 		</Grid>
 	)
