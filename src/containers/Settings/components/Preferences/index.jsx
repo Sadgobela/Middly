@@ -7,6 +7,8 @@ import LocalPreferences from "../LocalPreferences";
 import Password from "../Password";
 import ChangeEmail from "../ChangeEmail";
 import Social from "../Social";
+import Interests from "../Interests";
+import {CancelBtn, SaveBtn} from "../Notifications/styled";
 
 function Preferences() {
 	return (
@@ -23,6 +25,13 @@ function Preferences() {
 			<Container>
 				<Social />
 			</Container>
+			<Container>
+				<Interests />
+			</Container>
+			<Grid aic margin='0 0 0 auto'>
+				<CancelBtn>Cancel</CancelBtn>
+				<SaveBtn>Save</SaveBtn>
+			</Grid>
 		</Grid>
 	);
 }

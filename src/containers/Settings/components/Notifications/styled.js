@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Check from './check.png';
 
 export const NotificationsLabel = styled.label`
   display: flex;
@@ -17,7 +18,7 @@ export const NotificationsLabel = styled.label`
     justify-content: center;
     width: 20px;
     height: 20px;
-    background: ${({active}) => (active ? `#000` : 'transparent')};
+    background: ${({active}) => (active ? `url('${Check}') no-repeat center #000` : 'transparent')};
     border-color: ${({active}) => (active ? `#000` : '#464646')};
     border-width: 1.5px;
     border-style: solid;
