@@ -13,11 +13,13 @@ import {
 	Wrap,
 	Row,
 } from './styled';
-import tableData from './tableData';
+import {clothes} from './data/women';
+import Women from './Women';
+import Men from './Men';
 
 function getTableContent() {
 	return(
-		tableData.map( item =>
+		clothes.map( item =>
 			<Column>
 				<Title>{item.title}</Title>
 				{
@@ -55,7 +57,9 @@ const SizeGuide = ({close})=> (
 				<Tab>Shoes</Tab>
 			</TabList>
 			<Table>
-				{ getTableContent() }
+				{/*{ getTableContent() }*/}
+				{/*<Women/>*/}
+				<Men/>
 			</Table>
 		</Guide>
 	</Overlay>

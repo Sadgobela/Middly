@@ -57,6 +57,15 @@ export const Table = styled.div`
   padding: 24px 40px;
 `;
 
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const TableWrapper = styled.div`
+  display: flex;
+`;
+
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
@@ -84,14 +93,15 @@ export const Row = styled.div`
 `;
 
 export const Title = styled.span`
+  display: block;
   font-family: Helvetica, sans-serif;
   font-weight: 700;
   font-size: 12px;
   line-height: 120%;
   letter-spacing: 0.06em;
   color: #000000;
-  padding-bottom: 8px;
   text-align: center;
+  padding-bottom: ${({paddingBottom}) => (paddingBottom ? '37px' : '8px')};
 `;
 
 export const Item = styled.span`
