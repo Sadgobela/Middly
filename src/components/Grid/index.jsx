@@ -9,12 +9,13 @@ const components = {
 	container: Container,
 };
 
-const Grid = ({pageContainer, aic, aife, children, sb, center, column, margin, padding, width, wrap, height, bg, bsh, bd})=> {
+const Grid = ({pageContainer, aic, aife, jcc, children, sb, center, column, margin, padding, width, wrap, height, bg, bsh, bd})=> {
 	const Component = pageContainer ? PageContainer : Container;
 	return (
 		<Component
 			aife={aife}
 			width={width}
+			jcc={jcc}
 			aic={aic}
 			sb={sb}
 			center={center}

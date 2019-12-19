@@ -1,6 +1,7 @@
 import React from 'react';
 import {
 	Continue,
+	CartWrapper,
 } from './styled';
 import Grid from 'components/Grid';
 import Breadcrumbs from 'components/Breadcrumbs';
@@ -9,9 +10,9 @@ import Icon from 'components/Icon';
 import Seller from "./Components/Seller";
 import Summary from "./Components/Summary";
 import exampleData from './exampleData';
-import WithSlider from "../../components/WithSlider";
-import {featuredProducts, newArrivals} from "../../constants/staticData";
+import { newArrivals} from "../../constants/staticData";
 import CardNewArrival from "../../components/CardNewArrival";
+import Slider from 'react-slick';
 
 const locations = ['Home', 'Shopping', 'My Cart'];
 
@@ -19,12 +20,12 @@ function CartPageDesktop() {
 	return (
 		<Grid pageContainer>
 			<Breadcrumbs locations={locations} />
-			<ListHeading heading='My Cart' />
+			<ListHeading heading='My Cart' customStyles='padding-bottom:12px;'/>
 			<Continue>
 				<Icon type='arrow' color='#000' />
 				Continue Shopping
 			</Continue>
-			<Grid margin='24px 0 0 0'>
+			<Grid jcc margin='24px 0 0 0'>
 				<Grid column>
 					{
 						exampleData.map( item => <Seller data={item} />
@@ -35,11 +36,15 @@ function CartPageDesktop() {
 				<Summary />
 			</Grid>
 
-			<WithSlider title="Recommended for you" slidesToScroll={4} infinite={false} slidesToShow={4} marginTop={88} dots={true}>
-				{newArrivals.map((arrival, index) => (
-					<CardNewArrival key={index} {...arrival} />
-				))}
-			</WithSlider>
+
+				<ListHeading  heading='Recommended for you' customStyles='padding-bottom:12px;'/>
+				<CartWrapper>
+					<Slider dots={true} slidesToShow={4} slidesToScroll={4}>
+						{newArrivals.map((arrival, index) => (
+							<CardNewArrival key={index} {...arrival} />
+						))}
+					</Slider>
+				</CartWrapper>
 		</Grid>
 	);
 }
