@@ -1,29 +1,22 @@
 import React from 'react';
 import {
-	Title,
-	Row,
-	Item,
-
+	TabList,
+	Tab,
+	Content,
 } from './styled';
-import {shoes} from './data/women';
+import {shoes, clothes} from './data/women';
 
-function Women(props) {
+function Women({getContent}) {
 	return (
 		<>
-			{
-				shoes.map( item =>
-					<div>
-						<Title>{item.title}</Title>
-						<Row>
-							{
-								item.list.map(item =>
-									<Item>{item}</Item>
-								)
-							}
-						</Row>
-					</div>
-				)
-			}
+			<TabList>
+				<Tab>Clothing</Tab>
+				<Tab active>Shoes</Tab>
+			</TabList>
+			<Content>
+				{getContent(shoes)}
+			</Content>
+
 		</>
 	);
 }

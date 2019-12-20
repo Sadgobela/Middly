@@ -44,7 +44,7 @@ function getTableContent(data) {
 	)
 }
 
-function Men(props) {
+function Men() {
 	return (
 		<Wrapper>
 			{

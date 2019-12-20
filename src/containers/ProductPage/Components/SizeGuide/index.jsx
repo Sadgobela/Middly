@@ -12,14 +12,15 @@ import {
 	Title,
 	Wrap,
 	Row,
+	Close,
 } from './styled';
-import {clothes} from './data/women';
+import Icon from 'components/Icon';
 import Women from './Women';
 import Men from './Men';
 
-function getTableContent() {
+function getTableContent(data) {
 	return(
-		clothes.map( item =>
+		data.map( (item, i) =>
 			<Column>
 				<Title>{item.title}</Title>
 				{
@@ -37,11 +38,14 @@ function getTableContent() {
 							}
 						</Wrap>
 						:
-						<Row single>
-							{
-								item.list.map( item => <Item bold>{item}</Item> )
-							}
-						</Row>
+
+						<Wrap>
+							<Row single>
+								{
+									item.list.map( item => <Item single bold={!i}>{item}</Item> )
+								}
+							</Row>
+						</Wrap>
 				}
 			</Column>
 		)
@@ -51,15 +55,20 @@ function getTableContent() {
 const SizeGuide = ({close})=> (
 	<Overlay onClick={ev => close(false)}>
 		<Guide>
+			<Close>
+				<Icon type='close' color='#000' />
+			</Close>
+
 			<Heading>Size guide</Heading>
 			<TabList>
-				<Tab active>Clothing</Tab>
-				<Tab>Shoes</Tab>
+				<Tab main active>Women</Tab>
+				<Tab main>Men</Tab>
+				<Tab main>Kids</Tab>
 			</TabList>
 			<Table>
 				{/*{ getTableContent() }*/}
-				{/*<Women/>*/}
-				<Men/>
+				<Women getContent={getTableContent}/>
+				{/*<Men/>*/}
 			</Table>
 		</Guide>
 	</Overlay>
