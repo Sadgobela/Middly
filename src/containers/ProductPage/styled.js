@@ -14,7 +14,6 @@ export const Container = styled.div`
 export const Row = styled.div`
   display: flex;
   align-items: flex-start;
-  margin: 26px 0 0 0;
 `;
 
 export const Column = styled.div``;

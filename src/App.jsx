@@ -8,11 +8,19 @@ import Forgot from './components/UserAuth/Forgot';
 import ProductPage from './containers/ProductPage';
 import apolloClient from './apolloClient';
 import UIkit from './components/UI-kit';
+import SearchResult from './containers/SearchResult';
+import MyProfile from 'containers/MyProfile';
+import Settings from "containers/Settings";
+import CartPage from "containers/CartPage";
 
 const routes = [
   { path: '/', name: 'HomePage', Component: HomePage },
   { path: '/ui-kit', name: 'UIkit', Component: UIkit },
   { path: '/product', name: 'Product', Component: ProductPage },
+  { path: '/search', name: 'Search', Component: SearchResult },
+  { path: '/profile', name: 'Profile', Component: MyProfile },
+  { path: '/settings', name: 'Settings', Component: Settings },
+  { path: '/cart', name: 'My-Cart', Component: CartPage },
 ];
 
 const auth = [

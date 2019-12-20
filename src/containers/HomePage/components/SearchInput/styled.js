@@ -7,6 +7,8 @@ export const SearchContainer = styled.div`
   display: flex;
   margin: 0 24px 0 4.9%;
   z-index: 999;
+  max-width: 407px;
+  flex-grow: 1;
 `;
 
 export const CloseOverlay = styled.div`
@@ -46,7 +48,8 @@ export const Search = styled(Input)`
     border-radius: 4px 0 0 4px;
     outline: none;
     box-shadow: none;
-    width: 267px;
+    width: 100%;
+    max-width: 267px;
 
     & .ant-input {
       outline: none;

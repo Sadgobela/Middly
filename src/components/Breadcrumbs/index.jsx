@@ -5,9 +5,7 @@ import {
 } from './styled';
 import Arrow from 'assets/Arrow';
 
-const locations = ['Home', "Women's Clothing", 'Swimwear', 'Floral Dress'];
-
-export default function () {
+export default function ({locations}) {
 	return (
 		<Container>
 			{

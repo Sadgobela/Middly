@@ -36,6 +36,7 @@ import SlickSlider from 'react-slick';
 
 const sliderPreview = [preview,preview1,preview2,preview3,preview4];
 const hashtags = ['#Cream', '#canvas', '#Big', '#tags' ];
+const locations = ['Home', "Women's Clothing", 'Swimwear', 'Floral Dress'];
 
 function getTabs() {
 	return (
@@ -97,7 +98,7 @@ const ProductPageDesktop = ()=>{
 	return (
 		<PageWrap>
 			<Container>
-				<Breadcrumbs />
+				<Breadcrumbs locations={locations} />
 				<Row>
 					<Column>
 						<Slider>
