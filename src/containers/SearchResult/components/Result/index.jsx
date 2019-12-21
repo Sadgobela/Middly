@@ -13,7 +13,7 @@ function getCards() {
 
 const Result = ()=>{
 	return (
-		<Grid container sb wrap margin='40px 0 0 0'>
+		<Grid sb wrap margin='40px 0 0 0'>
 			{getCards()}
 		</Grid>
 	)

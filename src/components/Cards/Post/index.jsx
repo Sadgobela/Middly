@@ -20,7 +20,7 @@ const Post = ({content, margin})=>{
 	return (
 		<Card margin={margin}>
 			<Time>{time}</Time>
-			<Grid container aic height={64} padding='0 0 0 16px'>
+			<Grid aic height={64} padding='0 0 0 16px'>
 				<Avatar>
 					<AvatarLogo src={logo} />
 				</Avatar>
@@ -32,7 +32,7 @@ const Post = ({content, margin})=>{
 			<Poster>
 				<PosterPic src={poster} />
 			</Poster>
-			<Grid container sb aic height={43} padding='0 15px'>
+			<Grid sb aic height={43} padding='0 15px'>
 				<Shop>
 					<Icons type='bags'/>
 					{shop}

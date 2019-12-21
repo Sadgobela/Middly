@@ -9,7 +9,7 @@ import Icons from 'components/Icon';
 
 const Pagination = ()=>{
 	return (
-		<Grid container center margin='60px 0'>
+		<Grid center margin='60px 0'>
 			<Controls>Previous</Controls>
 			<Controls prev>
 				<Icons type='arrow' />
