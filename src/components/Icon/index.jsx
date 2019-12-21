@@ -18,6 +18,8 @@ import Bags from "assets/Bags";
 import Pencil from "assets/Pencil";
 import Marker from "assets/Marker";
 import Eye from "assets/Eye";
+import Coins from "assets/Profile/Coins";
+import Close from "assets/CloseIcon";
 
 const icons = {
 	addMessage: AddMessage,
@@ -36,6 +38,8 @@ const icons = {
 	pencil: Pencil,
 	marker: Marker,
 	eye: Eye,
+	coins: Coins,
+	close: Close,
 };
 
 const Icons = ({type, props, color, width, height})=> {
