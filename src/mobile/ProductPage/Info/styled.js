@@ -101,6 +101,8 @@ export const Coins = styled.span`
 
   svg {
     stroke: #398287;
+    position: relative;
+    top: 1px;
   }
 `;
 
@@ -133,34 +135,112 @@ export const Divider = styled.div`
   margin: 0 8px;
 `;
 
-export const Buttons = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 40px -5px 0;
+export const PopupOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+
+  opacity: ${({active}) => (active ? 1 : 0)};
+  pointer-events: ${({active}) => (active ? 'all' : 'none')};
 `;
 
-export const Button = styled.button`
-  margin: 0 5px;
+export const PopupWrapper = styled.div`
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
   background: #fff;
-  border: 1px solid ${primaryColor};
-  border-radius: 24px;
-  height: 40px;
-  width: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 100vw;
+  padding: 56px 16px 16px;
+
+  opacity: ${({active}) => (active ? 1 : 0)};
+  transform: translateY(${({active}) => (active ? '0px' : '50px')});
+  pointer-events: ${({active}) => (active ? 'all' : 'none')};
+`;
+
+export const IconWrapper = styled.div`
+  position: absolute;
+  top: -3px;
+  right: 0;
+  z-index: 110;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const FormGroup = styled.div`
+  margin-bottom: 32px;
+`;
+
+export const FormTitle = styled.h3`
+  display: flex;
+  align-items: center;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 30px;
-  padding: 0;
-  outline: none;
-  text-align: center;
-  color: ${primaryColor};
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 16px;
 
-  ${({type}) => {
-    if (type === 'primary') {
-      return `
-        background: ${primaryColor};
-        color: #fff;
-      `;
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    color: #ed484f;
+    margin-left: auto;
+    color: ${primaryColor};
+  }
+`;
+
+export const FormValues = styled.div`
+  display: flex;
+  margin: 0 -16px;
+
+  .ScrollbarsCustom-Content {
+    display: flex;
+    padding: 0 16px !important;
+
+    &:after {
+      content: '';
+      min-width: 16px;
+      height: 1px;
+      display: inline-flex;
     }
-  }}
+  }
+
+  .TrackX {
+    display: none;
+  }
+`;
+
+export const FormValue = styled.div`
+  height: 40px;
+  border: 1px solid ${({active}) => (active ? '#000000' : '#999999')};
+  padding: 0 16px;
+  line-height: 38px;
+  border-radius: 2px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: ${({active}) => (active ? '#000000' : '#999999')};
+  transition: all 0.3s ease;
+  box-shadow: ${({active}) => (active ? 'inset 0 0 0 1px #000' : 'inset 0 0 0 1px transparent')};
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
 `;

@@ -18,6 +18,10 @@ import Like from "assets/Like";
 import Message from "assets/MessageIcon";
 import Share from "assets/Share";
 import BookmarkIcon from "assets/BookmarkIcon";
+import CloseIcon from "assets/CloseIcon";
+import Send from "assets/Send";
+import Checkbox from "assets/Checkbox";
+import ShoppingCart from "assets/ShoppingCart";
 
 const icons = {
 	addMessage: AddMessage,
@@ -35,7 +39,11 @@ const icons = {
 	like: Like,
 	message: Message,
 	share: Share,
-	bookmarkIcon: BookmarkIcon
+	bookmarkIcon: BookmarkIcon,
+	close: CloseIcon,
+	send: Send,
+	checkbox: Checkbox,
+	cart: ShoppingCart
 };
 
 const Icons = ({type, props, svgStyle})=> {

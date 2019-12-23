@@ -17,7 +17,8 @@ const Variations = ({
   color,
   size,
   setColor,
-  setSize
+  setSize,
+  setShowVariationsPopup
 }) => {
   return <Wrapper>
     {
@@ -25,10 +26,11 @@ const Variations = ({
         ?
           <FieldGroup>
             <FieldLabel>Color</FieldLabel>
-            <FieldWrapper>
+            <FieldWrapper onClick={() => setShowVariationsPopup(true)}>
               <Field
                 placeholder="Any color"
-                active={color}
+                active={color !== null}
+                value={color}
                 readOnly
               />
               <Icon type="arrow" svgStyle={{color: color ? '#000' : '#999999', width: 8, height: 12}}/>
@@ -42,10 +44,11 @@ const Variations = ({
         ?
           <FieldGroup>
             <FieldLabel>Size</FieldLabel>
-            <FieldWrapper>
+            <FieldWrapper onClick={() => setShowVariationsPopup(true)}>
               <Field
                 placeholder="Any size"
-                active={size}
+                active={size !== null}
+                value={size}
                 readOnly
               />
               <Icon type="arrow" svgStyle={{color: size ? '#000' : '#999999', width: 8, height: 12}}/>
@@ -62,7 +65,8 @@ Variations.defaultProps = {
   color: null,
   size: null,
   setColor: () => {},
-  setSize: () => {}
+  setSize: () => {},
+  setShowVariationsPopup: () => {}
 };
 
 Variations.propTypes = {
@@ -71,7 +75,8 @@ Variations.propTypes = {
   color: string,
   size: string,
   setColor: func,
-  setSize: func
+  setSize: func,
+  setShowVariationsPopup: func
 };
 
 export default Variations;

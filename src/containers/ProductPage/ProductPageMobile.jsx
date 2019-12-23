@@ -11,10 +11,22 @@ import Description from 'mobile/ProductPage/Description';
 import Divider from 'mobile/ProductPage/Divider';
 import ReturnsPayments from 'mobile/ProductPage/ReturnsPayments';
 import AboutSeller from 'mobile/ProductPage/AboutSeller';
+import ProductSlider from 'mobile/ProductPage/ProductSlider';
+import Feedbacks from 'mobile/ProductPage/Feedbacks';
+import PopularHashtags from 'mobile/ProductPage/PopularHashtags';
+import Buttons from 'mobile/ProductPage/Buttons';
+import ProductAdded from 'mobile/ProductPage/ProductAdded';
+
+import {
+  Line
+} from './styled';
 
 const ProductPageMobile = () => {
   const [color, setColor] = useState(null);
   const [size, setSize] = useState(null);
+  const [showCommentsPopup, setShowCommentsPopup] = useState(false);
+  const [showVariationsPopup, setShowVariationsPopup] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   return <>
     <BackLink
@@ -37,12 +49,18 @@ const ProductPageMobile = () => {
       setColor={setColor}
       size={size}
       setSize={setSize}
+      showVariationsPopup={showVariationsPopup}
+      setShowVariationsPopup={setShowVariationsPopup}
+      showMessage={showMessage}
+      setShowMessage={setShowMessage}
     />
     <Counters
       likes={product.likes}
       comments={product.comments}
       share={product.share}
       bookmark={product.bookmark}
+      showCommentsPopup={showCommentsPopup}
+      setShowCommentsPopup={setShowCommentsPopup}
     />
     <Description
       text={product.description}
@@ -53,6 +71,40 @@ const ProductPageMobile = () => {
     <Divider/>
     <AboutSeller
       seller={product.seller}
+    />
+    <Line/>
+    <ProductSlider/>
+    <Divider/>
+
+    <Feedbacks/>
+
+    <Divider/>
+    <ProductSlider
+      title="Similar Items"
+      seeMoreText="View All"
+    />
+
+    <ProductSlider
+      title="Most Popular"
+      seeMoreText="View All"
+    />
+
+    <PopularHashtags
+      tags={['fashion', 'trends', 'shoes']}
+    />
+
+    <Buttons
+      style={{
+        marginTop: 0,
+        padding: '0 16px 24px'
+      }}
+      showMessage={showMessage}
+      setShowMessage={setShowMessage}
+    />
+
+    <ProductAdded
+      showMessage={showMessage}
+      setShowMessage={setShowMessage}
     />
   </>
 };

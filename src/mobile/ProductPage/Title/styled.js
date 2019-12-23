@@ -18,8 +18,8 @@ export const Text = styled.span``;
 export const SeeMore = styled.span`
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 14px;
+  line-height: 17px;
   color: ${primaryColor};
   margin-left: auto;
   cursor: pointer;

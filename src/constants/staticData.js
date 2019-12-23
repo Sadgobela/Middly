@@ -44,6 +44,7 @@ import avatar from 'images/avatar.png';
 
 import slide1 from 'images/slides/slide1.jpg';
 import slide2 from 'images/slides/slide2.jpg';
+import slide3 from 'images/slides/slide3.png';
 import sellerThumb from 'images/sellerThumb.png';
 import follower1 from 'images/follower1.png';
 import follower2 from 'images/follower2.png';
@@ -172,8 +173,8 @@ export const defaultArrivals = [
   {
     title: 'Autumn winter fashion',
     imgSrc: arrivalImage,
-    isLiked: true,
     isWished: true,
+    isLiked: false,
     stock: 21,
     newPrice: 120,
     oldPrice: 243,
@@ -182,8 +183,8 @@ export const defaultArrivals = [
   {
     title: 'Autumn winter fashion',
     imgSrc: arrivalImage,
-    isLiked: true,
     isWished: true,
+    isLiked: false,
     stock: 21,
     newPrice: 120,
     oldPrice: 243,
@@ -295,6 +296,7 @@ export const deals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -305,6 +307,7 @@ export const deals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -315,6 +318,7 @@ export const deals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -325,6 +329,7 @@ export const deals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -335,6 +340,7 @@ export const deals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -345,6 +351,7 @@ export const deals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -355,6 +362,7 @@ export const deals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -365,6 +373,7 @@ export const deals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   }
 ];
@@ -379,6 +388,7 @@ export const featuredProducts = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -390,6 +400,7 @@ export const featuredProducts = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -401,6 +412,7 @@ export const featuredProducts = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   }
 ];
@@ -415,6 +427,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -426,6 +439,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -437,6 +451,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -448,6 +463,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -459,6 +475,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -469,6 +486,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -479,6 +497,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -489,6 +508,7 @@ export const newArrivals = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   }
 ];
@@ -503,6 +523,7 @@ export const fashion = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -513,6 +534,7 @@ export const fashion = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -524,6 +546,7 @@ export const fashion = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -535,6 +558,7 @@ export const fashion = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -545,6 +569,7 @@ export const fashion = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -555,6 +580,7 @@ export const fashion = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -565,6 +591,7 @@ export const fashion = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -575,6 +602,7 @@ export const fashion = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   }
 ];
@@ -589,6 +617,7 @@ export const electronics = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -599,6 +628,7 @@ export const electronics = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -610,6 +640,7 @@ export const electronics = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -621,6 +652,7 @@ export const electronics = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -632,6 +664,7 @@ export const electronics = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -642,6 +675,7 @@ export const electronics = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -653,6 +687,7 @@ export const electronics = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -664,6 +699,7 @@ export const electronics = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   }
 ];
@@ -678,6 +714,7 @@ export const recentlyViewed = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -688,6 +725,7 @@ export const recentlyViewed = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -699,6 +737,7 @@ export const recentlyViewed = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -710,6 +749,7 @@ export const recentlyViewed = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -721,6 +761,7 @@ export const recentlyViewed = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -731,6 +772,7 @@ export const recentlyViewed = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -742,6 +784,7 @@ export const recentlyViewed = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   },
   {
@@ -753,6 +796,7 @@ export const recentlyViewed = [
     sale: -40,
     likesCount: 142,
     isWished: true,
+    isLiked: false,
     stock: 21
   }
 ];
@@ -1307,7 +1351,7 @@ export const lists = [
 
 export const product = {
   id: 1,
-  gallery: [slide2, slide2, slide2, slide2],
+  gallery: [slide2, slide3, slide2, slide3],
   name: 'Chanel',
   subName: 'Les Beiges Eau De Teint',
   rating: 5,
@@ -1315,7 +1359,7 @@ export const product = {
   price: 750,
   newPrice: 675,
   coins: 19,
-  sizes: ['35 (EU)', '35 (EU)', '37,5 (EU)', '38 (EU)'],
+  sizes: ['35 (EU)', '36 (EU)', '37,5 (EU)', '38 (EU)'],
   colors: ['Black', 'Grey', 'Multicolor'],
   likes: 3653,
   comments: 22,

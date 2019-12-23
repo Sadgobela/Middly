@@ -1,10 +1,13 @@
 import React from 'react';
 import Scrollbar from 'react-scrollbars-custom';
-import { AutoSizer } from 'react-virtualized';
-
 import { any, string, number, bool } from 'prop-types';
+
 import { ContentWrapper } from 'globalStyles';
+
 import arrow from 'images/arrow.png';
+
+import Arrow from 'assets/Arrow';
+
 import {
   Thumb,
   Title,
@@ -14,9 +17,19 @@ import {
   CircleWrapper,
   ButtonText
 } from './styled';
-import Arrow from 'assets/Arrow';
 
-const WithSlider = ({ children, title, withSeeMore, seeMoreText, seeMoreCounter, showSeeMoreArrow, marginTop, padding, height, showTrackX }) => {
+const WithSlider = ({
+  children,
+  title,
+  withSeeMore,
+  seeMoreText,
+  seeMoreCounter,
+  showSeeMoreArrow,
+  marginTop,
+  padding,
+  height,
+  showTrackX
+}) => {
   return (
     <ContentWrapper marginTop={marginTop}>
       <Header>

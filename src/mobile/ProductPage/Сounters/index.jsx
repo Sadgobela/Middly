@@ -1,7 +1,8 @@
 import React from 'react';
-import {number} from 'prop-types';
+import { number, func, bool, object } from 'prop-types';
 
 import Icon from 'components/Icon';
+import Popup from './popup';
 
 import {
   Wrapper,
@@ -9,12 +10,12 @@ import {
   CounterLabel
 } from './styled';
 
-const Counters = ({ likes, comments, share, bookmark }) => {
+const Counters = ({ style, likes, comments, share, bookmark, showCommentsPopup, setShowCommentsPopup }) => {
   const formatNumbers = (number) => {
     return number.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,');
   };
 
-  return <Wrapper>
+  return <Wrapper style={style}>
     {
       likes
       ?
@@ -28,7 +29,7 @@ const Counters = ({ likes, comments, share, bookmark }) => {
     {
       comments
       ?
-        <Counter>
+        <Counter onClick={() => setShowCommentsPopup(true)}>
           <Icon type="message"/>
           <CounterLabel>{formatNumbers(comments)}</CounterLabel>
         </Counter>
@@ -54,21 +55,32 @@ const Counters = ({ likes, comments, share, bookmark }) => {
         </Counter>
       : null
     }
+
+    <Popup
+      showCommentsPopup={showCommentsPopup}
+      setShowCommentsPopup={setShowCommentsPopup}
+    />
   </Wrapper>
 };
 
 Counters.defaultProps = {
+  style: {},
   likes: null,
   comments: null,
   share: null,
-  bookmark: null
+  bookmark: null,
+  showCommentsPopup: false,
+  setShowCommentsPopup: () => {}
 };
 
 Counters.propTypes = {
+  style: object,
   likes: number,
   comments: number,
   share: number,
-  bookmark: number
+  bookmark: number,
+  showCommentsPopup: bool,
+  setShowCommentsPopup: func
 };
 
 export default Counters;

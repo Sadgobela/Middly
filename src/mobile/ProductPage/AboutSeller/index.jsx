@@ -1,8 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
 import { object } from 'prop-types';
 
 import Title from '../Title';
+import Icon from 'components/Icon';
+import Popup from './popup';
 
 import {
   Wrapper,
@@ -19,9 +20,10 @@ import {
   Rating,
   Reviews,
 } from './styled';
-import Icon from 'components/Icon';
 
 const AboutSeller = ({ seller }) => {
+  const [showPopup, setShowPopup] = useState(false);
+
   return <Wrapper>
     <Title
       title="About Seller"
@@ -67,11 +69,16 @@ const AboutSeller = ({ seller }) => {
             {seller.followers.map((follower, key) => key <= 1 && <img src={follower.avatar} key={key} alt={follower.name}/>)}
           </SellerImages>
           <SellerFollowersCount>
-            {seller.followers[0].name} and <Link to="/">{seller.followers.length - 1} more</Link>
+            {seller.followers[0].name} and <a onClick={() => setShowPopup(true)}>{seller.followers.length - 1} more</a>
             <span>started following this Seller</span>
           </SellerFollowersCount>
         </SellerFollowers>
     }
+
+    <Popup
+      showPopup={showPopup}
+      setShowPopup={setShowPopup}
+    />
   </Wrapper>
 };
 

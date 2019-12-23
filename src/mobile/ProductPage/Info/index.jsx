@@ -1,9 +1,11 @@
 import React from 'react';
-import {string, number, array, func} from 'prop-types';
+import {string, number, array, func, bool} from 'prop-types';
 
 import Icon from 'components/Icon'
 
 import Variations from '../Variations';
+import Buttons from '../Buttons';
+import Popup from './popup';
 
 import {
   Wrapper,
@@ -19,9 +21,7 @@ import {
   Delivery,
   DeliveryLabel,
   DeliveryDate,
-  Divider,
-  Buttons,
-  Button
+  Divider
 } from './styled';
 
 const Info = ({
@@ -37,7 +37,11 @@ const Info = ({
   color,
   size,
   setColor,
-  setSize
+  setSize,
+  showVariationsPopup,
+  setShowVariationsPopup,
+  showMessage,
+  setShowMessage
 }) => {
   return <Wrapper>
     {name && <Name dangerouslySetInnerHTML={{ __html: name }}/>}
@@ -74,12 +78,24 @@ const Info = ({
       size={size}
       setColor={setColor}
       setSize={setSize}
+      setShowVariationsPopup={setShowVariationsPopup}
     />
 
-    <Buttons>
-      <Button>Add to Cart</Button>
-      <Button type="primary">Buy Now</Button>
-    </Buttons>
+    <Buttons
+      setShowMessage={setShowMessage}
+    />
+
+    <Popup
+      colors={colors}
+      sizes={sizes}
+      color={color}
+      size={size}
+      setColor={setColor}
+      setSize={setSize}
+      showVariationsPopup={showVariationsPopup}
+      setShowVariationsPopup={setShowVariationsPopup}
+      setShowMessage={setShowMessage}
+    />
   </Wrapper>
 };
 
@@ -95,8 +111,10 @@ Info.defaultProps = {
   sizes: [],
   color: null,
   size: null,
+  showVariationsPopup: false,
   setColor: () => {},
-  setSize: () => {}
+  setSize: () => {},
+  setShowVariationsPopup: () => {}
 };
 
 Info.propTypes = {
@@ -111,8 +129,10 @@ Info.propTypes = {
   sizes: array,
   color: string,
   size: string,
+  showVariationsPopup: bool,
   setColor: func,
-  setSize: func
+  setSize: func,
+  setShowVariationsPopup: func
 };
 
 export default Info;
