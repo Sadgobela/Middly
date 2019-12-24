@@ -5,6 +5,7 @@ import {
 import Grid from "components/Grid";
 import Breadcrumbs from "components/Breadcrumbs";
 import SideBar from "./components/SIdebar";
+import Lists from "./components/Lists";
 import Content from "components/ProfileContent";
 ///////////////
 import {
@@ -17,6 +18,11 @@ import {
 ////////////////
 
 import exampleData from "./exampleData";
+import ListsOwner from "./components/ListsOwner";
+import Information from "./components/Information";
+import MovePopup from "./components/MovePopup";
+import EditPopup from "./components/EditPopup";
+import EditOwnerPopup from "./components/EditOwnerPopup";
 
 function getItems() {
 	return (
@@ -43,11 +49,19 @@ const MyProfileDesktop = ()=> {
 		<Grid pageContainer>
 			<Breadcrumbs locations={locations} />
 			<Grid>
-				<SideBar />
-				<Content heading='Notifications'>
-					{getItems()}
-				</Content>
+				<div>
+					<SideBar />
+					<Information/>
+					<MovePopup/>
+				</div>
+				{/*<Content heading='Notifications'>*/}
+				{/*	{getItems()}*/}
+				{/*</Content>*/}
+				{/*<Lists/>*/}
+				<ListsOwner/>
 			</Grid>
+			{/*<EditPopup/>*/}
+			<EditOwnerPopup/>
 		</Grid>
 	)
 };
