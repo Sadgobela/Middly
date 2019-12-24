@@ -33,13 +33,14 @@ export const TabList = styled.ul`
   display: flex;
   list-style: none;
   margin-bottom: 0;
+  padding: 0;
 `;
 
 export const Tab = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
+  flex-grow: 1;
   height: 36px;
   font-family: Helvetica, sans-serif;
   font-weight: 700;
@@ -48,50 +49,62 @@ export const Tab = styled.button`
   border: none;
   text-decoration: none;
   color: ${({active}) => (active ? '#000000' : '#7A7A7A')};
-  border-bottom: ${({active}) => (active ? '2px solid #000' : 'none')};
+  border-bottom: 2px solid #efefef;
+  ${(props) => {
+    if (props.main && props.active) return 'border-bottom: 2px solid #ED484F';
+    if (props.active) return 'border-bottom: 2px solid #000';
+    return null;
+  }};
+`;
+
+export const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 0 0;
+  max-height: 70vh;
+  overflow-y: auto;
 `;
 
 export const Table = styled.div`
-  display: flex;
-  justify-content: space-between;
   padding: 24px 40px;
 `;
 
-export const Column = styled.div`
+export const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+`;
+
+export const TableWrapper = styled.div`
+  display: flex;
+`;
+
+export const Column = styled.div`
+  flex-grow: 1;
 `;
 
 export const Wrap = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 export const Row = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: ${({single}) => (single ? '28px 0 0 0' : '0')};
-  ${({double}) =>
-    double
-      ? `
-		margin-right: 30px;
-		&:last-child{
-			margin-right: 0;
-		}
-	`
-      : null};
+  flex-grow: 1;
+  margin-top: ${({single}) => (single ? '29px' : '0')};
 `;
 
 export const Title = styled.span`
+  display: block;
   font-family: Helvetica, sans-serif;
   font-weight: 700;
   font-size: 12px;
   line-height: 120%;
   letter-spacing: 0.06em;
-  color: #000000;
-  padding-bottom: 8px;
+  color: #000;
   text-align: center;
+  padding-bottom: ${({paddingBottom}) => (paddingBottom ? '37px' : '8px')};
 `;
 
 export const Item = styled.span`
@@ -100,12 +113,27 @@ export const Item = styled.span`
   font-size: 12px;
   line-height: 120%;
   font-weight: ${({bold}) => (bold ? '700' : '400')};
-  padding-bottom: 32px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
   color: ${({bold}) => (bold ? '#000' : '#545454')};
   text-align: center;
+  border-bottom: 1px solid #c4c4c4;
 `;
 
-export const Unit = styled(Item)`
+export const Unit = styled.span`
   padding: 0 0 14px 0;
-  font-weight: 700;
+  font-family: Helvetica Neue, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #666;
+`;
+
+export const Close = styled.i`
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  width: 24px;
+  height: 24px;
 `;

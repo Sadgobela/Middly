@@ -198,6 +198,9 @@ const OrderInfo = ({setRating})=> {
 			>
 				<SizeGuide close={setIsOpenGuide} />
 			</CSSTransition>
+			{/*-----------------*/}
+			<SizeGuide close={()=> console.log('ok')} />
+			{/*-----------------*/}
 		</Description>
 	)
 };
