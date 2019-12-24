@@ -15,10 +15,10 @@ export const WrapperPopup = styled.div`
   bottom: 0;
   z-index: 1100;
   background: #fff;
-  border-top: 1px solid #cccccc;
-  transition: all 0.3s ease;
-  transition-delay: 0.1s;
-  transform: translate(${({active}) => (active ? '0' : '100%')}, 0);
+  transition: all 0.15s linear;
+  user-select: none;
+  pointer-events: ${({active}) => (active ? 'all' : 'none')};
+  transform: ${({active}) => (active ? 'translate(0, 0)' : 'translate(100%, 0)')};
 `;
 
 export const Header = styled.div`
@@ -70,8 +70,6 @@ export const ViewAll = styled.span`
 
 export const Content = styled.div`
   display: block;
-  overflow-x: hidden;
-  overflow-y: auto;
   position: relative;
 `;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import Div100vh from 'react-div-100vh';
 import PropTypes from 'prop-types';
 
@@ -26,8 +26,54 @@ import {
 } from './styled';
 
 const MessagesPopup = ({showMessages, setShowHamburger, setShowMessages}) => {
+  const wrapper = useRef(null);
+  let movedX = null,
+    startX = null,
+    moving = false;
+
+  const touchStart = (e) => {
+    startX = e.targetTouches[0].clientX;
+
+    if (wrapper && wrapper.current && wrapper.current.contains(e.target)) {
+      moving = true;
+    }
+  };
+
+  const touchMove = (e) => {
+    const diffX = e.changedTouches[0].clientX - startX;
+
+    if (diffX > 0 && moving && wrapper && wrapper.current && wrapper.current.contains(e.target)) {
+      movedX = diffX;
+      wrapper.current.style.transform = `translate(${movedX}px, 0)`;
+    }
+  };
+
+  const touchEnd = (e) => {
+    if (wrapper && wrapper.current && wrapper.current.contains(e.target)) {
+      const diffX = e.changedTouches[0].clientX - startX;
+
+      if (diffX >= 40 && moving) {
+        setShowHamburger(true);
+        setShowMessages(false);
+        movedX = null;
+        moving = false;
+        wrapper.current.style = '';
+      } else {
+        movedX = null;
+        moving = false;
+        wrapper.current.style.transform = 'translate(0, 0)';
+      }
+    }
+  };
+
   return (
-    <WrapperPopup active={showMessages}>
+    <WrapperPopup
+      active={showMessages}
+      ref={wrapper}
+      onTouchStart={(e) => touchStart(e)}
+      onTouchMove={(e) => touchMove(e)}
+      onTouchEnd={(e) => touchEnd(e)}
+    >
       <HeaderPopup>
         <Back
           onClick={() => {

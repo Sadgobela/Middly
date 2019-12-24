@@ -29,13 +29,23 @@ export const Content = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
+  background: #fff;
+`;
+
+export const WrapperInner = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   right: 40px;
   bottom: 0;
   z-index: 1100;
   background: #fff;
-  transition: all 0.3s ease;
   overflow-x: hidden;
   overflow-y: auto;
+  transition: all 0.3s ease;
   transform: ${({active}) => (active ? 'translateX(0)' : 'translateX(-100%)')};
   pointer-events: ${({active}) => (active ? 'all' : 'none')};
 `;
@@ -103,4 +113,22 @@ export const Settings = styled.div`
       padding-left: 11px;
     }
   }
+`;
+
+export const SliderWrapper = styled.div`
+  .slick {
+    &-slide {
+      > div {
+        width: 100%;
+      }
+    }
+    &-track {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+`;
+
+export const SliderSlide = styled.div`
+  width: 100%;
 `;

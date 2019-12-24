@@ -16,20 +16,20 @@ import {
 } from './styled';
 import Arrow from 'assets/Arrow';
 
-const WithSlider = ({ children, title, withSeeMore, marginTop, padding, height, showTrackX }) => {
+const WithSlider = ({ children, title, withSeeMore, seeMoreText, seeMoreCounter, showSeeMoreArrow, marginTop, padding, height, showTrackX }) => {
   return (
     <ContentWrapper marginTop={marginTop}>
       <Header>
         <Title>{title}</Title>
         <Thumb>
-          View all <b>(96)</b>{' '}
-          <img
+          {seeMoreText} {seeMoreCounter && <b>({seeMoreCounter})</b>}{' '}
+          {showSeeMoreArrow && <img
             style={{ transform: 'rotateY(180deg)' }}
             width={10}
             height={16}
             src={arrow}
             alt="arrow"
-          />
+          />}
         </Thumb>
       </Header>
       <SliderWrapper padding={padding} showTrackX={showTrackX}>
@@ -64,14 +64,20 @@ WithSlider.propTypes = {
   marginTop: number,
   withSeeMore: bool,
   showTrackX: bool,
-  height: number
+  height: number,
+  seeMoreText: string,
+  seeMoreCounter: number,
+  showSeeMoreArrow: bool
 };
 
 WithSlider.defaultProps = {
   marginTop: 50,
   withSeeMore: false,
   showTrackX: false,
-  height: '100%'
+  height: '100%',
+  seeMoreText: 'View all',
+  seeMoreCounter: 96,
+  showSeeMoreArrow: true
 };
 
 export default WithSlider;

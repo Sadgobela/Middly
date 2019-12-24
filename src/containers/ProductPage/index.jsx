@@ -1,15 +1,24 @@
 import React from 'react';
 import {} from './styled';
 import Layout from 'containers/Layout';
+import { useWindowSize } from "@reach/window-size";
+
 import ProductPageDesktop from './ProductPageDesktop';
+import ProductPageMobile from './ProductPageMobile';
 
-const ProductPage = ()=>{
+const ProductPage = () => {
+  const { width } = useWindowSize();
+  const isMobile = width <= 767;
 
-	return (
-		<Layout>
-			<ProductPageDesktop />
-		</Layout>
-	)
+  return (
+    isMobile
+      ?
+        <ProductPageMobile/>
+      :
+        <Layout>
+          <ProductPageDesktop/>
+        </Layout>
+  )
 };
 
 export default ProductPage;

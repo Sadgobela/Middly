@@ -220,7 +220,6 @@ export const ProductThumb = styled.img`
   height: 90px;
   object-fit: cover;
   border-radius: 4px;
-  margin: -1px 0 -1px -1px;
 `;
 
 export const ProductContent = styled.div`

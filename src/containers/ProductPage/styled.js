@@ -109,3 +109,9 @@ export const Recently = styled.div`
   padding: 68px 0 0 0;
   margin: 24px 0 0 0;
 `;
+
+export const Line = styled.hr`
+  margin: 0 16px;
+  border: 0;
+  border-top: 1px solid #efefef;
+`;

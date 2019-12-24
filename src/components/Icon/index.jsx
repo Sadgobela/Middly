@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-	Container,
-} from './styled';
+
 import AddMessage from "assets/AddMessage";
 import Arrow from "assets/Arrow";
 import ArrowFooter from "assets/ArrowFooter";
@@ -18,6 +16,21 @@ import Bags from "assets/Bags";
 import Pencil from "assets/Pencil";
 import Marker from "assets/Marker";
 import Eye from "assets/Eye";
+import CoinsProfile from "assets/Profile/Coins";
+import Close from "assets/CloseIcon";
+import ArrowBack from "assets/ArrowBack";
+import Star from "assets/Star";
+import Coins from "assets/Coins";
+import Message from "assets/MessageIcon";
+import Share from "assets/Share";
+import BookmarkIcon from "assets/BookmarkIcon";
+import Send from "assets/Send";
+import Checkbox from "assets/Checkbox";
+import ShoppingCart from "assets/ShoppingCart";
+
+import {
+	Container,
+} from './styled';
 
 const icons = {
 	addMessage: AddMessage,
@@ -36,15 +49,26 @@ const icons = {
 	pencil: Pencil,
 	marker: Marker,
 	eye: Eye,
+	coinsProfile: CoinsProfile,
+	coins: Coins,
+	close: Close,
+	arrowBack: ArrowBack,
+	star: Star,
+	message: Message,
+	share: Share,
+	bookmarkIcon: BookmarkIcon,
+	send: Send,
+	checkbox: Checkbox,
+	cart: ShoppingCart
 };
 
-const Icons = ({type, props, color, width, height})=> {
+const Icons = ({type, props, svgStyle, color, width, height})=> {
 	const Icon = icons[type];
+
 	return (
 		<Container {...props}>
-			<Icon color={color} width={width} height={height} />
+			<Icon color={color} width={width} height={height} {...svgStyle}/>
 		</Container>
-
 	)
 };
 
