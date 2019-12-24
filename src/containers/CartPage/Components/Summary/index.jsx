@@ -39,7 +39,7 @@ function Summary() {
 			<Grid sb aic margin='19px 0 0 0'>
 				<CoinsCounter >
 					Shop*Coins: -11
-					<Icon type='coins' />
+					<Icon type='coinsProfile' />
 				</CoinsCounter>
 				<Count red small>
 					BD
@@ -57,7 +57,7 @@ function Summary() {
 				<Grid sb aic margin='12px 0 0 0'>
 					<CoinsCounter>
 						Shop*Coins: -11
-						<Icon type='coins' />
+						<Icon type='coinsProfile' />
 					</CoinsCounter>
 					<Count small>
 						BD

@@ -53,6 +53,7 @@ const Header = ({isMobile}) => {
             <BurgerIcon />
           </Burger>
           <LogoContainer
+            to="/"
             isMobile={isMobile}
             onClick={() => {
               setShowNotifications(false);
@@ -62,7 +63,7 @@ const Header = ({isMobile}) => {
             <LogoIcon />
           </LogoContainer>
 
-          <BadgesContainer isMobile={isMobile}>
+          <BadgesContainer isMobile={isMobile} style={{ marginLeft: 'auto' }}>
             <CustomBadge
               count={0}
               ismobile={isMobile.toString()}
@@ -77,7 +78,7 @@ const Header = ({isMobile}) => {
               ismobile={isMobile.toString()}
               onClick={() => {
                 setShowHamburger(true);
-                setTab(me ? 4 : 1);
+                setTab(me ? 3 : 1);
                 setShowNotifications(false);
                 setShowMessages(false);
               }}

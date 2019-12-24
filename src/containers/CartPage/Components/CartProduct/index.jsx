@@ -43,12 +43,12 @@ function CartProduct({data, isLast}) {
 						<MidCoins>
 							Mid Coins:
 							+{data.midCoins}
-							<Icon type='coins' />
+							<Icon type='coinsProfile' />
 						</MidCoins>
 						<ShopCoins>
 							Shop* Coins:
 							+{data.shopCoins}
-							<Icon type='coins' />
+							<Icon type='coinsProfile' />
 						</ShopCoins>
 					</Grid>
 				</Grid>
