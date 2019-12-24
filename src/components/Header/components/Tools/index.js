@@ -9,10 +9,10 @@ import Notification from 'assets/Notification';
 import {primaryColor} from 'constants/colors';
 import {Wrapper, Rewards, RewardsLabel, Pin, PinCount, Divider} from './styled';
 
-const Tools = ({me, tab, setTab}) => {
+const Tools = ({me, tab, sliderGoTo}) => {
   return (
     <Wrapper>
-      <Rewards me={me} onClick={() => setTab(0)}>
+      <Rewards me={me} onClick={() => sliderGoTo(0)}>
         <IconRewards />
         {me ? (
           <RewardsLabel me={me}>
@@ -26,19 +26,19 @@ const Tools = ({me, tab, setTab}) => {
 
       {me ? (
         <>
-          <Pin onClick={() => setTab(2)}>
-            <Message fill={tab === 2 ? primaryColor : 'black'} />
+          <Pin onClick={() => sliderGoTo(1)}>
+            <Message fill={tab === 1 ? primaryColor : 'black'} />
             {me.messages && <PinCount style={{right: 5}}>{me.messages}</PinCount>}
           </Pin>
 
-          <Pin onClick={() => setTab(3)}>
-            <Notification fill={tab === 3 ? primaryColor : 'black'} />
+          <Pin onClick={() => sliderGoTo(2)}>
+            <Notification fill={tab === 2 ? primaryColor : 'black'} />
             {me.notifications && <PinCount>{me.notifications}</PinCount>}
           </Pin>
         </>
       ) : null}
-      <Pin onClick={() => setTab(4)}>
-        <ShoppingCart fill={tab === 4 ? primaryColor : 'black'} />
+      <Pin onClick={() => sliderGoTo(3)} data-tab={me ? 3 : 1}>
+        <ShoppingCart fill={me ? (tab === 3 ? primaryColor : 'black') : tab === 1 ? primaryColor : 'black'} />
         <PinCount>20</PinCount>
       </Pin>
     </Wrapper>
@@ -48,13 +48,13 @@ const Tools = ({me, tab, setTab}) => {
 Tools.defaultProps = {
   me: {},
   tab: 1,
-  setTab: () => {}
+  sliderGoTo: () => {}
 };
 
 Tools.propTypes = {
   me: PropTypes.object,
   tab: PropTypes.number,
-  setTab: PropTypes.func
+  sliderGoTo: PropTypes.func
 };
 
 export default Tools;

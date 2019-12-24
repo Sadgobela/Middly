@@ -979,6 +979,54 @@ export const categories = [
       {
         name: 'Clothing 4',
         url: '/'
+      },
+      {
+        name: 'Clothing 1',
+        url: '/'
+      },
+      {
+        name: 'Clothing 2',
+        url: '/'
+      },
+      {
+        name: 'Clothing 3',
+        url: '/'
+      },
+      {
+        name: 'Clothing 4',
+        url: '/'
+      },
+      {
+        name: 'Clothing 1',
+        url: '/'
+      },
+      {
+        name: 'Clothing 2',
+        url: '/'
+      },
+      {
+        name: 'Clothing 3',
+        url: '/'
+      },
+      {
+        name: 'Clothing 4',
+        url: '/'
+      },
+      {
+        name: 'Clothing 1',
+        url: '/'
+      },
+      {
+        name: 'Clothing 2',
+        url: '/'
+      },
+      {
+        name: 'Clothing 3',
+        url: '/'
+      },
+      {
+        name: 'Clothing 4',
+        url: '/'
       }
     ],
     url: '/'
@@ -1074,6 +1122,7 @@ export const categories = [
 ];
 
 export const user = {
+  id: 1,
   avatar: avatar,
   firstName: 'Maria',
   lastName: 'Podrezova',

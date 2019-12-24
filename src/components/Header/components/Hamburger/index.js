@@ -1,11 +1,23 @@
-import React, {useState} from 'react';
+import React, {useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import Div100vh from 'react-div-100vh';
+import Slider from 'react-slick';
 
 import Shop from 'assets/Shop';
 import Logout from 'assets/Logout';
 
-import {Wrapper, Overlay, Content, ShopContainer, LogoutContainer, LogoutLink, Settings} from './styled';
+import {
+  Wrapper,
+  WrapperInner,
+  Overlay,
+  Content,
+  ShopContainer,
+  LogoutContainer,
+  LogoutLink,
+  Settings,
+  SliderWrapper,
+  SliderSlide
+} from './styled';
 import User from '../User';
 import Tools from '../Tools';
 import Menu from '../Menu';
@@ -24,87 +36,131 @@ const Hamburger = ({
   setShowNotifications,
   setShowMessages,
   subCategoryActive,
-  setSubCategoryActive
+  setSubCategoryActive,
+  me,
+  setMe
 }) => {
-  const [me, setMe] = useState(null);
+  const wrapperInner = useRef(null);
+  const slider = useRef(null);
+
+  useEffect(() => {
+    if (wrapperInner && wrapperInner.current && subCategoryActive !== null) {
+      wrapperInner.current.scrollTo(0, 0);
+    }
+  });
+
+  useEffect(() => {
+    if (slider && slider.current) {
+      slider.current.slickGoTo(tab);
+    }
+  }, [tab]);
+
+  const sliderGoTo = (index) => {
+    if (slider && slider.current) {
+      slider.current.slickGoTo(index);
+      setTab(index);
+    }
+  };
+
+  const sliderOnSwipe = (direction) => {
+    const maxTabs = me ? 3 : 1;
+    const index = direction === 'left' ? (tab + 1 <= maxTabs ? tab + 1 : maxTabs) : tab - 1 >= 0 ? tab - 1 : 0;
+
+    if (slider && slider.current) {
+      slider.current.slickGoTo(index);
+      setTab(index);
+    }
+  };
 
   const renderTabs = () => {
-    switch (tab) {
-      case 4:
-        return (
-          <>
-            <Cart />
-            {me && <Navigation tab={tab} setTab={setTab} />}
-          </>
-        );
+    let list = [];
 
-      case 3:
-        return (
-          <>
-            <Notifications setShowNotifications={setShowNotifications} setShowHamburger={setShowHamburger} />
-            {me && <Navigation tab={tab} setTab={setTab} />}
-          </>
-        );
+    list.push(
+      <SliderSlide key={`slideMainMenu`}>
+        <Menu />
+        <Categories setSubCategoryActive={setSubCategoryActive} />
+        <ShopContainer>
+          <Shop />
+          <span>Start a shop</span>
+        </ShopContainer>
+        <Settings>
+          <p>
+            Location: <span>Russia</span>
+          </p>
+          <p>
+            Language: <span>ENG (US)</span>
+          </p>
+          <p>
+            Currency: <span>RUB</span>
+          </p>
+        </Settings>
 
-      case 2:
-        return (
-          <>
-            <Messages setShowHamburger={setShowHamburger} setShowMessages={setShowMessages} />
-            {me && <Navigation tab={tab} setTab={setTab} />}
-          </>
-        );
+        {me && (
+          <LogoutContainer>
+            <LogoutLink onClick={() => setMe(null)}>
+              <Logout />
+              <span>Log Out</span>
+            </LogoutLink>
+          </LogoutContainer>
+        )}
+      </SliderSlide>
+    );
 
-      case 1:
-      default:
-        return (
-          <>
-            <Menu />
-            <Categories setSubCategoryActive={setSubCategoryActive} />
-            <ShopContainer>
-              <Shop />
-              <span>Start a shop</span>
-            </ShopContainer>
-            <Settings>
-              <p>
-                Location: <span>Russia</span>
-              </p>
-              <p>
-                Language: <span>ENG (US)</span>
-              </p>
-              <p>
-                Currency: <span>RUB</span>
-              </p>
-            </Settings>
+    if (me) {
+      list.push(
+        <SliderSlide key={`slideMessages`}>
+          <Messages setShowHamburger={setShowHamburger} setShowMessages={setShowMessages} />
+        </SliderSlide>
+      );
 
-            {me && (
-              <LogoutContainer>
-                <LogoutLink onClick={() => setMe(null)}>
-                  <Logout />
-                  <span>Log Out</span>
-                </LogoutLink>
-              </LogoutContainer>
-            )}
-          </>
-        );
+      list.push(
+        <SliderSlide key={`slideNotifications`}>
+          <Notifications setShowNotifications={setShowNotifications} setShowHamburger={setShowHamburger} />
+        </SliderSlide>
+      );
     }
+
+    list.push(
+      <SliderSlide key={`slideCart`}>
+        <Cart me={me} />
+      </SliderSlide>
+    );
+
+    return list;
+  };
+
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    onSwipe: sliderOnSwipe
   };
 
   return (
     <Wrapper>
       <Overlay active={showHamburger} onClick={() => setShowHamburger(false)} />
-      <Div100vh style={{maxHeight: '100rvh)'}}>
-        <Content active={showHamburger}>
-          {subCategoryActive ? (
-            <SubCategory category={subCategoryActive} setSubCategoryActive={setSubCategoryActive} />
-          ) : (
-            <>
-              <User me={me} setMe={setMe} />
-              <Tools tab={tab} me={me} setTab={setTab} />
-              {renderTabs()}
-            </>
-          )}
-        </Content>
-      </Div100vh>
+      <WrapperInner active={showHamburger} style={subCategoryActive && {overflow: 'hidden'}} ref={wrapperInner}>
+        <Div100vh
+          style={{
+            maxHeight: '100rvh'
+          }}
+        >
+          <Content>
+            <User me={me} setMe={setMe} />
+            <Tools tab={tab} me={me} setTab={setTab} sliderGoTo={sliderGoTo} />
+            <SliderWrapper>
+              <Slider {...settings} ref={slider}>
+                {renderTabs()}
+              </Slider>
+              {me && tab > 0 && <Navigation tab={tab} sliderGoTo={sliderGoTo} />}
+            </SliderWrapper>
+          </Content>
+        </Div100vh>
+        <SubCategory category={subCategoryActive} setSubCategoryActive={setSubCategoryActive} />
+      </WrapperInner>
     </Wrapper>
   );
 };
@@ -122,7 +178,7 @@ Hamburger.defaultProps = {
 
 Hamburger.propTypes = {
   showHamburger: PropTypes.bool,
-  subCategoryActive: PropTypes.bool,
+  subCategoryActive: PropTypes.object,
   tab: PropTypes.number,
   setShowHamburger: PropTypes.func,
   setTab: PropTypes.func,

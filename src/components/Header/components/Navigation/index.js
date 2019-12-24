@@ -5,29 +5,25 @@ import {Wrapper, TabContainer, Tab} from './styled';
 
 const navs = [
   {
-    id: 1,
     title: 'Home'
   },
   {
-    id: 2,
     title: 'Messages'
   },
   {
-    id: 3,
     title: 'Notification'
   },
   {
-    id: 4,
     title: 'Cart'
   }
 ];
 
-const Navigation = ({tab, setTab}) => {
+const Navigation = ({tab, sliderGoTo}) => {
   return (
     <Wrapper>
       <TabContainer>
-        {navs.map((nav) => {
-          return <Tab active={nav.id === tab} key={nav.id} onClick={() => setTab(nav.id)} />;
+        {navs.map((nav, key) => {
+          return <Tab active={key === tab} key={key} onClick={() => sliderGoTo(key)} />;
         })}
       </TabContainer>
     </Wrapper>
@@ -36,12 +32,12 @@ const Navigation = ({tab, setTab}) => {
 
 Navigation.defaultProps = {
   tab: 1,
-  setTab: () => {}
+  sliderGoTo: () => {}
 };
 
 Navigation.propTypes = {
   tab: PropTypes.number,
-  setTab: PropTypes.func
+  sliderGoTo: PropTypes.func
 };
 
 export default Navigation;

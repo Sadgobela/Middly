@@ -23,7 +23,8 @@ import {
 
 const Header = ({isMobile}) => {
   const [showHamburger, setShowHamburger] = useState(false);
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState(0);
+  const [me, setMe] = useState(null);
   const [showMessages, setShowMessages] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [subCategoryActive, setSubCategoryActive] = useState(null);
@@ -61,15 +62,10 @@ const Header = ({isMobile}) => {
             <LogoIcon />
           </LogoContainer>
 
-          <LinksContainer mobile={isMobile}>
-            <StyledLink active>Marketplace</StyledLink>
-            <StyledLink>Feed</StyledLink>
-          </LinksContainer>
-
           <BadgesContainer isMobile={isMobile}>
             <CustomBadge
               count={0}
-              isMobile={isMobile}
+              ismobile={isMobile.toString()}
               onClick={() => {
                 setShowSearch(!showSearch);
               }}
@@ -78,10 +74,10 @@ const Header = ({isMobile}) => {
             </CustomBadge>
             <CustomBadge
               count={1}
-              isMobile={isMobile}
+              ismobile={isMobile.toString()}
               onClick={() => {
                 setShowHamburger(true);
-                setTab(4);
+                setTab(me ? 4 : 1);
                 setShowNotifications(false);
                 setShowMessages(false);
               }}
@@ -91,7 +87,14 @@ const Header = ({isMobile}) => {
           </BadgesContainer>
         </HeaderContainer>
       </HeaderWrapper>
+
+      <LinksContainer mobile={isMobile}>
+        <StyledLink active>Marketplace</StyledLink>
+        <StyledLink>Feed</StyledLink>
+      </LinksContainer>
       <Hamburger
+        me={me}
+        setMe={setMe}
         showHamburger={showHamburger}
         setShowHamburger={setShowHamburger}
         setShowNotifications={setShowNotifications}

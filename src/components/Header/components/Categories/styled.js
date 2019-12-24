@@ -11,10 +11,21 @@ export const Wrapper = styled.div`
 `;
 
 export const WrapperSubCategory = styled.div`
-  padding: 26px 16px 16px;
+  padding: 26px 0 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.15s linear;
+  z-index: 1101;
+  background: #fff;
+  pointer-events: ${({active}) => (active ? 'all' : 'none')};
+  transform: ${({active}) => (active ? 'translate(0, 0)' : 'translate(100%, 0)')};
 `;
 
 export const Header = styled.div`
@@ -23,7 +34,8 @@ export const Header = styled.div`
   align-items: center;
   position: relative;
   position: relative;
-  margin: 0 -16px 16px;
+  width: 100%;
+  margin: 0;
   padding: 0 16px 16px;
   border-bottom: 1px solid #efefef;
 `;
@@ -55,6 +67,7 @@ export const TitleSubCategory = styled.p`
 
 // TODO: need switch 'a' to Link from 'react-router-dom'
 export const CustomLink = styled.a`
+  display: block;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
