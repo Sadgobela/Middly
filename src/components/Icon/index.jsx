@@ -20,6 +20,17 @@ import Marker from "assets/Marker";
 import Eye from "assets/Eye";
 import Coins from "assets/Profile/Coins";
 import Close from "assets/CloseIcon";
+import ArrowBack from "assets/ArrowBack";
+import Star from "assets/Star";
+import Coins from "assets/Coins";
+import Like from "assets/Like";
+import Message from "assets/MessageIcon";
+import Share from "assets/Share";
+import BookmarkIcon from "assets/BookmarkIcon";
+import CloseIcon from "assets/CloseIcon";
+import Send from "assets/Send";
+import Checkbox from "assets/Checkbox";
+import ShoppingCart from "assets/ShoppingCart";
 
 const icons = {
 	addMessage: AddMessage,
@@ -43,12 +54,27 @@ const icons = {
 };
 
 const Icons = ({type, props, color, width, height})=> {
+	arrowBack: ArrowBack,
+	star: Star,
+	coins: Coins,
+	like: Like,
+	message: Message,
+	share: Share,
+	bookmarkIcon: BookmarkIcon,
+	close: CloseIcon,
+	send: Send,
+	checkbox: Checkbox,
+	cart: ShoppingCart
+};
+
+const Icons = ({type, props, svgStyle})=> {
 	const Icon = icons[type];
+
 	return (
 		<Container {...props}>
 			<Icon color={color} width={width} height={height} />
+			<Icon {...svgStyle}/>
 		</Container>
-
 	)
 };
 

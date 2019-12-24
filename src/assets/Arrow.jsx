@@ -1,11 +1,11 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { string, number } from 'prop-types';
 import { primaryColor } from '../constants/colors';
 
-const Arrow = ({ color }) => (
+const Arrow = ({ width, height, color }) => (
   <svg
-    width="11"
-    height="18"
+    width={width}
+    height={height}
     viewBox="0 0 11 18"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -20,10 +20,14 @@ const Arrow = ({ color }) => (
 );
 
 Arrow.propTypes = {
+  width: number,
+  height: number,
   color: string
 };
 
 Arrow.defaultProps = {
+  width: 11,
+  height: 18,
   color: primaryColor
 };
 
