@@ -2,12 +2,11 @@ import React, {useState} from 'react';
 import {
 	Bottom,
 	Buttons,
+	BuyButton,
 	Coins,
 	CoinsNumber,
 	Color,
-	ColorWrap,
-	Counter,
-	CounterButton,
+	Size,
 	Deliver,
 	DeliverCity,
 	DeliverCost,
@@ -19,22 +18,21 @@ import {
 	FeatureName,
 	Icon,
 	LikesNumber,
+	Option,
 	Payment,
-	PaymentCash,
 	Price,
 	PriceDescription,
 	Rating,
 	Return,
-	Size,
 	Text,
+	ReturnTitle,
 	Title,
 	SizeGuideLink,
 	VerticalDivider,
 	HorizontalDivider,
-	Count,
+	Wrap,
 } from './styled';
 
-import Button from 'components/Buttons';
 import Likes from 'assets/ProductPage/Likes';
 import Bookmarks from 'assets/ProductPage/Bookmarks';
 import CoinsIcon from 'assets/ProductPage/Coins';
@@ -42,15 +40,13 @@ import Comments from 'assets/ProductPage/Comments';
 import AmericanExpress from 'assets/ProductPage/AmericanExpress';
 import Links from 'assets/ProductPage/Links';
 import Mastercard from 'assets/ProductPage/Mastercard';
-import Minus from 'assets/ProductPage/Minus';
-import Plus from 'assets/ProductPage/Plus';
-import Star from 'assets/ProductPage/Star';
 import Paypal from 'assets/ProductPage/Paypal';
 import Visa from 'assets/ProductPage/Visa';
-import {PageWrap, Recently} from "../../styled";
 import AddedPopup from "../AddedPopup";
 import SizeGuide from "../SizeGuide";
 import {CSSTransition} from 'react-transition-group';
+import Grid from "components/Grid";
+
 
 const colors = ['#F5D823', '#139AD6', '#DB95D1', '#ED494F'];
 const sizes = ['XS', 'S', 'M', 'L'];
@@ -62,37 +58,23 @@ const OrderInfo = ({setRating})=> {
 
 	return (
 		<Description>
+			<Wrap>
 			<Title>
-				2018 Floral Dresses Vestido De Festa
+				2018 Floral Dresses Vestido De Festa Vestido De Festa
 			</Title>
 			<Rating>
 				{setRating(4)}
 				<LikesNumber>(602)</LikesNumber>
 			</Rating>
-			<Deliver>
-				<DeliverDescription>
-					Deliver to
-				</DeliverDescription>
-				<DeliverCity>
-					Dubai
-				</DeliverCity>
-				<VerticalDivider />
-				<DeliverCost>
-					Free
-				</DeliverCost>
-				<DeliverDescription>
-					delivery by
-				</DeliverDescription>
-				<DeliverDate>
-					Sat, Nov 23
-				</DeliverDate>
-			</Deliver>
 			<Price>
 				<PriceDescription red>
 					$499
 				</PriceDescription>
 				<PriceDescription>
 					$699
+				</PriceDescription>
+				<PriceDescription discount>
+					- 40%
 				</PriceDescription>
 				<Coins>
 					Mid Coins:
@@ -103,80 +85,92 @@ const OrderInfo = ({setRating})=> {
 				</Coins>
 			</Price>
 			<HorizontalDivider />
-			<Detailes>
-				<Feature>
-					<FeatureName>
-						Brand:
-					</FeatureName>
-					<Text>
-						Zara
-					</Text>
-				</Feature>
-				<Feature>
-					<FeatureName>
-						Size:
-					</FeatureName>
-					{
-						sizes.map( (size, i) =>
-							<Size key={size} active={!i}>{size}</Size>
-						)
-					}
-					<SizeGuideLink onClick={()=>setIsOpenGuide(true)} >Size Guide</SizeGuideLink>
-				</Feature>
-				<Feature>
-					<FeatureName>
-						Color:
-					</FeatureName>
-					{
-						colors.map( color =>
-							<ColorWrap key={color}>
-								<Color color={color} />
-							</ColorWrap>
-						)
-					}
-				</Feature>
-				<Feature>
-					<FeatureName>
-						Quantity:
-					</FeatureName>
-					<Counter>
-						<CounterButton>
-							<Minus/>
-						</CounterButton>
-						<Count>1</Count>
-						<CounterButton>
-							<Plus/>
-						</CounterButton>
-					</Counter>
-				</Feature>
-				<Buttons>
-					<Button type='addToCart' props={{onClick: ()=> setIsAddedToCart(true)}} />
-					<Button type='buy'/>
-				</Buttons>
-				<Feature alignTop>
-					<FeatureName dark>
-						Returns
-					</FeatureName>
-					<div>
+				<Detailes>
+					<Grid aic margin='0 0 20px 0'>
+						<FeatureName brand >
+							Brand:
+						</FeatureName>
 						<Text>
-							Returns and Exchanges accepted
+							Zara
 						</Text>
-						<Return>See return policy</Return>
-					</div>
-				</Feature>
-				<Feature>
-					<FeatureName dark>
-						Payments
-					</FeatureName>
-					<Payment>
-						<Mastercard />
-						<Visa />
-						<Paypal />
-						<AmericanExpress />
-						<PaymentCash> Cash </PaymentCash>
-					</Payment>
-				</Feature>
-			</Detailes>
+					</Grid>
+					<Feature>
+						<FeatureName>
+							Color:
+						</FeatureName>
+						<Color defaultValue='Pink'>
+							<Option className="pink" value="Pink">Pink</Option>
+							<Option yellow value="Yellow">Yellow</Option>
+							<Option red value="Red">Red</Option>
+							<Option grey value="Grey">Grey</Option>
+							<Option black value="Black">Black</Option>
+							<Option orange value="Orange">Orange</Option>
+							<Option green value="Green">Green</Option>
+						</Color>
+					</Feature>
+					<Feature column>
+						<Grid aic sb>
+							<FeatureName>
+								Size:
+							</FeatureName>
+							<SizeGuideLink onClick={()=>setIsOpenGuide(true)} >Size Guide</SizeGuideLink>
+						</Grid>
+						<Size defaultValue='UK XL, 48'>
+							<Option value="UK XS, 42">UK XS, 42</Option>
+							<Option value="UK S, 36">UK S, 36</Option>
+							<Option value="UK M, 40">UK M, 40</Option>
+							<Option value="UK L, 44">UK L, 44</Option>
+							<Option value="UK XL, 48">UK XL, 48</Option>
+							<Option value="UK XXL, 52">UK XXL, 52</Option>
+							<Option value="UK XXXL, 58">UK XXXL, 58</Option>
+						</Size>
+					</Feature>
+					<Buttons>
+						<BuyButton>Add to cart</BuyButton>
+						<BuyButton>Buy now</BuyButton>
+					</Buttons>
+					<Deliver>
+						<DeliverDescription>
+							Deliver to
+						</DeliverDescription>
+						<DeliverCity>
+							Dubai
+						</DeliverCity>
+						<VerticalDivider />
+						<DeliverCost>
+							Free
+						</DeliverCost>
+						<DeliverDescription>
+							delivery by
+						</DeliverDescription>
+						<DeliverDate>
+							Sat, Nov 23
+						</DeliverDate>
+					</Deliver>
+					<Grid margin='0 0 32px 0'>
+						<FeatureName dark>
+							Returns
+						</FeatureName>
+						<div>
+							<ReturnTitle>
+								Returns and Exchanges accepted
+							</ReturnTitle>
+							<Return>See return policy</Return>
+						</div>
+					</Grid>
+					<Grid>
+						<FeatureName dark>
+							Payments
+						</FeatureName>
+						<Payment>
+							<Mastercard />
+							<Visa />
+							<Paypal />
+							<AmericanExpress />
+						</Payment>
+					</Grid>
+				</Detailes>
+			</Wrap>
 			<HorizontalDivider />
 			<Bottom>
 				<Icon> <Likes />1,232</Icon>
@@ -198,9 +192,6 @@ const OrderInfo = ({setRating})=> {
 			>
 				<SizeGuide close={setIsOpenGuide} />
 			</CSSTransition>
-			{/*-----------------*/}
-			<SizeGuide close={()=> console.log('ok')} />
-			{/*-----------------*/}
 		</Description>
 	)
 };

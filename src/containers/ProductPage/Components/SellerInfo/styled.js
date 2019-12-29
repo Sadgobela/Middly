@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  margin: 24px 0 0 0;
+  margin: 46px 0 0 0;
 `;
 
 export const Row = styled.div`
@@ -105,22 +105,13 @@ export const SellerName = styled.div`
 
 export const SellerCity = styled.div`
   display: flex;
-  align-items: center;
+  justify-content: center;
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 140%;
   color: #a7a7a7;
-  margin-left: 18px;
-
-  &::before {
-    content: '';
-    background: #c4c4c4;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    margin-right: 15px;
-  }
+  margin: 10px 25px 0 0;
 `;
 
 export const SellerRating = styled.span`
@@ -130,7 +121,14 @@ export const SellerRating = styled.span`
   line-height: 132%;
   color: #7a7a7a;
   margin-top: 9px;
-  padding-left: 8px;
+
+  & svg {
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 9px;
+    }
+  }
 `;
 
 export const SellerFollowers = styled.span`

@@ -62,9 +62,12 @@ const SellerInfo = ({setRating}) => {
 				<Row>
 					<SellerProfileItem>
 						<SellerProfileWrap>
-							<SellerPic>
-								<SellerLogo src={logo} />
-							</SellerPic>
+							<SellerAbout>
+								<SellerPic>
+									<SellerLogo src={logo} />
+								</SellerPic>
+								<SellerCity>Bahrain</SellerCity>
+							</SellerAbout>
 							<SellerAbout>
 								<UserType>
 									Seller
@@ -73,9 +76,7 @@ const SellerInfo = ({setRating}) => {
 									<SellerName>
 										Margot Robbie
 									</SellerName>
-									<SellerCity>
-										Bahrain
-									</SellerCity>
+
 								</SellerInfoItem>
 								<SellerInfoItem>
 									<SellerRating>
@@ -94,9 +95,6 @@ const SellerInfo = ({setRating}) => {
 						</SellerButtons>
 					</SellerProfileItem>
 					<SellerProfileItem alignRight>
-						<SellerProductsNumber>
-							1 455 products
-						</SellerProductsNumber>
 						<SellerInfoItem>
 							<SellerFollowersImg src={followers1} alt=""  />
 								<SellerFollowersImg src={followers2} alt="" />

@@ -1,8 +1,12 @@
 import styled from 'styled-components';
+import {Select} from 'antd';
 
 export const Description = styled.div`
   width: 394px;
   background: #fff;
+`;
+
+export const Wrap = styled.div`
   padding: 24px 25px 21px;
 `;
 
@@ -11,8 +15,9 @@ export const Title = styled.span`
   font-weight: 600;
   font-size: 20px;
   line-height: 124%;
-  color: #000000;
+  color: #000;
   padding-bottom: 12px;
+  padding-right: 15px;
 `;
 
 export const Rating = styled.div`
@@ -40,6 +45,9 @@ export const Deliver = styled.div`
   display: flex;
   align-items: center;
   margin-top: 6px;
+  margin-bottom: 32px;
+  border-top: 1px solid #e4e4e4;
+  padding-top: 16px;
 `;
 
 export const DeliverDescription = styled.div`
@@ -58,7 +66,7 @@ export const DeliverCity = styled.div`
   font-weight: 700;
   font-size: 12px;
   line-height: 132%;
-  color: #000000;
+  color: #4a90e2;
 `;
 
 export const VerticalDivider = styled.i`
@@ -110,6 +118,15 @@ export const PriceDescription = styled.div`
 		color: #ED494F;
 		`
       : null};
+  ${({discount}) =>
+    discount
+      ? `
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 140%;
+		color: #ED494F;
+		`
+      : null};
 `;
 
 export const Coins = styled.div`
@@ -139,25 +156,24 @@ export const HorizontalDivider = styled.i`
 `;
 
 export const Detailes = styled.div`
-  margin: 20px 0 29px;
+  margin-top: 20px;
 `;
 
 export const Feature = styled.div`
-  display: flex;
-  align-items: ${({alignTop}) => (alignTop ? 'flex-start' : 'flex-end')};
+  width: 308px;
   margin-bottom: 24px;
 `;
 
 export const FeatureName = styled.div`
   display: block;
-  width: 79px;
+  width: 58px;
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 132%;
   color: ${({dark}) => (dark ? '#464646' : '#7A7A7A')};
   color: ${({red}) => (red ? '#ED484F' : '#7A7A7A')};
-  margin-right: 16px;
+  margin: ${({brand}) => (brand ? '0' : '5px 12px 8px 0')};
 `;
 
 export const SizeGuideLink = styled.button`
@@ -167,10 +183,11 @@ export const SizeGuideLink = styled.button`
   font-weight: 400;
   font-size: 12px;
   line-height: 132%;
-  color: #ed484f;
+  color: #4a90e2;
   background: transparent;
   border: none;
-  margin-right: 16px;
+  margin-right: 0;
+  padding: 0;
   cursor: pointer;
   text-decoration: none;
   outline: none;
@@ -182,69 +199,7 @@ export const Text = styled.div`
   font-size: 12px;
   line-height: 132%;
   color: #464646;
-`;
-
-export const Size = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 29px;
-  height: 21px;
-  border: 1px solid #e4e4e4;
-  box-sizing: border-box;
-  border-radius: 2px;
-  background: transparent;
-  font-family: 'SF Pro Display', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 132%;
-  color: #464646;
-  margin-right: 8px;
-  cursor: pointer;
-  border: ${({active}) => (active ? '1px solid #000000' : 'none')};
-`;
-
-export const ColorWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 29px;
-  height: 21px;
-  border: 1px solid #e4e4e4;
-  box-sizing: border-box;
-  border-radius: 2px;
-  padding: 3px;
-  margin-right: 8px;
-  cursor: pointer;
-`;
-
-export const Color = styled.div`
-  width: 23px;
-  height: 15px;
-  border: none;
-  background: ${({color}) => (color ? `${color}` : 'none')};
-`;
-
-export const Counter = styled.div`
-  display: flex;
-  align-items: center;
-  font-family: Helvetica;
-  font-size: 12px;
-  line-height: 14px;
-  color: #666666;
-`;
-
-export const CounterButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 21px;
-  cursor: pointer;
-  background: #efefef;
-  border-radius: 2px;
-  border: none;
-  outline: none;
+  margin: 0 0 0 8px;
 `;
 
 export const Count = styled.span`
@@ -254,7 +209,25 @@ export const Count = styled.span`
 export const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
+  width: 308px;
+  margin: 0 0 24px;
+  padding: 8px 0 0 0;
+`;
+
+export const BuyButton = styled.button`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 158px;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: Helvetica Neue, sans-serif;
+  cursor: pointer;
+  background: #ed484f;
+  border-radius: 24px;
+  color: #fff;
 `;
 
 export const Return = styled.div`
@@ -288,7 +261,8 @@ export const PaymentCash = styled.div`
 
 export const Bottom = styled.div`
   display: flex;
-  margin: 18px 0 0 26px;
+  margin: 18px 27px 0 25px;
+  padding-bottom: 25px;
 `;
 
 export const Icon = styled.i`
@@ -303,5 +277,79 @@ export const Icon = styled.i`
   margin-right: 36px;
   & svg {
     margin-right: 8px;
+  }
+`;
+
+export const Color = styled(Select)`
+  &&& {
+    & .ant-select-selection--single {
+      width: 308px;
+      height: 40px;
+    }
+
+    & .ant-select-selection-selected-value {
+    }
+
+    & .ant-select-selection__rendered {
+      height: 100%;
+      line-height: 40px;
+      margin: 0 16px;
+    }
+
+    & .ant-select-selection-selected-value {
+      display: flex !important;
+      align-items: center;
+      font-family: Helvetica Neue, sans-serif;
+      font-size: 14px;
+      color: #545454;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #db95d1;
+        margin: 0 8px 0 0;
+      }
+    }
+  }
+`;
+
+export const Option = styled(Select.Option)`
+  &&& {
+    display: flex !important;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 400;
+    font-size: 144px;
+    line-height: 140%;
+    color: #545454;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #db95d1;
+      margin: 0 8px 0 0;
+    }
+  }
+`;
+
+export const ReturnTitle = styled.span`
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 132%;
+  color: #464646;
+`;
+
+export const Size = styled(Color)`
+  & .ant-select-selection-selected-value {
+    &::before {
+      content: none !important;
+    }
   }
 `;

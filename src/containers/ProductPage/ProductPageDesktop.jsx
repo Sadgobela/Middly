@@ -121,7 +121,7 @@ const ProductPageDesktop = ()=>{
 
 					<Column>
 						<OrderInfo setRating={setRating} />
-						<Comments />
+						{/*<Comments />*/}
 					</Column>
 				</Row>
 				<SellerInfo setRating={setRating} />

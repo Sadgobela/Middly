@@ -6,14 +6,13 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  display: none;
+  display: flex;
   justify-content: flex-end;
   z-index: 1111;
   background: rgba(0, 0, 0, 0.5);
 `;
 
 export const Guide = styled.div`
-  display: none;
   width: 566px;
   height: 100%;
   background: #fff;
@@ -137,4 +136,5 @@ export const Close = styled.i`
   right: 32px;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 `;
