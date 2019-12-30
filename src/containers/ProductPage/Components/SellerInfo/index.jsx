@@ -39,6 +39,7 @@ import {
 	FeedbackDate,
 	FeedbackInfo,
 	Row,
+	SliderWrapper,
 	Img,
 } from './styled';
 import logo from './img/seller-logo.png';
@@ -86,6 +87,14 @@ const SellerInfo = ({setRating}) => {
 									<SellerFollowers>
 										8k followers
 									</SellerFollowers>
+									<SellerInfoItem marginTop>
+										<SellerFollowersImg src={followers1} alt=""  />
+										<SellerFollowersImg src={followers2} alt="" />
+										<SellerFollowersName>
+											Sherylin Fenn and 2 others
+										</SellerFollowersName>
+										<SellerFollowersLink>follow that seller</SellerFollowersLink>
+								</SellerInfoItem>
 								</SellerInfoItem>
 							</SellerAbout>
 						</SellerProfileWrap>
@@ -94,41 +103,32 @@ const SellerInfo = ({setRating}) => {
 							<SellerChatBtn>Chat with Seller</SellerChatBtn>
 						</SellerButtons>
 					</SellerProfileItem>
-					<SellerProfileItem alignRight>
-						<SellerInfoItem>
-							<SellerFollowersImg src={followers1} alt=""  />
-								<SellerFollowersImg src={followers2} alt="" />
-							<SellerFollowersName>
-								Sherylin Fenn and 2 others
-							</SellerFollowersName>
-							<SellerFollowersLink>follow that seller</SellerFollowersLink>
-						</SellerInfoItem>
-					</SellerProfileItem>
 				</Row>
 				<MoreSameSeller>
-					<MoreSameSellerTitle>More from the same seller </MoreSameSellerTitle>
-					<MoreSameSellerList>
-						{products.map((arrival, index) => (
-							index < 4 ? <CardNewArrival key={index} {...arrival} /> : null
-						))}
-						<Button type='seeMore' props={{withText: true}} />
-					</MoreSameSellerList>
+					<MoreSameSellerTitle>More from this Seller </MoreSameSellerTitle>
+					<SliderWrapper>
+						<Slider slidesToShow={4} arrows={true} slidesToScroll={4}>
+							{
+								products.map((arrival, index) => (
+									index < 4 ? <CardNewArrival key={index} {...arrival} /> : null
+								))
+							}
+							<Button margin='0 0 0 -55px' type='seeMore' props={{withText: true}} />
+						</Slider>
+					</SliderWrapper>
 				</MoreSameSeller>
 			</SellerProfile>
 
 
 			<ProductInfo>
-				<SellerHeading>
-					More from the same seller
-				</SellerHeading>
 				<ProductInfoItem>
 					<ProductInfoHeading>Item description</ProductInfoHeading>
 					<ProductInfoText>
 						Women's Casual knitted sweater with twist effect. Back length on size S is 64cm and sleeve length is 70cm. This model features a balloon effect waist. Collar Type: Round
 					</ProductInfoText>
 					<ProductInfoBtn more>Show more</ProductInfoBtn>
-					<HorizontalDivider middle/>
 				</ProductInfoItem>
+				<HorizontalDivider middle/>
 				<ProductInfoItem>
 					<ProductInfoHeading>Returns & Exchanges </ProductInfoHeading>
 					<ProductInfoText>

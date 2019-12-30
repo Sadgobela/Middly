@@ -218,16 +218,16 @@ export const BuyButton = styled.button`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 158px;
-  background: transparent;
-  border: none;
+  width: ${({addToCart}) => (addToCart ? '138px' : '158px')};
+  height: 36px;
+  background: ${({addToCart}) => (addToCart ? 'transparent' : '#ed484f')};
+  color: ${({addToCart}) => (addToCart ? '#ed484f' : '#ffffff')};
+  border: ${({addToCart}) => (addToCart ? '1px solid #ed484f' : 'none')};
   outline: none;
   text-decoration: none;
   font-family: Helvetica Neue, sans-serif;
   cursor: pointer;
-  background: #ed484f;
   border-radius: 24px;
-  color: #fff;
 `;
 
 export const Return = styled.div`

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
+  width: 1014px;
   border-top: 1px solid #e4e4e4;
-  margin: 24px 0 0 0;
+  margin: 24px auto 0 auto;
   padding-top: 27px;
 `;
 
@@ -10,6 +11,10 @@ export const Wrap = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: ${({bottom}) => (bottom ? '17px' : '0px')};
+
+  & svg {
+    margin-right: 4px;
+  }
 `;
 
 export const WrapSecond = styled.div``;
@@ -63,11 +68,9 @@ export const InfluenceBtn = styled.button`
   justify-content: center;
   width: 118px;
   height: 28px;
+  border: none;
   background: transparent;
-  border: 1px solid #c3c3c3;
   box-sizing: border-box;
-  border-radius: 24px;
-  cursor: pointer;
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -112,29 +115,29 @@ export const Settings = styled.button`
 
 export const Dot = styled.i`
   position: relative;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   background: #7c7e82;
   border-radius: 50%;
 
   &::before {
     position: absolute;
-    bottom: calc(100% + 5.5px);
+    bottom: calc(100% + 3.5px);
     left: 0;
     content: '';
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     background: #7c7e82;
     border-radius: 50%;
   }
 
   &::after {
     position: absolute;
-    top: calc(100% + 5.5px);
+    top: calc(100% + 2.5px);
     left: 0;
     content: '';
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     background: #7c7e82;
     border-radius: 50%;
   }

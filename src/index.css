@@ -130,3 +130,54 @@ p {
   border-bottom: none;
   position: relative;
 }
+
+.ant-select-dropdown-menu-item.color {
+  display: flex !important;
+  align-items: center;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #545454;
+}
+
+.ant-select-dropdown-menu-item.color.selected {
+  font-weight: 700;
+}
+
+.ant-select-dropdown-menu-item.color::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 8px 0 0;
+}
+
+.ant-select-dropdown-menu-item.color.-pink::before {
+  background: #db95d1;
+}
+
+.ant-select-dropdown-menu-item.color.-yellow::before {
+  background: #f5d823;
+}
+
+.ant-select-dropdown-menu-item.color.-red::before {
+  background: #f53023;
+}
+
+.ant-select-dropdown-menu-item.color.-grey::before {
+  background: #969696;
+}
+
+.ant-select-dropdown-menu-item.color.-black::before {
+  background: #000000;
+}
+
+.ant-select-dropdown-menu-item.color.-orange::before {
+  background: #ff9900;
+}
+
+.ant-select-dropdown-menu-item.color.-green::before {
+  background: #0eac00;
+}

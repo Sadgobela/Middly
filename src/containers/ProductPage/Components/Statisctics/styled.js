@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   margin: 16px 0 0 0;
+  padding-left: 60px;
 `;
 
 export const List = styled.div``;
@@ -14,7 +15,13 @@ export const Item = styled.div`
   margin: 0 0 16px 0;
 `;
 
-export const Title = styled.span``;
+export const Title = styled.span`
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #000000;
+`;
 
 export const Rating = styled.div`
   position: relative;
@@ -49,6 +56,10 @@ export const Total = styled.div`
 
 export const Stars = styled.div`
   margin: 0 0 20px 16px;
+
+  & svg {
+    margin-right: 4px;
+  }
 `;
 
 export const TotalTitle = styled.span`

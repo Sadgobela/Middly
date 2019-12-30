@@ -10,7 +10,7 @@ export const Row = styled.div`
 `;
 
 export const SellerProfile = styled.div`
-  padding: 33px 0 34px 32px;
+  padding: 32px;
   background: #fff;
 `;
 
@@ -22,6 +22,7 @@ export const MoreSameSellerTitle = styled.span`
   line-height: 20px;
   color: #000;
   margin: 0 0 24px 0;
+  padding-left: 60px;
 `;
 
 export const MoreSameSeller = styled.div`
@@ -35,6 +36,18 @@ export const MoreSameSellerList = styled.div`
 
   & button {
     margin-right: 51px;
+  }
+`;
+
+export const SliderWrapper = styled.div`
+  padding: 0 42px;
+
+  & div.slick-track {
+    padding-bottom: 15px;
+  }
+
+  & div.slick-slide button {
+    margin-left: -55px;
   }
 `;
 
@@ -92,6 +105,8 @@ export const SellerAbout = styled.div``;
 export const SellerInfoItem = styled.div`
   display: flex;
   align-items: center;
+  margin-top: ${({marginTop}) => (marginTop ? '9px' : '0')};
+  margin-left: ${({marginTop}) => (marginTop ? '45px' : '0')};
 `;
 
 export const SellerName = styled.div`
@@ -240,7 +255,9 @@ export const ProductInfo = styled.div`
   background: #fff;
 `;
 
-export const ProductInfoItem = styled.div``;
+export const ProductInfoItem = styled.div`
+  padding: 0 46px;
+`;
 
 export const ProductInfoHeading = styled.span`
   display: block;
@@ -286,22 +303,27 @@ export const ProductInfoBtn = styled.button`
 
 export const CustomerFeedbacks = styled.div`
   padding: 24px 32px;
-  margin: 8px 0 0 0;
+  margin: 24px 0 0 0;
   background: #fff;
 `;
 
 export const CustomerFeedbacksHeading = styled.div`
   font-family: Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 24px;
+  line-height: 29px;
   color: #000000;
+  padding-left: 60px;
   ${({number}) =>
     number
       ? `
 		display: inline;
+		font-size: 16px;
+  	line-height: 140%;
 		font-weight: 400;
 		color: #7A7A7A;
+		padding-left: 17px; 
+		letter-spacing: -0.016em;
 	`
       : null};
   ${({photos}) =>
@@ -314,7 +336,11 @@ export const CustomerFeedbacksHeading = styled.div`
 `;
 
 export const FeedbackList = styled.div`
-  padding: 0 56px;
+  padding: 0 42px;
+
+  & div.slick-track {
+    padding-bottom: 12px;
+  }
 `;
 
 export const FeedbackCard = styled.div`

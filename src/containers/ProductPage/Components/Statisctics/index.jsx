@@ -36,7 +36,7 @@ const Statistics = ({setRating})=>{
 			</List>
 			<Total>
 				<TotalTitle>4,7
-					<MaxResult>/5</MaxResult>
+					<MaxResult>/ 5</MaxResult>
 				</TotalTitle>
 				<Stars>
 					{setRating(5)}

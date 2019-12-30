@@ -99,13 +99,13 @@ const OrderInfo = ({setRating})=> {
 							Color:
 						</FeatureName>
 						<Color defaultValue='Pink'>
-							<Option className="pink" value="Pink">Pink</Option>
-							<Option yellow value="Yellow">Yellow</Option>
-							<Option red value="Red">Red</Option>
-							<Option grey value="Grey">Grey</Option>
-							<Option black value="Black">Black</Option>
-							<Option orange value="Orange">Orange</Option>
-							<Option green value="Green">Green</Option>
+							<Option className="color -pink selected" value="Pink">Pink</Option>
+							<Option className="color -yellow" value="Yellow">Yellow</Option>
+							<Option className="color -red" value="Red">Red</Option>
+							<Option className="color -grey" value="Grey">Grey</Option>
+							<Option className="color -black" value="Black">Black</Option>
+							<Option className="color -orange" value="Orange">Orange</Option>
+							<Option className="color -green" value="Green">Green</Option>
 						</Color>
 					</Feature>
 					<Feature column>
@@ -116,17 +116,17 @@ const OrderInfo = ({setRating})=> {
 							<SizeGuideLink onClick={()=>setIsOpenGuide(true)} >Size Guide</SizeGuideLink>
 						</Grid>
 						<Size defaultValue='UK XL, 48'>
-							<Option value="UK XS, 42">UK XS, 42</Option>
-							<Option value="UK S, 36">UK S, 36</Option>
-							<Option value="UK M, 40">UK M, 40</Option>
-							<Option value="UK L, 44">UK L, 44</Option>
-							<Option value="UK XL, 48">UK XL, 48</Option>
-							<Option value="UK XXL, 52">UK XXL, 52</Option>
-							<Option value="UK XXXL, 58">UK XXXL, 58</Option>
+							<Option className="color" value="UK XS, 42">UK XS, 42</Option>
+							<Option className="color" value="UK S, 36">UK S, 36</Option>
+							<Option className="color" value="UK M, 40">UK M, 40</Option>
+							<Option className="color" value="UK L, 44">UK L, 44</Option>
+							<Option className="color selected" value="UK XL, 48">UK XL, 48</Option>
+							<Option className="color" value="UK XXL, 52">UK XXL, 52</Option>
+							<Option className="color" value="UK XXXL, 58">UK XXXL, 58</Option>
 						</Size>
 					</Feature>
 					<Buttons>
-						<BuyButton>Add to cart</BuyButton>
+						<BuyButton addToCart>Add to cart</BuyButton>
 						<BuyButton>Buy now</BuyButton>
 					</Buttons>
 					<Deliver>
