@@ -4,13 +4,19 @@ export const Container = styled.section`
   width: 1014px;
   border-top: 1px solid #e4e4e4;
   margin: 24px auto 0 auto;
-  padding-top: 27px;
+`;
+
+export const FeedbackItem = styled.div`
+  padding-top: 42px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e4e4e4;
 `;
 
 export const Wrap = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: ${({bottom}) => (bottom ? '17px' : '0px')};
+  justify-content: space-between;
 
   & svg {
     margin-right: 4px;
@@ -20,7 +26,20 @@ export const Wrap = styled.div`
 export const WrapSecond = styled.div``;
 
 export const UserAvatar = styled.img`
-  margin-right: 24px;
+  position: relative;
+  margin-right: 32px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #c3c3c3;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    right: 0;
+    bottom: 0;
+  }
 `;
 
 export const Header = styled.div`
@@ -31,7 +50,9 @@ export const Header = styled.div`
 
 export const Item = styled.div`
   display: ${({flex}) => (flex ? 'flex' : 'block')};
-  align-items: center;
+  align-items: ${({center}) => (center ? 'center' : 'flex-start')};
+  justify-content: ${({spaceBetween}) => (spaceBetween ? 'space-between' : 'flex-start')};
+  margin-left: ${({center}) => (center ? '292px' : '0')};
 `;
 
 export const UserName = styled.span`
@@ -50,27 +71,24 @@ export const FollowBtn = styled.button`
   justify-content: center;
   width: 99px;
   height: 28px;
-  background: #ed484f;
+  background: transparent;
   border: 1px solid #ed484f;
   border-radius: 24px;
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  color: #ffffff;
+  color: #ed484f;
   cursor: pointer;
-  margin-left: 32px;
+  margin-top: 11px;
 `;
 
-export const InfluenceBtn = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 118px;
-  height: 28px;
-  border: none;
-  background: transparent;
-  box-sizing: border-box;
+export const Plus = styled.img`
+  margin-right: 11px;
+`;
+
+export const InfluenceBtn = styled.span`
+  display: block;
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -80,14 +98,15 @@ export const InfluenceBtn = styled.button`
 `;
 
 export const Text = styled.span`
-  max-width: 700px;
+  display: ${({block}) => (block ? 'block' : 'inline')};
+  max-width: 600px;
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  color: #000000;
+  color: ${({link}) => (link ? '#ED484F' : '#545454')};
   margin-left: ${({left}) => (left ? '8px' : '0px')};
-  display: ${({block}) => (block ? 'block' : 'inline')};
+  margin-top: ${({block}) => (block ? '17px' : '0px')};
 `;
 
 export const Date = styled.span`
@@ -111,6 +130,7 @@ export const Settings = styled.button`
   border: none;
   text-decoration: none;
   cursor: pointer;
+  margin-top: -8px;
 `;
 
 export const Dot = styled.i`
@@ -133,7 +153,7 @@ export const Dot = styled.i`
 
   &::after {
     position: absolute;
-    top: calc(100% + 2.5px);
+    top: calc(100% + 3.5px);
     left: 0;
     content: '';
     width: 4px;
@@ -148,13 +168,13 @@ export const Example = styled.img`
 `;
 
 export const HelpBtn = styled.button`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 28px;
   padding: 0 35px;
-  background: #fafafa;
-  border: 1px solid #c3c3c3;
+  background: #e4e4e4;
+  border: none;
   box-sizing: border-box;
   border-radius: 24px;
   cursor: pointer;
@@ -166,18 +186,41 @@ export const HelpBtn = styled.button`
   margin-right: 12px;
 `;
 
-export const Heart = styled.div`
-  margin-right: 30px;
+export const Heart = styled.img`
+  width: 20px;
+  height: 18px;
+  margin-right: 4px;
+  margin-top: -2px;
 `;
 
 export const Reply = styled.div`
-  border-top: 1px solid #e4e4e4;
   border-bottom: 1px solid #e4e4e4;
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
   color: #999999;
-  margin: 26px 0 8px;
   padding: 12px 16px;
+`;
+
+export const Send = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #c3c3c3;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+`;
+
+export const AddComment = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 69px;
 `;

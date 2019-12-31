@@ -256,7 +256,7 @@ export const ProductInfo = styled.div`
 `;
 
 export const ProductInfoItem = styled.div`
-  padding: 0 46px;
+  padding: 0 56px;
 `;
 
 export const ProductInfoHeading = styled.span`

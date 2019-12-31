@@ -87,7 +87,7 @@ export const Similar = styled.div`
 `;
 
 export const SliderContainer = styled.div`
-  padding: 0 95px;
+  padding: 0 70px;
 
   & .slick-list {
     padding: 24px 0;
@@ -101,7 +101,7 @@ export const SimilarHeading = styled.span`
   line-height: 22px;
   color: #000000;
   background: #fff;
-  margin: 0 0 0 36px;
+  margin: 0 0 0 90px;
 `;
 
 export const Recently = styled.div`

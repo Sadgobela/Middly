@@ -17,63 +17,118 @@ import {
 	HelpBtn,
 	Heart,
 	Reply,
+	FeedbackItem,
+	Plus,
+	Send,
+	AddComment,
 } from './styled';
 
 import pic from './img/feedback-avatar.png';
 import pic2 from './img/example.png';
-import {AddComment, InputMessage, Send, UserPic} from "../../../../components/Comments/styled";
+import heart from './img/heart.svg';
+import heart2 from './img/heart2.svg';
+import plus from './img/plus.svg';
+import {InputMessage, UserPic} from "../../../../components/Comments/styled";
 import myAvatar from "../../../../components/Comments/img/avatar1.png";
 import send from "../../../../components/Comments/img/send.svg";
 
 const Feedback = ({setRating}) => {
 	return(
 		<Container>
-			<Header>
-				<Item flex>
-					<Wrap>
-						<UserAvatar src={pic} />
-					</Wrap>
-					<WrapSecond>
+			<FeedbackItem>
+				<Header>
+					<Item flex>
 						<Wrap>
-							<UserName>Raily Sempled</UserName>
-							<FollowBtn>Follow</FollowBtn>
+							<UserAvatar src={pic} />
 						</Wrap>
-						<InfluenceBtn>Influencer</InfluenceBtn>
-					</WrapSecond>
+						<WrapSecond>
+							<UserName>raily_sempled</UserName>
+							<InfluenceBtn>Influencer</InfluenceBtn>
+							<FollowBtn><Plus src={plus} />Follow</FollowBtn>
+						</WrapSecond>
+					</Item>
+					<Item>
+						<Wrap>
+							<div>{setRating(5)}</div>
+							<Date>Mar 2019</Date>
+						</Wrap>
+						<Text block>
+							This product is amazing! I have finally found a moisturizer that actually works. I have very dry 	skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so...
+							<Text link> More</Text>
+						</Text>
+					</Item>
+					<Item flex>
+						<Settings>
+							<Dot/>
+						</Settings>
+					</Item>
+				</Header>
+				<Item flex center spaceBetween>
+					<div>
+						<HelpBtn>
+							Helpful (23)
+						</HelpBtn>
+						<HelpBtn>
+							Not helpful (4)
+						</HelpBtn>
+					</div>
+					<div>
+						<Heart src={heart} />
+						<Text>2</Text>
+					</div>
 				</Item>
-				<Item flex>
-					<Date>a month ago</Date>
-					<Settings>
-						<Dot/>
-					</Settings>
+			</FeedbackItem>
+			<FeedbackItem>
+				<Header>
+					<Item flex>
+						<Wrap>
+							<UserAvatar src={pic} />
+						</Wrap>
+						<WrapSecond>
+							<UserName>anna_smith</UserName>
+							<InfluenceBtn>Influencer</InfluenceBtn>
+							<FollowBtn><Plus src={plus} />Follow</FollowBtn>
+						</WrapSecond>
+					</Item>
+					<Item>
+						<Wrap>
+							<div>{setRating(5)}</div>
+							<Date>Mar 2019</Date>
+						</Wrap>
+						<Text block>
+						This product is amazing! I have finally found a moisturizer that actually works. I have very dry 	skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so...
+							<Text link> More</Text>
+						</Text>
+					</Item>
+					<Item flex>
+						<Settings>
+							<Dot/>
+						</Settings>
+					</Item>
+				</Header>
+				<Item flex center>
+					<Example src={pic2} />
+					<Example src={pic2} />
+					<Example src={pic2} />
 				</Item>
-			</Header>
-			<Wrap bottom>
-				{setRating(5)}
-				<Text left>Loved it!</Text>
-			</Wrap>
-			<Text block>
-				This product is amazing! I have finally found a moisturizer that actually works. I have very dry 	skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so dry, any product I put on my face would burn so I went and got a sample of this and within a few days my skin felt so much better, I went and purchased the full size. It doesn't feel heavy at all and a little goes a long way. This will be a staple in my skincare routine from now on.
-			</Text>
-			<Item flex>
-				<Example src={pic2} />
-				<Example src={pic2} />
-				<Example src={pic2} />
-			</Item>
-			<Item flex>
-				<Heart>
-					<Text>2</Text>
-				</Heart>
-				<HelpBtn>
-					Helpful (23)
-				</HelpBtn>
-				<HelpBtn>
-					Not helpful (4)
-				</HelpBtn>
-			</Item>
+				<Item flex center spaceBetween>
+					<div>
+						<HelpBtn>
+							Helpful (23)
+						</HelpBtn>
+						<HelpBtn>
+							Not helpful (4)
+						</HelpBtn>
+					</div>
+					<div>
+						<Heart src={heart2} />
+						<Text>2</Text>
+					</div>
+				</Item>
+			</FeedbackItem>
 			<Reply>
 				Reply to
-				<Text left>Raily Sempled</Text>
+				<Text left>@anna_smith</Text>
 			</Reply>
 			<AddComment>
 				<UserPic src={myAvatar} />

@@ -6,6 +6,8 @@ import {ContentWrapper} from 'globalStyles';
 
 export const Wrapper = styled.div`
   width: 100%;
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.16);
+  margin-top: 127px;
 `;
 
 export const FooterArea = styled(ContentWrapper)`
@@ -13,7 +15,9 @@ export const FooterArea = styled(ContentWrapper)`
   max-width: 1440px;
   display: flex;
   flex-wrap: wrap;
-  padding: 59px 132px 55px;
+  padding: 44px 118px 55px 132px;
+  background: #fefefe;
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.16);
 
   @media (max-width: ${media.mobileMax}) {
     padding: 18px 32px 0;
@@ -61,12 +65,14 @@ export const FooterPay = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin-left: 11px;
 
   img {
     margin-left: 44px;
 
     &:first-child {
       margin-left: auto;
+      margin-top: 3px;
     }
   }
 `;
@@ -122,10 +128,9 @@ export const CopyrightLinks = styled.ul`
 
 export const CopyrightText = styled.span`
   margin-left: auto;
-  font-size: 16px;
-  line-height: 140%;
+  font-size: 12px;
+  line-height: 14px;
   text-align: right;
-  letter-spacing: -0.256px;
   color: ${grayTextColor};
 
   @media (max-width: ${media.mobileMax}) {

@@ -160,7 +160,7 @@ export const Burger = styled.button`
 `;
 
 export const LogoContainer = styled(Link)`
-  min-width: 114px;
+  width: 114px;
   padding-top: 6px;
   margin-right: 5.7%;
   ${({isMobile}) =>
@@ -174,6 +174,10 @@ export const LogoContainer = styled(Link)`
     min-width: 91px;
   `
       : ''}
+
+  & svg {
+    max-width: 114px;
+  }
 `;
 
 export const LinksContainer = styled.div`
