@@ -1,39 +1,64 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
 	Title,
 	TabList,
+	BreadcrumbsContainer,
+	SearchAndCategoryWrapper,
+	GreyColoredDiv,
+	SearchParam,
+	Categories,
+	StyledTabs,
+	OnDemandDelivery,
 } from './styled';
-import Grid from 'components/Grid';
 import Breadcrumbs from 'components/Breadcrumbs';
 import ListHeading from 'components/ListHeading';
-import Tabs from 'components/Tabs';
-import Result from './components/Result';
-import Filters from './components/Filters';
-import Pagination from 'components/PagePagination';
+import ProductSearch from "./ProductSearch";
+import PostSearch from "./PostSearch";
+import { Switch } from 'antd';
+
+const { TabPane } = StyledTabs;
 
 const locations = ['Home', 'Categories', 'Clothing'];
-const tabs = ['Products (2 780)', 'Stores (2 786)', 'Posts (5 678)'];
-
-function getTabs() {
-	return (
-		tabs.map( (text, i) => <Tabs active={i === tabs.length - 1}>{text}</Tabs>)
-	)
-}
 
 const SearchResultDesktop = ()=> {
+	const [activeTab, setActiveTab] = useState("1");
+
 	return (
-		<Grid>
-			<Breadcrumbs locations={locations} />
-			<ListHeading heading='Search Results:' customStyles='padding-top: 10px'>
-				<Title>Showing: 4 567 Items</Title>
-			</ListHeading>
+		<div>
+			<BreadcrumbsContainer>
+				<Breadcrumbs locations={locations} isSearchPage={true}/>
+			</BreadcrumbsContainer>
+			<GreyColoredDiv>
+				<SearchAndCategoryWrapper>
+					<ListHeading heading={<div>Search Results: <SearchParam>fashion</SearchParam></div>} customStyles='padding-top: 10px'>
+						{
+							activeTab === "1" ? (
+								<OnDemandDelivery>
+									<Title>On-Demand Delivery</Title>
+									<Switch size="small" defaultChecked onChange={() => {}} />
+								</OnDemandDelivery>
+							) : null
+						}
+					</ListHeading>
+				</SearchAndCategoryWrapper>
+			</GreyColoredDiv>
 			<TabList>
-				{getTabs()}
+				<StyledTabs defaultActiveKey="1" activeKey={activeTab} onChange={setActiveTab}>
+					<TabPane tab="Products (2,780)" key="1">
+						<ProductSearch />
+					</TabPane>
+					<TabPane tab="Stories (2,786)" key="2">
+						Stories
+					</TabPane>
+					<TabPane tab="Posts (5,678)" key="3">
+						<PostSearch />
+					</TabPane>
+					<TabPane tab="Lists (2,345)" key="4">
+						Lists
+					</TabPane>
+				</StyledTabs>
 			</TabList>
-			<Filters />
-			<Result />
-			<Pagination />
-		</Grid>
+		</div>
 	)
 };
 

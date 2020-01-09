@@ -22,13 +22,43 @@ export const Controls = styled.button`
   }
 `;
 
-export const Counter = styled(Controls)`
-  width: 36px;
-  height: 36px;
-  margin: 0 10px;
-  background: ${({active}) => (active ? '#8F8F8F' : 'transparent')};
+export const ControlButton = styled.button`
+  border: 1px solid #E4E4E4;
+  box-sizing: border-box;
   border-radius: 4px;
-  color: ${({active}) => (active ? '#fff' : '#666')};
+  padding: 8px 20px 8px 20px;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  outline: none;
+
+  &:hover {
+    color: #000;
+    border-color: #000;
+    svg path {
+        fill: #000;
+    }
+  }
+  & svg {
+    ${({prev}) => (prev ? 'transform: rotate(180deg); margin-right: 5px;' : 'margin-left: 5px;')};
+  }
+
+  & svg path {
+    fill: #E4E4E4;
+    width: 12px;
+    height: 12px;
+  }
 `;
 
+export const PageCount = styled.div`
+  margin: 0 13px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  color: #666666;
+`;
 export const Dots = styled.span``;

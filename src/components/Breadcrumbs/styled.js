@@ -8,7 +8,12 @@ export const Location = styled.a`
   display: inline-flex;
   align-items: center;
   font-family: Helvetica Neue, sans-serif;
-  font-weight: bold;
+  ${({isSearchPage}) =>
+  isSearchPage
+    ? `
+    font-weight: normal;
+		`
+    : 'font-weight: bold;'}
   font-size: 14px;
   line-height: 140%;
   ${({current}) =>
@@ -17,6 +22,7 @@ export const Location = styled.a`
 		color: #000;
     cursor: not-allowed;
     pointer-events: none;
+    font-weight: bold;
 		`
       : 'color: #656565'};
   margin: 0 20px 0 0;

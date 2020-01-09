@@ -30,13 +30,16 @@ export const Container = styled.div`
     if (props.sb) return 'space-between';
     if (props.center) return 'center';
     if (props.jcc) return 'center';
+    if (props.jcfe) return 'flex-end';
     return 'flex-start';
   }};
 
   ${(props) => {
-    if (props.bsh) return `box-shadow: ${props.bsh};`;
-    if (props.bg) return `background: ${props.bg};`;
-    if (props.bd) return `border: ${props.bd};`;
-    return null;
+    let style = "";
+    if (props.bsh) style = style + `box-shadow: ${props.bsh};`;
+    if (props.bg) style = style + `background: ${props.bg};`;
+    if (props.bd) style = style + `border: ${props.bd};`;
+    if (props.br) style = style + `border-radius: ${props.br};`;
+    return style;
   }};
 `;

@@ -3,9 +3,9 @@ import {
 	Tab,
 } from './styled';
 
-const Tabs = ({children, active})=> {
+const Tabs = ({children, active, onClick})=> {
 	return (
-		<Tab active={active}>
+		<Tab active={active} onClick={onClick}>
 			{children}
 		</Tab>
 	)

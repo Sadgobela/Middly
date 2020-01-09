@@ -1,20 +1,11 @@
 import styled from 'styled-components';
 import {Select} from 'antd';
 
-export const Container = styled.div`
-  margin: 24px 0 0 0;
+export const StyledOption = styled(Select.Option)`
+  pointer-events: none;
 `;
 
-export const Title = styled.span`
-  font-family: Helvetica, sans-serif;
-  font-size: 22px;
-  line-height: 132%;
-  letter-spacing: 0.016em;
-  color: #000;
-  padding: 0;
-`;
-
-export const Filter = styled(Select)`
+export const StyledSelect = styled(Select)`
   &&& {
     margin: 0 24px 0 0;
     flex: 1;
@@ -26,6 +17,7 @@ export const Filter = styled(Select)`
       flex: 1 !important;
       width: unset !important;
       height: unset !important;
+      box-shadow: none !important;
       border: none;
       border-bottom: 1px solid #C3C3C3;
     }
@@ -52,53 +44,53 @@ export const Filter = styled(Select)`
       letter-spacing: -0.016em;
       color: #000;
     }
+    & .ant-select-selection__placeholder, .ant-select-search__field__placeholder {
+      color: #000;
+    }
   }
 `;
 
-export const FilterOption = styled(Select.Option)``;
-
-export const SelectedFilter = styled.button`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 22px 0 0;
-  padding: 6px 18px 6px 12px;
-  background: #e4e4e4;
-  border-radius: 24px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  font-size: 12px;
+export const SelectTitle = styled.div`
+  font-weight: 500;
+  font-size: 18px;
   line-height: 132%;
-  color: #464646;
 `;
 
-export const Clear = styled.button`
-  font-family: Helvetica Neue, sans-serif;
-  font-size: 14px;
+export const ClearAll = styled.div`
+  font-size: 10px;
   line-height: 140%;
-  color: #ed494f;
-  text-align: right;
-  outline: none;
-  border: none;
-  background: transparent;
-  cursor: pointer;
+  color: #ED494F;
 `;
 
-export const AppliedFilters = styled.div`
+export const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 24px;
+  align-items: center;
+  border-radius: 4px;
+  padding-bottom: 10px;
+  width: 100%;
 `;
 
-export const PostSearchFilters = styled.div`
-  display: flex;
-  flex-direction: column;
+export const Menu = styled.div`
   width: 100%;
-  margin-left: 20px;
-`;
-
-export const GetPostFilters = styled.div`
-  display: flex;
-  width: 100%;
+  ul {
+    width: 100%
+  }
+  li {
+    &.ant-select-dropdown-menu-item-selected {
+      background: ##ed484f36;
+      color: #000000;
+      border-radius: 5px;
+    }
+    &.ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled) {
+      background: ##ed484f36;
+      color: #000000;
+      border-radius: 5px;
+    }
+    &.ant-select-dropdown-menu-item-active, &.ant-select-dropdown-menu-item-selected {
+      i {
+        color: #000000 !important;
+      }
+    } 
+  }
 `;
