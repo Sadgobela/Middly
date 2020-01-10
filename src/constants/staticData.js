@@ -290,7 +290,8 @@ export const defaultProductCards = [
 export const deals = [
   {
     title: 'Autumn winter fashion',
-    price: 132,
+    newPrice: 132.0,
+    oldPrice: 234.0,
     countOfViews: 783,
     imgSrc: product1,
     sale: -40,
@@ -301,7 +302,8 @@ export const deals = [
   },
   {
     title: 'Autumn winter fashion',
-    price: 132,
+    newPrice: 132.0,
+    oldPrice: 234.0,
     countOfViews: 783,
     imgSrc: product2,
     sale: -40,
@@ -312,7 +314,8 @@ export const deals = [
   },
   {
     title: 'Autumn winter fashion',
-    price: 132,
+    newPrice: 132.0,
+    oldPrice: 234.0,
     countOfViews: 783,
     imgSrc: product3,
     sale: -40,
@@ -323,7 +326,8 @@ export const deals = [
   },
   {
     title: 'Autumn winter fashion',
-    price: 132,
+    newPrice: 132.0,
+    oldPrice: 234.0,
     countOfViews: 783,
     imgSrc: product4,
     sale: -40,
@@ -334,7 +338,8 @@ export const deals = [
   },
   {
     title: 'Autumn winter fashion',
-    price: 132,
+    newPrice: 132.0,
+    oldPrice: 234.0,
     countOfViews: 783,
     imgSrc: product1,
     sale: -40,
@@ -345,7 +350,8 @@ export const deals = [
   },
   {
     title: 'Autumn winter fashion',
-    price: 132,
+    newPrice: 132.0,
+    oldPrice: 234.0,
     countOfViews: 783,
     imgSrc: product2,
     sale: -40,
@@ -356,7 +362,8 @@ export const deals = [
   },
   {
     title: 'Autumn winter fashion',
-    price: 132,
+    newPrice: 132.0,
+    oldPrice: 234.0,
     countOfViews: 783,
     imgSrc: product3,
     sale: -40,
@@ -367,7 +374,8 @@ export const deals = [
   },
   {
     title: 'Autumn winter fashion',
-    price: 132,
+    newPrice: 132.0,
+    oldPrice: 234.0,
     countOfViews: 783,
     imgSrc: product4,
     sale: -40,
@@ -379,6 +387,42 @@ export const deals = [
 ];
 
 export const featuredProducts = [
+  {
+    title: 'Autumn winter fashion',
+    newPrice: 132,
+    oldPrice: null,
+    countOfViews: 783,
+    imgSrc: product5,
+    sale: -40,
+    likesCount: 142,
+    isWished: true,
+    isLiked: false,
+    stock: 21
+  },
+  {
+    title: 'Autumn winter fashion',
+    newPrice: 132,
+    oldPrice: null,
+    countOfViews: 783,
+    imgSrc: product6,
+    sale: -40,
+    likesCount: 142,
+    isWished: true,
+    isLiked: false,
+    stock: 21
+  },
+  {
+    title: 'Autumn winter fashion',
+    newPrice: 132,
+    oldPrice: 243,
+    countOfViews: 783,
+    imgSrc: product7,
+    sale: -40,
+    likesCount: 142,
+    isWished: true,
+    isLiked: false,
+    stock: 21
+  },
   {
     title: 'Autumn winter fashion',
     newPrice: 132,

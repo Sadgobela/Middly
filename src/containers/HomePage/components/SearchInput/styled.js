@@ -5,9 +5,9 @@ import {primaryColor, headerSelectColor, headerSearchColor, mainBlackColor} from
 export const SearchContainer = styled.div`
   position: relative;
   display: flex;
-  margin: 0 24px 0 4.9%;
+  margin: 0 51px 0 36px;
   z-index: 999;
-  max-width: 407px;
+  max-width: 423px;
   flex-grow: 1;
 `;
 

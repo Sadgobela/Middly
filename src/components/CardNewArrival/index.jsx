@@ -13,7 +13,8 @@ import {
   Price,
   Tools,
   Info,
-  OldPrice
+  OldPrice,
+  Sale,
 } from './styled';
 import Bookmark from '../../assets/Bookmark';
 
@@ -23,17 +24,21 @@ const CardNewArrival = ({
   isLiked,
   isWished,
   newPrice,
+  price,
   oldPrice,
   likesCount,
-  inline
+  inline,
+  showSale = false,
+  sale
 }) => (
   <Card inline={inline}>
     <Image src={imgSrc} alt="product" inline={inline} />
+    {showSale ? <Sale>-{sale}%</Sale> : null}
     <CardFooter inline={inline}>
       <Info inline={inline}>
         <Price inline={inline}>
-          ${newPrice}
-          {oldPrice && <OldPrice>{oldPrice}$</OldPrice>}
+          ${newPrice || price}
+          {oldPrice && <OldPrice>${oldPrice}</OldPrice>}
         </Price>
         <Shipping inline={inline}>Free Shipping</Shipping>
       </Info>

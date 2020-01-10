@@ -78,8 +78,8 @@ export const Tools = styled(FlexContainer)`
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  height: 214px;
+  width: 228px;
+  height: 228px;
 
   @media (max-width: ${media.mobileMax}) {
     height: 174px;
@@ -104,7 +104,7 @@ export const CardFooter = styled(FlexContainer)`
   height: 128px;
   flex-direction: column;
   letter-spacing: -0.6px;
-  padding: 6px 25px 22px 15px;
+  padding: 6px 15px 22px 15px;
 
   @media (max-width: ${media.mobileMax}) {
     padding: 2px 7px 8px;
@@ -230,4 +230,22 @@ export const LikesCount = styled.span`
   @media (max-width: ${media.mobileMax}) {
     margin-left: 4px;
   }
+`;
+
+export const Sale = styled.div`
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background: #f0646a;
+  width: 45px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #ffffff;
 `;

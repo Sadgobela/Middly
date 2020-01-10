@@ -9,7 +9,7 @@ import {headerHeight, mobileHeaderHeight} from './constants';
 export const HeaderWrapper = styled.div`
   position: relative;
   background: ${mainWhiteColor};
-  box-shadow: inset 0px -1px 1px ${headerShadowColor};
+  box-shadow: inset 0px -1px 0px ${headerShadowColor};
 
   @media (max-width: ${media.mobileMax}) {
     position: fixed;
@@ -24,7 +24,6 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   height: ${({isMobile}) => (isMobile ? mobileHeaderHeight : headerHeight)};
-  justify-content: space-between;
   margin: 0 auto;
   padding: 0 70px;
   max-width: 1440px;
@@ -41,7 +40,7 @@ export const HeaderContainer = styled.header`
 `;
 
 export const StyledLink = styled.a`
-  padding: 4px 8px;
+  padding: 4px 0;
   cursor: pointer;
   color: #999;
   border: none;
@@ -65,7 +64,7 @@ export const StyledLink = styled.a`
   }
 
   &:not(:last-child) {
-    margin-right: 26px;
+    margin-right: 42px;
   }
 
   &:hover {
@@ -89,7 +88,7 @@ export const SellButton = styled(Button)`
     line-height: 20px;
     border: 1px solid #c3c3c3;
     border-radius: 24px;
-    margin: 0 2.4% 0 0;
+    margin: 0 36px 0 0;
 
     & svg {
       margin-right: 6px;
@@ -152,7 +151,7 @@ export const Burger = styled.button`
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin: 0 2.2% 0 0;
+  margin: 0 26px 0 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -162,7 +161,7 @@ export const Burger = styled.button`
 export const LogoContainer = styled(Link)`
   width: 114px;
   padding-top: 6px;
-  margin-right: 5.7%;
+  margin-right: 64px;
   ${({isMobile}) =>
     isMobile
       ? `
@@ -246,7 +245,7 @@ export const CustomBadge = styled(Badge)`
 export const AuthControls = styled.div`
   display: flex;
   align-items: center;
-  margin: 0 45px 0 0;
+  margin: 0 47px 0 0;
 `;
 
 export const AuthSign = styled(Link)`
