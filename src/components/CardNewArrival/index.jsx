@@ -24,7 +24,6 @@ const CardNewArrival = ({
   isLiked,
   isWished,
   newPrice,
-  price,
   oldPrice,
   likesCount,
   inline,
