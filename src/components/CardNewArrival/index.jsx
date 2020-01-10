@@ -32,7 +32,7 @@ const CardNewArrival = ({
 }) => (
   <Card inline={inline}>
     <Image src={imgSrc} alt="product" inline={inline} />
-    {showSale ? <Sale>-{sale}%</Sale> : null}
+    {showSale ? <Sale>{sale}%</Sale> : null}
     <CardFooter inline={inline}>
       <Info inline={inline}>
         <Price inline={inline}>
