@@ -64,11 +64,21 @@ export const StyledSelect = styled(Select)`
           background: white;
           text-overflow: unset;
           border: none;
-          &.ant-select-search.ant-select-search--inline {
-            
+          &.ant-select-selection__choice.ant-select-selection__choice__disabled {
+            &:after {
+              content: "\\A";
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background: #ED494F;
+              display: inline-block;
+              position: absolute;
+              right: 25px;
+              top: 40%;
+            }
           }
+        }
       }
-    }
 
     & .ant-select-arrow {
       top: 18px !important;
