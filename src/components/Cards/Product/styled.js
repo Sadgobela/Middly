@@ -2,17 +2,17 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   position: relative;
-  width: 252px;
+  width: 272px;
   background: #ffffff;
-  box-shadow: 0 2px 25px rgba(0,0,0,0.1);
-  border-radius: 3px;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.09);
+  border-radius: 4px;
   margin: ${({margin}) => (margin ? `${margin}` : 0)};
 `;
 
 export const Poster = styled.div`
   width: 100%;
   height: 260px;
-  position: relative
+  position: relative;
 `;
 
 export const PosterPic = styled.img`
@@ -20,6 +20,7 @@ export const PosterPic = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 4px 4px 0px 0px;
 `;
 
 export const Avatar = styled.div`
@@ -62,7 +63,7 @@ export const Shop = styled.span`
 
   & svg {
     margin: 0 10px 0 0;
-    fill: #8F8F8F;
+    fill: #8f8f8f;
   }
 `;
 
@@ -84,11 +85,11 @@ export const Shipping = styled.span`
   font-size: 14px;
   line-height: 140%;
   text-align: right;
-  color: #8F8F8F;
+  color: #8f8f8f;
 `;
 
 export const PriceValue = styled.span`
-  font-size: ${({isDiscounted}) => (isDiscounted ? '16px' : '14px')};;
+  font-size: ${({isDiscounted}) => (isDiscounted ? '16px' : '14px')};
   line-height: 140%;
   letter-spacing: -0.016em;
   ${({isDiscounted}) => (isDiscounted ? 'color: #000000;' : 'margin-left: 5px; text-decoration: line-through;')};
@@ -96,9 +97,9 @@ export const PriceValue = styled.span`
 
 export const Bookmark = styled.div`
   > div {
-  display: flex;
+    display: flex;
   }
   svg {
-    fill: #8F8F8F; 
+    fill: #8f8f8f;
   }
 `;

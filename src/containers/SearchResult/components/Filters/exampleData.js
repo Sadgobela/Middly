@@ -35,3 +35,46 @@ export const sizeData = [
     value: 'uk_l_40'
   }
 ];
+
+export const brandData = [
+  {
+    label: 'Adidas',
+    value: 'adidas'
+  },
+  {
+    label: 'Reebok',
+    value: 'reebok'
+  },
+  {
+    label: 'Zara',
+    value: 'zara'
+  },
+  {
+    label: 'H & M',
+    value: 'h-m'
+  },
+  {
+    label: 'Gap',
+    value: 'gap'
+  },
+  {
+    label: 'Puma',
+    value: 'puma'
+  },
+  {
+    label: 'Nike',
+    value: 'nike'
+  },
+  {
+    label: 'Puma',
+    value: 'puma'
+  },
+  {
+    label: 'Nike',
+    value: 'nike'
+  },
+  {
+    label: 'Polo',
+    value: 'polo'
+  }
+];

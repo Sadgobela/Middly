@@ -9,7 +9,7 @@ const components = {
 	container: Container,
 };
 
-const Grid = ({pageContainer, aic, aife, jcc, jcfe, children, sb, center, column, margin, padding, width, wrap, height, bg, bsh, bd, br})=> {
+const Grid = ({pageContainer, aic, aife, jcc, jcfe, children, sb, center, column, margin, padding, width, wrap, height, bg, bsh, bd, br, maxh})=> {
 	const Component = pageContainer ? PageContainer : Container;
 	return (
 		<Component
@@ -29,6 +29,7 @@ const Grid = ({pageContainer, aic, aife, jcc, jcfe, children, sb, center, column
 			bsh={bsh}
 			bd={bd}
 			br={br}
+			maxh={maxh}
 		>
 			{children}
 		</Component>

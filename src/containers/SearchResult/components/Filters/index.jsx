@@ -13,7 +13,7 @@ import {
 import Grid from 'components/Grid';
 import { Col, Row } from 'antd';
 import CustomSelect from "../../../../components/Select";
-import {colorData, sizeData} from "./exampleData";
+import {brandData, colorData, sizeData} from "./exampleData";
 
 const filters = ['Location', 'Category', 'Brand', 'Price', 'Sort by'];
 
@@ -84,7 +84,6 @@ const Filters = ({ isPostSearch, title })=> {
 										field="size"
 										label="Size"
 										placeholder="Size"
-										isCheckbox
 										mode="multiple"
 										selectedOptions={selectedSizes}
 										onChange={handleSelectedOptionsChange}
@@ -94,13 +93,37 @@ const Filters = ({ isPostSearch, title })=> {
 										field="color"
 										label="Color"
 										placeholder="Color"
-										isCheckbox
 										mode="multiple"
 										selectedOptions={selectedColors}
 										onChange={handleSelectedOptionsChange}
 										options={colorData}
 									/>
-									{getFilters(['Brand', 'Price', 'Location'])}
+									<CustomSelect
+										field="brand"
+										label="Brand"
+										placeholder="Brand"
+										mode="multiple"
+										selectedOptions={selectedSizes}
+										onChange={handleSelectedOptionsChange}
+										options={brandData}
+									/>
+									<CustomSelect
+										field="price"
+										label="Price"
+										placeholder="Price"
+										mode="multiple"
+										selectedOptions={selectedColors}
+										onChange={handleSelectedOptionsChange}
+										options={colorData}
+									/>
+									<CustomSelect
+										field="country"
+										label="Country"
+										placeholder="Country"
+										selectedOptions={selectedSizes}
+										onChange={handleSelectedOptionsChange}
+										options={sizeData}
+									/>
 								</Row>
 								{getAppliedFilters()}
 							</Col>

@@ -16,6 +16,7 @@ export const Container = styled.div`
   display: flex;
   width: ${({width}) => (width ? `${width}` : 'auto')};
   height: ${({height}) => (height ? `${height}px` : 'auto')};
+  max-height: ${({maxh}) => (maxh ? `${maxh}px` : 'auto')};
   margin: ${({margin}) => (margin ? `${margin}` : '0')};
   padding: ${({padding}) => (padding ? `${padding}` : '0')};
   flex-direction: ${({column}) => (column ? 'column' : 'row')};
@@ -35,7 +36,7 @@ export const Container = styled.div`
   }};
 
   ${(props) => {
-    let style = "";
+    let style = '';
     if (props.bsh) style = style + `box-shadow: ${props.bsh};`;
     if (props.bg) style = style + `background: ${props.bg};`;
     if (props.bd) style = style + `border: ${props.bd};`;
