@@ -300,6 +300,25 @@ export const Sale = styled.div`
   line-height: 15px;
   text-align: center;
   color: #ffffff;
+
+  @media (max-width: ${media.mobileMax}) {
+    width: 27px;
+    height: 27px;
+    top: 5px;
+    right: 5px;
+    background: #f0646a;
+    border-radius: 2px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const Actions = styled.div`

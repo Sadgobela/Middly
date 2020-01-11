@@ -50,7 +50,7 @@ const HomePageDesktop = () => (
 
     <WithSlider marginTop={76} title="Deals" withSeeMore slidesToScroll={4} infinite={false} slidesToShow={4}>
       {deals.map((product, index) => (
-        <CardNewArrival key={index} {...product} showSale />
+        <CardNewArrival key={index} {...product} />
       ))}
     </WithSlider>
 

@@ -666,7 +666,8 @@ export const electronics = [
   },
   {
     title: 'Apple iPad Pro',
-    oldPrice: 132,
+    newPrice: 132,
+    oldPrice: 240,
     countOfViews: 783,
     imgSrc: product16,
     sale: -40,
@@ -713,7 +714,8 @@ export const electronics = [
   },
   {
     title: 'Apple iPad Pro',
-    oldPrice: 132,
+    newPrice: 132,
+    oldPrice: 240,
     countOfViews: 783,
     imgSrc: product16,
     sale: -40,

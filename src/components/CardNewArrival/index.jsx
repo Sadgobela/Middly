@@ -2,14 +2,12 @@ import React from 'react';
 import { useWindowSize } from "@reach/window-size";
 import { string, number, bool } from 'prop-types';
 import Heart from '../../assets/Heart';
-import { FlexContainer } from '../../globalStyles';
 import {
   CardFooter,
   ImageContainer,
   Image,
   Card,
   Likes,
-  LikesCount,
   Title,
   Shipping,
   Price,
@@ -28,19 +26,20 @@ const CardNewArrival = ({
   isWished,
   newPrice,
   oldPrice,
-  likesCount,
-  inline,
-  showSale = false,
-  sale
+  inline
 }) => {
   const { width } = useWindowSize();
   const isMobile = width <= 767;
+
+  let sale = null;
+
+  if(oldPrice && newPrice) sale = parseInt(newPrice / oldPrice * 100);
 
   return (
     <Card inline={inline}>
       <ImageContainer inline={inline}>
         <Image src={imgSrc} alt="product" inline={inline} />
-        {showSale ? <Sale>{sale}%</Sale> : null}
+        {sale && !inline ? <Sale>-{sale}%</Sale> : null}
 
         {
           !inline && isMobile &&
@@ -94,7 +93,13 @@ CardNewArrival.propTypes = {
   isWished: bool.isRequired,
   newPrice: number,
   oldPrice: number,
-  likesCount: number.isRequired
+  inline: bool
+};
+
+CardNewArrival.defaultProps = {
+  newPrice: null,
+  oldPrice: null,
+  inline: false
 };
 
 export default CardNewArrival;
