@@ -35,7 +35,8 @@ export const HeaderContainer = styled.header`
   @media (max-width: ${media.mobileMax}) {
     padding: 0 16px;
     background: ${mainWhiteColor};
-    border-bottom: 1px solid ${bgLightGray};
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    height: 48px;
   }
 `;
 
@@ -61,6 +62,7 @@ export const StyledLink = styled.a`
 
   @media (max-width: 767px) {
     ${({active}) => (active ? null : 'border-bottom: 2px solid #EFEFEF;')};
+    padding: 8px 0 4px;
   }
 
   &:not(:last-child) {
@@ -146,7 +148,7 @@ export const StyledHi = styled.div``;
 
 export const Burger = styled.button`
   position: ${({isMobile}) => (isMobile ? 'absolute' : 'relative')};
-  left: ${({isMobile}) => (isMobile ? '18px' : '0')};
+  left: ${({isMobile}) => (isMobile ? '14px' : '0')};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,7 +161,7 @@ export const Burger = styled.button`
 `;
 
 export const LogoContainer = styled(Link)`
-  width: 114px;
+  width: 69px;
   padding-top: 6px;
   margin-right: 64px;
   ${({isMobile}) =>
@@ -170,12 +172,12 @@ export const LogoContainer = styled(Link)`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 91px;
+    min-width: 69px;
   `
       : ''}
 
   & svg {
-    max-width: 114px;
+    max-width: 69px;
   }
 `;
 
@@ -187,7 +189,7 @@ export const LinksContainer = styled.div`
     mobile
       ? `
     position: absolute;
-    top: 57px;
+    top: 48px;
     left: 0;
     width: 100%;
     background: #fff;

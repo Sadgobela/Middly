@@ -51,8 +51,8 @@ const CardNewArrival = ({
       <CardFooter inline={inline}>
         <Info inline={inline}>
           <Price inline={inline}>
-            ${newPrice ? newPrice.toFixed(2) : 0}
-            {oldPrice && <OldPrice inline={inline}>${oldPrice.toFixed(2)}</OldPrice>}
+            <small>BD</small>{newPrice ? newPrice.toFixed(2) : 0}
+            {oldPrice && <OldPrice inline={inline}><small>BD</small>{oldPrice.toFixed(2)}</OldPrice>}
           </Price>
           <Shipping inline={inline}>Free Shipping</Shipping>
         </Info>

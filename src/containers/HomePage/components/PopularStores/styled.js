@@ -103,8 +103,8 @@ export const StoreCountry = styled.span`
 `;
 
 export const StoreFollow = styled.span`
-  min-height: 28px;
-  width: 105px;
+  min-height: 24px;
+  width: 82px;
   display: inline-flex;
   margin-left: auto;
   align-items: center;
@@ -116,12 +116,12 @@ export const StoreFollow = styled.span`
 
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 20px;
   color: ${primaryColor};
 
   svg {
-    margin-right: 16px;
+    margin-right: 10px;
   }
 `;
 

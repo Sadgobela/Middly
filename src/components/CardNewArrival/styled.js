@@ -149,6 +149,10 @@ export const Price = styled.div`
     line-height: 1;
     margin-top: 2px;
 
+    small {
+      font-size: 70%;
+    }
+
     ${({inline}) => {
       if (inline) {
         return `
