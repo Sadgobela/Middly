@@ -68,8 +68,6 @@ export const Links = styled.div`
   display: flex;
 
   a {
-    display: inline-flex;
-
     &:not(:last-child) {
       margin-right: 8px;
     }

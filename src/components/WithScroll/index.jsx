@@ -1,6 +1,5 @@
 import React from 'react';
 import Scrollbar from 'react-scrollbars-custom';
-import { AutoSizer } from 'react-virtualized';
 
 import { any, string, number, bool } from 'prop-types';
 import { ContentWrapper } from 'globalStyles';
@@ -12,15 +11,25 @@ import {
   SliderWrapper,
   SeeMoreButton,
   CircleWrapper,
-  ButtonText
+  ButtonText,
+  FollowButton
 } from './styled';
+import Icon from 'components/Icon';
 import Arrow from 'assets/Arrow';
 
-const WithSlider = ({ children, title, withSeeMore, seeMoreText, seeMoreCounter, showSeeMoreArrow, marginTop, padding, height, showTrackX }) => {
+const WithSlider = ({ children, title, withSeeMore, seeMoreText, seeMoreCounter, showSeeMoreArrow, marginTop, padding, height, showTrackX, showFollow, followed }) => {
   return (
     <ContentWrapper marginTop={marginTop}>
       <Header>
-        <Title>{title}</Title>
+        <Title>
+          {title}
+          {
+            showFollow &&
+              <FollowButton followed={followed}>
+                {followed ? <Icon type="checkbox" /> : <Icon type="plus" />}
+              </FollowButton>
+          }
+        </Title>
         <Thumb>
           {seeMoreText} {seeMoreCounter && <b>({seeMoreCounter})</b>}{' '}
           {showSeeMoreArrow && <img
@@ -67,7 +76,9 @@ WithSlider.propTypes = {
   height: number,
   seeMoreText: string,
   seeMoreCounter: number,
-  showSeeMoreArrow: bool
+  showSeeMoreArrow: bool,
+  showFollow: bool,
+  followed: bool
 };
 
 WithSlider.defaultProps = {
@@ -77,7 +88,9 @@ WithSlider.defaultProps = {
   height: '100%',
   seeMoreText: 'View all',
   seeMoreCounter: 96,
-  showSeeMoreArrow: true
+  showSeeMoreArrow: true,
+  showFollow: false,
+  followed: false
 };
 
 export default WithSlider;

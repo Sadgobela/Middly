@@ -7,7 +7,11 @@ import {ContentWrapper} from 'globalStyles';
 export const Wrapper = styled.div`
   width: 100%;
   box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.16);
-  margin-top: 127px;
+  margin-top: 86px;
+
+  @media (max-width: ${media.mobileMax}) {
+    margin-top: 24px;
+  }
 `;
 
 export const FooterArea = styled(ContentWrapper)`

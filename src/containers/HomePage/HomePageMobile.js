@@ -13,7 +13,8 @@ import {
   newArrivals,
   popularStores,
   shopNow,
-  categoriesCards
+  categoriesCards,
+  electronics
 } from 'constants/staticData';
 import {primaryColor} from 'constants/colors';
 import {SliderContainer, SliderContainerList} from './styled';
@@ -43,15 +44,15 @@ const HomePageMobile = () => {
       <CategoriesMobile list={categoriesMobile} />
       <Divider />
       <SliderContainer>
-        <WithScroll marginTop={0} title="Deals" withSeeMore height={244}>
+        <WithScroll marginTop={0} title="Deals" withSeeMore height={260}>
           {deals.map((product, index) => (
-            <CardWithSale key={index} {...product} />
+            <CardNewArrival key={index} {...product} />
           ))}
         </WithScroll>
       </SliderContainer>
       <Divider height={40} />
       <SliderContainer>
-        <WithScroll marginTop={0} title="Most Liked" withSeeMore height={261}>
+        <WithScroll marginTop={0} title="Most Liked" withSeeMore height={260}>
           {featuredProducts.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
@@ -84,8 +85,16 @@ const HomePageMobile = () => {
       <ShopNow list={shopNow} />
 
       <SliderContainer>
-        <WithScroll marginTop={0} title="Fashion" withSeeMore height={261}>
+        <WithScroll marginTop={0} title="Fashion" withSeeMore height={270} showFollow followed>
           {featuredProducts.map((product, index) => (
+            <CardNewArrival key={index} {...product} />
+          ))}
+        </WithScroll>
+      </SliderContainer>
+
+      <SliderContainer>
+        <WithScroll marginTop={0} title="Electronics" withSeeMore height={270} showFollow followed={false}>
+          {electronics.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
         </WithScroll>

@@ -28,6 +28,8 @@ export const Title = styled.div`
     font-size: 18px;
     line-height: 21px;
     color: #343434;
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -67,6 +69,7 @@ export const SliderWrapper = styled.div`
   .ScrollbarsCustom-Content {
     display: flex;
     padding: 0 12px 10px !important;
+    min-height: 0 !important;
     
     &:after {
       content: '';
@@ -105,4 +108,32 @@ export const ButtonText = styled.div`
   font-size: 16px;
   font-weight: bold;
   color: ${mainBlackColor};
+`;
+
+export const FollowButton = styled.button`
+  padding: 0;
+  margin: 0 0 2px;
+  outline: none;
+  border: 1px solid ${({followed}) => (followed ? '#999' : '#ED484F')};
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 0;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  margin-left: 14px;
+  padding: 0;
+
+  span {
+    display: none;
+  }
+
+  svg {
+    max-width: ${({followed}) => (followed ? '9px' : '9.5px')};
+    max-height: ${({followed}) => (followed ? '6.5px' : '9.5px')};
+    fill: ${({followed}) => (followed ? '#999' : 'initial')};
+  }
 `;

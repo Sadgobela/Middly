@@ -17,35 +17,37 @@ export const Card = styled(FlexContainer)`
   background: ${mainWhiteColor};
   cursor: pointer;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.06);
-  
-  @media(max-width: ${media.mobileMax}) {
+
+  @media (max-width: ${media.mobileMax}) {
+    min-width: 159px;
     width: 159px;
     height: auto;
     margin: 0 4px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
-    
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+
     svg {
       max-width: 12px;
       max-height: 14px;
     }
-    
+
     ${({inline}) => {
       if (inline) {
         return `
-            width: 100%;
-            height: auto;
-            background: #FFFFFF;
-            border: 1px solid #EEEEEE;
-            box-sizing: border-box;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
-            border-radius: 2px;
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: initial;
-          `;
+          width: 100%;
+          height: auto;
+          background: #FFFFFF;
+          border: 1px solid #EEEEEE;
+          box-sizing: border-box;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
+          border-radius: 2px;
+          padding: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: initial;
+        `;
       }
     }}
+  }
 `;
 
 export const Info = styled(FlexContainer)`
@@ -72,7 +74,20 @@ export const Tools = styled(FlexContainer)`
       return `
           order: 3;
           margin-top: 18px;
+          display: none;
         `;
+    }
+  }}
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+
+  ${({inline}) => {
+    if (inline) {
+      return `
+      position: static;
+    `;
     }
   }}
 `;
@@ -85,6 +100,7 @@ export const Image = styled.img`
     height: 174px;
     object-fit: cover;
     border-radius: 4px 4px 0 0;
+    width: 100%;
 
     ${({inline}) => {
       if (inline) {
@@ -107,7 +123,7 @@ export const CardFooter = styled(FlexContainer)`
   padding: 6px 15px 22px 15px;
 
   @media (max-width: ${media.mobileMax}) {
-    padding: 2px 7px 8px;
+    padding: 6px 7px 25px;
     position: relative;
     height: auto;
 
@@ -117,6 +133,7 @@ export const CardFooter = styled(FlexContainer)`
             width: calc(100% - 100px);
             padding-left: 10px;
             margin: 0 0 auto;
+            padding: 0 0 0 10px;
           `;
       }
     }}
@@ -128,7 +145,7 @@ export const Price = styled.div`
   color: ${mainBlackColor};
 
   @media (max-width: ${media.mobileMax}) {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1;
     margin-top: 2px;
 
@@ -136,6 +153,7 @@ export const Price = styled.div`
       if (inline) {
         return `
             order: 2;
+            font-size: 14px;
           `;
       }
     }}
@@ -147,6 +165,18 @@ export const OldPrice = styled.span`
   color: ${transparentTextColor};
   text-decoration: line-through;
   margin-left: 6px;
+
+  @media (max-width: ${media.mobileMax}) {
+    font-size: 8px;
+
+    ${({inline}) => {
+      if (inline) {
+        return `
+          font-size: 12px;
+        `;
+      }
+    }}
+  }
 `;
 
 export const Shipping = styled.div`
@@ -159,6 +189,7 @@ export const Shipping = styled.div`
     color: #999999;
     margin-right: -1px;
     letter-spacing: -0.1px;
+    margin-top: 2px;
 
     ${({inline}) => {
       if (inline) {
@@ -184,13 +215,16 @@ export const Title = styled.div`
   color: ${mainBlackColor};
 
   @media (max-width: ${media.mobileMax}) {
-    font-size: 14px;
-    color: ${bookmarkFillColor};
-    margin: 6px 0 5px;
-    font-weight: 700;
+    font-size: 12px;
+    color: #000;
+    margin: 11px 0 0;
+    font-weight: normal;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'SF Pro Display';
+    line-height: 14px;
+    letter-spacing: 0;
 
     ${({inline}) => {
       if (inline) {
@@ -212,14 +246,32 @@ export const Likes = styled(FlexContainer)`
   font-size: 14px;
 
   @media (max-width: ${media.mobileMax}) {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.76);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     svg {
-      max-width: 14px;
-      max-height: 12px;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 14px;
-      color: #000000;
+      max-width: 12px;
+      max-height: 11px;
     }
+
+    ${({inline}) => {
+      if (inline) {
+        return `
+          position: static;
+          order: 5;
+          margin: 14px auto 0 0;
+        `;
+      }
+    }}
   }
 `;
 
@@ -248,4 +300,30 @@ export const Sale = styled.div`
   line-height: 15px;
   text-align: center;
   color: #ffffff;
+`;
+
+export const Actions = styled.div`
+  position: absolute;
+  right: 9px;
+  bottom: 11px;
+  display: flex;
+  cursor: pointer;
+
+  span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #7c7e82;
+    margin-left: 3px;
+  }
+
+  ${({inline}) => {
+    if (inline) {
+      return `
+        bottom: inherit;
+        right: 0;
+        top: 10px;
+      `;
+    }
+  }}
 `;

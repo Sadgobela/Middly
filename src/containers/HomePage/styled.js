@@ -21,15 +21,13 @@ export const ShopsWrapper = styled.div`
 export const SubscribeBlock = styled(FlexContainer)`
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 116px;
   padding-top: 56px;
   ${({backgroundImage}) => (backgroundImage ? `background-image: url(${backgroundImage});` : '')}
   
   @media(max-width: ${media.mobileMax}) {
-    padding: 13px 16px 24px;
+    padding: 13px 16px 0;
     flex-wrap: wrap;
     border-top: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
     
     > div {
       flex-wrap: wrap;

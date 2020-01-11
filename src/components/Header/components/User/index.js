@@ -33,9 +33,9 @@ const User = ({me, setMe}) => {
         <>
           <UserLabel>Please,</UserLabel>
           <UserContent>
-            <UserSignIn onClick={() => setMe(user)}>Sing in</UserSignIn>
+            <UserSignIn onClick={() => setMe(user)}>Sign In</UserSignIn>
             <UserDivider />
-            <UserSignUp>Sing up</UserSignUp>
+            <UserSignUp>Sign Up</UserSignUp>
           </UserContent>
         </>
       )}
