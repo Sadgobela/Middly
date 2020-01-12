@@ -44,7 +44,7 @@ const HomePageMobile = () => {
       <CategoriesMobile list={categoriesMobile} />
       <Divider />
       <SliderContainer>
-        <WithScroll marginTop={0} title="Deals" withSeeMore height={270}>
+        <WithScroll marginTop={0} title="Deals" withSeeMore height={255}>
           {deals.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
@@ -52,7 +52,7 @@ const HomePageMobile = () => {
       </SliderContainer>
       <Divider height={40} />
       <SliderContainer>
-        <WithScroll marginTop={0} title="Most Liked" withSeeMore height={270}>
+        <WithScroll marginTop={0} title="Most Liked" withSeeMore height={255}>
           {featuredProducts.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
@@ -85,7 +85,7 @@ const HomePageMobile = () => {
       <ShopNow list={shopNow} />
 
       <SliderContainer>
-        <WithScroll marginTop={0} title="Fashion" withSeeMore height={270} showFollow followed>
+        <WithScroll marginTop={0} title="Fashion" withSeeMore height={255} showFollow followed>
           {featuredProducts.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
@@ -93,7 +93,7 @@ const HomePageMobile = () => {
       </SliderContainer>
 
       <SliderContainer>
-        <WithScroll marginTop={0} title="Electronics" withSeeMore height={270} showFollow followed={false}>
+        <WithScroll marginTop={0} title="Electronics" withSeeMore height={255} showFollow followed={false}>
           {electronics.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}

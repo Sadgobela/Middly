@@ -24,6 +24,7 @@ export const Card = styled(FlexContainer)`
     height: auto;
     margin: 0 4px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
 
     svg {
       max-width: 12px;
@@ -44,6 +45,7 @@ export const Card = styled(FlexContainer)`
           display: flex;
           flex-wrap: wrap;
           flex-direction: initial;
+          margin: 0;
         `;
       }
     }}
@@ -125,7 +127,7 @@ export const CardFooter = styled(FlexContainer)`
   padding: 6px 15px 22px 15px;
 
   @media (max-width: ${media.mobileMax}) {
-    padding: 6px 7px 25px;
+    padding: 6px 7px 8px;
     position: relative;
     height: auto;
 
@@ -147,7 +149,7 @@ export const Price = styled.div`
   color: ${mainBlackColor};
 
   @media (max-width: ${media.mobileMax}) {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 12px;
     color: ${({sale}) => (sale ? primaryColor : '#000')};
@@ -155,10 +157,11 @@ export const Price = styled.div`
     margin-top: 2px;
 
     small {
-      font-weight: normal;
-      font-size: 8px;
+      font-weight: 500;
+      font-size: 12px;
       line-height: 10px;
       color: #666666;
+      letter-spacing: 0;
     }
 
     ${({inline}) => {
@@ -179,24 +182,24 @@ export const OldPrice = styled.span`
   margin-left: 6px;
 
   @media (max-width: ${media.mobileMax}) {
-    font-weight: 300;
-    font-size: 8px;
+    font-weight: normal;
+    font-size: 12px;
     line-height: 10px;
     text-decoration-line: line-through;
     color: #999999;
-    margin-left: 4px;
+    margin-left: 10px;
 
     small {
-      font-weight: 300;
-      font-size: 8px;
-      color: #ccc;
+      font-weight: normal;
+      font-size: 12px;
+      color: #999;
     }
 
     ${({inline}) => {
       if (inline) {
         return `
           font-size: 12px;
-          margin-left: 8px;
+          margin-left: 10px;
         `;
       }
     }}
@@ -213,8 +216,9 @@ export const Shipping = styled.div`
     color: #999999;
     margin-right: -1px;
     letter-spacing: -0.1px;
-    margin-top: 4px;
+    margin-top: 6px;
     width: 100%;
+    letter-spacing: -0.3px;
 
     ${({inline}) => {
       if (inline) {
@@ -225,7 +229,7 @@ export const Shipping = styled.div`
             font-size: 12px;
             line-height: 1.4;
             color: #8F8F8F;
-            margin: 0 0 8px;
+            margin: 1px 0 10px;
             width: 100%;
           `;
       }
@@ -240,9 +244,9 @@ export const Title = styled.div`
   color: ${mainBlackColor};
 
   @media (max-width: ${media.mobileMax}) {
-    font-size: 12px;
+    font-size: 10px;
     color: #000;
-    margin: 6px 0 0;
+    margin: 9px 0 0;
     font-weight: normal;
     white-space: nowrap;
     overflow: hidden;
