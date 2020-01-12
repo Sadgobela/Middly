@@ -20,6 +20,8 @@ import product19 from 'images/products/product19.jpg';
 import product20 from 'images/products/product20.jpg';
 import product21 from 'images/products/product21.jpg';
 import product22 from 'images/products/product22.jpg';
+import card1 from 'images/products/card1.jpg';
+import card2 from 'images/products/card2.jpg';
 import shop1 from 'images/shops/shop1.jpg';
 import shop2 from 'images/shops/shop2.jpg';
 import shop3 from 'images/shops/shop3.jpg';
@@ -293,7 +295,7 @@ export const deals = [
     newPrice: 132.0,
     oldPrice: 234.0,
     countOfViews: 783,
-    imgSrc: product1,
+    imgSrc: card1,
     sale: -40,
     likesCount: 142,
     isWished: true,
@@ -305,7 +307,7 @@ export const deals = [
     newPrice: 132.0,
     oldPrice: 234.0,
     countOfViews: 783,
-    imgSrc: product2,
+    imgSrc: card2,
     sale: -40,
     likesCount: 142,
     isWished: true,
@@ -317,7 +319,7 @@ export const deals = [
     newPrice: 132.0,
     oldPrice: 234.0,
     countOfViews: 783,
-    imgSrc: product3,
+    imgSrc: card1,
     sale: -40,
     likesCount: 142,
     isWished: true,
@@ -329,7 +331,7 @@ export const deals = [
     newPrice: 132.0,
     oldPrice: 234.0,
     countOfViews: 783,
-    imgSrc: product4,
+    imgSrc: card2,
     sale: -40,
     likesCount: 142,
     isWished: true,
@@ -341,7 +343,7 @@ export const deals = [
     newPrice: 132.0,
     oldPrice: 234.0,
     countOfViews: 783,
-    imgSrc: product1,
+    imgSrc: card1,
     sale: -40,
     likesCount: 142,
     isWished: true,
@@ -353,7 +355,7 @@ export const deals = [
     newPrice: 132.0,
     oldPrice: 234.0,
     countOfViews: 783,
-    imgSrc: product2,
+    imgSrc: card2,
     sale: -40,
     likesCount: 142,
     isWished: true,
@@ -365,7 +367,7 @@ export const deals = [
     newPrice: 132.0,
     oldPrice: 234.0,
     countOfViews: 783,
-    imgSrc: product3,
+    imgSrc: card1,
     sale: -40,
     likesCount: 142,
     isWished: true,
@@ -377,7 +379,7 @@ export const deals = [
     newPrice: 132.0,
     oldPrice: 234.0,
     countOfViews: 783,
-    imgSrc: product4,
+    imgSrc: card2,
     sale: -40,
     likesCount: 142,
     isWished: true,

@@ -4,7 +4,7 @@ import {
   mainBlackColor,
   transparentTextColor,
   secondaryTextColor,
-  bookmarkFillColor
+  primaryColor
 } from '../../constants/colors';
 import {FlexContainer} from '../../globalStyles';
 import media from 'constants/media';
@@ -54,6 +54,8 @@ export const Info = styled(FlexContainer)`
   width: 100%;
 
   @media (max-width: ${media.mobileMax}) {
+    flex-wrap: wrap;
+
     ${({inline}) => {
       if (inline) {
         return `
@@ -146,11 +148,17 @@ export const Price = styled.div`
 
   @media (max-width: ${media.mobileMax}) {
     font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    color: ${({sale}) => (sale ? primaryColor : '#000')};
     line-height: 1;
     margin-top: 2px;
 
     small {
-      font-size: 70%;
+      font-weight: normal;
+      font-size: 8px;
+      line-height: 10px;
+      color: #666666;
     }
 
     ${({inline}) => {
@@ -171,12 +179,24 @@ export const OldPrice = styled.span`
   margin-left: 6px;
 
   @media (max-width: ${media.mobileMax}) {
+    font-weight: 300;
     font-size: 8px;
+    line-height: 10px;
+    text-decoration-line: line-through;
+    color: #999999;
+    margin-left: 4px;
+
+    small {
+      font-weight: 300;
+      font-size: 8px;
+      color: #ccc;
+    }
 
     ${({inline}) => {
       if (inline) {
         return `
           font-size: 12px;
+          margin-left: 8px;
         `;
       }
     }}
@@ -193,7 +213,8 @@ export const Shipping = styled.div`
     color: #999999;
     margin-right: -1px;
     letter-spacing: -0.1px;
-    margin-top: 2px;
+    margin-top: 4px;
+    width: 100%;
 
     ${({inline}) => {
       if (inline) {
@@ -221,7 +242,7 @@ export const Title = styled.div`
   @media (max-width: ${media.mobileMax}) {
     font-size: 12px;
     color: #000;
-    margin: 11px 0 0;
+    margin: 6px 0 0;
     font-weight: normal;
     white-space: nowrap;
     overflow: hidden;

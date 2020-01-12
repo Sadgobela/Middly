@@ -44,7 +44,7 @@ const HomePageMobile = () => {
       <CategoriesMobile list={categoriesMobile} />
       <Divider />
       <SliderContainer>
-        <WithScroll marginTop={0} title="Deals" withSeeMore height={260}>
+        <WithScroll marginTop={0} title="Deals" withSeeMore height={270}>
           {deals.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
@@ -52,7 +52,7 @@ const HomePageMobile = () => {
       </SliderContainer>
       <Divider height={40} />
       <SliderContainer>
-        <WithScroll marginTop={0} title="Most Liked" withSeeMore height={260}>
+        <WithScroll marginTop={0} title="Most Liked" withSeeMore height={270}>
           {featuredProducts.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}

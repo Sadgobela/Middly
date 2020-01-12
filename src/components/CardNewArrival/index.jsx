@@ -50,13 +50,13 @@ const CardNewArrival = ({
       </ImageContainer>
       <CardFooter inline={inline}>
         <Info inline={inline}>
-          <Price inline={inline}>
+          <Price inline={inline} sale={sale}>
             <small>BD</small>{newPrice ? newPrice.toFixed(2) : 0}
             {oldPrice && <OldPrice inline={inline}><small>BD</small>{oldPrice.toFixed(2)}</OldPrice>}
           </Price>
-          <Shipping inline={inline}>Free Shipping</Shipping>
         </Info>
         <Title inline={inline}>{title}</Title>
+        <Shipping inline={inline}>Free Shipping</Shipping>
 
         {
           isMobile
