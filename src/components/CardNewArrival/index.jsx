@@ -1,7 +1,9 @@
 import React from 'react';
 import { useWindowSize } from "@reach/window-size";
 import { string, number, bool } from 'prop-types';
-import Heart from '../../assets/Heart';
+
+import Actions from 'components/Actions';
+
 import {
   CardFooter,
   ImageContainer,
@@ -14,10 +16,11 @@ import {
   Tools,
   Info,
   OldPrice,
-  Sale,
-  Actions
+  Sale
 } from './styled';
-import Bookmark from '../../assets/Bookmark';
+
+import Heart from 'assets/Heart';
+import Bookmark from 'assets/Bookmark';
 
 const CardNewArrival = ({
   title,
@@ -63,15 +66,11 @@ const CardNewArrival = ({
             ? <>
               {
                 inline &&
-                <Likes inline={inline}>
+                <Likes inline={inline} onClick={() => { console.log(Actions); }}>
                   <Heart isLiked={isLiked}/>
                 </Likes>
               }
-              <Actions inline={inline}>
-                <span/>
-                <span/>
-                <span/>
-              </Actions>
+              <Actions inline={inline}/>
             </>
             :
             <Tools inline={inline}>
