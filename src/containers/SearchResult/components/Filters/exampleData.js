@@ -78,3 +78,49 @@ export const brandData = [
     value: 'polo'
   }
 ];
+
+export const priceData = [
+  {
+    label: '1000',
+    value: '1000'
+  },
+  {
+    label: '2000',
+    value: '2000'
+  },
+  {
+    label: '1',
+    value: '1'
+  },
+  {
+    label: '2',
+    value: '2'
+  },
+  {
+    label: '99',
+    value: '99'
+  }
+];
+
+export const countryData = [
+  {
+    label: 'Ukraine',
+    value: 'ukraine'
+  },
+  {
+    label: 'USA',
+    value: 'usa'
+  },
+  {
+    label: 'England',
+    value: 'england'
+  },
+  {
+    label: 'Spain',
+    value: 'spain'
+  },
+  {
+    label: 'Poland',
+    value: 'poland'
+  }
+];

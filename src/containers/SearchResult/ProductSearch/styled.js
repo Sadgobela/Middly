@@ -14,6 +14,10 @@ export const StyledCategory = styled.div`
   margin: 13px 0;
 `;
 
+export const CategoryQuantity = styled.span`
+  color: #656565;
+`;
+
 export const Categories = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,13 +32,13 @@ export const PopularTags = styled.div`
   font-size: 32px;
   letter-spacing: 0.013em;
   padding-bottom: 20px;
-  border-bottom: 2px solid #ED4850;
+  border-bottom: 2px solid #ed4850;
 `;
 
 export const HashTag = styled.button`
   outline: none;
   margin: 0 16px 16px 0;
-  border: 1px solid #C3C3C3;
+  border: 1px solid #c3c3c3;
   box-sizing: border-box;
   border-radius: 4px;
   font-size: 14px;

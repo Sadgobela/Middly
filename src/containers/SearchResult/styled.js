@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Tabs } from 'antd';
+import {Tabs} from 'antd';
 
 export const Title = styled.span`
   font-family: Helvetica Neue, sans-serif;
@@ -39,19 +39,20 @@ export const Row = styled.div`
 `;
 
 export const GreyColoredDiv = styled.div`
-  background: #FAFAFA;
+  background: #fafafa;
 `;
 
 export const SearchAndCategoryWrapper = styled.div`
   margin: 0 auto;
   max-width: 1440px;
-  background: #FAFAFA;
-  padding: 0 120px
+  background: #fafafa;
+  padding: 0 120px;
 `;
 
 export const SearchParam = styled.span`
   font-weight: normal;
   font-size: 24px;
+  color: #000 !important;
 `;
 
 export const Categories = styled.div`
@@ -61,20 +62,22 @@ export const Categories = styled.div`
   margin-top: 40px;
 `;
 
-
 export const StyledTabs = styled(Tabs)`
   width: 100%;
+  .ant-tabs-top-bar {
+    margin-bottom: 27px;
+  }
   .ant-tabs-ink-bar {
     background-color: #000;
   }
   .ant-tabs-nav .ant-tabs-tab:active,
   .ant-tabs-nav .ant-tabs-tab:hover,
   .ant-tabs-nav .ant-tabs-tab-active {
-    color: #000;    
+    color: #000;
   }
   .ant-tabs-nav-wrap {
-    background: #FBFBFB;
-    padding-top: 22px
+    background: #fbfbfb;
+    padding-top: 10px;
   }
   .ant-tabs-nav-scroll {
     margin: 0 auto;
@@ -83,13 +86,14 @@ export const StyledTabs = styled(Tabs)`
   }
   .ant-tabs-nav .ant-tabs-tab {
     padding: 12px 0;
+    font-weight: bold;
   }
 `;
 
 export const OnDemandDelivery = styled.div`
   button {
     &.ant-switch-checked {
-        background-color: #398287;
-      }
+      background-color: #398287;
+    }
   }
 `;

@@ -24,6 +24,12 @@ export const StyledOption = styled(Select.Option)`
 `;
 
 export const StyledSelect = styled(Select)`
+  width: 100%;
+  position: relative;
+  background: none;
+  cursor: pointer;
+  border: none;
+  /*
   &&& {
     margin: 0 24px 0 0;
     flex: 1;
@@ -66,7 +72,7 @@ export const StyledSelect = styled(Select)`
           border: none;
           &.ant-select-selection__choice.ant-select-selection__choice__disabled {
             &:after {
-              content: "\\A";
+             content: "\\A"; 
               width: 6px;
               height: 6px;
               border-radius: 50%;
@@ -104,7 +110,7 @@ export const StyledSelect = styled(Select)`
         margin: 0 8px 0 0;
       }
     }
-  }
+  } */
 `;
 
 export const SelectTitle = styled.div`

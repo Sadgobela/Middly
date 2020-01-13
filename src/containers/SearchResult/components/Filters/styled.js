@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import {Select} from 'antd';
 
-export const Container = styled.div`
-  margin: 24px 0 0 0;
-`;
-
 export const Title = styled.span`
   font-family: Helvetica, sans-serif;
   font-size: 22px;
@@ -27,22 +23,24 @@ export const Filter = styled(Select)`
       width: unset !important;
       height: unset !important;
       border: none;
-      border-bottom: 1px solid #C3C3C3;
+      border-bottom: 1px solid #c3c3c3;
     }
 
     & .ant-select-enabled {
       flex: 1;
     }
-    
+
     & .ant-select-open .ant-select-selection {
-      border-bottom: 1px solid #C3C3C3;
+      border-bottom: 1px solid #c3c3c3;
       box-shadow: none;
     }
-    & .ant-select-focused .ant-select-selection, .ant-select-selection:focus, .ant-select-selection:active {
-      border-bottom: 1px solid #C3C3C3;
+    & .ant-select-focused .ant-select-selection,
+    .ant-select-selection:focus,
+    .ant-select-selection:active {
+      border-bottom: 1px solid #c3c3c3;
       box-shadow: none;
     }
-    
+
     & .ant-select-selection__rendered {
       line-height: 44px;
       font-family: Helvetica Neue, sans-serif;
