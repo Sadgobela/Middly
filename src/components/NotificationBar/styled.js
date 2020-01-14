@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 export const Container = styled.div`
   position: absolute;
@@ -392,7 +393,7 @@ export const CartContent = styled.div`
   padding: 17px 16px 24px;
 `;
 
-export const CartCheckout = styled.button`
+export const CartCheckout = styled(Link)`
   display: inline-flex;
   justify-content: center;
   align-items: center;
