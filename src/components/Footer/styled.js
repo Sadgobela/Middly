@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   @media (max-width: ${media.mobileMax}) {
     margin-top: 24px;
   }
+  margin-top: 127px;
 `;
 
 export const FooterArea = styled(ContentWrapper)`
