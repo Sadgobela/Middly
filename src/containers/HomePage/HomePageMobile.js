@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import WithSlider from 'components/WithSlider';
 import WithScroll from 'components/WithScroll';
@@ -17,6 +17,7 @@ import {
   electronics
 } from 'constants/staticData';
 import {primaryColor} from 'constants/colors';
+import ActionPopup from 'components/Actions/popup';
 import {SliderContainer, SliderContainerList} from './styled';
 
 import MainSlider from './components/MainSlider';
@@ -121,6 +122,7 @@ const HomePageMobile = () => {
       <Sell />
       <Divider />
       <PopularCategories list={categoriesCards} />
+      <ActionPopup />
     </>
   );
 };
