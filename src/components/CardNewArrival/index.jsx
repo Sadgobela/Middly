@@ -40,7 +40,7 @@ const CardNewArrival = ({
 
   return (
     <Card inline={inline}>
-      <ImageContainer inline={inline}>
+      <ImageContainer inline={inline} to="/product">
         <Image src={imgSrc} alt="product" inline={inline} />
         {sale && !inline ? <Sale>-{sale}%</Sale> : null}
 
@@ -58,7 +58,7 @@ const CardNewArrival = ({
             {oldPrice && <OldPrice inline={inline}><small>BD</small>{oldPrice.toFixed(2)}</OldPrice>}
           </Price>
         </Info>
-        <Title inline={inline}>{title}</Title>
+        <Title inline={inline} to="/product">{title}</Title>
         <Shipping inline={inline}>Free Shipping</Shipping>
 
         {

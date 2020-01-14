@@ -4,6 +4,8 @@ import { string, number, bool } from 'prop-types';
 import Heart from 'assets/Heart';
 import Bookmark from 'assets/Bookmark';
 
+import Actions from "components/Actions";
+
 import {
   CardFooter,
   Image,
@@ -16,9 +18,8 @@ import {
   Tools,
   Info,
   OldPrice,
-  More,
-  MoreDot,
-  Sale
+  Sale,
+  ImageContainer
 } from './styled';
 
 const ProductCard = ({
@@ -32,7 +33,9 @@ const ProductCard = ({
   inline
 }) => (
   <Card inline={inline}>
-    <Image src={imgSrc} alt="product" inline={inline} />
+    <ImageContainer to="/product">
+      <Image src={imgSrc} alt="product" inline={inline} />
+    </ImageContainer>
     {oldPrice && <Sale>-{parseInt(100 - newPrice / oldPrice * 100)}%</Sale>}
     <CardFooter inline={inline}>
       <Info inline={inline}>
@@ -42,17 +45,13 @@ const ProductCard = ({
         </Price>
         <Shipping inline={inline}>Free Shipping</Shipping>
       </Info>
-      <Title inline={inline}>{title}</Title>
+      <Title inline={inline} to="/product">{title}</Title>
       <Tools inline={inline}>
         <Likes>
           <Heart width={16} height={14} isLiked={isLiked} /> <LikesCount>{likesCount}</LikesCount>
         </Likes>
 
-        <More>
-          <MoreDot/>
-          <MoreDot/>
-          <MoreDot/>
-        </More>
+        <Actions/>
       </Tools>
     </CardFooter>
   </Card>

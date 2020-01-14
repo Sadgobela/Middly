@@ -133,8 +133,8 @@ function getItem(name){
 						</SubtotalCount>
 					</SubTotal>
 					<Actions>
-						<CartCheckout>View Cart</CartCheckout>
-						<CartView>Checkout</CartView>
+						<CartCheckout to="/cart">View Cart</CartCheckout>
+						<CartView to="/cart">Checkout</CartView>
 					</Actions>
 				</CartContent>
 
