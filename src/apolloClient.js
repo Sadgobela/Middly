@@ -19,7 +19,7 @@ const middlyLink = new HttpLink({
   // credentials: 'include',
 });
 const magentoLink = new HttpLink({
-  uri: 'https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/test/graphql'
+  uri: 'https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/magento2/graphql'
   // credentials: 'include'
 });
 
