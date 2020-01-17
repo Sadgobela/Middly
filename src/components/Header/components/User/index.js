@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import useGlobal from 'store';
+
 import Arrow from 'assets/Arrow';
 
 import {user} from 'constants/staticData';
@@ -17,6 +19,8 @@ import {
 } from './styled';
 
 const User = ({me, setMe}) => {
+  const [globalState, globalActions] = useGlobal();
+
   return (
     <Wrapper me={me}>
       {me ? (
@@ -33,7 +37,14 @@ const User = ({me, setMe}) => {
         <>
           <UserLabel>Please,</UserLabel>
           <UserContent>
-            <UserSignIn onClick={() => setMe(user)}>Sign In</UserSignIn>
+            <UserSignIn
+              onClick={() => {
+                setMe(user);
+                globalActions.setUser(user);
+              }}
+            >
+              Sign In
+            </UserSignIn>
             <UserDivider />
             <UserSignUp>Sign Up</UserSignUp>
           </UserContent>

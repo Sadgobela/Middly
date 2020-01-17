@@ -4,7 +4,7 @@ import { string } from 'prop-types';
 import { featuredProducts } from 'constants/staticData';
 
 import WithScroll from '../WithScroll';
-import ProductCard from '../ProductCard';
+import CardNewArrival from 'components/CardNewArrival';
 
 import { Wrapper, SliderContainer } from './styled';
 
@@ -17,10 +17,10 @@ const ProductSlider = ({ title, seeMoreText }) => {
         showSeeMoreArrow={false}
         seeMoreText={seeMoreText}
         seeMoreCounter={null}
-        height={254}
+        height={265}
       >
         {featuredProducts.map((product, index) => (
-          <ProductCard key={index} {...product} />
+          <CardNewArrival key={index} {...product} />
         ))}
       </WithScroll>
     </SliderContainer>

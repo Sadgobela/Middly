@@ -28,6 +28,7 @@ import Send from "assets/Send";
 import Checkbox from "assets/Checkbox";
 import ShoppingCart from "assets/ShoppingCart";
 import Lock from "assets/Lock";
+import Filter from "assets/Filter";
 
 import {
 	Container,
@@ -63,7 +64,8 @@ const icons = {
 	checkbox: Checkbox,
 	cart: ShoppingCart,
 	lock: Lock,
-	loader: Loader
+	loader: Loader,
+	filter: Filter
 };
 
 const Icons = ({type, props, svgStyle, color, width, height})=> {

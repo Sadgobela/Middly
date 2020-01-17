@@ -45,7 +45,8 @@ export const SliderWrapper = styled.div`
 
   .ScrollbarsCustom-Content {
     display: flex;
-    padding: 0 10px 10px !important;
+    padding: 10px 10px 20px !important;
+    margin: -10px 0 !important;
     
     &:after {
       content: '';
