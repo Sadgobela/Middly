@@ -44,7 +44,11 @@
     "deploy": "yarn build && yarn copytos3 && yarn cachecontrol1 && yarn cachecontrol2",
     "copytos3": "aws s3 cp --recursive --acl public-read ./build s3://middly-buyer-ui-dev-bucket/",
     "cachecontrol1": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/service-worker.js s3://middly-buyer-ui-dev-bucket/",
-    "cachecontrol2": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/index.html s3://middly-buyer-ui-dev-bucket/"
+    "cachecontrol2": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/index.html s3://middly-buyer-ui-dev-bucket/",
+    "deployapi": "yarn build && yarn copytos3api && yarn cachecontrol1api && yarn cachecontrol2api",
+    "copytos3api": "aws s3 cp --recursive --acl public-read ./build s3://middly-buyer-ui-api-dev-bucket/",
+    "cachecontrol1api": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/service-worker.js s3://middly-buyer-ui-api-dev-bucket/",
+    "cachecontrol2api": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/index.html s3://middly-buyer-ui-api-dev-bucket/"
   },
   "eslintConfig": {
     "extends": "react-app"
