@@ -4,7 +4,8 @@ import useGlobalHook from "use-global-hook";
 import * as actions from "../actions";
 
 const initialState = {
-  actionsPopup: false
+  actionsPopup: false,
+  user: null
 };
 
 const useGlobal = useGlobalHook(React, initialState, actions);

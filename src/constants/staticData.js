@@ -1400,49 +1400,57 @@ export const lists = [
     title: 'Beautiful',
     username: 'username',
     imgSrc: product11,
-    followers: 961
+    followers: 961,
+    orders: 340
   },
   {
     title: 'Beautiful',
     username: 'username',
     imgSrc: product12,
-    followers: 961
+    followers: 961,
+    orders: 340
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product13,
-    followers: 961
+    followers: 961,
+    orders: 340
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product14,
-    followers: 961
+    followers: 961,
+    orders: 340
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product15,
-    followers: 961
+    followers: 961,
+    orders: 340
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product16,
-    followers: 961
+    followers: 961,
+    orders: 340
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product17,
-    followers: 961
+    followers: 961,
+    orders: 340
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product18,
-    followers: 961
+    followers: 961,
+    orders: 340
   }
 ];
 

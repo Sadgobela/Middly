@@ -66,7 +66,7 @@ const CardNewArrival = ({
             ? <>
               {
                 inline &&
-                <Likes inline={inline} onClick={() => { console.log(Actions); }}>
+                <Likes inline={inline}>
                   <Heart isLiked={isLiked}/>
                 </Likes>
               }
