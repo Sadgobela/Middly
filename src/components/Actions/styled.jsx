@@ -48,7 +48,7 @@ export const Popup = styled.div`
   width: 100vw;
   z-index: 10000;
   opacity: ${({ show }) => show ? 1 : 0};
-  pointer-events: ${({ show }) => show ? 'all' : 'none'};
+  pointer-events: none;
   transition: all .3s ease;
   display: flex;
   flex-wrap: wrap;
@@ -63,9 +63,19 @@ export const PopupOverlay = styled.div`
   bottom: 0;
   z-index: 1;
   background: rgba(0,0,0,.5);
-  opacity: ${({ show }) => show ? 1 : 0};
-  pointer-events: ${({ show }) => show ? 'all' : 'none'};
+  opacity: 0;
+  pointer-events: none;
   transition: all .3s ease;
+  
+  ${({show}) => show && `
+    opacity: 1;
+    pointer-events: all;
+  `}
+  
+  ${({showSaved}) => showSaved && `
+    opacity: 0;
+    pointer-events: none;
+  `}
 `;
 
 export const PopupContent = styled.div`
@@ -80,6 +90,7 @@ export const PopupContent = styled.div`
   position: absolute;
   left: 0;
   right: 0;
+  pointer-events: ${({ show }) => show ? 'all' : 'none'};
   bottom: ${({ show }) => show ? '0' : '-100%'};
 `;
 
@@ -424,4 +435,44 @@ export const CancelButton = styled.button`
   cursor: pointer;
   margin-top: 24px;
   border: 0;
+`;
+
+export const SavedTo = styled.div`
+  display: flex;
+  align-items: center;
+  
+  span {
+    padding: 0 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+  
+  a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: right;
+    color: #999999;
+    margin-left: auto;
+  }
+`;
+
+export const SavedIcon = styled.div`
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2ECC71;
+  
+  svg {
+    max-width: 11px;
+    max-height: 8px;
+    fill: #2ECC71;
+  }
 `;
