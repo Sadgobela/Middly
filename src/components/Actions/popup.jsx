@@ -37,7 +37,9 @@ import {
   FieldLabel,
   Buttons,
   CreateButton,
-  CancelButton
+  CancelButton,
+  SavedTo,
+  SavedIcon
 } from './styled';
 import SearchIcon from "../../assets/Search";
 import CloseIcon from "../../assets/CloseIcon";
@@ -78,14 +80,24 @@ const ActionPopup = ({  }) => {
   const [newList, setNewList] = useState('');
   const [list, setList] = useState(defaultList);
   const [searchValue, setSearchValue] = useState('');
+  const [savedToList, setSavedToList] = useState(null);
+  const showSaved = !!(savedToList && savedToList.length);
 
   const addToWishlist = () => {
     setWishlistLoading(true);
 
+    // Await answer from Server
     setTimeout(() => {
       setWishlistLoading(false);
       setAddedToWishlist(true);
-    }, 1000);
+      setDefaultShow(false);
+      globalActions.setActionsPopup(false);
+
+      // delay 400ms after answer from Server
+      setTimeout(() => {
+        setSavedToList('Wishlist');
+      }, 400);
+    }, 500);
   };
 
   const share = async () => {
@@ -169,8 +181,16 @@ const ActionPopup = ({  }) => {
     }
   }, [globalState.actionsPopup]);
 
+  useEffect(() => {
+    if(savedToList && savedToList.length > 0) {
+      setTimeout(() => {
+        setSavedToList(null);
+      }, 2000);
+    }
+  }, [savedToList]);
+
   return <Popup
-    show={globalState.actionsPopup}
+    show={globalState.actionsPopup || showSaved}
   >
     <Div100vh
       style={{
@@ -182,6 +202,7 @@ const ActionPopup = ({  }) => {
     >
       <PopupOverlay
         show={globalState.actionsPopup}
+        showSaved={savedToList && savedToList.length}
         onClick={() => {
           globalActions.setActionsPopup(false);
           setDefaultShow(false);
@@ -189,6 +210,30 @@ const ActionPopup = ({  }) => {
           setCreateNewList(false);
         }}
       />
+      {
+        showSaved
+          ?
+            <PopupContent
+              style={{
+                padding: '20px 24px',
+                boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.15)'
+              }}
+              show={showSaved}
+            >
+              <SavedTo>
+                <SavedIcon>
+                  <Icon type="checkbox"/>
+                </SavedIcon>
+                <span>Saved to “{savedToList}”</span>
+                <a href="#" onClick={() => {
+                  globalActions.setActionsPopup(true);
+                  setDefaultShow(false);
+                  setAddToList(true);
+                }}>Change</a>
+              </SavedTo>
+            </PopupContent>
+          : null
+      }
       <PopupContent
         show={defaultShow}
       >
@@ -301,10 +346,15 @@ const ActionPopup = ({  }) => {
                   checked={item.title === checkedList}
                   onClick={() => {
                     setCheckedList(item.title);
+
+                    setAddToList(false);
+                    setDefaultShow(false);
                     globalActions.setActionsPopup(false);
 
-                    setDefaultShow(true);
-                    setAddToList(false);
+                    // delay 400ms after answer from Server
+                    setTimeout(() => {
+                      setSavedToList(item.title);
+                    }, 400)
                   }}
                 >
                   {item.title}
