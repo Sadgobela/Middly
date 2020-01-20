@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from "prop-types";
+import Slider from 'react-slick';
 import {
 	Container,
 	SellerCity,
@@ -17,13 +19,10 @@ import {
 	HorizontalDivider,
 	SellerFollowersLink,
 	SellerFollowersName,
-	SellerHeading,
-	SellerProductsNumber,
 	SellerRating,
 	SellerLogo,
 	SellerFollowBtn,
 	MoreSameSeller,
-	MoreSameSellerList,
 	MoreSameSellerTitle,
 	CustomerFeedbacks,
 	CustomerFeedbacksHeading,
@@ -50,14 +49,13 @@ import feedbackPic from './img/feedbackPic.png';
 import products from './exampleData';
 import CardNewArrival from "../../../../components/CardNewArrival";
 import Button from "../../../../components/Buttons";
-import Slider from 'react-slick';
 import Statistics from "../Statisctics";
 import Feedback from '../Feedback';
 
-const feedbacks = ['', '','','','',''];
+const feedbacks = ['', '', '', '', '', ''];
 
-const SellerInfo = ({setRating}) => {
-	return(
+const SellerInfo = ({ setRating }) => {
+	return (
 		<Container>
 			<SellerProfile>
 				<Row>
@@ -88,13 +86,13 @@ const SellerInfo = ({setRating}) => {
 										8k followers
 									</SellerFollowers>
 									<SellerInfoItem marginTop>
-										<SellerFollowersImg src={followers1} alt=""  />
+										<SellerFollowersImg src={followers1} alt="" />
 										<SellerFollowersImg src={followers2} alt="" />
 										<SellerFollowersName>
 											Sherylin Fenn and 2 others
 										</SellerFollowersName>
 										<SellerFollowersLink>follow that seller</SellerFollowersLink>
-								</SellerInfoItem>
+									</SellerInfoItem>
 								</SellerInfoItem>
 							</SellerAbout>
 						</SellerProfileWrap>
@@ -107,13 +105,13 @@ const SellerInfo = ({setRating}) => {
 				<MoreSameSeller>
 					<MoreSameSellerTitle>More from this Seller </MoreSameSellerTitle>
 					<SliderWrapper>
-						<Slider slidesToShow={4} arrows={true} slidesToScroll={4}>
+						<Slider slidesToShow={4} arrows slidesToScroll={4}>
 							{
 								products.map((arrival, index) => (
 									index < 4 ? <CardNewArrival key={index} {...arrival} /> : null
 								))
 							}
-							<Button margin='0 0 0 -55px' type='seeMore' props={{withText: true}} />
+							<Button margin='0 0 0 -55px' type='seeMore' props={{ withText: true }} />
 						</Slider>
 					</SliderWrapper>
 				</MoreSameSeller>
@@ -124,11 +122,11 @@ const SellerInfo = ({setRating}) => {
 				<ProductInfoItem>
 					<ProductInfoHeading>Item description</ProductInfoHeading>
 					<ProductInfoText>
-						Women's Casual knitted sweater with twist effect. Back length on size S is 64cm and sleeve length is 70cm. This model features a balloon effect waist. Collar Type: Round
+						Women&apos;s Casual knitted sweater with twist effect. Back length on size S is 64cm and sleeve length is 70cm. This model features a balloon effect waist. Collar Type: Round
 					</ProductInfoText>
 					<ProductInfoBtn more>Show more</ProductInfoBtn>
 				</ProductInfoItem>
-				<HorizontalDivider middle/>
+				<HorizontalDivider middle />
 				<ProductInfoItem>
 					<ProductInfoHeading>Returns & Exchanges </ProductInfoHeading>
 					<ProductInfoText>
@@ -149,9 +147,9 @@ const SellerInfo = ({setRating}) => {
 
 				<CustomerFeedbacksHeading photos>Photos from feedback</CustomerFeedbacksHeading>
 				<FeedbackList>
-					<Slider slidesToShow={4} arrows={true} slidesToScroll={4}>
+					<Slider slidesToShow={4} arrows slidesToScroll={4}>
 						{
-							feedbacks.map(item =>
+							feedbacks.map(() =>
 								<FeedbackCard>
 									<FeedbackInfo>
 										<FeedbackAvatar>
@@ -176,5 +174,9 @@ const SellerInfo = ({setRating}) => {
 		</Container>
 	)
 };
+
+SellerInfo.propTypes = {
+	setRating: PropTypes.func.isRequired
+}
 
 export default SellerInfo;

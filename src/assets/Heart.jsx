@@ -1,8 +1,7 @@
 import React from 'react';
-import { bool } from 'prop-types';
+import { bool, string } from 'prop-types';
 import {
   primaryColor,
-  mainWhiteColor,
   secondaryTextColor
 } from '../constants/colors';
 
@@ -31,6 +30,8 @@ Heart.defaultProps = {
 };
 
 Heart.propTypes = {
+  width: string,
+  height: string,
   isLiked: bool.isRequired
 };
 

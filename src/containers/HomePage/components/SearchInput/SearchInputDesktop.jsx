@@ -1,6 +1,5 @@
 import React, {useState}  from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { useHistory } from 'react-router-dom'
 import SearchIcon from 'assets/SearchIcon';
 import {
 	Search,
@@ -30,7 +29,6 @@ const recent = ['Boots', 'Chanel Bags', 'Fashion'];
 
 const SearchInputDesktop = ({ getCategory, isShow, open, isFocus, hint }) => {
 	const [inputValue, setInputValue] = useState(null);
-	const history = useHistory();
 
 	function highlightQuery(response) {
 		setTimeout(()=>{
@@ -83,11 +81,7 @@ const SearchInputDesktop = ({ getCategory, isShow, open, isFocus, hint }) => {
 				<Option value="Brands">Stores</Option>
 				<Option value="Brands">Products</Option>
 			</StyledSelect>
-			<SearchButton
-				onClick={() => {
-					// history.push('/search');
-				}}
-			>
+			<SearchButton>
 				<SearchIcon />
 			</SearchButton>
 			<SearchPopup>

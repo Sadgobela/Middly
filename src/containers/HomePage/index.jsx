@@ -15,12 +15,12 @@ const HomePage = () => {
 
   return (
     <Layout>
-      {isMobile ? <HomePageMobile/> : <HomePageDesktop/>}
+      {isMobile ? <HomePageMobile /> : <HomePageDesktop />}
 
       <SubscribeBlock>
         <SubscribeTitle>Subscribe to our newsletter</SubscribeTitle>
         <FlexContainer justifyContent="center">
-          <StyledEmailInput placeholder="Your e-mail"/>
+          <StyledEmailInput placeholder="Your e-mail" />
 
           <SubscribeButton type="button">Subscribe</SubscribeButton>
         </FlexContainer>

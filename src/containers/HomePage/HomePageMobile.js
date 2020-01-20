@@ -1,23 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import WithSlider from 'components/WithSlider';
 import WithScroll from 'components/WithScroll';
-import CardWithSale from 'components/CardWithSale';
 import CardNewArrival from 'components/CardNewArrival';
 
-import {
-  mainSlides,
-  categoriesMobile,
-  deals,
-  featuredProducts,
-  newArrivals,
-  popularStores,
-  shopNow,
-  categoriesCards,
-  electronics
-} from 'constants/staticData';
+import {mainSlides, newArrivals, shopNow, electronics} from 'constants/staticData';
 import {primaryColor} from 'constants/colors';
-import ActionPopup from 'components/Actions/popup';
+import {useQuery} from 'react-apollo';
 import {SliderContainer, SliderContainerList} from './styled';
 
 import MainSlider from './components/MainSlider';
@@ -30,8 +19,37 @@ import PopularStores from './components/PopularStores';
 import ShopNow from './components/ShopNow';
 import Sell from './components/Sell';
 import PopularCategories from './components/PopularCategories';
+import {GET_FEATURED_PRODUCTS, GET_DAILY_DEALS, GET_CATEGORIES, GET_POPULAR_CATEGORIES, GET_STORES} from './graphQL';
+import {formatProducts, formatDeals, formatPopularCategories, formatMobilePopularShops} from './helpers';
 
 const HomePageMobile = () => {
+  const {data: categoriesData} = useQuery(GET_CATEGORIES, {
+    context: {clientType: 'magento'}
+  });
+  const categoriesList = categoriesData ? categoriesData.category.children.filter((category) => category.name) : [];
+
+  const {data: dealsData} = useQuery(GET_DAILY_DEALS, {
+    context: {clientType: 'magento'}
+  });
+  const deals = dealsData ? dealsData.dailyDeals.items : [];
+
+  const {data: featuredProductsData} = useQuery(GET_FEATURED_PRODUCTS, {
+    context: {clientType: 'magento'}
+  });
+  const featuredProducts = featuredProductsData ? featuredProductsData.featuredProducts.items : [];
+
+  const {data: stores} = useQuery(GET_STORES, {
+    context: {clientType: 'magento'}
+  });
+  const popularStores = stores ? stores.stores.items.filter((item) => item.name && item.company_locality) : [];
+
+  const {data: popularCategoriesData} = useQuery(GET_POPULAR_CATEGORIES, {
+    context: {clientType: 'magento'}
+  });
+  const popularCategories = popularCategoriesData
+    ? popularCategoriesData.popularCategories.items.filter((category) => category.image !== 'false')
+    : [];
+
   return (
     <>
       <MainSlider slides={mainSlides} touchThreshold={8} speed={100} waitForAnimate={false} />
@@ -42,11 +60,11 @@ const HomePageMobile = () => {
           Start Selling on <span style={{color: primaryColor}}>Middly!</span>
         </strong>
       </Text>
-      <CategoriesMobile list={categoriesMobile} />
+      <CategoriesMobile list={categoriesList} />
       <Divider />
       <SliderContainer>
         <WithScroll marginTop={0} title="Deals" withSeeMore height={255}>
-          {deals.map((product, index) => (
+          {formatDeals(deals).map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
         </WithScroll>
@@ -54,7 +72,7 @@ const HomePageMobile = () => {
       <Divider height={40} />
       <SliderContainer>
         <WithScroll marginTop={0} title="Most Liked" withSeeMore height={255}>
-          {featuredProducts.map((product, index) => (
+          {newArrivals.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
         </WithScroll>
@@ -70,24 +88,24 @@ const HomePageMobile = () => {
           infinite={false}
           slidesToShow={1}
           arrows={false}
-          dots={true}
+          dots
           rows={3}
-          swipeToSlide={true}
+          swipeToSlide
           touchThreshold={8}
         >
-          {newArrivals.map((product, index) => (
+          {formatProducts(featuredProducts).map((product, index) => (
             <CardNewArrival key={index} {...product} inline />
           ))}
         </WithSlider>
       </SliderContainerList>
 
       <Explore />
-      <PopularStores list={popularStores} />
+      <PopularStores list={formatMobilePopularShops(popularStores)} />
       <ShopNow list={shopNow} />
 
       <SliderContainer>
         <WithScroll marginTop={0} title="Fashion" withSeeMore height={255} showFollow followed>
-          {featuredProducts.map((product, index) => (
+          {newArrivals.map((product, index) => (
             <CardNewArrival key={index} {...product} />
           ))}
         </WithScroll>
@@ -109,7 +127,7 @@ const HomePageMobile = () => {
           infinite={false}
           slidesToShow={1}
           arrows={false}
-          dots={true}
+          dots
           rows={3}
           touchThreshold={8}
         >
@@ -121,8 +139,7 @@ const HomePageMobile = () => {
       <Divider />
       <Sell />
       <Divider />
-      <PopularCategories list={categoriesCards} />
-      <ActionPopup />
+      <PopularCategories list={formatPopularCategories(popularCategories)} />
     </>
   );
 };

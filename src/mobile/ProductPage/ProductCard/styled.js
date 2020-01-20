@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
 import {
   mainWhiteColor,
   mainBlackColor,
@@ -177,7 +176,7 @@ export const Shipping = styled.div`
   }
 `;
 
-export const Title = styled(Link)`
+export const Title = styled.div`
   width: 100%;
   font-size: 16px;
   margin: 0 0 10px;
@@ -265,5 +264,3 @@ export const Sale = styled.span`
   text-align: center;
   color: #ffffff;
 `;
-
-export const ImageContainer = styled(Link)``;

@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useRef} from 'react';
-import {string, array} from 'prop-types';
+import React, { useState, useEffect, useRef } from 'react';
+import { string, arrayOf, object } from 'prop-types';
 
 import Icon from 'components/Icon';
 import Title from '../Title';
@@ -20,15 +20,15 @@ const Description = ({ text, attributes }) => {
   const description = useRef(null);
 
   useEffect(() => {
-    if(description && description.current && description.current.clientHeight > 51 && !showMore) {
+    if (description && description.current && description.current.clientHeight > 51 && !showMore) {
       setFullHeight(description.current.clientHeight);
       description.current.style.maxHeight = '51px';
     }
-  });
+  }, [setFullHeight, showMore]);
 
   useEffect(() => {
-    if(description && description.current) {
-      if(showMore) {
+    if (description && description.current) {
+      if (showMore) {
         description.current.style.maxHeight = `${fullHeight}px`;
       } else {
         description.current.style.maxHeight = '51px';
@@ -45,21 +45,21 @@ const Description = ({ text, attributes }) => {
         ?
         <Text
           ref={description}
-          dangerouslySetInnerHTML={{__html: text}}
+          dangerouslySetInnerHTML={{ __html: text }}
         />
         : null
     }
     {
       attributes && attributes.length
         ?
-          <Attributes>
-            {attributes.map((attribute, key) => {
-              return <Attribute key={key}>
-                <AttributeLabel>{attribute.name}:</AttributeLabel>
-                <AttributeValue>{attribute.value}</AttributeValue>
-              </Attribute>
-            })}
-          </Attributes>
+        <Attributes>
+          {attributes.map((attribute, key) => {
+            return <Attribute key={key}>
+              <AttributeLabel>{attribute.name}:</AttributeLabel>
+              <AttributeValue>{attribute.value}</AttributeValue>
+            </Attribute>
+          })}
+        </Attributes>
         : null
     }
     <ShowMore active={showMore}>
@@ -67,7 +67,7 @@ const Description = ({ text, attributes }) => {
         setShowMore(!showMore);
       }}>
         Show {showMore ? 'less' : 'More'}
-        <Icon type="arrow" svgStyle={{width: 8, height: 10}}/>
+        <Icon type="arrow" svgStyle={{ width: 8, height: 10 }} />
       </div>
     </ShowMore>
   </Wrapper>
@@ -80,7 +80,7 @@ Description.defaultProps = {
 
 Description.propTypes = {
   text: string,
-  attributes: array
+  attributes: arrayOf(object)
 };
 
 export default Description;

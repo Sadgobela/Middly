@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import {
 	Container,
 	UserAvatar,
@@ -28,12 +29,12 @@ import pic2 from './img/example.png';
 import heart from './img/heart.svg';
 import heart2 from './img/heart2.svg';
 import plus from './img/plus.svg';
-import {InputMessage, UserPic} from "../../../../components/Comments/styled";
+import { InputMessage, UserPic } from "../../../../components/Comments/styled";
 import myAvatar from "../../../../components/Comments/img/avatar1.png";
 import send from "../../../../components/Comments/img/send.svg";
 
-const Feedback = ({setRating}) => {
-	return(
+const Feedback = ({ setRating }) => {
+	return (
 		<Container>
 			<FeedbackItem>
 				<Header>
@@ -59,7 +60,7 @@ const Feedback = ({setRating}) => {
 					</Item>
 					<Item flex>
 						<Settings>
-							<Dot/>
+							<Dot />
 						</Settings>
 					</Item>
 				</Header>
@@ -96,13 +97,13 @@ const Feedback = ({setRating}) => {
 							<Date>Mar 2019</Date>
 						</Wrap>
 						<Text block>
-						This product is amazing! I have finally found a moisturizer that actually works. I have very dry 	skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so...
+							This product is amazing! I have finally found a moisturizer that actually works. I have very dry 	skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so...
 							<Text link> More</Text>
 						</Text>
 					</Item>
 					<Item flex>
 						<Settings>
-							<Dot/>
+							<Dot />
 						</Settings>
 					</Item>
 				</Header>
@@ -134,11 +135,16 @@ const Feedback = ({setRating}) => {
 				<UserPic src={myAvatar} />
 				<InputMessage placeholder='Add a comment' />
 				<Send>
-					<img src={send} />
+					<img alt="send" src={send} />
 				</Send>
 			</AddComment>
 		</Container>
 	)
 };
+
+Feedback.propTypes = {
+	setRating: PropTypes.func.isRequired,
+};
+
 
 export default Feedback;

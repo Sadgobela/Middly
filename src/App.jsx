@@ -9,9 +9,9 @@ import ProductPage from './containers/ProductPage';
 import apolloClient from './apolloClient';
 import UIkit from './components/UI-kit';
 import SearchResult from './containers/SearchResult';
-import MyProfile from 'containers/MyProfile';
-import Settings from "containers/Settings";
-import CartPage from "containers/CartPage";
+import MyProfile from './containers/MyProfile';
+import Settings from "./containers/Settings";
+import CartPage from "./containers/CartPage";
 
 const routes = [
   { path: '/', name: 'HomePage', Component: HomePage },
@@ -33,22 +33,22 @@ function App() {
   return (
     <Router>
       <ApolloProvider client={apolloClient}>
-          {routes.map(({ path, Component }) => (
-            <Route key={path} exact path={path}>
-              {({ match }) => match !== null ? <Component /> : null }
-            </Route>
-          ))}
-          {auth.map(({ path, Component }) => (
-            <Route key={path} exact path={path}>
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            {({ match }) => match !== null ? <Component /> : null}
+          </Route>
+        ))}
+        {auth.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
 
-              {({ match }) => match !== null ? 
+            {({ match }) => match !== null ?
               <>
-              <HomePage />
-              <Component/>
-              </> 
-              : null }
-            </Route>
-          ))}
+                <HomePage />
+                <Component />
+              </>
+              : null}
+          </Route>
+        ))}
       </ApolloProvider>
     </Router>
   );

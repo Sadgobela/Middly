@@ -1,4 +1,19 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import PropTypes from "prop-types";
+
+import Likes from 'assets/ProductPage/Likes';
+import Bookmarks from 'assets/ProductPage/Bookmarks';
+import CoinsIcon from 'assets/ProductPage/Coins';
+import Comments from 'assets/ProductPage/Comments';
+import AmericanExpress from 'assets/ProductPage/AmericanExpress';
+import Links from 'assets/ProductPage/Links';
+import Mastercard from 'assets/ProductPage/Mastercard';
+import Paypal from 'assets/ProductPage/Paypal';
+import Visa from 'assets/ProductPage/Visa';
+import { CSSTransition } from 'react-transition-group';
+import Grid from "components/Grid";
+import AddedPopup from "../AddedPopup";
+import SizeGuide from "../SizeGuide";
 import {
 	Bottom,
 	Buttons,
@@ -33,25 +48,8 @@ import {
 	Wrap,
 } from './styled';
 
-import Likes from 'assets/ProductPage/Likes';
-import Bookmarks from 'assets/ProductPage/Bookmarks';
-import CoinsIcon from 'assets/ProductPage/Coins';
-import Comments from 'assets/ProductPage/Comments';
-import AmericanExpress from 'assets/ProductPage/AmericanExpress';
-import Links from 'assets/ProductPage/Links';
-import Mastercard from 'assets/ProductPage/Mastercard';
-import Paypal from 'assets/ProductPage/Paypal';
-import Visa from 'assets/ProductPage/Visa';
-import AddedPopup from "../AddedPopup";
-import SizeGuide from "../SizeGuide";
-import {CSSTransition} from 'react-transition-group';
-import Grid from "components/Grid";
 
-
-const colors = ['#F5D823', '#139AD6', '#DB95D1', '#ED494F'];
-const sizes = ['XS', 'S', 'M', 'L'];
-
-const OrderInfo = ({setRating})=> {
+const OrderInfo = ({ setRating }) => {
 
 	const [isAddedToCart, setIsAddedToCart] = useState(false);
 	const [isOpenGuide, setIsOpenGuide] = useState(false);
@@ -59,32 +57,32 @@ const OrderInfo = ({setRating})=> {
 	return (
 		<Description>
 			<Wrap>
-			<Title>
-				2018 Floral Dresses Vestido De Festa Vestido De Festa
+				<Title>
+					2018 Floral Dresses Vestido De Festa Vestido De Festa
 			</Title>
-			<Rating>
-				{setRating(4)}
-				<LikesNumber>(602)</LikesNumber>
-			</Rating>
-			<Price>
-				<PriceDescription red>
-					$499
+				<Rating>
+					{setRating(4)}
+					<LikesNumber>(602)</LikesNumber>
+				</Rating>
+				<Price>
+					<PriceDescription red>
+						$499
 				</PriceDescription>
-				<PriceDescription>
-					$699
+					<PriceDescription>
+						$699
 				</PriceDescription>
-				<PriceDescription discount>
-					- 40%
+					<PriceDescription discount>
+						- 40%
 				</PriceDescription>
-				<Coins>
-					Mid Coins:
+					<Coins>
+						Mid Coins:
 					<CoinsNumber>
-						+19
+							+19
 					</CoinsNumber>
-					<CoinsIcon />
-				</Coins>
-			</Price>
-			<HorizontalDivider />
+						<CoinsIcon />
+					</Coins>
+				</Price>
+				<HorizontalDivider />
 				<Detailes>
 					<Grid aic margin='0 0 20px 0'>
 						<FeatureName brand >
@@ -113,7 +111,7 @@ const OrderInfo = ({setRating})=> {
 							<FeatureName>
 								Size:
 							</FeatureName>
-							<SizeGuideLink onClick={()=>setIsOpenGuide(true)} >Size Guide</SizeGuideLink>
+							<SizeGuideLink onClick={() => setIsOpenGuide(true)} >Size Guide</SizeGuideLink>
 						</Grid>
 						<Size defaultValue='UK XL, 48'>
 							<Option className="color" value="UK XS, 42">UK XS, 42</Option>
@@ -195,5 +193,9 @@ const OrderInfo = ({setRating})=> {
 		</Description>
 	)
 };
+
+OrderInfo.propTypes = {
+	setRating: PropTypes.func.isRequired
+}
 
 export default OrderInfo;

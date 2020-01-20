@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'components/Icon';
 import {
 	Overlay,
 	Guide,
@@ -14,24 +15,22 @@ import {
 	Row,
 	Close,
 } from './styled';
-import Icon from 'components/Icon';
 import Women from './Women';
-import Men from './Men';
 
 function getTableContent(data) {
-	return(
-		data.map( (item, i) =>
+	return (
+		data.map((item, i) =>
 			<Column>
 				<Title>{item.title}</Title>
 				{
 					item.units ?
 						<Wrap>
 							{
-								item.units.map( item =>
+								item.units.map(item =>
 									<Row double>
 										<Unit>{item.title}</Unit>
 										{
-											item.list.map( item => <Item>{item}</Item> )
+											item.list.map(item => <Item>{item}</Item>)
 										}
 									</Row>
 								)
@@ -42,7 +41,7 @@ function getTableContent(data) {
 						<Wrap>
 							<Row single>
 								{
-									item.list.map( item => <Item single bold={!i}>{item}</Item> )
+									item.list.map(item => <Item single bold={!i}>{item}</Item>)
 								}
 							</Row>
 						</Wrap>
@@ -52,7 +51,7 @@ function getTableContent(data) {
 	)
 }
 
-const SizeGuide = ({close})=> (
+const SizeGuide = ({ close }) => (
 	<Overlay onClick={ev => close(false)}>
 		<Guide>
 			<Close>
@@ -66,9 +65,9 @@ const SizeGuide = ({close})=> (
 				<Tab main>Kids</Tab>
 			</TabList>
 			<Table>
-				{/*{ getTableContent() }*/}
-				<Women getContent={getTableContent}/>
-				{/*<Men/>*/}
+				{/* { getTableContent() } */}
+				<Women getContent={getTableContent} />
+				{/* <Men/> */}
 			</Table>
 		</Guide>
 	</Overlay>

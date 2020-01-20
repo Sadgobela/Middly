@@ -27,13 +27,10 @@ import BookmarkIcon from "assets/BookmarkIcon";
 import Send from "assets/Send";
 import Checkbox from "assets/Checkbox";
 import ShoppingCart from "assets/ShoppingCart";
-import Lock from "assets/Lock";
-import Filter from "assets/Filter";
 
 import {
 	Container,
 } from './styled';
-import Loader from "../../assets/Loader";
 
 const icons = {
 	addMessage: AddMessage,
@@ -62,10 +59,7 @@ const icons = {
 	bookmarkIcon: BookmarkIcon,
 	send: Send,
 	checkbox: Checkbox,
-	cart: ShoppingCart,
-	lock: Lock,
-	loader: Loader,
-	filter: Filter
+	cart: ShoppingCart
 };
 
 const Icons = ({type, props, svgStyle, color, width, height})=> {

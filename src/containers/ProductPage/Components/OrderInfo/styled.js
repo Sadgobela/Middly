@@ -282,8 +282,7 @@ export const Icon = styled.i`
 
 export const Color = styled(Select)`
   &&& {
-    & .ant-select-selection--single,
-    .ant-select-selection--multiple {
+    & .ant-select-selection--single {
       width: 308px;
       height: 40px;
     }

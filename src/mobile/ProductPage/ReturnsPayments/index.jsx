@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import {} from 'prop-types';
 
-import Title from '../Title';
-import Popup from './popup';
-
-import MS from 'images/svg/ms.svg';
 import Visa from 'images/svg/visa.svg';
 import PayPall from 'images/svg/paypall.svg';
 import AE from 'images/svg/ae.svg';
 import Cash from 'images/svg/cash.svg';
+import MS from 'images/svg/ms.svg';
+import Popup from './popup';
+import Title from '../Title';
 
 import {
   Wrapper,
@@ -17,7 +15,7 @@ import {
   Value
 } from './styled';
 
-const ReturnsPayments = ({  }) => {
+const ReturnsPayments = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   return <Wrapper>
@@ -39,11 +37,11 @@ const ReturnsPayments = ({  }) => {
     <Row>
       <Label>Payments</Label>
       <Value style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <img src={MS} alt=""/>
-        <img src={Visa} alt=""/>
-        <img src={PayPall} alt=""/>
-        <img src={AE} alt=""/>
-        <img src={Cash} alt=""/>
+        <img src={MS} alt="" />
+        <img src={Visa} alt="" />
+        <img src={PayPall} alt="" />
+        <img src={AE} alt="" />
+        <img src={Cash} alt="" />
       </Value>
     </Row>
 

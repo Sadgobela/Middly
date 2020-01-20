@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {array} from 'prop-types';
+import { arrayOf } from 'prop-types';
 import Slider from 'react-slick';
 
 import Popup from './popup';
@@ -19,17 +19,18 @@ const MinSlider = ({ slides }) => {
     touchThreshold: 15,
     cssEase: 'linear',
     onSwipe: (direction) => {
-      if(direction === 'left' && (slides.length - 1) > index) {
-        sliderPopup && sliderPopup.current && sliderPopup.current.slickGoTo(index + 1);
+      const currentRef = sliderPopup.current;
+      if (direction === 'left' && (slides.length - 1) > index) {
+        if (currentRef) currentRef.slickGoTo(index + 1);
         setIndex(index + 1);
-      } else if(direction === 'right' && index > 0) {
-        sliderPopup && sliderPopup.current && sliderPopup.current.slickGoTo(index - 1);
+      } else if (direction === 'right' && index > 0) {
+        if (currentRef) currentRef.slickGoTo(index - 1);
         setIndex(index - 1);
       }
     }
   };
 
-  let firstClientX, clientX;
+  let firstClientX; let clientX;
 
   const preventTouch = e => {
     const minValue = 5;
@@ -42,6 +43,8 @@ const MinSlider = ({ slides }) => {
 
       return false;
     }
+
+    return true;
   };
 
   const touchStart = e => {
@@ -49,17 +52,18 @@ const MinSlider = ({ slides }) => {
   };
 
   useEffect(() => {
-    if (slider && slider.current) {
-      slider.current.addEventListener("touchstart", touchStart);
-      slider.current.addEventListener("touchmove", preventTouch, {
+    const currentRef = slider.current;
+    if (currentRef) {
+      currentRef.addEventListener("touchstart", touchStart);
+      currentRef.addEventListener("touchmove", preventTouch, {
         passive: false
       });
     }
 
     return () => {
-      if (slider && slider.current) {
-        slider.current.removeEventListener("touchstart", touchStart);
-        slider.current.removeEventListener("touchmove", preventTouch, {
+      if (currentRef) {
+        currentRef.removeEventListener("touchstart", touchStart);
+        currentRef.removeEventListener("touchmove", preventTouch, {
           passive: false
         });
       }
@@ -77,7 +81,7 @@ const MinSlider = ({ slides }) => {
                 setShowPopup(true);
                 setIndex(key);
 
-                if(sliderPopup && sliderPopup.current) {
+                if (sliderPopup && sliderPopup.current) {
                   sliderPopup.current.slickGoTo(key)
                 }
               }}
@@ -102,7 +106,7 @@ MinSlider.defaultProps = {
 };
 
 MinSlider.propTypes = {
-  slides: array
+  slides: arrayOf()
 };
 
 export default MinSlider;

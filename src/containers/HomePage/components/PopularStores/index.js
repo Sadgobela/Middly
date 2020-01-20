@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Scrollbar from 'react-scrollbars-custom';
 
+import Arrow from 'assets/Arrow';
+import Plus from 'assets/Plus';
 import {
   Wrapper,
   Header,
@@ -17,8 +19,6 @@ import {
   StoreGallery,
   StoreGalleryImage
 } from './styled';
-import Arrow from 'assets/Arrow';
-import Plus from 'assets/Plus';
 
 const PopularStores = ({title, list}) => {
   return (
@@ -60,8 +60,8 @@ const PopularStores = ({title, list}) => {
 
                   {item.gallery && item.gallery.length ? (
                     <StoreGallery>
-                      {item.gallery.map((image, key) => {
-                        return <StoreGalleryImage key={key} src={image} />;
+                      {item.gallery.map((image, index) => {
+                        return <StoreGalleryImage key={index} src={image} />;
                       })}
                     </StoreGallery>
                   ) : null}

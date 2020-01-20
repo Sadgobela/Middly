@@ -1,22 +1,17 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import {
 	PageContainer,
 	Container,
 } from './styled';
 
-const components = {
-	pageContainer: PageContainer,
-	container: Container,
-};
-
-const Grid = ({pageContainer, aic, aife, jcc, jcfe, children, sb, center, column, margin, padding, width, wrap, height, bg, bsh, bd, br, maxh})=> {
+const Grid = ({ pageContainer, aic, aife, jcc, children, sb, center, column, margin, padding, width, wrap, height, bg, bsh, bd }) => {
 	const Component = pageContainer ? PageContainer : Container;
 	return (
 		<Component
 			aife={aife}
 			width={width}
 			jcc={jcc}
-			jcfe={jcfe}
 			aic={aic}
 			sb={sb}
 			center={center}
@@ -28,8 +23,6 @@ const Grid = ({pageContainer, aic, aife, jcc, jcfe, children, sb, center, column
 			bg={bg}
 			bsh={bsh}
 			bd={bd}
-			br={br}
-			maxh={maxh}
 		>
 			{children}
 		</Component>

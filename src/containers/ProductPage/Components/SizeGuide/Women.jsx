@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import {
 	TabList,
 	Tab,
 	Content,
 } from './styled';
-import {shoes, clothes} from './data/women';
+import { shoes } from './data/women';
 
-function Women({getContent}) {
+function Women({ getContent }) {
 	return (
 		<>
 			<TabList>
@@ -19,6 +20,10 @@ function Women({getContent}) {
 
 		</>
 	);
+}
+
+Women.propTypes = {
+	getContent: PropTypes.func.isRequired
 }
 
 export default Women;

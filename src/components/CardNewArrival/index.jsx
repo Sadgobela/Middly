@@ -1,9 +1,7 @@
 import React from 'react';
 import { useWindowSize } from "@reach/window-size";
 import { string, number, bool } from 'prop-types';
-
-import Actions from 'components/Actions';
-
+import Heart from '../../assets/Heart';
 import {
   CardFooter,
   ImageContainer,
@@ -16,11 +14,10 @@ import {
   Tools,
   Info,
   OldPrice,
-  Sale
+  Sale,
+  Actions
 } from './styled';
-
-import Heart from 'assets/Heart';
-import Bookmark from 'assets/Bookmark';
+import Bookmark from '../../assets/Bookmark';
 
 const CardNewArrival = ({
   title,
@@ -36,29 +33,29 @@ const CardNewArrival = ({
 
   let sale = null;
 
-  if(oldPrice && newPrice) sale = parseInt(newPrice / oldPrice * 100);
+  if (oldPrice && newPrice && newPrice !== oldPrice) sale = parseInt(newPrice / oldPrice * 100);
 
   return (
     <Card inline={inline}>
-      <ImageContainer inline={inline} to="/product">
+      <ImageContainer inline={inline}>
         <Image src={imgSrc} alt="product" inline={inline} />
         {sale && !inline ? <Sale>-{sale}%</Sale> : null}
 
         {
           !inline && isMobile &&
-            <Likes>
-              <Heart isLiked={isLiked} />
-            </Likes>
+          <Likes>
+            <Heart isLiked={isLiked} />
+          </Likes>
         }
       </ImageContainer>
       <CardFooter inline={inline}>
         <Info inline={inline}>
           <Price inline={inline} sale={sale}>
             <small>BD</small>{newPrice ? newPrice.toFixed(2) : 0}
-            {oldPrice && <OldPrice inline={inline}><small>BD</small>{oldPrice.toFixed(2)}</OldPrice>}
+            {oldPrice && newPrice !== oldPrice && <OldPrice inline={inline}><small>BD</small>{oldPrice.toFixed(2)}</OldPrice>}
           </Price>
         </Info>
-        <Title inline={inline} to="/product">{title}</Title>
+        <Title inline={inline}>{title}</Title>
         <Shipping inline={inline}>Free Shipping</Shipping>
 
         {
@@ -67,17 +64,21 @@ const CardNewArrival = ({
               {
                 inline &&
                 <Likes inline={inline}>
-                  <Heart isLiked={isLiked}/>
+                  <Heart isLiked={isLiked} />
                 </Likes>
               }
-              <Actions inline={inline}/>
+              <Actions inline={inline}>
+                <span />
+                <span />
+                <span />
+              </Actions>
             </>
             :
             <Tools inline={inline}>
               <Likes>
-                <Heart isLiked={isLiked}/>
+                <Heart isLiked={isLiked} />
               </Likes>
-              <Bookmark isWished={isWished}/>
+              <Bookmark isWished={isWished} />
             </Tools>
         }
       </CardFooter>

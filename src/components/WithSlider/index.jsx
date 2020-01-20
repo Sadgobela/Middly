@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Slider from 'react-slick';
-import { any, string, number, bool } from 'prop-types';
+import { string, number, bool, element } from 'prop-types';
 import { ContentWrapper } from '../../globalStyles';
 import arrow from '../../images/arrow.png';
 import {
@@ -20,7 +20,7 @@ const WithSlider = ({ children, title, withSeeMore, marginTop, padding, ...rest 
     ...rest
   };
 
-  let firstClientX, clientX;
+  let firstClientX; let clientX;
 
   const preventTouch = e => {
     const minValue = 5; // threshold
@@ -34,26 +34,29 @@ const WithSlider = ({ children, title, withSeeMore, marginTop, padding, ...rest 
 
       return false;
     }
+
+    return true
   };
 
   const touchStart = e => {
     firstClientX = e.touches[0].clientX;
   };
 
-  let containerRef = useRef();
+  const containerRef = useRef();
 
   useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.addEventListener("touchstart", touchStart);
-      containerRef.current.addEventListener("touchmove", preventTouch, {
+    const currentRef = containerRef.current;
+    if (currentRef) {
+      currentRef.addEventListener("touchstart", touchStart);
+      currentRef.addEventListener("touchmove", preventTouch, {
         passive: false
       });
     }
 
     return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener("touchstart", touchStart);
-        containerRef.current.removeEventListener("touchmove", preventTouch, {
+      if (currentRef) {
+        currentRef.removeEventListener("touchstart", touchStart);
+        currentRef.removeEventListener("touchmove", preventTouch, {
           passive: false
         });
       }
@@ -95,8 +98,9 @@ const WithSlider = ({ children, title, withSeeMore, marginTop, padding, ...rest 
 
 WithSlider.propTypes = {
   title: string.isRequired,
-  children: any,
+  children: element.isRequired,
   marginTop: number,
+  padding: number.isRequired,
   withSeeMore: bool
 };
 

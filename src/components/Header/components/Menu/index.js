@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import {Wrapper, CustomLink} from './styled';
 
-const Menu = ({}) => {
+const Menu = () => {
   return (
     <Wrapper>
       <CustomLink>Marketpalce</CustomLink>

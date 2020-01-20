@@ -1,13 +1,10 @@
 import React from 'react';
 import { bool } from 'prop-types';
 import {
-  mainWhiteColor,
   bookmarkFillColor,
-  mainBlackColor,
-  transparentTextColor
 } from '../constants/colors';
 
-const Bookmark = ({ color, isWished }) => (
+const Bookmark = ({ isWished }) => (
   <svg
     width="16"
     height="20"

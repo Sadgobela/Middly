@@ -1,78 +1,40 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {
+	Title,
+	TabList,
+} from './styled';
+import Grid from 'components/Grid';
 import Breadcrumbs from 'components/Breadcrumbs';
 import ListHeading from 'components/ListHeading';
-import {Switch} from 'antd';
-import DeliveryPopUp from './components/DeliveryPopUp';
-import {
-  Title,
-  TabList,
-  BreadcrumbsContainer,
-  SearchAndCategoryWrapper,
-  GreyColoredDiv,
-  SearchParam,
-  Categories,
-  StyledTabs,
-  OnDemandDelivery
-} from './styled';
-import ProductSearch from './ProductSearch';
-import PostSearch from './PostSearch';
+import Tabs from 'components/Tabs';
+import Result from './components/Result';
+import Filters from './components/Filters';
+import Pagination from 'components/PagePagination';
 
-const headingStyles = `
-  padding: 16px 0;
-  span {
-    font-weight: normal ; 
-    font-size: 16px ;
-    color: #656565;
-  }
-`;
+const locations = ['Home', 'Categories', 'Clothing'];
+const tabs = ['Products (2 780)', 'Stores (2 786)', 'Posts (5 678)'];
 
-const {TabPane} = StyledTabs;
+function getTabs() {
+	return (
+		tabs.map( (text, i) => <Tabs active={i === tabs.length - 1}>{text}</Tabs>)
+	)
+}
 
-const SearchResultDesktop = () => {
-  const [activeTab, setActiveTab] = useState('1');
-  const [demandDelivery, setDemandDelivery] = useState(true);
-
-  return (
-    <div>
-      <GreyColoredDiv>
-        <SearchAndCategoryWrapper>
-          <ListHeading
-            heading={
-              <>
-                Search Results:
-                <SearchParam> fashion</SearchParam>
-              </>
-            }
-            customStyles={headingStyles}
-          >
-            {activeTab === '1' ? (
-              <OnDemandDelivery>
-                <Title>On-Demand Delivery</Title>
-                <Switch size="small" checked={demandDelivery} onChange={() => setDemandDelivery(!demandDelivery)} />
-                {demandDelivery && <DeliveryPopUp />}
-              </OnDemandDelivery>
-            ) : null}
-          </ListHeading>
-        </SearchAndCategoryWrapper>
-      </GreyColoredDiv>
-      <TabList>
-        <StyledTabs defaultActiveKey="1" activeKey={activeTab} onChange={setActiveTab}>
-          <TabPane tab="Products" key="1">
-            <ProductSearch />
-          </TabPane>
-          <TabPane tab="Stories" key="2">
-            Stories
-          </TabPane>
-          <TabPane tab="Posts" key="3">
-            <PostSearch />
-          </TabPane>
-          <TabPane tab="Lists" key="4">
-            Lists
-          </TabPane>
-        </StyledTabs>
-      </TabList>
-    </div>
-  );
+const SearchResultDesktop = ()=> {
+	return (
+		<Grid>
+			<Breadcrumbs locations={locations} />
+			<ListHeading heading='Search Results:' customStyles='padding-top: 10px'>
+				<Title>Showing: 4 567 Items</Title>
+			</ListHeading>
+			<TabList>
+				{getTabs()}
+			</TabList>
+			<Filters />
+			<Result />
+			<Pagination />
+		</Grid>
+	)
 };
 
 export default SearchResultDesktop;

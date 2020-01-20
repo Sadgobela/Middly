@@ -1,21 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, {object} from 'prop-types';
 import Scrollbar from 'react-scrollbars-custom';
 
+import Plus from 'assets/Plus';
 import {
   Wrapper,
   Header,
   Title,
   List,
   Category,
-  CategoryRow,
   CategoryAvatar,
   CategoryContent,
   CategoryName,
   CategoryFollowers,
   CategoryFollow
 } from './styled';
-import Plus from 'assets/Plus';
 
 const PopularCategories = ({title, list}) => {
   return (
@@ -29,6 +28,7 @@ const PopularCategories = ({title, list}) => {
           style={{height: 74}}
           trackXProps={{
             renderer: (props) => {
+              // eslint-disable-next-line react/prop-types
               const {elementRef, ...restProps} = props;
               return <span {...restProps} ref={elementRef} className="TrackX" />;
             }
@@ -63,7 +63,7 @@ PopularCategories.defaultProps = {
 
 PopularCategories.propTypes = {
   title: PropTypes.string,
-  list: PropTypes.array
+  list: PropTypes.arrayOf(object)
 };
 
 export default PopularCategories;

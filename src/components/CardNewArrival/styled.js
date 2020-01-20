@@ -1,7 +1,12 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
-import {mainWhiteColor, mainBlackColor, transparentTextColor, secondaryTextColor, primaryColor} from 'constants/colors';
-import {FlexContainer} from 'globalStyles';
+import {
+  mainWhiteColor,
+  mainBlackColor,
+  transparentTextColor,
+  secondaryTextColor,
+  primaryColor
+} from '../../constants/colors';
+import {FlexContainer} from '../../globalStyles';
 import media from 'constants/media';
 
 export const Card = styled(FlexContainer)`
@@ -79,7 +84,7 @@ export const Tools = styled(FlexContainer)`
   }}
 `;
 
-export const ImageContainer = styled(Link)`
+export const ImageContainer = styled.div`
   position: relative;
 
   ${({inline}) => {
@@ -232,7 +237,7 @@ export const Shipping = styled.div`
   }
 `;
 
-export const Title = styled(Link)`
+export const Title = styled.div`
   width: 100%;
   font-size: 16px;
   margin: 0 0 10px;

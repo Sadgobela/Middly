@@ -17,8 +17,6 @@ import PopularHashtags from 'mobile/ProductPage/PopularHashtags';
 import Buttons from 'mobile/ProductPage/Buttons';
 import ProductAdded from 'mobile/ProductPage/ProductAdded';
 
-import ActionPopup from 'components/Actions/popup';
-
 import {
   Line
 } from './styled';
@@ -108,8 +106,6 @@ const ProductPageMobile = () => {
       showMessage={showMessage}
       setShowMessage={setShowMessage}
     />
-
-    <ActionPopup/>
   </>
 };
 

@@ -1,7 +1,4 @@
-import product1 from 'images/products/product1.jpg';
 import product2 from 'images/products/product2.jpg';
-import product3 from 'images/products/product3.jpg';
-import product4 from 'images/products/product4.jpg';
 import product5 from 'images/products/product5.jpg';
 import product6 from 'images/products/product6.jpg';
 import product7 from 'images/products/product7.jpg';
@@ -41,7 +38,6 @@ import gallery2 from 'images/gallery/gallery2.jpg';
 import gallery3 from 'images/gallery/gallery3.jpg';
 import shopNow1 from 'images/shopNow1.png';
 import shopNow2 from 'images/shopNow2.png';
-import snickers from 'images/snickers.png';
 import avatar from 'images/avatar.png';
 
 import slide1 from 'images/slides/slide1.jpg';
@@ -1171,7 +1167,7 @@ export const categories = [
 
 export const user = {
   id: 1,
-  avatar: avatar,
+  avatar,
   firstName: 'Maria',
   lastName: 'Podrezova',
   messages: 1,
@@ -1181,7 +1177,7 @@ export const user = {
 
 export const messages = [
   {
-    avatar: avatar,
+    avatar,
     name: 'Jorge Webb',
     text: 'I would like to return the dress lorem ipsum is',
     date: 'Today, 10:30 pm',
@@ -1189,7 +1185,7 @@ export const messages = [
     online: true
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Pit Weny',
     text: 'I would like to return the dress lorem ipsum is',
     date: 'Today, 10:30 pm',
@@ -1197,7 +1193,7 @@ export const messages = [
     online: true
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Deny Smitt',
     text: 'Hello, this dress is 100% silk. ',
     date: 'Wed',
@@ -1205,7 +1201,7 @@ export const messages = [
     online: false
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Maria Podrezova',
     text: 'Me too))))',
     date: 'Wed',
@@ -1213,7 +1209,7 @@ export const messages = [
     online: false
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Anna Tvildy',
     text: 'So cute. I agree with you. If you wan',
     date: 'Sun',
@@ -1221,7 +1217,7 @@ export const messages = [
     online: false
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Olga Milkey',
     text: 'So cute. I agree with you. If you wan',
     date: 'Sun',
@@ -1229,7 +1225,7 @@ export const messages = [
     online: false
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Olga Milkey',
     text: 'So cute. I agree with you. If you wan',
     date: 'Sun',
@@ -1237,7 +1233,7 @@ export const messages = [
     online: false
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Olga Milkey',
     text: 'So cute. I agree with you. If you wan',
     date: 'Sun',
@@ -1248,7 +1244,7 @@ export const messages = [
 
 export const notifications = [
   {
-    avatar: avatar,
+    avatar,
     name: 'Jorge Webb',
     text: 'It’s nice)))',
     date: '4h replited to your post:',
@@ -1256,7 +1252,7 @@ export const notifications = [
     thumb: product15
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Oleg Welton',
     text: 'Wow! So good suit and tie, I like it very much',
     date: '1d replited to your post',
@@ -1264,7 +1260,7 @@ export const notifications = [
     thumb: product13
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Jorge Webb',
     text: 'Could you give me one?',
     date: '2d mentioned you',
@@ -1272,7 +1268,7 @@ export const notifications = [
     thumb: product10
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Nika Pink',
     text: null,
     date: '1w liked your photo.',
@@ -1280,7 +1276,7 @@ export const notifications = [
     thumb: null
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Nika Pink',
     text: null,
     date: '2w started following you.',
@@ -1288,7 +1284,7 @@ export const notifications = [
     thumb: null
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Jorge Webb',
     text: 'It’s nice)))',
     date: '4h replited to your post:',
@@ -1296,7 +1292,7 @@ export const notifications = [
     thumb: product15
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Oleg Welton',
     text: 'Wow! So good suit and tie, I like it very much',
     date: '1d replited to your post',
@@ -1304,7 +1300,7 @@ export const notifications = [
     thumb: product13
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Jorge Webb',
     text: 'Could you give me one?',
     date: '2d mentioned you',
@@ -1312,7 +1308,7 @@ export const notifications = [
     thumb: product10
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Nika Pink',
     text: null,
     date: '1w liked your photo.',
@@ -1320,7 +1316,7 @@ export const notifications = [
     thumb: null
   },
   {
-    avatar: avatar,
+    avatar,
     name: 'Nika Pink',
     text: null,
     date: '2w started following you.',
@@ -1400,57 +1396,49 @@ export const lists = [
     title: 'Beautiful',
     username: 'username',
     imgSrc: product11,
-    followers: 961,
-    orders: 340
+    followers: 961
   },
   {
     title: 'Beautiful',
     username: 'username',
     imgSrc: product12,
-    followers: 961,
-    orders: 340
+    followers: 961
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product13,
-    followers: 961,
-    orders: 340
+    followers: 961
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product14,
-    followers: 961,
-    orders: 340
+    followers: 961
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product15,
-    followers: 961,
-    orders: 340
+    followers: 961
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product16,
-    followers: 961,
-    orders: 340
+    followers: 961
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product17,
-    followers: 961,
-    orders: 340
+    followers: 961
   },
   {
     title: 'Post Title',
     username: 'username',
     imgSrc: product18,
-    followers: 961,
-    orders: 340
+    followers: 961
   }
 ];
 

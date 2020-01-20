@@ -10,12 +10,12 @@ import {
 
 const Popup = ({ showMessage, setShowMessage }) => {
   useEffect(() => {
-    if(showMessage) {
+    if (showMessage) {
       setTimeout(() => {
         setShowMessage(false);
       }, 3000)
     }
-  }, [showMessage]);
+  }, [showMessage, setShowMessage]);
 
   return <PopupWrapper active={showMessage}>
     <IconWrapper>
@@ -29,7 +29,7 @@ const Popup = ({ showMessage, setShowMessage }) => {
 
 Popup.defaultProps = {
   showMessage: false,
-  setShowMessage: () => {}
+  setShowMessage: () => { }
 };
 
 Popup.propTypes = {

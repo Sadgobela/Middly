@@ -14,13 +14,12 @@ const cache = new InMemoryCache({
   }
 });
 
-
 const middlyLink = new HttpLink({
   uri: 'https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/graphql'
   // credentials: 'include',
 });
 const magentoLink = new HttpLink({
-  uri: 'https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/magento2/graphql'
+  uri: 'https://4h5hs4wxt9.execute-api.eu-west-1.amazonaws.com/dev/test/graphql'
   // credentials: 'include'
 });
 

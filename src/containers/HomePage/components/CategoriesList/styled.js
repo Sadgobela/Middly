@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {FlexContainer} from '../../../../globalStyles';
-import {primaryColor} from '../../../../constants/colors';
 
 export const CategoriesWrapper = styled(FlexContainer)`
   position: relative;

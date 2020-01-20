@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {FlexContainer} from 'globalStyles';
-import {primaryColor, mainBlackColor, grayBackroundColor} from 'constants/colors';
+import {primaryColor, mainBlackColor} from 'constants/colors';
 import media from 'constants/media';
 
 export const Header = styled(FlexContainer)`
@@ -60,7 +60,7 @@ export const Thumb = styled.div`
 `;
 
 export const SliderWrapper = styled.div`
-  padding: ${({padding}) => (padding ? padding : '32px 45px')};
+  padding: ${({padding}) => padding || '32px 45px'};
   width: 100%;
   margin-bottom: 0;
   display: flex;

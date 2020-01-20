@@ -22,12 +22,12 @@ const SearchStore = ({data}) => {
         <StoreInside>
           <StoreTitle dangerouslySetInnerHTML={{__html: data.title}}/>
           <StoreRating>
-            {data.rating ? <span>{data.rating} Followers</span> : ''}
             <Star fill={data.rating >= 1 ? '#FFC131' : '#CCC'}/>
             <Star fill={data.rating >= 2 ? '#FFC131' : '#CCC'}/>
             <Star fill={data.rating >= 3 ? '#FFC131' : '#CCC'}/>
             <Star fill={data.rating >= 4 ? '#FFC131' : '#CCC'}/>
             <Star fill={data.rating >= 5 ? '#FFC131' : '#CCC'}/>
+            {data.rating ? <span>({data.rating})</span> : ''}
           </StoreRating>
         </StoreInside>
         <StoreFollow isFollowing={data.isFollowing}>

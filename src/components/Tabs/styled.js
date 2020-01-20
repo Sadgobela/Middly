@@ -13,18 +13,17 @@ export const Tab = styled.button`
   font-size: 14px;
   line-height: 140%;
   text-align: center;
-  box-sizing: border-box;
   color: ${({active}) => (active ? '#000' : '#7A7A7A')};
   outline: none;
-  ${({active}) =>
-    active
-      ? `
-    border-bottom: 2px solid #000;
-		`
-      : 'border-bottom: 2px solid transparent;'}
 
-  &:hover {
-    color: #000;
-    border-bottom: 2px solid #000;
+  &::after {
+    content: ${({active}) => (active ? ` '' ` : null)};
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background: #000;
+    border-radius: 10px;
   }
 `;

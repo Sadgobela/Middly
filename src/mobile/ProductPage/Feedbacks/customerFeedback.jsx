@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import Scrollbar from 'react-scrollbars-custom';
 import Div100vh from 'react-div-100vh';
-import { string, bool, func } from 'prop-types';
+import { bool, func } from 'prop-types';
 
 import Icon from 'components/Icon';
 
-import Divider from '../Divider';
-import Counters from '../Сounters';
 
 import image1 from 'images/image1.jpg';
 import avatar1 from 'images/avatar1.png';
 import photo from 'images/photo.png';
+import Counters from '../Сounters';
+import Divider from '../Divider';
 
 import {
   PopupWrapper,
@@ -44,7 +44,7 @@ import {
 
 const CustomerFeedback = ({ showCustomerFeedback, setShowCustomerFeedback }) => {
   useEffect(() => {
-    if(showCustomerFeedback) {
+    if (showCustomerFeedback) {
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
@@ -63,9 +63,9 @@ const CustomerFeedback = ({ showCustomerFeedback, setShowCustomerFeedback }) => 
       </IconWrapper>
 
       <More>
-        <MoreDot/>
-        <MoreDot/>
-        <MoreDot/>
+        <MoreDot />
+        <MoreDot />
+        <MoreDot />
       </More>
     </Header>
 
@@ -79,16 +79,16 @@ const CustomerFeedback = ({ showCustomerFeedback, setShowCustomerFeedback }) => 
       }}
     >
       <Product>
-        <ProductThumb src={image1}/>
+        <ProductThumb src={image1} />
         <ProductContent>
           <ProductName>Chanel Beauty full A</ProductName>
           <ProductFree>Free Shipping</ProductFree>
           <ProductRating>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 1 ? '#FFC131' : '#ccc' }}/>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 2 ? '#FFC131' : '#ccc' }}/>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 3 ? '#FFC131' : '#ccc' }}/>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 4 ? '#FFC131' : '#ccc' }}/>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 5 ? '#FFC131' : '#ccc' }}/>
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 1 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 2 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 3 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: '#FFC131' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 5 ? '#FFC131' : '#ccc' }} />
 
             <ProductReviews>(355)</ProductReviews>
           </ProductRating>
@@ -103,7 +103,7 @@ const CustomerFeedback = ({ showCustomerFeedback, setShowCustomerFeedback }) => 
         </ProductContent>
       </Product>
 
-      <Divider style={{height: 8}}/>
+      <Divider style={{ height: 8 }} />
 
       <FeedbackItem
         style={{
@@ -113,14 +113,14 @@ const CustomerFeedback = ({ showCustomerFeedback, setShowCustomerFeedback }) => 
         }}
       >
         <FeedbackItemHeader>
-          <FeedbackItemImg src={avatar1}/>
+          <FeedbackItemImg src={avatar1} />
           <FeedbackItemName>
             Hanna Rick
             <span>24 Nov 2019</span>
           </FeedbackItemName>
 
           <FeedbackFollowButton>
-            <Icon type="plus"/>
+            <Icon type="plus" />
             <span>Follow</span>
           </FeedbackFollowButton>
         </FeedbackItemHeader>
@@ -130,11 +130,11 @@ const CustomerFeedback = ({ showCustomerFeedback, setShowCustomerFeedback }) => 
           }}
         >
           <FeedbackRating>
-            <Icon type="star" svgStyle={{width: 12, height: 12, fill: 4.7 >= 1 ? '#FFC131' : '#ccc'}}/>
-            <Icon type="star" svgStyle={{width: 12, height: 12, fill: 4.7 >= 2 ? '#FFC131' : '#ccc'}}/>
-            <Icon type="star" svgStyle={{width: 12, height: 12, fill: 4.7 >= 3 ? '#FFC131' : '#ccc'}}/>
-            <Icon type="star" svgStyle={{width: 12, height: 12, fill: 4.7 >= 4 ? '#FFC131' : '#ccc'}}/>
-            <Icon type="star" svgStyle={{width: 12, height: 12, fill: 4.7 >= 5 ? '#FFC131' : '#ccc'}}/>
+            <Icon type="star" svgStyle={{ width: 12, height: 12, fill: 4.7 >= 1 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 12, height: 12, fill: 4.7 >= 2 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 12, height: 12, fill: 4.7 >= 3 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 12, height: 12, fill: 4.7 >= 4 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 12, height: 12, fill: 4.7 >= 5 ? '#FFC131' : '#ccc' }} />
           </FeedbackRating>
           This is an amazing product!
         </FeedbackItemRating>
@@ -150,24 +150,25 @@ const CustomerFeedback = ({ showCustomerFeedback, setShowCustomerFeedback }) => 
             style={{ height: '100vh', maxHeight: 275 }}
             trackXProps={{
               renderer: (props) => {
-                const {elementRef, ...restProps} = props;
-                return <span {...restProps} ref={elementRef} className="TrackX"/>;
+                // eslint-disable-next-line react/prop-types
+                const { elementRef, ...restProps } = props;
+                return <span {...restProps} ref={elementRef} className="TrackX" />;
               }
             }}
           >
-            This product is amazing! I have finally found a moisturizer that actually works. I have very dry skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so dry, any product I put on my face would burn so I went and got a sample of this and within a few days my skin felt so much better, I went and purchased the full size. It doesn't feel heavy at all and a little goes a long way.  I will be a staple in my skincare routine from now on.
+            This product is amazing! I have finally found a moisturizer that actually works. I have very dry skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so dry, any product I put on my face would burn so I went and got a sample of this and within a few days my skin felt so much better, I went and purchased the full size. It doesn&apos;t feel heavy at all and a little goes a long way.  I will be a staple in my skincare routine from now on.
             This product is amazing! I have finally found a moisturizer that actually works. I have very dry skin year round and nothing until this product has given me enough hydration. I was having trouble with my
-            This product is amazing! I have finally found a moisturizer that actually works. I have very dry skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so dry, any product I put on my face would burn so I went and got a sample of this and within a few days my skin felt so much better, I went and purchased the full size. It doesn't feel heavy at all and a little goes a long way.  I will be a staple in my skincare routine from now on.
+            This product is amazing! I have finally found a moisturizer that actually works. I have very dry skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so dry, any product I put on my face would burn so I went and got a sample of this and within a few days my skin felt so much better, I went and purchased the full size. It doesn&apos;t feel heavy at all and a little goes a long way.  I will be a staple in my skincare routine from now on.
             This product is amazing! I have finally found a moisturizer that actually works. I have very dry skin year round and nothing until this product has given me enough hydration. I was having trouble with my
-            This product is amazing! I have finally found a moisturizer that actually works. I have very dry skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so dry, any product I put on my face would burn so I went and got a sample of this and within a few days my skin felt so much better, I went and purchased the full size. It doesn't feel heavy at all and a little goes a long way.  I will be a staple in my skincare routine from now on.
+            This product is amazing! I have finally found a moisturizer that actually works. I have very dry skin year round and nothing until this product has given me enough hydration. I was having trouble with my skin being so dry, any product I put on my face would burn so I went and got a sample of this and within a few days my skin felt so much better, I went and purchased the full size. It doesn&apos;t feel heavy at all and a little goes a long way.  I will be a staple in my skincare routine from now on.
             This product is amazing! I have finally found a moisturizer that actually works. I have very dry skin year round and nothing until this product has given me enough hydration. I was having trouble with my
           </Scrollbar>
         </FeedbackItemText>
 
         <Gallery>
           <GalleryCol>
-            <GalleryItem image={photo} onClick={() => setShowCustomerFeedback(true)}/>
-            <GalleryItem image={photo} onClick={() => setShowCustomerFeedback(true)}/>
+            <GalleryItem image={photo} onClick={() => setShowCustomerFeedback(true)} />
+            <GalleryItem image={photo} onClick={() => setShowCustomerFeedback(true)} />
           </GalleryCol>
         </Gallery>
 
@@ -193,13 +194,11 @@ const CustomerFeedback = ({ showCustomerFeedback, setShowCustomerFeedback }) => 
 };
 
 CustomerFeedback.defaultProps = {
-  title: 'Returns & Exchanges',
   showCustomerFeedback: false,
-  setShowCustomerFeedback: () => {}
+  setShowCustomerFeedback: () => { }
 };
 
 CustomerFeedback.propTypes = {
-  title: string,
   showCustomerFeedback: bool,
   setShowCustomerFeedback: func
 };

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from "prop-types";
 import {
 	Container,
 	BarContainer,
@@ -41,9 +42,9 @@ import {
 import templateData from './templateData';
 import Profile from '../Profile';
 
-function getItem(name){
+function getItem(name) {
 	const reducer = (accumulator, currentValue) => accumulator + currentValue;
-	if(name === 'notifications'){
+	if (name === 'notifications') {
 
 		return (
 			<>
@@ -71,7 +72,7 @@ function getItem(name){
 			</>
 		)
 	}
-	if(name === 'message'){
+	if (name === 'message') {
 		return (
 			<>
 				{
@@ -87,7 +88,7 @@ function getItem(name){
 								<ItemTitle message>
 									{item.title}
 								</ItemTitle>
-								{ item.notRead ? <MessageCounter count={item.notRead} /> : null }
+								{item.notRead ? <MessageCounter count={item.notRead} /> : null}
 							</ItemDescription>
 							<MessageDate>{item.date}</MessageDate>
 						</NotificationsItem>
@@ -96,7 +97,7 @@ function getItem(name){
 			</>
 		)
 	}
-	if(name === 'cart'){
+	if (name === 'cart') {
 		return (
 			<Cart>
 				<CartHeader>
@@ -105,7 +106,7 @@ function getItem(name){
 				</CartHeader>
 				<CartContent>
 					{
-						templateData[name].list.map( item =>
+						templateData[name].list.map(item =>
 							<CartItem key={item.name}>
 								<CartItemPreview src={item.pic} />
 								<ItemDescription>
@@ -116,9 +117,9 @@ function getItem(name){
 									</ItemTitle>
 									<Quantity>
 										<QuantityTitle>Quantity:</QuantityTitle>
-										<QuantityRemove/>
-										<QuantityCounter value={1}/>
-										<QuantityAdd/>
+										<QuantityRemove />
+										<QuantityCounter value={1} />
+										<QuantityAdd />
 									</Quantity>
 								</ItemDescription>
 							</CartItem>
@@ -133,22 +134,30 @@ function getItem(name){
 						</SubtotalCount>
 					</SubTotal>
 					<Actions>
-						<CartCheckout to="/cart">View Cart</CartCheckout>
-						<CartView to="/cart">Checkout</CartView>
+						<CartCheckout>View Cart</CartCheckout>
+						<CartView>Checkout</CartView>
 					</Actions>
 				</CartContent>
 
 			</Cart>
 		)
 	}
-	if(name === 'profile'){
+	if (name === 'profile') {
 		return (
 			<Profile />
 		)
 	}
+
+	return null;
 }
 
-const NotificationBar = ({contentType, closeHandler})=> {
+const NotificationBar = ({ contentType, closeHandler }) => {
+
+	const closeBar = ev => {
+		if (!ev.target.closest('.barContainer') && !ev.target.closest('.barControls')) {
+			closeHandler(false);
+		}
+	};
 
 	useEffect(() => {
 		document.addEventListener('click', closeBar);
@@ -157,16 +166,11 @@ const NotificationBar = ({contentType, closeHandler})=> {
 		};
 	});
 
-	const closeBar = ev => {
-		if(!ev.target.closest('.barContainer') && !ev.target.closest('.barControls')){
-			closeHandler(false);
-		}
-	};
 
 	return (
 		<Container>
 			<BarContainer className='barContainer'>
-				<CloseBtn onClick={ ()=> closeHandler(false) } >X</CloseBtn>
+				<CloseBtn onClick={() => closeHandler(false)} >X</CloseBtn>
 				{
 					contentType !== 'cart' && contentType !== 'profile'
 						?
@@ -181,6 +185,12 @@ const NotificationBar = ({contentType, closeHandler})=> {
 		</Container>
 	)
 
+};
+
+
+NotificationBar.propTypes = {
+	contentType: PropTypes.string.isRequired,
+	closeHandler: PropTypes.func.isRequired,
 };
 
 export default NotificationBar;

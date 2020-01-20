@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes, {object} from 'prop-types';
 import Scrollbar from 'react-scrollbars-custom';
 
 import {Wrapper, Title, List, Card, Thumb, Name} from './styled';
@@ -8,8 +9,8 @@ const CategoriesMobile = ({title, list}) => {
     return list.map((item, key) => {
       return (
         <Card to={item.url} key={key}>
-          <Thumb backgroundImage={item.imgSrc} />
-          <Name>{item.title}</Name>
+          <Thumb backgroundImage={item.image} />
+          <Name>{item.name}</Name>
         </Card>
       );
     });
@@ -24,6 +25,7 @@ const CategoriesMobile = ({title, list}) => {
           style={{height: 78}}
           trackXProps={{
             renderer: (props) => {
+              // eslint-disable-next-line react/prop-types
               const {elementRef, ...restProps} = props;
               return <span {...restProps} ref={elementRef} className="TrackX" />;
             }
@@ -34,6 +36,11 @@ const CategoriesMobile = ({title, list}) => {
       ) : null}
     </Wrapper>
   );
+};
+
+CategoriesMobile.propTypes = {
+  title: PropTypes.string,
+  list: PropTypes.arrayOf(object).isRequired
 };
 
 CategoriesMobile.defaultProps = {

@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {CSSTransition} from 'react-transition-group';
-import Badges from '../Badges';
-import {SideMenu} from './SideMenu/SideMenu';
-import NotificationBar from '../NotificationBar';
+import React, { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import LogoIcon from 'assets/LogoIcon';
 import SearchInput from 'containers/HomePage/components/SearchInput';
 import BoxIcon from 'assets/BoxIcon';
 import defaultAvatar from 'images/defaultAvatar.png';
+import NotificationBar from '../NotificationBar';
+import { SideMenu } from './SideMenu/SideMenu';
+import Badges from '../Badges';
 
 import {
   HeaderContainer,
@@ -35,14 +35,14 @@ const btnText = {
   noShop: 'SELL'
 };
 
-const Header = ({isMobile}) => {
+const Header = () => {
 
   const [isNotificationBar, setBarState] = useState(false);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [barContentType, setBarContentType] = useState('');
 
   function getContentType(ev) {
-    if(ev === 'profile'){
+    if (ev === 'profile') {
       setBarContentType(ev);
       setBarState(true);
       return;
@@ -54,11 +54,11 @@ const Header = ({isMobile}) => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <Burger onClick={()=> setIsMenuOpened(!isMenuOpened)}>
+        <Burger onClick={() => setIsMenuOpened(!isMenuOpened)}>
           <BurgerIcon />
         </Burger>
-        <CSSTransition in={isMenuOpened} timeout={300} classNames={'sideMenu'} unmountOnExit>
-          <SideMenu setIsMenuOpened={ setIsMenuOpened } />
+        <CSSTransition in={isMenuOpened} timeout={300} classNames="sideMenu" unmountOnExit>
+          <SideMenu setIsMenuOpened={setIsMenuOpened} />
         </CSSTransition>
         <LogoContainer to='/'>
           <LogoIcon />
@@ -70,7 +70,7 @@ const Header = ({isMobile}) => {
         <SearchInput />
         <SellButton>
           <BoxIcon />
-          { userType === 'withShop' ? btnText.withShop : btnText.noShop}
+          {userType === 'withShop' ? btnText.withShop : btnText.noShop}
         </SellButton>
 
         <BarControls className='barControls'>
@@ -95,15 +95,15 @@ const Header = ({isMobile}) => {
           <BadgesContainer className='badgesContainer'>
             {
               userType !== 'anonymous'
-              ?
+                ?
                 <>
-                  <Badges action={ getContentType } name='notifications' />
-                  <Badges action={ getContentType } name='message' counter='4' />
-                  <Badges action={ getContentType } name='cart' />
+                  <Badges action={getContentType} name='notifications' />
+                  <Badges action={getContentType} name='message' counter='4' />
+                  <Badges action={getContentType} name='cart' />
                 </>
-              :
+                :
                 <>
-                  <Badges action={ getContentType } counter='1' name='cart' />
+                  <Badges action={getContentType} counter='1' name='cart' />
                 </>
             }
           </BadgesContainer>

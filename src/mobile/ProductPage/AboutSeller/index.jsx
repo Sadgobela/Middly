@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { object } from 'prop-types';
+import { shape } from 'prop-types';
 
-import Title from '../Title';
 import Icon from 'components/Icon';
+import Title from '../Title';
 import Popup from './popup';
 
 import {
@@ -31,27 +31,27 @@ const AboutSeller = ({ seller }) => {
     />
 
     <Seller>
-      <SellerThumb src={seller.img}/>
+      <SellerThumb src={seller.img} />
       <SellerContent>
         <SellerLabel>Seller</SellerLabel>
         {seller.name && <SellerName>{seller.name}</SellerName>}
 
         {
           seller.rating &&
-            <Rating>
-              <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 1 ? '#FFC131' : '#ccc' }}/>
-              <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 2 ? '#FFC131' : '#ccc' }}/>
-              <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 3 ? '#FFC131' : '#ccc' }}/>
-              <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 4 ? '#FFC131' : '#ccc' }}/>
-              <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 5 ? '#FFC131' : '#ccc' }}/>
+          <Rating>
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 1 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 2 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 3 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 4 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: seller.rating >= 5 ? '#FFC131' : '#ccc' }} />
 
-              {seller.reviews && <Reviews>({seller.reviews})</Reviews>}
-            </Rating>
+            {seller.reviews && <Reviews>({seller.reviews})</Reviews>}
+          </Rating>
         }
 
         <SellerButtons>
           <SellerButton>
-            <Icon type="plus"/>
+            <Icon type="plus" />
             <span>Follow</span>
           </SellerButton>
 
@@ -64,15 +64,15 @@ const AboutSeller = ({ seller }) => {
 
     {
       seller.followers && seller.followers.length &&
-        <SellerFollowers>
-          <SellerImages>
-            {seller.followers.map((follower, key) => key <= 1 && <img src={follower.avatar} key={key} alt={follower.name}/>)}
-          </SellerImages>
-          <SellerFollowersCount>
-            {seller.followers[0].name} and <a onClick={() => setShowPopup(true)}>{seller.followers.length - 1} more</a>
-            <span>started following this Seller</span>
-          </SellerFollowersCount>
-        </SellerFollowers>
+      <SellerFollowers>
+        <SellerImages>
+          {seller.followers.map((follower, key) => key <= 1 && <img src={follower.avatar} key={key} alt={follower.name} />)}
+        </SellerImages>
+        <SellerFollowersCount>
+          {seller.followers[0].name} and <a href="/" onClick={() => setShowPopup(true)}>{seller.followers.length - 1} more</a>
+          <span>started following this Seller</span>
+        </SellerFollowersCount>
+      </SellerFollowers>
     }
 
     <Popup
@@ -87,7 +87,7 @@ AboutSeller.defaultProps = {
 };
 
 AboutSeller.propTypes = {
-  seller: object
+  seller: shape()
 };
 
 export default AboutSeller;

@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react';
+import PropTypes, {object} from 'prop-types';
 import Slider from 'react-slick';
 
 import {MainSliderWrapper, SlideWrapper, SlideContent, SlideTitle, SlideDescription, SlideButton} from './styled';
@@ -9,7 +10,8 @@ const MainSlider = ({slides}) => {
     arrows: false
   };
 
-  let firstClientX, clientX;
+  let firstClientX;
+  let clientX;
 
   const preventTouch = (e) => {
     const minValue = 5;
@@ -22,26 +24,29 @@ const MainSlider = ({slides}) => {
 
       return false;
     }
+
+    return true;
   };
 
   const touchStart = (e) => {
     firstClientX = e.touches[0].clientX;
   };
 
-  let containerRef = useRef();
+  const containerRef = useRef();
 
   useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.addEventListener('touchstart', touchStart);
-      containerRef.current.addEventListener('touchmove', preventTouch, {
+    const newRef = containerRef.current;
+    if (newRef) {
+      newRef.addEventListener('touchstart', touchStart);
+      newRef.addEventListener('touchmove', preventTouch, {
         passive: false
       });
     }
 
     return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener('touchstart', touchStart);
-        containerRef.current.removeEventListener('touchmove', preventTouch, {
+      if (newRef) {
+        newRef.removeEventListener('touchstart', touchStart);
+        newRef.removeEventListener('touchmove', preventTouch, {
           passive: false
         });
       }
@@ -69,6 +74,10 @@ const MainSlider = ({slides}) => {
       </Slider>
     </MainSliderWrapper>
   );
+};
+
+MainSlider.propTypes = {
+  slides: PropTypes.arrayOf(object).isRequired
 };
 
 export default MainSlider;

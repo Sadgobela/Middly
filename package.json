@@ -25,7 +25,7 @@
     "react-div-100vh": "^0.3.4",
     "react-dom": "^16.10.2",
     "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "3.2.0",
     "react-scrollbars-custom": "^4.0.21",
     "react-slick": "^0.25.2",
@@ -33,8 +33,7 @@
     "react-transition-group": "^4.3.0",
     "react-virtualized": "^9.21.2",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^4.4.1",
-    "use-global-hook": "^0.1.12"
+    "styled-components": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,11 +43,7 @@
     "deploy": "yarn build && yarn copytos3 && yarn cachecontrol1 && yarn cachecontrol2",
     "copytos3": "aws s3 cp --recursive --acl public-read ./build s3://middly-buyer-ui-dev-bucket/",
     "cachecontrol1": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/service-worker.js s3://middly-buyer-ui-dev-bucket/",
-    "cachecontrol2": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/index.html s3://middly-buyer-ui-dev-bucket/",
-    "deployapi": "yarn build && yarn copytos3api && yarn cachecontrol1api && yarn cachecontrol2api",
-    "copytos3api": "aws s3 cp --recursive --acl public-read ./build s3://middly-buyer-ui-api-dev-bucket/",
-    "cachecontrol1api": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/service-worker.js s3://middly-buyer-ui-api-dev-bucket/",
-    "cachecontrol2api": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/index.html s3://middly-buyer-ui-api-dev-bucket/"
+    "cachecontrol2": "aws s3 cp --acl public-read --cache-control=\"max-age=0, no-cache, no-store, must-revalidate\" ./build/index.html s3://middly-buyer-ui-dev-bucket/"
   },
   "eslintConfig": {
     "extends": "react-app"

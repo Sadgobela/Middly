@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import Div100vh from 'react-div-100vh';
 import Scrollbar from 'react-scrollbars-custom';
-import { string, bool, func } from 'prop-types';
+import { bool, func } from 'prop-types';
 
 import Icon from 'components/Icon';
 
-import Counters from '../Сounters';
 
 import image1 from 'images/image1.jpg'
 import gallery4 from 'images/gallery/gallery4.jpg'
 import gallery5 from 'images/gallery/gallery5.jpg'
 import gallery7 from 'images/gallery/gallery7.jpg'
+import Counters from '../Сounters';
 
 import {
   PopupWrapper,
@@ -32,7 +32,7 @@ import {
 
 const PhotosPopup = ({ showPhotosPopup, setShowPhotosPopup }) => {
   useEffect(() => {
-    if(showPhotosPopup) {
+    if (showPhotosPopup) {
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
@@ -60,19 +60,19 @@ const PhotosPopup = ({ showPhotosPopup, setShowPhotosPopup }) => {
         overflowY: 'auto'
       }}
     >
-      <MainImage src={image1}/>
+      <MainImage src={image1} />
 
       <Product>
-        <ProductThumb src={image1}/>
+        <ProductThumb src={image1} />
         <ProductContent>
           <ProductName>Chanel Beauty full A</ProductName>
           <ProductFree>Free Shipping</ProductFree>
           <ProductRating>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 1 ? '#FFC131' : '#ccc' }}/>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 2 ? '#FFC131' : '#ccc' }}/>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 3 ? '#FFC131' : '#ccc' }}/>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 4 ? '#FFC131' : '#ccc' }}/>
-            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 5 ? '#FFC131' : '#ccc' }}/>
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 1 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 2 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 3 ? '#FFC131' : '#ccc' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: '#FFC131' }} />
+            <Icon type="star" svgStyle={{ width: 11, height: 11, fill: 4 >= 5 ? '#FFC131' : '#ccc' }} />
 
             <ProductReviews>(355)</ProductReviews>
           </ProductRating>
@@ -93,23 +93,24 @@ const PhotosPopup = ({ showPhotosPopup, setShowPhotosPopup }) => {
           style={{ height: 72 }}
           trackXProps={{
             renderer: (props) => {
+              // eslint-disable-next-line react/prop-types
               const { elementRef, ...restProps } = props;
-              return <span {...restProps} ref={elementRef} className="TrackX"/>;
+              return <span {...restProps} ref={elementRef} className="TrackX" />;
             }
           }}
         >
-          <Thumb src={gallery4}/>
-          <Thumb src={gallery5}/>
-          <Thumb src={gallery7}/>
-          <Thumb src={gallery4}/>
-          <Thumb src={gallery5}/>
-          <Thumb src={gallery7}/>
-          <Thumb src={gallery4}/>
-          <Thumb src={gallery5}/>
-          <Thumb src={gallery7}/>
-          <Thumb src={gallery4}/>
-          <Thumb src={gallery5}/>
-          <Thumb src={gallery7}/>
+          <Thumb src={gallery4} />
+          <Thumb src={gallery5} />
+          <Thumb src={gallery7} />
+          <Thumb src={gallery4} />
+          <Thumb src={gallery5} />
+          <Thumb src={gallery7} />
+          <Thumb src={gallery4} />
+          <Thumb src={gallery5} />
+          <Thumb src={gallery7} />
+          <Thumb src={gallery4} />
+          <Thumb src={gallery5} />
+          <Thumb src={gallery7} />
         </Scrollbar>
       </Thumbs>
     </Div100vh>
@@ -127,13 +128,11 @@ const PhotosPopup = ({ showPhotosPopup, setShowPhotosPopup }) => {
 };
 
 PhotosPopup.defaultProps = {
-  title: 'Returns & Exchanges',
   showPhotosPopup: false,
-  setShowPhotosPopup: () => {}
+  setShowPhotosPopup: () => { }
 };
 
 PhotosPopup.propTypes = {
-  title: string,
   showPhotosPopup: bool,
   setShowPhotosPopup: func
 };

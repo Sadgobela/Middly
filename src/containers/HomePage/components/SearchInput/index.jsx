@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from "prop-types";
 import SearchInputDesktop from './SearchInputDesktop';
 import SearchInputMobile from './SearchInputMobile';
 import avatar from './img/avatar.jpg';
-import avatar2 from './img/avatar2.jpg';
 import avatar3 from './img/avatar3.jpg';
 import avatar4 from './img/avatar4.jpg';
 import {
@@ -21,12 +21,11 @@ import {
   ItemDescription,
 } from './styled';
 
-const avatars = [avatar, avatar2, avatar3, avatar4];
 const items = [1, 2];
 
 function getItem(name) {
-  name = name.toLowerCase();
-  if(name === 'products'){
+  const newName = name.toLowerCase();
+  if (newName === 'products') {
     return (
       <>
         <ItemPic src={avatar} />
@@ -38,7 +37,7 @@ function getItem(name) {
       </>
     );
   }
-  if(name === 'stores'){
+  if (newName === 'stores') {
     return (
       <>
         <ItemPic src={avatar3} />
@@ -50,7 +49,7 @@ function getItem(name) {
       </>
     );
   }
-  if(name === 'posts'){
+  if (newName === 'posts') {
     return (
       <>
         <ItemPic src={avatar4} />
@@ -62,28 +61,30 @@ function getItem(name) {
       </>
     );
   }
+
+  return null;
 }
 
 function getCategory(arr) {
   return (
-    arr.map( item =>
+    arr.map(item =>
       <ResultCategory>
         <CategoryHeader>
           <CategoryHeading>{item}</CategoryHeading>
           <ViewAll>View All</ViewAll>
         </CategoryHeader>
-        {items.map( () =>
-            <CategoryItem>
-              {getItem(item)}
-            </CategoryItem>
-          )
+        {items.map(() =>
+          <CategoryItem>
+            {getItem(item)}
+          </CategoryItem>
+        )
         }
       </ResultCategory>
     )
   )
 }
 
-const SearchInput = ({isMobile}) => {
+const SearchInput = ({ isMobile }) => {
 
   const [isShow, showResult] = useState(false);
   const [isFocus, showRecent] = useState(false);
@@ -91,7 +92,7 @@ const SearchInput = ({isMobile}) => {
   document.addEventListener('click', ev => {
     const t = ev.target;
     const close = t.classList.contains('close-search-popup');
-    if(close){
+    if (close) {
       showResult(false);
       showRecent(false);
     }
@@ -114,8 +115,12 @@ const SearchInput = ({isMobile}) => {
         isFocus={isFocus}
         hint={showRecent}
       />
-      
+
   )
 };
+
+SearchInput.propTypes = {
+  isMobile: PropTypes.bool.isRequired
+}
 
 export default SearchInput;
