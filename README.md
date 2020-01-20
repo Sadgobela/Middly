@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Middly-Buyer-UI
 User Interface -Middly
 
@@ -73,3 +74,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### `yarn storybook`
 run your storybook
+=======
+"# Middly" 
+>>>>>>> 340c62e611950c0752db84df636910481366d426
